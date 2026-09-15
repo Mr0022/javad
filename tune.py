@@ -42,6 +42,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from exp.exp_ModernTCN import Exp_Main
 from utils.tools import EarlyStopping, adjust_learning_rate
+from data_provider.event_preprocessing import (
+    DEFAULT_EVENT_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    count_event_features, event_kwargs_from_args)
 
 
 # ---------------------------------------------------------------------------
@@ -260,19 +263,22 @@ def build_base_config(tune_args: argparse.Namespace) -> argparse.Namespace:
 
     # News-event conditioning (Study 2). event_fusion/past/future are fixed;
     # event_dim is searched (see sample_hyperparameters).
-    cfg.use_events      = tune_args.use_events
-    cfg.event_data_path = tune_args.event_data_path
-    cfg.event_fusion    = tune_args.event_fusion
-    cfg.event_past      = True
-    cfg.event_future    = True
-    cfg.event_dim       = tune_args.event_dim   # default; overwritten per-trial when searched
-    cfg.event_in        = 0
+    cfg.use_events          = tune_args.use_events
+    cfg.event_data_path     = tune_args.event_data_path
+    cfg.event_min_days      = tune_args.event_min_days
+    cfg.event_min_impact    = tune_args.event_min_impact
+    cfg.event_on_nontrading = tune_args.event_on_nontrading
+    cfg.event_fusion        = tune_args.event_fusion
+    cfg.event_past          = True
+    cfg.event_future        = True
+    cfg.event_dim           = tune_args.event_dim   # default; overwritten per-trial when searched
+    cfg.event_in            = 0
     if cfg.use_events:
         if cfg.data == 'custom':
             cfg.data = 'custom_events'
-        import pandas as pd
-        ev_header = pd.read_csv(os.path.join(cfg.root_path, cfg.event_data_path), nrows=0)
-        cfg.event_in = len([c for c in ev_header.columns if c != 'date'])
+        cfg.event_in = count_event_features(
+            cfg.root_path, cfg.data_path, cfg.target, cfg.event_data_path,
+            **event_kwargs_from_args(cfg))
         print(f'news events: {cfg.event_in} feature columns from {cfg.event_data_path} '
               f'(fusion={cfg.event_fusion})')
 
@@ -340,7 +346,7 @@ def parse_tune_args():
 
     # Task
     p.add_argument('--features',  type=str, default='M',    help='M / S / MS')
-    p.add_argument('--target',    type=str, default='OT',   help='Target column for S/MS')
+    p.add_argument('--target',    type=str, default='ln_RV', help='Target column for S/MS')
     p.add_argument('--freq',      type=str, default='h',    help='Time feature frequency')
     p.add_argument('--embed',     type=str, default='timeF',help='Time embedding type')
     p.add_argument('--seq_len',   type=int, default=22,     help='Fallback input length (seq_len is searched over {22,35,70,180})')
@@ -371,8 +377,19 @@ def parse_tune_args():
     p.add_argument('--use_events', action='store_true', default=False,
                    help='Tune the news-event model: switches data->custom_events and adds '
                         'event_dim to the search space (event_fusion/past/future fixed)')
-    p.add_argument('--event_data_path', type=str, default='events.csv',
-                   help='Event calendar csv inside root_path')
+    p.add_argument('--event_data_path', type=str, default=DEFAULT_EVENT_PATH,
+                   help='Event calendar csv inside root_path: the raw long-format calendar '
+                        '(Date,Name,Impact,Currency), preprocessed into daily features by '
+                        'data_provider.event_preprocessing; an already-wide daily csv also works')
+    p.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
+                   help='Raw calendar only: minimum distinct trading days for an evt_* indicator')
+    p.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,
+                   choices=['LOW', 'MEDIUM', 'HIGH'],
+                   help='Raw calendar only: minimum strongest-observed impact for an evt_* indicator')
+    p.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
+                   choices=['roll', 'drop'],
+                   help="Raw calendar only: roll releases dated on a non-trading day onto the next "
+                        "trading day ('roll') or discard them ('drop')")
     p.add_argument('--event_fusion', type=str, default='channel', choices=['inject', 'channel'],
                    help='How past events enter the backbone; fixed across the study')
     p.add_argument('--event_dim', type=int, default=8,

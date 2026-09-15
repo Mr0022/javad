@@ -19,7 +19,7 @@ set -euo pipefail
 
 # ---- h = 1  (LSTMM1) --------------------------------------------------------
 python LSTM_run.py --is_training 1 --model_id LSTM_h1 \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 \
   --aggregate_mean --seq_len 35 --pred_len 1 \
   --hidden_size 64 --num_layers 3 \
@@ -30,7 +30,7 @@ python LSTM_run.py --is_training 1 --model_id LSTM_h1 \
 
 # ---- h = 5  (LSTMM5) --------------------------------------------------------
 python LSTM_run.py --is_training 1 --model_id LSTM_h5 \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 \
   --aggregate_mean --seq_len 22 --pred_len 5 \
   --hidden_size 64 --num_layers 2 \
@@ -41,7 +41,7 @@ python LSTM_run.py --is_training 1 --model_id LSTM_h5 \
 
 # ---- h = 22 (LSTMM22) -------------------------------------------------------
 python LSTM_run.py --is_training 1 --model_id LSTM_h22 \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 \
   --aggregate_mean --seq_len 35 --pred_len 22 \
   --hidden_size 64 --num_layers 1 \

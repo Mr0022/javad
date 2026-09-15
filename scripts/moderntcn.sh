@@ -17,7 +17,7 @@ set -euo pipefail
 
 # ---- h = 1  (ModernTCN1) ----------------------------------------------------
 python run.py --is_training 1 --model_id ModernTCN_h1 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 70 --pred_len 1 \
   --patch_size 16 --patch_stride 8 --ffn_ratio 2 \
@@ -30,7 +30,7 @@ python run.py --is_training 1 --model_id ModernTCN_h1 --model ModernTCN \
 
 # ---- h = 5  (ModernTCN5) ----------------------------------------------------
 python run.py --is_training 1 --model_id ModernTCN_h5 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 22 --pred_len 5 \
   --patch_size 16 --patch_stride 8 --ffn_ratio 1 \
@@ -43,7 +43,7 @@ python run.py --is_training 1 --model_id ModernTCN_h5 --model ModernTCN \
 
 # ---- h = 22 (ModernTCN22) ---------------------------------------------------
 python run.py --is_training 1 --model_id ModernTCN_h22 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 22 --pred_len 22 \
   --patch_size 16 --patch_stride 2 --ffn_ratio 3 \

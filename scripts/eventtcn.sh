@@ -8,7 +8,12 @@
 #
 # Events were tuned with --event_fusion channel (tune.py default) and event_dim
 # in {4,8,16}; event_past/event_future stay on (defaults). --use_events auto-
-# switches --data custom -> custom_events and reads data/events.csv.
+# switches --data custom -> custom_events and reads data/events_daily.csv, the raw
+# long-format calendar (Date,Name,Impact,Currency). data_provider/event_preprocessing.py
+# turns it into daily features aligned to the EURUSD_lnRV.csv trading calendar
+# (117 columns by default); tune --event_min_days / --event_min_impact to resize it.
+# NOTE: these hyper-parameters were tuned on realized_volatility.csv + events.csv, so
+# re-tune before reading the numbers as final.
 #
 # NOTE on patch_stride: tune.py clamps stride = min(patch_stride, patch_size).
 # For h = 22 the JSON stores patch_stride 8 but patch_size 4, so the value that
@@ -22,7 +27,7 @@ set -euo pipefail
 
 # ---- h = 1  (EVENTTCN1, event_dim 16) ---------------------------------------
 python run.py --is_training 1 --model_id EventTCN_h1 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 22 --pred_len 1 \
   --patch_size 32 --patch_stride 8 --ffn_ratio 3 \
@@ -36,7 +41,7 @@ python run.py --is_training 1 --model_id EventTCN_h1 --model ModernTCN \
 
 # ---- h = 5  (EVENTTCN5, event_dim 4) ----------------------------------------
 python run.py --is_training 1 --model_id EventTCN_h5 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 35 --pred_len 5 \
   --patch_size 32 --patch_stride 2 --ffn_ratio 3 \
@@ -50,7 +55,7 @@ python run.py --is_training 1 --model_id EventTCN_h5 --model ModernTCN \
 
 # ---- h = 22 (EVENTTCN22, event_dim 8; patch_stride clamped 8 -> 4) ----------
 python run.py --is_training 1 --model_id EventTCN_h22 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path realized_volatility.csv \
+  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
   --aggregate_mean --seq_len 35 --pred_len 22 \
   --patch_size 4 --patch_stride 4 --ffn_ratio 2 \

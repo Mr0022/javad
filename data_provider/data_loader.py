@@ -6,6 +6,8 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from utils.timefeatures import time_features
+from data_provider.event_preprocessing import (
+    DEFAULT_EVENT_PATH, load_event_features)
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -16,8 +18,8 @@ warnings.filterwarnings('ignore')
 
 class Dataset_Custom(Dataset):
     def __init__(self, root_path, flag='train', size=None,
-                 features='S', data_path='ETTh1.csv',
-                 target='OT', scale=False, timeenc=0, freq='h'):
+                 features='S', data_path='EURUSD_lnRV.csv',
+                 target='ln_RV', scale=False, timeenc=0, freq='h'):
         # size [seq_len, label_len, pred_len]
         # info
         if size == None:
@@ -118,12 +120,15 @@ class Dataset_Custom(Dataset):
 
 class Dataset_Custom_Events(Dataset_Custom):
     """
-    Dataset_Custom + a daily macro news-event calendar (data/events.csv).
+    Dataset_Custom + a daily macro news-event calendar (data/events_daily.csv).
 
-    The event file must contain a 'date' column plus numeric per-day event
-    features (multi-hot 'evt_*' indicator columns and 'n_events*' counts).
-    Rows are aligned to the target CSV's trading dates by date; days missing
-    from the event file are treated as no-event days (all zeros).
+    The event file is the raw long-format calendar ('Date,Name,Impact,Currency',
+    one row per scheduled release); data_provider.event_preprocessing turns it
+    into a wide daily matrix aligned to the target CSV's trading dates -- see
+    that module for the feature contract and the calendar-alignment rules. An
+    already-wide file (a 'date' column plus numeric per-day columns, e.g. the
+    legacy data/events.csv) is accepted unchanged, with days missing from it
+    treated as no-event days (all zeros).
 
     'evt_*' indicator columns are kept raw (0/1). All other event columns
     (counts) are standardised with statistics from the TRAIN years only,
@@ -138,10 +143,11 @@ class Dataset_Custom_Events(Dataset_Custom):
     """
 
     def __init__(self, root_path, flag='train', size=None,
-                 features='S', data_path='realized_volatility.csv',
+                 features='S', data_path='EURUSD_lnRV.csv',
                  target='ln_RV', scale=False, timeenc=0, freq='h',
-                 event_path='events.csv'):
+                 event_path=DEFAULT_EVENT_PATH, event_kwargs=None):
         self.event_path = event_path
+        self.event_kwargs = dict(event_kwargs or {})
         super().__init__(root_path=root_path, flag=flag, size=size,
                          features=features, data_path=data_path,
                          target=target, scale=scale, timeenc=timeenc, freq=freq)
@@ -154,14 +160,12 @@ class Dataset_Custom_Events(Dataset_Custom):
         df_raw = df_raw.dropna(subset=['date', self.target]).reset_index(drop=True)
         df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-        df_ev = pd.read_csv(os.path.join(self.root_path, self.event_path))
-        df_ev['date'] = pd.to_datetime(df_ev['date'])
+        # raw long-format calendar -> wide daily matrix on the target's trading
+        # dates (already-wide files pass through); memoised across train/val/test
+        df_ev = load_event_features(self.root_path, self.event_path, df_raw['date'],
+                                    **self.event_kwargs)
         ev_cols = [c for c in df_ev.columns if c != 'date']
-
-        # align event rows to the trading dates of the target series;
-        # dates absent from the event file become all-zero (no-event) days
-        df_ev = df_ev.drop_duplicates(subset='date').set_index('date')
-        events = df_ev.reindex(df_raw['date']).fillna(0.0)[ev_cols].values.astype(np.float32)
+        events = df_ev[ev_cols].to_numpy(dtype=np.float32, copy=True)
 
         # standardise count columns on the TRAIN years only; keep evt_* binary
         train_end = int((df_raw['date'].dt.year <= 2021).sum())

@@ -6,6 +6,9 @@ from exp.exp_ModernTCN import Exp_Main
 import random
 import numpy as np
 from utils.str2bool import str2bool
+from data_provider.event_preprocessing import (
+    DEFAULT_EVENT_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    count_event_features, event_kwargs_from_args)
 
 parser = argparse.ArgumentParser(description='ModernTCN')
 
@@ -22,11 +25,11 @@ parser.add_argument('--model', type=str, required=True, default='ModernTCN',
 
 # data loader
 parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
-parser.add_argument('--root_path', type=str, default='./data/ETT/', help='root path of the data file')
-parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
+parser.add_argument('--root_path', type=str, default='./data/', help='root path of the data file')
+parser.add_argument('--data_path', type=str, default='EURUSD_lnRV.csv', help='data file')
 parser.add_argument('--features', type=str, default='M',
                     help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
-parser.add_argument('--target', type=str, default='OT', help='target feature in S or MS task')
+parser.add_argument('--target', type=str, default='ln_RV', help='target feature in S or MS task')
 parser.add_argument('--freq', type=str, default='h',
                     help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
 parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
@@ -117,8 +120,21 @@ parser.add_argument('--use_events', action='store_true', default=False,
                     help='condition on the daily macro news-event calendar: past events are '
                          'embedded and injected at the stem; the KNOWN future event schedule '
                          '(release calendar over the pred_len horizon) FiLM-conditions the head')
-parser.add_argument('--event_data_path', type=str, default='events.csv',
-                    help='event calendar csv inside root_path (a date column + numeric event columns)')
+parser.add_argument('--event_data_path', type=str, default=DEFAULT_EVENT_PATH,
+                    help='event calendar csv inside root_path: the raw long-format calendar '
+                         '(Date,Name,Impact,Currency), preprocessed into daily features by '
+                         'data_provider.event_preprocessing; an already-wide daily csv '
+                         '(date + numeric columns, e.g. the legacy events.csv) also works')
+parser.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
+                    help='raw calendar only: emit an evt_* indicator for release types seen on '
+                         'at least this many distinct trading days')
+parser.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,
+                    choices=['LOW', 'MEDIUM', 'HIGH'],
+                    help='raw calendar only: minimum strongest-observed impact for an evt_* indicator')
+parser.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
+                    choices=['roll', 'drop'],
+                    help="raw calendar only: releases dated on a non-trading day are rolled onto "
+                         "the next trading day ('roll') or discarded ('drop')")
 parser.add_argument('--event_dim', type=int, default=8,
                     help='dimension of the learned event-type embedding (keep small: 4-16)')
 parser.add_argument('--event_past', type=str2bool, default=True,
@@ -157,9 +173,9 @@ args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
 if args.use_events:
     if args.data == 'custom':
         args.data = 'custom_events'
-    import pandas as pd
-    ev_header = pd.read_csv(os.path.join(args.root_path, args.event_data_path), nrows=0)
-    args.event_in = len([c for c in ev_header.columns if c != 'date'])
+    args.event_in = count_event_features(
+        args.root_path, args.data_path, args.target, args.event_data_path,
+        **event_kwargs_from_args(args))
     print('news events: {} feature columns from {}'.format(args.event_in, args.event_data_path))
 
 if args.use_gpu and args.use_multi_gpu:

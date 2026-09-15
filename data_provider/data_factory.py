@@ -1,5 +1,7 @@
 from data_provider.data_loader import Dataset_Custom, Dataset_Custom_Events, Dataset_Pred
 from data_provider.data_loader import Dataset_HAR_Residual
+from data_provider.event_preprocessing import (
+    DEFAULT_EVENT_PATH, event_kwargs_from_args)
 from torch.utils.data import DataLoader
 
 data_dict = {
@@ -32,7 +34,8 @@ def data_provider(args, flag):
 
     extra_kwargs = {}
     if Data is Dataset_Custom_Events:
-        extra_kwargs['event_path'] = getattr(args, 'event_data_path', 'events.csv')
+        extra_kwargs['event_path'] = getattr(args, 'event_data_path', DEFAULT_EVENT_PATH)
+        extra_kwargs['event_kwargs'] = event_kwargs_from_args(args)
     elif Data is Dataset_Pred and getattr(args, 'use_events', False):
         raise NotImplementedError(
             'flag="pred" (Dataset_Pred) does not support --use_events; '

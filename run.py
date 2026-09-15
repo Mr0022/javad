@@ -7,8 +7,8 @@ import random
 import numpy as np
 from utils.str2bool import str2bool
 from data_provider.event_preprocessing import (
-    DEFAULT_EVENT_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
-    count_event_features, event_kwargs_from_args)
+    DEFAULT_DATA_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    count_event_features, event_kwargs_from_args, resolve_event_path)
 
 parser = argparse.ArgumentParser(description='ModernTCN')
 
@@ -26,7 +26,8 @@ parser.add_argument('--model', type=str, required=True, default='ModernTCN',
 # data loader
 parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
 parser.add_argument('--root_path', type=str, default='./data/', help='root path of the data file')
-parser.add_argument('--data_path', type=str, default='EURUSD_lnRV.csv', help='data file')
+parser.add_argument('--data_path', type=str, default=DEFAULT_DATA_PATH,
+                    help='target series inside root_path, named <PAIR>_lnRV.csv')
 parser.add_argument('--features', type=str, default='M',
                     help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
 parser.add_argument('--target', type=str, default='ln_RV', help='target feature in S or MS task')
@@ -120,10 +121,12 @@ parser.add_argument('--use_events', action='store_true', default=False,
                     help='condition on the daily macro news-event calendar: past events are '
                          'embedded and injected at the stem; the KNOWN future event schedule '
                          '(release calendar over the pred_len horizon) FiLM-conditions the head')
-parser.add_argument('--event_data_path', type=str, default=DEFAULT_EVENT_PATH,
-                    help='event calendar csv inside root_path: the raw long-format calendar '
-                         '(Date,Name,Impact,Currency), preprocessed into daily features by '
-                         'data_provider.event_preprocessing; an already-wide daily csv '
+parser.add_argument('--event_data_path', type=str, default=None,
+                    help='event calendar csv inside root_path. Defaults to the calendar paired '
+                         'with --data_path by name (AUDUSD_lnRV.csv -> AUDUSD_EVENTS.csv), so it '
+                         'only needs setting to override that. The file is the raw long-format '
+                         'calendar (Date,Name,Impact,Currency), preprocessed into daily features '
+                         'by data_provider.event_preprocessing; an already-wide daily csv '
                          '(date + numeric columns, e.g. the legacy events.csv) also works')
 parser.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
                     help='raw calendar only: emit an evt_* indicator for release types seen on '
@@ -173,6 +176,9 @@ args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
 if args.use_events:
     if args.data == 'custom':
         args.data = 'custom_events'
+    # pair the series with its own calendar unless one was named explicitly
+    args.event_data_path = resolve_event_path(
+        args.root_path, args.data_path, args.event_data_path)
     args.event_in = count_event_features(
         args.root_path, args.data_path, args.target, args.event_data_path,
         **event_kwargs_from_args(args))

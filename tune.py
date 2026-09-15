@@ -43,8 +43,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from exp.exp_ModernTCN import Exp_Main
 from utils.tools import EarlyStopping, adjust_learning_rate
 from data_provider.event_preprocessing import (
-    DEFAULT_EVENT_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
-    count_event_features, event_kwargs_from_args)
+    DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    count_event_features, event_kwargs_from_args, resolve_event_path)
 
 
 # ---------------------------------------------------------------------------
@@ -276,6 +276,8 @@ def build_base_config(tune_args: argparse.Namespace) -> argparse.Namespace:
     if cfg.use_events:
         if cfg.data == 'custom':
             cfg.data = 'custom_events'
+        cfg.event_data_path = resolve_event_path(
+            cfg.root_path, cfg.data_path, cfg.event_data_path)
         cfg.event_in = count_event_features(
             cfg.root_path, cfg.data_path, cfg.target, cfg.event_data_path,
             **event_kwargs_from_args(cfg))
@@ -377,10 +379,11 @@ def parse_tune_args():
     p.add_argument('--use_events', action='store_true', default=False,
                    help='Tune the news-event model: switches data->custom_events and adds '
                         'event_dim to the search space (event_fusion/past/future fixed)')
-    p.add_argument('--event_data_path', type=str, default=DEFAULT_EVENT_PATH,
-                   help='Event calendar csv inside root_path: the raw long-format calendar '
-                        '(Date,Name,Impact,Currency), preprocessed into daily features by '
-                        'data_provider.event_preprocessing; an already-wide daily csv also works')
+    p.add_argument('--event_data_path', type=str, default=None,
+                   help='Event calendar csv inside root_path. Defaults to the calendar paired '
+                        'with --data_path by name (AUDUSD_lnRV.csv -> AUDUSD_EVENTS.csv); set it '
+                        'only to override. Raw long-format (Date,Name,Impact,Currency) or an '
+                        'already-wide daily csv')
     p.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
                    help='Raw calendar only: minimum distinct trading days for an evt_* indicator')
     p.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,

@@ -7,7 +7,7 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from utils.timefeatures import time_features
 from data_provider.event_preprocessing import (
-    DEFAULT_EVENT_PATH, load_event_features)
+    DEFAULT_DATA_PATH, load_event_features, resolve_event_path)
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 class Dataset_Custom(Dataset):
     def __init__(self, root_path, flag='train', size=None,
-                 features='S', data_path='EURUSD_lnRV.csv',
+                 features='S', data_path=DEFAULT_DATA_PATH,
                  target='ln_RV', scale=False, timeenc=0, freq='h'):
         # size [seq_len, label_len, pred_len]
         # info
@@ -143,10 +143,11 @@ class Dataset_Custom_Events(Dataset_Custom):
     """
 
     def __init__(self, root_path, flag='train', size=None,
-                 features='S', data_path='EURUSD_lnRV.csv',
+                 features='S', data_path=DEFAULT_DATA_PATH,
                  target='ln_RV', scale=False, timeenc=0, freq='h',
-                 event_path=DEFAULT_EVENT_PATH, event_kwargs=None):
-        self.event_path = event_path
+                 event_path=None, event_kwargs=None):
+        # None -> the calendar paired with data_path by name
+        self.event_path = resolve_event_path(root_path, data_path, event_path)
         self.event_kwargs = dict(event_kwargs or {})
         super().__init__(root_path=root_path, flag=flag, size=size,
                          features=features, data_path=data_path,

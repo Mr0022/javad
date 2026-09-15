@@ -1,5 +1,15 @@
 """
-Preprocessing for the macro news-event calendar (``data/events_daily.csv``).
+Preprocessing for the per-pair macro news-event calendars (``data/<PAIR>_EVENTS.csv``).
+
+Every FX pair carries its own calendar next to its own realised-volatility
+series, and the two are paired **by filename**::
+
+    data/EURUSD_lnRV.csv  <->  data/EURUSD_EVENTS.csv
+    data/AUDUSD_lnRV.csv  <->  data/AUDUSD_EVENTS.csv
+
+so ``--data_path AUDUSD_lnRV.csv`` picks up ``AUDUSD_EVENTS.csv`` on its own and
+``--event_data_path`` only has to be passed to override that (see
+``derive_event_path`` / ``resolve_event_path``).
 
 The raw calendar is a **long** table with one row per scheduled release::
 
@@ -18,8 +28,10 @@ Output columns
 ``n_events*`` / ``event_*`` (counts -- standardised on TRAIN years by the loader)
     ``n_events``            total releases that day
     ``n_events_high``       ... with HIGH impact      (likewise medium / low)
-    ``n_events_eur``        ... with Currency == EUR  (likewise usd)
-    ``n_events_eur_high``   HIGH-impact EUR releases  (likewise usd)
+    ``n_events_<cur>``      ... per currency actually present in the file, e.g.
+                            ``n_events_eur`` / ``n_events_usd`` for EURUSD and
+                            ``n_events_aud`` / ``n_events_usd`` for AUDUSD
+    ``n_events_<cur>_high`` HIGH-impact releases for that currency
     ``event_score``         impact-weighted count, LOW=1 MEDIUM=2 HIGH=3
     ``event_coverage``      1 on days inside the calendar's date range, else 0.
                             Only emitted when the target series actually extends
@@ -58,7 +70,10 @@ RAW_COLUMNS = ('Date', 'Name', 'Impact', 'Currency')
 
 IMPACT_RANK = {'LOW': 1, 'MEDIUM': 2, 'HIGH': 3}
 
-DEFAULT_EVENT_PATH = 'events_daily.csv'
+EVENT_SUFFIX = '_EVENTS.csv'
+# target series are named <PAIR>_lnRV.csv; this is stripped to get <PAIR>
+SERIES_SUFFIXES = ('_lnRV',)
+DEFAULT_DATA_PATH = 'EURUSD_lnRV.csv'
 DEFAULT_MIN_DAYS = 24
 DEFAULT_MIN_IMPACT = 'HIGH'
 DEFAULT_ON_NONTRADING = 'roll'
@@ -190,10 +205,13 @@ def build_daily_event_features(event_file, trading_dates,
     _daily(pd.Series(True, index=aligned.index), 'n_events')
     for impact in ('HIGH', 'MEDIUM', 'LOW'):
         _daily(aligned['Impact'] == impact, f'n_events_{impact.lower()}')
-    for cur in ('EUR', 'USD'):
-        _daily(aligned['Currency'] == cur, f'n_events_{cur.lower()}')
+    # one pair of columns per currency actually present, so EURUSD yields
+    # n_events_eur/_usd and AUDUSD yields n_events_aud/_usd without any edits
+    for cur in sorted(raw['Currency'].unique()):
+        slug = _sanitise(cur).lower()
+        _daily(aligned['Currency'] == cur, f'n_events_{slug}')
         _daily((aligned['Currency'] == cur) & (aligned['Impact'] == 'HIGH'),
-               f'n_events_{cur.lower()}_high')
+               f'n_events_{slug}_high')
 
     score = aligned.groupby('trade_date')['rank'].sum()
     counts['event_score'] = score.reindex(idx).fillna(0.0).to_numpy(dtype=np.float32)
@@ -246,6 +264,52 @@ def build_daily_event_features(event_file, trading_dates,
     return out
 
 
+def derive_event_path(data_path):
+    """``AUDUSD_lnRV.csv`` -> ``AUDUSD_EVENTS.csv``; pairs a series with its calendar.
+
+    The directory part of ``data_path`` is preserved, so a series in a
+    subdirectory looks for its calendar alongside itself.
+    """
+    head, base = os.path.split(data_path)
+    stem = os.path.splitext(base)[0]
+    for suffix in SERIES_SUFFIXES:
+        if stem.lower().endswith(suffix.lower()):
+            stem = stem[:-len(suffix)]
+            break
+    return os.path.join(head, stem + EVENT_SUFFIX)
+
+
+def available_event_files(root_path):
+    try:
+        names = os.listdir(root_path)
+    except OSError:
+        return []
+    return sorted(n for n in names if n.endswith(EVENT_SUFFIX))
+
+
+def resolve_event_path(root_path, data_path, event_path=None):
+    """Pick the calendar for ``data_path``, or honour an explicit ``event_path``.
+
+    An explicitly supplied ``event_path`` always wins. Otherwise the calendar is
+    derived from the series filename; if that file is missing we raise rather
+    than silently fall back, because the quiet failure here is training one
+    currency pair against another pair's news calendar.
+    """
+    if event_path:
+        return event_path
+
+    derived = derive_event_path(data_path)
+    if os.path.exists(os.path.join(root_path, derived)):
+        return derived
+
+    found = available_event_files(root_path)
+    raise FileNotFoundError(
+        f'--use_events needs an event calendar for {data_path!r}: expected '
+        f'{derived!r} in {root_path!r}, which does not exist. '
+        + (f'Calendars present: {found}. ' if found else 'No *_EVENTS.csv files are present. ')
+        + 'Add it, or name one explicitly with --event_data_path.')
+
+
 def _is_wide(event_file):
     head = pd.read_csv(event_file, nrows=0)
     return 'date' in head.columns and not set(RAW_COLUMNS[1:]).issubset(head.columns)
@@ -292,8 +356,9 @@ def read_trading_dates(root_path, data_path, target):
     return pd.to_datetime(df['date'])
 
 
-def count_event_features(root_path, data_path, target, event_path, **kwargs):
+def count_event_features(root_path, data_path, target, event_path=None, **kwargs):
     """``event_in`` for the model: how many feature columns the calendar yields."""
+    event_path = resolve_event_path(root_path, data_path, event_path)
     dates = read_trading_dates(root_path, data_path, target)
     return len(load_event_features(root_path, event_path, dates, **kwargs).columns) - 1
 
@@ -312,9 +377,10 @@ def _main():
     p = argparse.ArgumentParser(
         description='Preprocess the raw news-event calendar into a wide daily matrix.')
     p.add_argument('--root_path', type=str, default='./data/')
-    p.add_argument('--event_data_path', type=str, default=DEFAULT_EVENT_PATH)
-    p.add_argument('--data_path', type=str, default='EURUSD_lnRV.csv',
+    p.add_argument('--data_path', type=str, default=DEFAULT_DATA_PATH,
                    help='target series whose trading calendar the events are aligned to')
+    p.add_argument('--event_data_path', type=str, default=None,
+                   help='defaults to the calendar paired with --data_path by name')
     p.add_argument('--target', type=str, default='ln_RV')
     p.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS)
     p.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,
@@ -325,12 +391,14 @@ def _main():
                    help='where to write the wide csv (default: <root_path>/events_daily_features.csv)')
     a = p.parse_args()
 
+    event_path = resolve_event_path(a.root_path, a.data_path, a.event_data_path)
     dates = read_trading_dates(a.root_path, a.data_path, a.target)
     df = build_daily_event_features(
-        os.path.join(a.root_path, a.event_data_path), dates,
+        os.path.join(a.root_path, event_path), dates,
         min_days=a.event_min_days, min_impact=a.event_min_impact,
         on_nontrading=a.event_on_nontrading)
-    out = a.out or os.path.join(a.root_path, 'events_daily_features.csv')
+    default_out = os.path.splitext(os.path.basename(event_path))[0] + '_features.csv'
+    out = a.out or os.path.join(a.root_path, default_out)
     df.to_csv(out, index=False, float_format='%g')
     print(f'wrote {out}  shape={df.shape}')
 

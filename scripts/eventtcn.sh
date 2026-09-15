@@ -8,12 +8,15 @@
 #
 # Events were tuned with --event_fusion channel (tune.py default) and event_dim
 # in {4,8,16}; event_past/event_future stay on (defaults). --use_events auto-
-# switches --data custom -> custom_events and reads data/events_daily.csv, the raw
-# long-format calendar (Date,Name,Impact,Currency). data_provider/event_preprocessing.py
-# turns it into daily features aligned to the EURUSD_lnRV.csv trading calendar
-# (117 columns by default); tune --event_min_days / --event_min_impact to resize it.
+# switches --data custom -> custom_events and reads the calendar paired with
+# --data_path by name: EURUSD_lnRV.csv -> data/EURUSD_EVENTS.csv, and likewise
+# AUDUSD_lnRV.csv -> AUDUSD_EVENTS.csv, so switching currency pair needs no other
+# change. Those files are the raw long-format calendar (Date,Name,Impact,Currency);
+# data_provider/event_preprocessing.py turns one into daily features aligned to that
+# pair's trading calendar (117 columns for EURUSD); tune --event_min_days /
+# --event_min_impact to resize it, or --event_data_path to override the pairing.
 # NOTE: these hyper-parameters were tuned on realized_volatility.csv + events.csv, so
-# re-tune before reading the numbers as final.
+# re-tune before reading the numbers as final -- and re-tune per currency pair.
 #
 # NOTE on patch_stride: tune.py clamps stride = min(patch_stride, patch_size).
 # For h = 22 the JSON stores patch_stride 8 but patch_size 4, so the value that

@@ -2,28 +2,38 @@
 Multi-horizon target construction for the realized-volatility benchmark.
 
 For horizon h the dependent variable is the log of the realized variance
-*summed* over the forecast window:
+AVERAGED over the forecast window:
 
-    Y_t^(h) = ln( Sum_{k=1}^{h} RV_{t+k} )
+    Y_t^(h) = ln( (1/h) * Sum_{k=1}^{h} RV_{t+k} )
 
 The series on disk is already ln(RV), so this is a log-sum-exp over the
-window:
+window, less ln(h):
 
-    Y_t^(h) = ln( Sum_{k=1}^{h} exp( ln RV_{t+k} ) )
+    Y_t^(h) = ln( Sum_{k=1}^{h} exp( ln RV_{t+k} ) ) - ln(h)
 
 This replaces the earlier forward mean of logs, (1/h) * Sum_{k=1}^{h} ln RV_{t+k}.
 The two are genuinely different quantities -- by Jensen's inequality the mean
 of logs sits below the log of the mean, and the gap widens with the dispersion
-of RV inside the window, so quiet and turbulent weeks are re-weighted. For
-h = 1 both collapse to ln(RV_{t+1}), so h = 1 results are unaffected.
+of RV inside the window, so quiet and turbulent weeks are re-weighted. That
+Jensen gap IS the change; averaging rather than summing the variance only
+removes the constant ln(h) on top of it. For h = 1 every one of these
+definitions collapses to ln(RV_{t+1}), so h = 1 results are unaffected.
 
-Summed vs averaged variance is only a level shift, since
-ln(Sum RV) = ln(h) + ln(mean RV):
+Averaging rather than summing keeps the target on the same scale as the input
+series, which matters in two places:
 
-  * an OLS/LASSO intercept absorbs ln(h) exactly (HAR-RV, N-HAR),
-  * RevIN / the linear head absorb it for the deep models,
-  * QLIKE (Patton, 2011) depends on the ratio RV_act / RV_pred only, so the
-    constant cancels there as well.
+  * the deep models de-normalise through RevIN using the look-back window's
+    own mean and standard deviation, so a target centred near that mean
+    leaves the head a small constant to learn rather than ln(h)/sigma;
+  * the numbers stay directly comparable with the previous mean-of-logs
+    results and with the h-day-average convention of Corsi (2009) and
+    Bollerslev, Patton & Quaedvlieg (2016).
+
+For the linear models the choice is cosmetic: ln(Sum RV) and ln(mean RV)
+differ by a constant, an OLS intercept absorbs it exactly, N-HAR's LASSO
+residualises the target against an intercept-carrying block before
+penalising, and QLIKE (Patton, 2011) depends on the ratio
+RV_act / RV_pred only. All three therefore score identically either way.
 
 MSE and MAE remain on the ln-RV scale and stay comparable across models
 because every model in the benchmark is scored against this same Y_t^(h).
@@ -40,12 +50,12 @@ import numpy as np
 import pandas as pd
 
 
-def forward_log_sum_rv(ln_rv: pd.Series, h: int) -> pd.Series:
-    """ln of the RV summed over the FUTURE window [t+1 .. t+h].
+def forward_log_mean_rv(ln_rv: pd.Series, h: int) -> pd.Series:
+    """ln of the RV averaged over the FUTURE window [t+1 .. t+h].
 
-        Y_t^(h) = ln( Sum_{k=1}^{h} exp( ln RV_{t+k} ) )
+        Y_t^(h) = ln( (1/h) * Sum_{k=1}^{h} exp( ln RV_{t+k} ) )
 
-    rolling(h).sum() gives the trailing sum over [t-h+1 .. t]; the final
+    rolling(h).mean() gives the trailing mean over [t-h+1 .. t]; the final
     shift(-h) slides that window forward to [t+1 .. t+h], so row t only ever
     uses observations strictly after t and there is no look-ahead.
 
@@ -70,4 +80,4 @@ def forward_log_sum_rv(ln_rv: pd.Series, h: int) -> pd.Series:
     if not np.isfinite(c):
         c = 0.0
     rv = np.exp(s - c)
-    return np.log(rv.rolling(h).sum()).shift(-h) + c
+    return np.log(rv.rolling(h).mean()).shift(-h) + c

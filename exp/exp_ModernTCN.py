@@ -10,6 +10,7 @@ import torch.nn as nn
 from torch import optim
 from torch.optim import lr_scheduler
 
+import math
 import os
 import time
 
@@ -48,15 +49,21 @@ class Exp_Main(Exp_Basic):
     def _get_target(self, batch_y, f_dim):
         """Slice the future window from batch_y and optionally aggregate it.
 
-        batch_y carries ln(RV), so log-sum-exp over the horizon is
-        ln( Sum_{k=1..h} RV_{t+k} ) -- the benchmark target defined in
-        utils/target_agg.py and shared with HAR-RV and N-HAR. It replaces the
-        earlier mean-pool, which averaged logs instead of summing variances;
-        for pred_len=1 the two coincide.
+        batch_y carries ln(RV), so log-sum-exp less ln(h) is
+        ln( (1/h) * Sum_{k=1..h} RV_{t+k} ) -- the benchmark target defined
+        in utils/target_agg.py and shared with HAR-RV and N-HAR. It replaces
+        the earlier mean-pool, which averaged logs instead of the variances
+        themselves; for pred_len=1 the two coincide.
+
+        Subtracting ln(h) keeps the target on the input series' scale, which
+        matters here because RevIN de-normalises with the look-back window's
+        own mean: the head then has a small constant to learn rather than
+        ln(h)/sigma.
         """
         y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
         if getattr(self.args, 'aggregate_horizon', False):
-            y = torch.logsumexp(y, dim=1, keepdim=True)
+            h = y.shape[1]                       # == pred_len, the axis reduced
+            y = torch.logsumexp(y, dim=1, keepdim=True) - math.log(h)
         return y
 
     def _unpack_batch(self, batch):

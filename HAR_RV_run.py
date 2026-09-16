@@ -17,15 +17,16 @@ Split logic mirrors Dataset_Custom (data_provider/data_loader.py) exactly:
 
 Target construction (Corsi, 2009; Bollerslev et al., 2016):
     For horizon h, the dependent variable is the log of the h-day forward
-    SUM of realized variance:
+    AVERAGE of realized variance:
 
-        Y_t^(h) = ln( Sum_{k=1}^{h}  RV_{t+k} )
+        Y_t^(h) = ln( (1/h) * Sum_{k=1}^{h}  RV_{t+k} )
 
     The series on disk is ln(RV), so this is a log-sum-exp over the window
-    (see utils/target_agg.py, which every model in the benchmark shares).
-    It replaces the earlier forward mean of logs, (1/h)*Sum ln(RV_{t+k}):
-    aggregating variance and then taking the log is not the same as
-    averaging logs (Jensen), though for h=1 both reduce to ln(RV_{t+1}).
+    less ln(h) (see utils/target_agg.py, which every model in the benchmark
+    shares). It replaces the earlier forward mean of logs,
+    (1/h)*Sum ln(RV_{t+k}): averaging the variance and then taking the log
+    is not the same as averaging logs (Jensen), though for h=1 both reduce
+    to ln(RV_{t+1}).
 
     The regressors (RV_d, RV_w, RV_m) use information available AT time t
     (i.e. they include today's RV_t), so predicting the aggregate over
@@ -70,7 +71,7 @@ from   statsmodels.stats.diagnostic        import acorr_ljungbox
 from   scipy                               import stats
 
 # -- Local --------------------------------------------------------------------
-from   utils.target_agg                    import forward_log_sum_rv
+from   utils.target_agg                    import forward_log_mean_rv
 
 
 # ==============================================================================
@@ -186,23 +187,24 @@ def load_base_features(filepath: str) -> pd.DataFrame:
 
 def build_horizon_target(df_base: pd.DataFrame, h: int) -> pd.DataFrame:
     """
-    Construct the log of the h-day forward RV sum as the dependent variable.
+    Construct the log of the h-day forward RV average as the dependent variable.
 
-        Y_t^(h) = ln( Sum_{k=1}^{h}  RV_{t+k} )
+        Y_t^(h) = ln( (1/h) * Sum_{k=1}^{h}  RV_{t+k} )
 
     The regressors in load_base_features include today's value (RV_d =
     ln(RV_t), etc.), so the newest information available at row t is from t.
     The target therefore spans [t+1 .. t+h], making every horizon a genuine
     1-step-ahead forecast:
 
-        h=1  -> Y_t = ln(  RV_{t+1} )
-        h=5  -> Y_t = ln(  RV_{t+1} + ... + RV_{t+5}  )
-        h=22 -> Y_t = ln(  RV_{t+1} + ... + RV_{t+22} )
+        h=1  -> Y_t = ln(      RV_{t+1} )
+        h=5  -> Y_t = ln( (1/5) *(RV_{t+1} + ... + RV_{t+5})  )
+        h=22 -> Y_t = ln( (1/22)*(RV_{t+1} + ... + RV_{t+22}) )
 
-    The series is stored as ln(RV), so this is a log-sum-exp over the window;
-    forward_log_sum_rv (utils/target_agg.py) holds the one definition every
-    model in the benchmark uses. Note h=1 is unchanged from the previous
-    forward-mean-of-logs target -- only the multi-day horizons move.
+    The series is stored as ln(RV), so this is a log-sum-exp over the window
+    less ln(h); forward_log_mean_rv (utils/target_agg.py) holds the one
+    definition every model in the benchmark uses. Note h=1 is unchanged from
+    the previous forward-mean-of-logs target -- only the multi-day horizons
+    move.
 
     Parameters
     ----------
@@ -214,7 +216,7 @@ def build_horizon_target(df_base: pd.DataFrame, h: int) -> pd.DataFrame:
     DataFrame with 'Y_h' added; rows with any NaN dropped.
     """
     df = df_base.copy()
-    df["Y_h"] = forward_log_sum_rv(df["ln_RV"], h)
+    df["Y_h"] = forward_log_mean_rv(df["ln_RV"], h)
     df = df.dropna(subset=["Y_h", "RV_d", "RV_w", "RV_m"])
     return df
 
@@ -441,7 +443,7 @@ def figure_multi_horizon_forecast(results_dict):
                 ls="--", alpha=0.90, label=f"HAR-RV  h={h}")
         ax.fill_between(t_idx, actual.values, pred.values,
                         color="#aaaaaa", alpha=0.18, label="Error")
-        ax.set_ylabel(f"$\\ln(\\sum RV)^{{({h})}}$", fontsize=10)
+        ax.set_ylabel(f"$\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=10)
         ax.set_title(
             f"{panel_letters[idx]}  {HORIZONS[h]['label']} -- Out-of-Sample Forecast  "
             f"({TEST_START_YEAR}-2025)",
@@ -597,8 +599,8 @@ def figure_scatter_grid(results_dict: dict):
         xs = np.array([lo, hi])
         ax.plot(xs, intercept + slope * xs, color=C_TEST, lw=1.0,
                 label=f"OLS fit  R2={r**2:.3f}")
-        ax.set_xlabel(f"Predicted  $\\ln(\\sum RV)^{{({h})}}$", fontsize=9)
-        ax.set_ylabel(f"Actual     $\\ln(\\sum RV)^{{({h})}}$", fontsize=9)
+        ax.set_xlabel(f"Predicted  $\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=9)
+        ax.set_ylabel(f"Actual     $\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=9)
         ax.set_title(f"{panel_letters[idx]}  h={h}  [{HORIZONS[h]['label']}]",
                      loc="left", pad=3)
         ax.legend(fontsize=8)

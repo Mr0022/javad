@@ -375,7 +375,7 @@ def parse_tune_args():
     p.add_argument('--aggregate_horizon', '--aggregate_mean', dest='aggregate_horizon',
                    action='store_true', default=False,
                    help='Predict one aggregate over the next pred_len steps: '
-                        'Y = ln( sum_k RV_{t+k} ) (utils/target_agg.py). Single-value '
+                        'Y = ln( (1/h) * sum_k RV_{t+k} ) (utils/target_agg.py). Single-value '
                         'output. --aggregate_mean is an alias for the older spelling')
 
     # News events (Study 2)

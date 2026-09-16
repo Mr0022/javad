@@ -8,7 +8,7 @@ Example (univariate, aggregate-mean over 5 days):
         --model_id forex_lstm \
         --data custom \
         --root_path ./data/ \
-        --data_path forex_log_realized_volatility.csv \
+        --data_path EURUSD_lnRV.csv \
         --features S \
         --target EURUSD \
         --seq_len 48 \
@@ -48,10 +48,10 @@ parser.add_argument('--model_id',    type=str,  required=True,  help='experiment
 # ── Dataset ──────────────────────────────────────────────────────────────────
 parser.add_argument('--data',        type=str,  required=True,  help='dataset type, e.g. custom / ETTh1')
 parser.add_argument('--root_path',   type=str,  default='./data/')
-parser.add_argument('--data_path',   type=str,  default='forex_log_realized_volatility.csv')
+parser.add_argument('--data_path',   type=str,  default='EURUSD_lnRV.csv')
 parser.add_argument('--features',    type=str,  default='S',
                     help='M: multivariate→multivariate  S: univariate  MS: multivariate→univariate')
-parser.add_argument('--target',      type=str,  default='OT',   help='target column for S/MS')
+parser.add_argument('--target',      type=str,  default='ln_RV', help='target column for S/MS')
 parser.add_argument('--freq',        type=str,  default='h',
                     help='time-feature frequency: s t h d b w m')
 parser.add_argument('--embed',       type=str,  default='timeF')

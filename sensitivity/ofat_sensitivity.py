@@ -124,7 +124,7 @@ def build_cmd(param, value, itr, epochs, model_id):
         "--model", "ModernTCN",
         "--data", "custom",
         "--root_path", "./data/",
-        "--data_path", "realized_volatility.csv",
+        "--data_path", "EURUSD_lnRV.csv",
         "--features", "S", "--target", "ln_RV",
         "--enc_in", "1", "--dec_in", "1", "--c_out", "1",
         "--aggregate_mean",

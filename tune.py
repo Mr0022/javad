@@ -259,7 +259,7 @@ def build_base_config(tune_args: argparse.Namespace) -> argparse.Namespace:
     cfg.checkpoints  = tune_args.checkpoints
 
     # Aggregation mode
-    cfg.aggregate_mean = tune_args.aggregate_mean
+    cfg.aggregate_horizon = tune_args.aggregate_horizon
 
     # News-event conditioning (Study 2). event_fusion/past/future are fixed;
     # event_dim is searched (see sample_hyperparameters).
@@ -372,8 +372,11 @@ def parse_tune_args():
                    help='Epochs before pruner starts evaluating a trial')
     p.add_argument('--reset', action='store_true',
                    help='Delete existing study DB and start fresh (use after changing search space)')
-    p.add_argument('--aggregate_mean', action='store_true', default=False,
-                   help='Predict the mean of the next pred_len steps (single-value output)')
+    p.add_argument('--aggregate_horizon', '--aggregate_mean', dest='aggregate_horizon',
+                   action='store_true', default=False,
+                   help='Predict one aggregate over the next pred_len steps: '
+                        'Y = ln( sum_k RV_{t+k} ) (utils/target_agg.py). Single-value '
+                        'output. --aggregate_mean is an alias for the older spelling')
 
     # News events (Study 2)
     p.add_argument('--use_events', action='store_true', default=False,

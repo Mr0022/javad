@@ -32,7 +32,7 @@ set -euo pipefail
 python run.py --is_training 1 --model_id EventTCN_h1 --model ModernTCN \
   --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
-  --aggregate_mean --seq_len 22 --pred_len 1 \
+  --aggregate_horizon --seq_len 22 --pred_len 1 \
   --patch_size 32 --patch_stride 8 --ffn_ratio 3 \
   --num_blocks 3 3 3 3 --large_size 51 51 51 51 --small_size 3 3 3 3 \
   --dims 32 32 32 32 --dw_dims 32 32 32 32 \
@@ -46,7 +46,7 @@ python run.py --is_training 1 --model_id EventTCN_h1 --model ModernTCN \
 python run.py --is_training 1 --model_id EventTCN_h5 --model ModernTCN \
   --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
-  --aggregate_mean --seq_len 35 --pred_len 5 \
+  --aggregate_horizon --seq_len 35 --pred_len 5 \
   --patch_size 32 --patch_stride 2 --ffn_ratio 3 \
   --num_blocks 3 3 3 3 --large_size 13 13 13 13 --small_size 5 5 5 5 \
   --dims 32 32 32 32 --dw_dims 32 32 32 32 \
@@ -60,7 +60,7 @@ python run.py --is_training 1 --model_id EventTCN_h5 --model ModernTCN \
 python run.py --is_training 1 --model_id EventTCN_h22 --model ModernTCN \
   --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
   --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
-  --aggregate_mean --seq_len 35 --pred_len 22 \
+  --aggregate_horizon --seq_len 35 --pred_len 22 \
   --patch_size 4 --patch_stride 4 --ffn_ratio 2 \
   --num_blocks 1 1 1 1 --large_size 31 31 31 31 --small_size 5 5 5 5 \
   --dims 32 32 32 32 --dw_dims 32 32 32 32 \

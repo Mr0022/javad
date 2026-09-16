@@ -127,7 +127,7 @@ def build_cmd(param, value, itr, epochs, model_id):
         "--data_path", "EURUSD_lnRV.csv",
         "--features", "S", "--target", "ln_RV",
         "--enc_in", "1", "--dec_in", "1", "--c_out", "1",
-        "--aggregate_mean",
+        "--aggregate_horizon",
         "--seq_len", str(cfg["seq_len"]),
         "--pred_len", "1",
         "--patch_size", str(cfg["patch_size"]),

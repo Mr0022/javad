@@ -331,8 +331,11 @@ class Dataset_HAR_Residual(Dataset):
     Design notes
     ------------
     * Horizon h is taken from pred_len. The target Y_t^(h) is the h-day
-      forward mean of ln(RV) -- identical to the aggregate-mean target used
-      by the deep-learning baselines, so the comparison is apples-to-apples.
+      forward mean of ln(RV). NOTE this is the legacy target: the benchmark
+      models (HAR-RV, N-HAR, ModernTCN, FiLM-TCN) now predict
+      ln( Sum_{k=1..h} RV_{t+k} ) instead -- see utils/target_agg.py. These
+      HAR-residual hybrids were not migrated, so for h > 1 their numbers are
+      NOT comparable with the benchmark table (at h = 1 the two coincide).
     * The LSTM input window is the *observed* ln(RV) series (known at the
       forecast origin t), so there is no look-ahead from overlapping
       residuals.

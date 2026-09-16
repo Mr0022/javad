@@ -28,12 +28,12 @@ class Exp_Main(Exp_Basic):
         model_dict = {
             'ModernTCN': ModernTCN,
         }
-        # When aggregate_mean is enabled the model head must output a single
-        # value (the predicted mean).  Temporarily set pred_len=1 so that
-        # ModernTCN builds with target_window=1, then restore the original
-        # value so the data loader still loads the full pred_len future steps
-        # (needed to compute the ground-truth mean inside _get_target).
-        if getattr(self.args, 'aggregate_mean', False):
+        # When horizon aggregation is enabled the model head must output a
+        # single value (the predicted aggregate).  Temporarily set pred_len=1
+        # so that ModernTCN builds with target_window=1, then restore the
+        # original value so the data loader still loads the full pred_len
+        # future steps (needed to build the ground truth in _get_target).
+        if getattr(self.args, 'aggregate_horizon', False):
             orig_pred_len = self.args.pred_len
             self.args.pred_len = 1
             model = model_dict[self.args.model].Model(self.args).float()
@@ -46,10 +46,17 @@ class Exp_Main(Exp_Basic):
         return model
 
     def _get_target(self, batch_y, f_dim):
-        """Slice the future window from batch_y and optionally mean-pool it."""
+        """Slice the future window from batch_y and optionally aggregate it.
+
+        batch_y carries ln(RV), so log-sum-exp over the horizon is
+        ln( Sum_{k=1..h} RV_{t+k} ) -- the benchmark target defined in
+        utils/target_agg.py and shared with HAR-RV and N-HAR. It replaces the
+        earlier mean-pool, which averaged logs instead of summing variances;
+        for pred_len=1 the two coincide.
+        """
         y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
-        if getattr(self.args, 'aggregate_mean', False):
-            y = y.mean(dim=1, keepdim=True)
+        if getattr(self.args, 'aggregate_horizon', False):
+            y = torch.logsumexp(y, dim=1, keepdim=True)
         return y
 
     def _unpack_batch(self, batch):

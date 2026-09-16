@@ -112,9 +112,14 @@ parser.add_argument('--loss', type=str, default='mse', help='loss function')
 parser.add_argument('--lradj', type=str, default='type3', help='adjust learning rate')
 parser.add_argument('--pct_start', type=float, default=0.3, help='pct_start')
 parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
-parser.add_argument('--aggregate_mean', action='store_true', default=False,
-                    help='when pred_len>1, predict the mean of the next pred_len steps '
-                         'instead of each step individually (single-value output)')
+parser.add_argument('--aggregate_horizon', '--aggregate_mean', dest='aggregate_horizon',
+                    action='store_true', default=False,
+                    help='when pred_len>1, predict one aggregate over the next pred_len '
+                         'steps instead of each step individually: '
+                         'Y = ln( sum_k RV_{t+k} ), i.e. a log-sum-exp over the ln(RV) '
+                         'window (utils/target_agg.py). --aggregate_mean is kept as an '
+                         'alias for the older spelling, when the aggregate was the mean '
+                         'of the logs rather than the log of the summed variance')
 
 # news events
 parser.add_argument('--use_events', action='store_true', default=False,

@@ -47,8 +47,13 @@ architecture comparison rather than an information-set comparison.
 
 Target and split (mirrors HAR_RV_run.py exactly, so rows are comparable)
 -----------------------------------------------------------------------
-    Y_t^(h) = (1/h) * Sum_{k=1..h} ln(RV_{t+k})
+    Y_t^(h) = ln( Sum_{k=1..h} RV_{t+k} )
     train: year <= 2023   (val folded in)      test: year >= 2024
+
+The target aggregates VARIANCE over the forecast window and logs the total,
+rather than averaging the logs; utils/target_agg.py holds the one definition
+the whole benchmark shares. The event regressors below stay horizon MEANS --
+they are release counts, not variances, and the FiLM head mean-pools them.
 
 All three models at a given (pair, horizon) are estimated and scored on an
 IDENTICAL row sample, so the loss differences are attributable to the
@@ -97,6 +102,7 @@ from sklearn.linear_model import lasso_path
 from data_provider.event_preprocessing import (
     DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING,
     load_event_features, resolve_event_path, resolve_target_column)
+from utils.target_agg import forward_log_sum_rv
 
 
 # ==============================================================================
@@ -213,8 +219,12 @@ def forward_mean(frame, h):
     """Mean over rows [t+1 .. t+h], in trading-day space.
 
     rolling(h).mean() is the trailing mean over [t-h+1 .. t]; shift(-h) slides
-    that window forward to [t+1 .. t+h]. Same construction as the target in
-    HAR_RV_run.py:205, so regressors and target span the same window.
+    that window forward to [t+1 .. t+h] -- the same window the target spans,
+    so regressors and target line up.
+
+    This builds the EVENT regressors (release counts). The target itself is
+    forward_log_sum_rv: variance is summed over the window and then logged,
+    which is not the same as averaging logs.
     """
     return frame.rolling(h).mean().shift(-h)
 
@@ -301,7 +311,7 @@ def assemble(series, events, h, evt_cols):
     up for the MCS / DM tests.
     """
     base = build_har_core(series)
-    base["Y_h"] = forward_mean(base["ln_RV"], h)
+    base["Y_h"] = forward_log_sum_rv(base["ln_RV"], h)
 
     dow = build_dow(base.index)
     for c in dow.columns:

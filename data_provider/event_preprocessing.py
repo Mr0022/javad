@@ -13,9 +13,16 @@ so ``--data_path AUDUSD_lnRV.csv`` picks up ``AUDUSD_EVENTS.csv`` on its own and
 
 The raw calendar is a **long** table with one row per scheduled release::
 
-    Date,Name,Impact,Currency
-    2012-01-02,HCOB Manufacturing PMI,LOW,EUR
-    2012-01-03,Unemployment Change,HIGH,EUR
+    Date,Name,Currency
+    2012-01-02,HCOB Manufacturing PMI,EUR
+    2012-01-03,Unemployment Change,EUR
+
+An ``Impact`` column may be present in the file; it is IGNORED. Impact ratings
+are a vendor's subjective label rather than an observable, they are not part of
+the published release schedule, and they can be revised after the fact -- so
+conditioning on them weakens the ex-ante claim that every regressor was knowable
+at forecast time. Nothing downstream (HAR-X, N-HAR, the FiLM/channel event
+conditioning) sees impact on this branch.
 
 ``Dataset_Custom_Events`` (and the FiLM/channel event conditioning in
 ``models/ModernTCN.py``) needs a **wide** daily matrix instead: one row per
@@ -27,23 +34,20 @@ Output columns
 --------------
 ``n_events*`` / ``event_*`` (counts -- standardised on TRAIN years by the loader)
     ``n_events``            total releases that day
-    ``n_events_high``       ... with HIGH impact      (likewise medium / low)
     ``n_events_<cur>``      ... per currency actually present in the file, e.g.
                             ``n_events_eur`` / ``n_events_usd`` for EURUSD and
                             ``n_events_aud`` / ``n_events_usd`` for AUDUSD
-    ``n_events_<cur>_high`` HIGH-impact releases for that currency
-    ``event_score``         impact-weighted count, LOW=1 MEDIUM=2 HIGH=3
     ``event_coverage``      1 on days inside the calendar's date range, else 0.
                             Only emitted when the target series actually extends
                             beyond the calendar, so the model can tell "no events
                             scheduled" apart from "no event data collected".
 
 ``evt_<CUR>_<Name>`` (multi-hot indicators -- kept raw 0/1 by the loader)
-    One column per (Currency, Name) release type that clears ``min_days`` and
-    ``min_impact``.  Defaults keep the ~114 macro-relevant types (FOMC/ECB rate
-    decisions, NFP, CPI, GDP, PMIs, Powell/Lagarde speeches, ...) out of the 536
-    present in the file, dropping the long tail of low-impact noise (bill
-    auctions, Redbook, rig counts).
+    One column per (Currency, Name) release type seen on at least ``min_days``
+    distinct trading days.  With impact gone, recurrence is the only filter, so
+    the long tail of frequent-but-minor releases (bill auctions, Redbook, rig
+    counts) now survives wherever it is regular enough -- raise ``min_days`` if
+    you want a tighter set.
 
 Calendar alignment
 ------------------
@@ -65,17 +69,14 @@ import warnings
 import numpy as np
 import pandas as pd
 
-# raw long-format schema
-RAW_COLUMNS = ('Date', 'Name', 'Impact', 'Currency')
-
-IMPACT_RANK = {'LOW': 1, 'MEDIUM': 2, 'HIGH': 3}
+# raw long-format schema. 'Impact' may also be present and is ignored.
+RAW_COLUMNS = ('Date', 'Name', 'Currency')
 
 EVENT_SUFFIX = '_EVENTS.csv'
 # target series are named <PAIR>_lnRV.csv; this is stripped to get <PAIR>
 SERIES_SUFFIXES = ('_lnRV',)
 DEFAULT_DATA_PATH = 'EURUSD_lnRV.csv'
 DEFAULT_MIN_DAYS = 24
-DEFAULT_MIN_IMPACT = 'HIGH'
 DEFAULT_ON_NONTRADING = 'roll'
 
 # build_daily_event_features is called once per dataset split (train/val/test)
@@ -119,20 +120,12 @@ def _read_raw(path):
 
     df = df[list(RAW_COLUMNS)].copy()
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-    df['Impact'] = df['Impact'].astype(str).str.strip().str.upper()
     df['Currency'] = df['Currency'].astype(str).str.strip().str.upper()
 
     bad_date = df['Date'].isna()
     if bad_date.any():
         warnings.warn(f'{path}: dropping {int(bad_date.sum())} rows with unparseable Date')
         df = df[~bad_date]
-
-    bad_impact = ~df['Impact'].isin(IMPACT_RANK)
-    if bad_impact.any():
-        warnings.warn(
-            f'{path}: {int(bad_impact.sum())} rows have an unknown Impact '
-            f'{sorted(df.loc[bad_impact, "Impact"].unique())}; treated as LOW')
-        df.loc[bad_impact, 'Impact'] = 'LOW'
 
     return _normalise_names(df).reset_index(drop=True)
 
@@ -158,7 +151,6 @@ def _align_to_trading_days(df, trading_dates, on_nontrading):
 
 def build_daily_event_features(event_file, trading_dates,
                                min_days=DEFAULT_MIN_DAYS,
-                               min_impact=DEFAULT_MIN_IMPACT,
                                on_nontrading=DEFAULT_ON_NONTRADING,
                                verbose=True):
     """Long-format calendar -> wide daily matrix indexed by ``trading_dates``.
@@ -167,14 +159,14 @@ def build_daily_event_features(event_file, trading_dates,
     ----------
     event_file : str
         Path to the raw ``events_daily.csv``.  A file that is already wide (has a
-        ``date`` column and no ``Name``/``Impact`` columns) is passed through
+        ``date`` column and no ``Name`` column) is passed through
         unchanged, so ``--event_data_path events.csv`` keeps working.
     trading_dates : sequence of datetime-like
         The target series' dates, in order.  The result has exactly these rows.
-    min_days, min_impact :
+    min_days :
         An ``evt_*`` indicator is emitted for a (Currency, Name) release type
-        seen on at least ``min_days`` distinct days whose strongest observed
-        impact is at least ``min_impact``.
+        seen on at least ``min_days`` distinct trading days. Impact ratings are
+        ignored, so recurrence is the only filter.
     on_nontrading : {'roll', 'drop'}
         What to do with releases dated on a non-trading day.
 
@@ -185,7 +177,6 @@ def build_daily_event_features(event_file, trading_dates,
     trading_dates = pd.DatetimeIndex(pd.to_datetime(pd.Series(list(trading_dates))))
 
     raw = _read_raw(event_file)
-    raw['rank'] = raw['Impact'].map(IMPACT_RANK)
 
     aligned, n_unaligned = _align_to_trading_days(raw, trading_dates, on_nontrading)
     if verbose and n_unaligned:
@@ -203,25 +194,16 @@ def build_daily_event_features(event_file, trading_dates,
         counts[name] = s.reindex(idx).fillna(0.0).to_numpy(dtype=np.float32)
 
     _daily(pd.Series(True, index=aligned.index), 'n_events')
-    for impact in ('HIGH', 'MEDIUM', 'LOW'):
-        _daily(aligned['Impact'] == impact, f'n_events_{impact.lower()}')
-    # one pair of columns per currency actually present, so EURUSD yields
+    # one column per currency actually present, so EURUSD yields
     # n_events_eur/_usd and AUDUSD yields n_events_aud/_usd without any edits
     for cur in sorted(raw['Currency'].unique()):
-        slug = _sanitise(cur).lower()
-        _daily(aligned['Currency'] == cur, f'n_events_{slug}')
-        _daily((aligned['Currency'] == cur) & (aligned['Impact'] == 'HIGH'),
-               f'n_events_{slug}_high')
-
-    score = aligned.groupby('trade_date')['rank'].sum()
-    counts['event_score'] = score.reindex(idx).fillna(0.0).to_numpy(dtype=np.float32)
+        _daily(aligned['Currency'] == cur, f'n_events_{_sanitise(cur).lower()}')
 
     # ---- multi-hot indicators for the release types worth modelling ----------
-    min_rank = IMPACT_RANK[str(min_impact).strip().upper()]
     stats = (aligned.groupby(['Currency', 'Name'])
-             .agg(days=('trade_date', 'nunique'), top=('rank', 'max'))
+             .agg(days=('trade_date', 'nunique'))
              .reset_index())
-    sel = stats[(stats['days'] >= min_days) & (stats['top'] >= min_rank)]
+    sel = stats[stats['days'] >= min_days]
     sel = sel.sort_values(['Currency', 'Name'])
 
     indicators = {}
@@ -259,7 +241,7 @@ def build_daily_event_features(event_file, trading_dates,
         n_evt = sum(c.startswith('evt_') for c in out.columns)
         print(f'events: {len(out.columns) - 1} feature columns '
               f'({n_evt} evt_* indicators from {len(stats)} release types, '
-              f'min_days={min_days}, min_impact={str(min_impact).upper()}) '
+              f'min_days={min_days}; impact ignored) '
               f'over {len(out)} trading days')
     return out
 
@@ -397,7 +379,6 @@ def event_kwargs_from_args(args):
     """Pull the preprocessing options off an argparse namespace / config object."""
     return {
         'min_days': getattr(args, 'event_min_days', DEFAULT_MIN_DAYS),
-        'min_impact': getattr(args, 'event_min_impact', DEFAULT_MIN_IMPACT),
         'on_nontrading': getattr(args, 'event_on_nontrading', DEFAULT_ON_NONTRADING),
     }
 
@@ -413,8 +394,6 @@ def _main():
                    help='defaults to the calendar paired with --data_path by name')
     p.add_argument('--target', type=str, default='ln_RV')
     p.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS)
-    p.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,
-                   choices=['LOW', 'MEDIUM', 'HIGH'])
     p.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
                    choices=['roll', 'drop'])
     p.add_argument('--out', type=str, default=None,
@@ -425,7 +404,7 @@ def _main():
     dates = read_trading_dates(a.root_path, a.data_path, a.target)
     df = build_daily_event_features(
         os.path.join(a.root_path, event_path), dates,
-        min_days=a.event_min_days, min_impact=a.event_min_impact,
+        min_days=a.event_min_days,
         on_nontrading=a.event_on_nontrading)
     default_out = os.path.splitext(os.path.basename(event_path))[0] + '_features.csv'
     out = a.out or os.path.join(a.root_path, default_out)

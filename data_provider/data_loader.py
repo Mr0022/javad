@@ -135,7 +135,7 @@ class Dataset_Custom_Events(Dataset_Custom):
     """
     Dataset_Custom + a daily macro news-event calendar (data/events_daily.csv).
 
-    The event file is the raw long-format calendar ('Date,Name,Impact,Currency',
+    The event file is the raw long-format calendar ('Date,Name,Currency',
     one row per scheduled release); data_provider.event_preprocessing turns it
     into a wide daily matrix aligned to the target CSV's trading dates -- see
     that module for the feature contract and the calendar-alignment rules. An

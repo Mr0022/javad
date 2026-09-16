@@ -7,7 +7,7 @@ import random
 import numpy as np
 from utils.str2bool import str2bool
 from data_provider.event_preprocessing import (
-    DEFAULT_DATA_PATH, DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    DEFAULT_DATA_PATH, DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING,
     count_event_features, event_kwargs_from_args, resolve_event_path)
 
 parser = argparse.ArgumentParser(description='ModernTCN')
@@ -130,10 +130,8 @@ parser.add_argument('--event_data_path', type=str, default=None,
                          '(date + numeric columns, e.g. the legacy events.csv) also works')
 parser.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
                     help='raw calendar only: emit an evt_* indicator for release types seen on '
-                         'at least this many distinct trading days')
-parser.add_argument('--event_min_impact', type=str, default=DEFAULT_MIN_IMPACT,
-                    choices=['LOW', 'MEDIUM', 'HIGH'],
-                    help='raw calendar only: minimum strongest-observed impact for an evt_* indicator')
+                         'at least this many distinct trading days. The calendar\'s '
+                         'Impact column is ignored, so recurrence is the only filter')
 parser.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
                     choices=['roll', 'drop'],
                     help="raw calendar only: releases dated on a non-trading day are rolled onto "

@@ -1,279 +1,581 @@
 pair,horizon,regressor,coef_std,fold_stability,merged_with
-AUDUSD,1,evt_AUD_Gross_Domestic_Product_YoY,0.010318885873770854,1.0,evt_AUD_Gross_Domestic_Product_QoQ
-AUDUSD,1,evt_AUD_Producer_Price_Index_YoY,0.02527748640386363,1.0,
-AUDUSD,1,evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_YoY,0.048714396043908,1.0,evt_AUD_Quarterly_Consumer_Price_Index_QoQ; evt_AUD_Quarterly_Consumer_Price_Index_YoY; evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_QoQ
-AUDUSD,1,evt_AUD_RBA_Interest_Rate_Decision,0.06697921985302653,1.0,evt_AUD_RBA_Rate_Statement
-AUDUSD,1,evt_AUD_RBA_Meeting_Minutes,0.0046035834101959905,1.0,
-AUDUSD,1,evt_AUD_RBAs_Governor_Lowe_speech,0.012520191478705386,1.0,
-AUDUSD,1,evt_AUD_Retail_Sales_s_a_MoM,0.004574199337717361,1.0,
-AUDUSD,1,evt_AUD_Unemployment_Rate_s_a,0.07060175902458442,1.0,evt_AUD_Employment_Change_s_a; evt_AUD_Full_Time_Employment; evt_AUD_Part_Time_Employment; evt_AUD_Participation_Rate
-AUDUSD,1,evt_USD_Consumer_Confidence,0.006003884194144198,1.0,
-AUDUSD,1,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.04174641016413086,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-AUDUSD,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.02811416423882634,1.0,
-AUDUSD,1,evt_USD_FOMC_Economic_Projections,0.04686212819516921,1.0,
-AUDUSD,1,evt_USD_FOMC_Minutes,0.02063686775568946,1.0,
-AUDUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.031023593779055825,1.0,
-AUDUSD,1,evt_USD_Feds_Beige_Book,0.01048321017344405,1.0,
-AUDUSD,1,evt_USD_Feds_Bullard_speech,0.0032064774902976377,1.0,
-AUDUSD,1,evt_USD_Feds_Powell_speech,0.012747699137872473,1.0,
-AUDUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.013769032806505235,1.0,
-AUDUSD,1,evt_USD_Goods_Trade_Balance,0.007272225828558248,1.0,
-AUDUSD,1,evt_USD_ISM_Manufacturing_Prices_Paid,0.01415687800009717,1.0,evt_USD_ISM_Manufacturing_PMI
-AUDUSD,1,evt_USD_Initial_Jobless_Claims,0.033941192067556136,1.0,
-AUDUSD,1,evt_USD_Jackson_Hole_Symposium,0.011171368578727933,1.0,
-AUDUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.012880802237058455,1.0,evt_USD_Retail_Sales_MoM
-AUDUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.018337983837398472,1.0,
-AUDUSD,1,evt_USD_Treasury_Sec_Lew_speech,0.005335618230963174,1.0,
-AUDUSD,1,evt_USD_Unemployment_Rate,0.07006866798237248,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-AUDUSD,1,evt_AUD_Consumer_Price_Index_YoY,0.005928989209181723,0.9,
-AUDUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.0192707888446716,0.9,
-AUDUSD,1,evt_USD_Feds_Chair_Yellen_speech,0.003219392521681296,0.9,
-AUDUSD,1,evt_USD_Feds_Goolsbee_speech,0.0015859570625822515,0.9,
-AUDUSD,1,evt_USD_Feds_Stanley_Fischer_speech,-0.0006809733460342177,0.9,
-AUDUSD,1,evt_USD_IMF_Meeting,0.002521196629543793,0.9,
-AUDUSD,1,evt_USD_President_Trump_speech,0.005572933364715123,0.9,
-AUDUSD,1,evt_USD_ADP_Employment_Change,0.0037282436290338367,0.8,
-AUDUSD,1,evt_USD_President_Biden_speech,0.002009550461938454,0.8,
-AUDUSD,1,evt_USD_Gross_Domestic_Product_Price_Index,2.232576860568174e-05,0.4,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
-AUDUSD,5,evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_YoY,0.007349660502115587,1.0,evt_AUD_Quarterly_Consumer_Price_Index_QoQ; evt_AUD_Quarterly_Consumer_Price_Index_YoY; evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_QoQ
-AUDUSD,5,evt_AUD_Unemployment_Rate_s_a,0.01586488981662068,1.0,evt_AUD_Employment_Change_s_a; evt_AUD_Full_Time_Employment; evt_AUD_Part_Time_Employment; evt_AUD_Participation_Rate
-AUDUSD,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.00844195286912679,1.0,
-AUDUSD,5,evt_USD_FOMC_Press_Conference,0.013540030864797797,1.0,
-AUDUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.010974974315322896,1.0,
-AUDUSD,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.037925215525214016,1.0,evt_USD_ISM_Manufacturing_PMI
-AUDUSD,5,evt_USD_ISM_Services_PMI,0.006296525166931019,1.0,
-AUDUSD,5,evt_USD_President_Trump_speech,0.003007190945969935,1.0,
-AUDUSD,5,evt_USD_Unemployment_Rate,0.013251785176353665,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-AUDUSD,5,evt_USD_Fed_Monetary_Policy_Statement,0.01397892450666975,0.9,
-AUDUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.004080377048429896,0.9,
-AUDUSD,5,evt_USD_Treasury_Sec_Lew_speech,0.006456615805697646,0.9,
-AUDUSD,5,evt_USD_Durable_Goods_Orders_ex_Transportation,-0.003081662533431344,0.8,evt_USD_Durable_Goods_Orders
-AUDUSD,5,evt_AUD_Retail_Sales_s_a_MoM,0.00017826602200584244,0.6,
-EURUSD,1,evt_EUR_10_y_Obligaciones_Auction,0.008375182216260305,1.0,
-EURUSD,1,evt_EUR_Consumer_Price_Index_MoM,0.014116926852539912,1.0,evt_EUR_Consumer_Price_Index_YoY
-EURUSD,1,evt_EUR_ECB_Main_Refinancing_Operations_Rate,0.1154139077518879,1.0,evt_EUR_ECB_Press_Conference
-EURUSD,1,evt_EUR_ECB_Monetary_Policy_Meeting_Accounts,-0.00962106124610865,1.0,
-EURUSD,1,evt_EUR_ECBs_De_Guindos_speech,0.006091183939429772,1.0,
-EURUSD,1,evt_EUR_ECBs_President_Draghi_speech,0.008314364473590812,1.0,
-EURUSD,1,evt_EUR_Eurogroup_Meeting,-0.0049727634887195725,1.0,
-EURUSD,1,evt_EUR_Gross_Domestic_Product_QoQ,0.007564164797420896,1.0,evt_EUR_Gross_Domestic_Product_YoY
-EURUSD,1,evt_EUR_Harmonized_Index_of_Consumer_Prices_YoY,0.011693593997504201,1.0,
-EURUSD,1,evt_EUR_IFO_Business_Climate,0.011094263878010534,1.0,
-EURUSD,1,evt_EUR_Retail_Sales_YoY,0.019713559672548654,1.0,
-EURUSD,1,evt_EUR_ZEW_Survey_Economic_Sentiment,0.004003336830720217,1.0,evt_EUR_ZEW_Survey_Current_Situation
-EURUSD,1,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.04106522607690562,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-EURUSD,1,evt_USD_FOMC_Economic_Projections,0.03556444226984239,1.0,
-EURUSD,1,evt_USD_FOMC_Minutes,0.01662128839115296,1.0,
-EURUSD,1,evt_USD_FOMC_Press_Conference,0.008115708009495544,1.0,
-EURUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.04395737672408477,1.0,
-EURUSD,1,evt_USD_Feds_Bullard_speech,0.008311182910210529,1.0,
-EURUSD,1,evt_USD_Feds_Powell_speech,0.01342616191736378,1.0,
-EURUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.007667038797959485,1.0,
-EURUSD,1,evt_USD_Goods_Trade_Balance,0.00602460830640401,1.0,
-EURUSD,1,evt_USD_Initial_Jobless_Claims,0.05057678698056816,1.0,
-EURUSD,1,evt_USD_Jackson_Hole_Symposium,0.003854662649085395,1.0,
-EURUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.019270407316533632,1.0,evt_USD_Retail_Sales_MoM
-EURUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.0216331305381783,1.0,
-EURUSD,1,evt_USD_S_P_Global_Services_PMI,0.012520812211534824,1.0,evt_USD_S_P_Global_Composite_PMI
-EURUSD,1,evt_USD_Unemployment_Rate,0.08057526571247274,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-EURUSD,1,evt_EUR_Core_Harmonized_Index_of_Consumer_Prices_MoM,-0.003524946451418922,0.9,
-EURUSD,1,evt_EUR_ECBs_Nagel_speech,-0.001812651505122155,0.9,
-EURUSD,1,evt_EUR_ECBs_President_Lagarde_speech,0.0036162581397495203,0.9,
-EURUSD,1,evt_EUR_European_Commission_releases_Economic_Growth_Forecasts,0.00408201833689414,0.9,
-EURUSD,1,evt_EUR_HCOB_Manufacturing_PMI,0.009903948535136039,0.9,
-EURUSD,1,evt_EUR_Unemployment_Rate,0.003093540302974329,0.9,
-EURUSD,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.004348380437569006,0.9,
-EURUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.00855689988981522,0.9,
-EURUSD,1,evt_USD_Feds_Chair_Yellen_speech,0.0034314682926172763,0.9,
-EURUSD,1,evt_USD_Gross_Domestic_Product_Price_Index,0.0060058154749312274,0.9,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
-EURUSD,1,evt_EUR_G20_Meeting,-0.0018678318099496596,0.8,
-EURUSD,1,evt_EUR_German_Buba_President_Weidmann_speech,0.0021910212149772977,0.8,
-EURUSD,1,evt_EUR_HCOB_Services_PMI,0.0016724978910718222,0.8,evt_EUR_HCOB_Composite_PMI
-EURUSD,1,evt_USD_IMF_Meeting,0.0009162500177890363,0.8,
-EURUSD,1,evt_USD_Michigan_Consumer_Sentiment_Index,0.0002535272120300832,0.6,
-EURUSD,1,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY,0.0010774864756797106,0.5,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM
-EURUSD,5,evt_EUR_ECB_Main_Refinancing_Operations_Rate,0.03735627715643598,1.0,evt_EUR_ECB_Press_Conference
-EURUSD,5,evt_EUR_G20_Meeting,-0.0046559225653458195,1.0,
-EURUSD,5,evt_EUR_Harmonized_Index_of_Consumer_Prices_YoY,0.014989382651463936,1.0,
-EURUSD,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.006590508962419333,1.0,
-EURUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.03556034063454958,1.0,
-EURUSD,5,evt_USD_Feds_Beige_Book,0.0060982906773901285,1.0,
-EURUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.014636867227584381,1.0,
-EURUSD,5,evt_USD_S_P_Global_Manufacturing_PMI,0.010519573996085524,1.0,
-EURUSD,5,evt_USD_Unemployment_Rate,0.01777077563942894,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-EURUSD,5,evt_EUR_ECB_Monetary_Policy_Statement,0.0016117581818189794,0.9,
-EURUSD,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.006746669757177681,0.9,evt_USD_ISM_Manufacturing_PMI
-EURUSD,5,evt_EUR_European_Commission_releases_Economic_Growth_Forecasts,0.002899964202471038,0.8,
-EURUSD,5,evt_EUR_Gross_Domestic_Product_w_d_a_YoY,0.0033674044711656647,0.8,
-EURUSD,5,evt_USD_FOMC_Press_Conference,0.003948859614812189,0.8,
-EURUSD,5,evt_EUR_ECB_Monetary_Policy_Meeting_Accounts,-0.0029055122407936488,0.7,
-EURUSD,5,evt_USD_FOMC_Economic_Projections,0.002872862412356593,0.7,
-EURUSD,5,evt_EUR_Consumer_Price_Index_MoM,0.0012890997137317828,0.5,evt_EUR_Consumer_Price_Index_YoY
-GBPUSD,1,evt_GBP_BoE_Interest_Rate_Decision,0.02510667144329477,1.0,evt_GBP_BoE_Asset_Purchase_Facility
-GBPUSD,1,evt_GBP_BoE_Minutes,0.030871680662806218,1.0,
-GBPUSD,1,evt_GBP_BoE_Monetary_Policy_Report,0.0327893588014422,1.0,
-GBPUSD,1,evt_GBP_BoEs_Governor_Carney_speech,0.026241886781131128,1.0,
-GBPUSD,1,evt_GBP_Consumer_Inflation_Expectations,0.011968116755309767,1.0,
-GBPUSD,1,evt_GBP_Core_Consumer_Price_Index_YoY,0.016842593006735615,1.0,evt_GBP_Consumer_Price_Index_MoM; evt_GBP_Consumer_Price_Index_YoY
-GBPUSD,1,evt_GBP_Employment_Change_3M,0.011461321444450513,1.0,
-GBPUSD,1,evt_GBP_Gross_Domestic_Product_YoY,0.005412116950872957,1.0,evt_GBP_Gross_Domestic_Product_QoQ
-GBPUSD,1,evt_GBP_ILO_Unemployment_Rate_3M,0.0144342047242561,1.0,evt_GBP_Average_Earnings_Excluding_Bonus_3Mo_Yr; evt_GBP_Average_Earnings_Including_Bonus_3Mo_Yr; evt_GBP_Claimant_Count_Change
-GBPUSD,1,evt_GBP_NIESR_GDP_Estimate_3M,0.0254028840859122,1.0,evt_GBP_Industrial_Production_MoM; evt_GBP_Manufacturing_Production_MoM
-GBPUSD,1,evt_GBP_Retail_Sales_ex_Fuel_YoY,0.01113684815300147,1.0,evt_GBP_Retail_Sales_MoM; evt_GBP_Retail_Sales_YoY
-GBPUSD,1,evt_GBP_S_P_Global_Manufacturing_PMI,0.022615567927761263,1.0,
-GBPUSD,1,evt_GBP_S_P_Global_Services_PMI,0.008646570484243601,1.0,
-GBPUSD,1,evt_USD_Consumer_Confidence,0.011166450609205437,1.0,
-GBPUSD,1,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.030078467012124632,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-GBPUSD,1,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY,0.025857013637983685,1.0,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM
-GBPUSD,1,evt_USD_FOMC_Economic_Projections,0.030699266081823003,1.0,
-GBPUSD,1,evt_USD_FOMC_Minutes,0.011786083620680012,1.0,
-GBPUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.024381145228960885,1.0,
-GBPUSD,1,evt_USD_Feds_Powell_speech,0.012867137330060369,1.0,
-GBPUSD,1,evt_USD_Goods_Trade_Balance,0.0101502335065708,1.0,
-GBPUSD,1,evt_USD_Gross_Domestic_Product_Price_Index,0.004966851727295394,1.0,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
-GBPUSD,1,evt_USD_IMF_Meeting,0.009451863891581237,1.0,
-GBPUSD,1,evt_USD_Initial_Jobless_Claims,0.02039705220933113,1.0,
-GBPUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.020546133261746365,1.0,evt_USD_Retail_Sales_MoM
-GBPUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.006108150681188099,1.0,
-GBPUSD,1,evt_USD_Treasury_Sec_Lew_speech,0.015985332825946927,1.0,
-GBPUSD,1,evt_USD_Unemployment_Rate,0.04976428360271252,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-GBPUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.00846247124936699,0.9,
-GBPUSD,1,evt_USD_Feds_Chair_Powell_testifies,0.0037347643312774623,0.9,
-GBPUSD,1,evt_USD_Feds_Goolsbee_speech,0.005663523265519644,0.9,
-GBPUSD,1,evt_USD_Feds_Stanley_Fischer_speech,0.009673471970335289,0.9,
-GBPUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.0015241918243789788,0.9,
-GBPUSD,1,evt_USD_U6_Underemployment_Rate,-0.012374015594238319,0.9,
-GBPUSD,1,evt_USD_Feds_Chair_Yellen_speech,-0.00018524506488094638,0.8,
-GBPUSD,1,evt_USD_Feds_Beige_Book,0.0009323569588771994,0.6,
-GBPUSD,1,evt_USD_ISM_Services_PMI,0.0030802037821838868,0.6,
-GBPUSD,1,evt_USD_Interest_Rate_Projections_Longer,0.00011771748989682228,0.6,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
-GBPUSD,5,evt_GBP_BoE_Monetary_Policy_Summary,0.020172237617458257,1.0,
-GBPUSD,5,evt_GBP_BoEs_Governor_Carney_speech,0.00927483682463122,1.0,
-GBPUSD,5,evt_GBP_Consumer_Inflation_Expectations,0.014944451793845752,1.0,
-GBPUSD,5,evt_GBP_Gross_Domestic_Product_YoY,-0.013509835815176232,1.0,evt_GBP_Gross_Domestic_Product_QoQ
-GBPUSD,5,evt_GBP_ILO_Unemployment_Rate_3M,0.007146132548209692,1.0,evt_GBP_Average_Earnings_Excluding_Bonus_3Mo_Yr; evt_GBP_Average_Earnings_Including_Bonus_3Mo_Yr; evt_GBP_Claimant_Count_Change
-GBPUSD,5,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.007842969305428143,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-GBPUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.018552084225799,1.0,
-GBPUSD,5,evt_USD_Fed_Monetary_Policy_Statement,0.013943175647683857,1.0,
-GBPUSD,5,evt_USD_Feds_Powell_speech,0.021049305729343586,1.0,
-GBPUSD,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.01895456725640081,1.0,evt_USD_ISM_Manufacturing_PMI
-GBPUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.009945210663848522,1.0,
-GBPUSD,5,evt_USD_Retail_Sales_Control_Group,0.009077835606309646,1.0,
-GBPUSD,5,evt_GBP_BoE_Interest_Rate_Decision,0.007724800068741823,0.9,evt_GBP_BoE_Asset_Purchase_Facility
-GBPUSD,5,evt_GBP_S_P_Global_Manufacturing_PMI,0.010378949429639997,0.9,
-GBPUSD,5,evt_USD_Feds_Beige_Book,0.002750649548039377,0.9,
-GBPUSD,5,evt_USD_IMF_Meeting,0.007171251590784858,0.9,
-GBPUSD,5,evt_GBP_Employment_Change_3M,0.0027165097355199043,0.8,
-GBPUSD,5,evt_USD_Feds_Chair_Yellen_speech,-0.00267343474547848,0.8,
-GBPUSD,5,evt_USD_Interest_Rate_Projections_Longer,0.0008355511522668656,0.7,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
-GBPUSD,22,evt_GBP_BoE_Monetary_Policy_Summary,0.06660570525778206,1.0,
-GBPUSD,22,evt_GBP_Consumer_Inflation_Expectations,0.01768007962828463,1.0,
-GBPUSD,22,evt_USD_Fed_Monetary_Policy_Statement,0.020889584266297872,1.0,
-GBPUSD,22,evt_USD_Feds_Kashkari_speech,-0.020563148950125277,1.0,
-GBPUSD,22,evt_GBP_BoE_Monetary_Policy_Report,-0.02315688906451127,0.9,
-GBPUSD,22,evt_GBP_BoE_Monetary_Policy_Report_Hearings,0.01048221060680538,0.9,
-GBPUSD,22,evt_USD_Feds_Powell_speech,0.023062817735084007,0.9,
-GBPUSD,22,evt_USD_Feds_Stanley_Fischer_speech,0.021941486444625326,0.9,
-GBPUSD,22,evt_USD_President_Trump_speech,0.03411961762047981,0.9,
-GBPUSD,22,evt_GBP_BoEs_Governor_Carney_speech,0.0022254319194294483,0.7,
-GBPUSD,22,evt_USD_OPEC_Meeting,0.0037301988924260915,0.6,
-GBPUSD,22,evt_USD_Retail_Sales_Control_Group,0.0023468153424301714,0.6,
-USDCHF,1,evt_CHF_SNBs_Chairman_Jordan_speech,0.018738182241139222,1.0,
-USDCHF,1,evt_USD_Consumer_Confidence,0.016787110131865117,1.0,
-USDCHF,1,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.04044899977091525,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-USDCHF,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.011158900726187465,1.0,
-USDCHF,1,evt_USD_FOMC_Economic_Projections,0.029791985648442484,1.0,
-USDCHF,1,evt_USD_FOMC_Minutes,0.011596350330145293,1.0,
-USDCHF,1,evt_USD_Fed_Interest_Rate_Decision,0.044083457392925636,1.0,
-USDCHF,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.010503486621306677,1.0,
-USDCHF,1,evt_USD_Goods_Trade_Balance,0.005223260662558292,1.0,
-USDCHF,1,evt_USD_Gross_Domestic_Product_Price_Index,0.014847203329763735,1.0,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
-USDCHF,1,evt_USD_ISM_Services_PMI,0.018274113717670945,1.0,
-USDCHF,1,evt_USD_Initial_Jobless_Claims,0.05869444850172614,1.0,
-USDCHF,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.017234098302672425,1.0,evt_USD_Retail_Sales_MoM
-USDCHF,1,evt_USD_S_P_Global_Manufacturing_PMI,0.01185953533250175,1.0,
-USDCHF,1,evt_USD_Treasury_Sec_Lew_speech,0.0025979462783854755,1.0,
-USDCHF,1,evt_USD_U6_Underemployment_Rate,-0.02832985159393878,1.0,
-USDCHF,1,evt_USD_Unemployment_Rate,0.09889481359123055,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-USDCHF,1,evt_CHF_SNB_Interest_Rate_Decision,0.04737553437956479,0.9,
-USDCHF,1,evt_CHF_SNB_Press_Conference,-0.016892990246434394,0.9,
-USDCHF,1,evt_USD_Feds_Kashkari_speech,0.0008546922195403614,0.9,
-USDCHF,1,evt_USD_Jackson_Hole_Symposium,0.0025612934501845186,0.9,
-USDCHF,1,evt_USD_Michigan_Consumer_Sentiment_Index,0.009204999980840978,0.9,
-USDCHF,1,evt_CHF_Gross_Domestic_Product_YoY,0.0025234202858992845,0.8,evt_CHF_Gross_Domestic_Product_QoQ
-USDCHF,1,evt_CHF_SNB_Monetary_Policy_Assessment,0.005737386401369018,0.8,
-USDCHF,1,evt_USD_Fed_Monetary_Policy_Statement,0.010591324610891246,0.8,
-USDCHF,1,evt_USD_Feds_Powell_speech,0.002529625963247978,0.8,
-USDCHF,1,evt_USD_Feds_Stanley_Fischer_speech,-0.0002189754155208591,0.8,
-USDCHF,1,evt_USD_ISM_Manufacturing_Prices_Paid,0.0033895267415979687,0.8,evt_USD_ISM_Manufacturing_PMI
-USDCHF,1,evt_USD_Producer_Price_Index_ex_Food_Energy_YoY,0.00034921340596581095,0.8,evt_USD_Producer_Price_Index_MoM; evt_USD_Producer_Price_Index_YoY; evt_USD_Producer_Price_Index_ex_Food_Energy_MoM
-USDCHF,1,evt_USD_Feds_Beige_Book,0.0002577890381946346,0.5,
-USDCHF,5,evt_CHF_Gross_Domestic_Product_YoY,0.0045503365613335164,1.0,evt_CHF_Gross_Domestic_Product_QoQ
-USDCHF,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.008178127608442625,1.0,
-USDCHF,5,evt_USD_Fed_Interest_Rate_Decision,0.03244862865171191,1.0,
-USDCHF,5,evt_USD_Feds_Beige_Book,0.011178551770664005,1.0,
-USDCHF,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.017625549215911484,1.0,evt_USD_ISM_Manufacturing_PMI
-USDCHF,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.00796865485544483,1.0,
-USDCHF,5,evt_CHF_Real_Retail_Sales_YoY,0.012641768739382846,0.9,
-USDCHF,5,evt_CHF_SNB_Interest_Rate_Decision,0.017740831395422957,0.9,
-USDCHF,5,evt_USD_Interest_Rate_Projections_Longer,0.004091469951326402,0.9,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
-USDCHF,5,evt_CHF_SNBs_Chairman_Jordan_speech,0.004080679469303401,0.8,
-USDCHF,5,evt_USD_Fed_Monetary_Policy_Statement,0.005040990194876683,0.8,
-USDCHF,5,evt_USD_Unemployment_Rate,0.0021519636599155382,0.8,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-USDCHF,5,evt_USD_ADP_Employment_Change,0.0009819875230182,0.7,
-USDCHF,5,evt_USD_FOMC_Press_Conference,0.0038948717369863264,0.7,
-USDCHF,22,evt_USD_Fed_Interest_Rate_Decision,0.007045195395988108,0.9,
-USDCHF,22,evt_CHF_SNB_Interest_Rate_Decision,0.0029669035836920824,0.8,
-USDJPY,1,evt_JPY_BoJ_Monetary_Policy_Statement,0.08762167805854995,1.0,evt_JPY_BoJ_Interest_Rate_Decision
-USDJPY,1,evt_JPY_BoJ_Monthly_Economic_Survey,-0.012797724670452097,1.0,
-USDJPY,1,evt_JPY_Gross_Domestic_Product_QoQ,-0.00932623102919807,1.0,evt_JPY_Gross_Domestic_Product_Annualized; evt_JPY_Gross_Domestic_Product_Deflator_YoY
-USDJPY,1,evt_JPY_Industrial_Production_YoY,0.010514416567943753,1.0,
-USDJPY,1,evt_JPY_Tankan_Large_Manufacturing_Index,0.004670765762387009,1.0,evt_JPY_Tankan_Large_Manufacturing_Outlook
-USDJPY,1,evt_JPY_Unemployment_Rate,-0.027859644626444986,1.0,
-USDJPY,1,evt_USD_10_Year_Note_Auction,0.024557548916630374,1.0,
-USDJPY,1,evt_USD_ADP_Employment_Change,0.020149373915895438,1.0,
-USDJPY,1,evt_USD_Consumer_Confidence,0.008489125105240001,1.0,
-USDJPY,1,evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY,0.043278384148879225,1.0,evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM
-USDJPY,1,evt_USD_FOMC_Economic_Projections,0.04591135071176393,1.0,
-USDJPY,1,evt_USD_FOMC_Minutes,0.026797061051613256,1.0,
-USDJPY,1,evt_USD_Fed_Interest_Rate_Decision,0.038218987637252205,1.0,
-USDJPY,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.006576909695826952,1.0,
-USDJPY,1,evt_USD_Goods_Trade_Balance,0.02061555751506826,1.0,
-USDJPY,1,evt_USD_Gross_Domestic_Product_Price_Index,0.028907610840775578,1.0,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
-USDJPY,1,evt_USD_ISM_Manufacturing_Prices_Paid,0.017451935836717912,1.0,evt_USD_ISM_Manufacturing_PMI
-USDJPY,1,evt_USD_ISM_Services_PMI,0.0129904992031797,1.0,
-USDJPY,1,evt_USD_Initial_Jobless_Claims,0.0502854530382367,1.0,
-USDJPY,1,evt_USD_Interest_Rate_Projections_Longer,-0.005688905004953389,1.0,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
-USDJPY,1,evt_USD_Nondefense_Capital_Goods_Orders_ex_Aircraft,-0.006876744216561855,1.0,evt_USD_Durable_Goods_Orders_ex_Defense
-USDJPY,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.01596368614417829,1.0,evt_USD_Retail_Sales_MoM
-USDJPY,1,evt_USD_S_P_Global_Manufacturing_PMI,0.018992930892308305,1.0,
-USDJPY,1,evt_USD_S_P_Global_Services_PMI,0.00707694668251724,1.0,evt_USD_S_P_Global_Composite_PMI
-USDJPY,1,evt_USD_U6_Underemployment_Rate,-0.05938648816249536,1.0,
-USDJPY,1,evt_USD_Unemployment_Rate,0.14514214804144096,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-USDJPY,1,evt_JPY_BoJ_Governor_Ueda_speech,-0.012825907059426276,0.9,
-USDJPY,1,evt_JPY_BoJs_Governor_Kuroda_speech,-0.004006227187137702,0.9,
-USDJPY,1,evt_JPY_National_Consumer_Price_Index_YoY,-0.007622990420444618,0.9,evt_JPY_National_CPI_ex_Food_Energy_YoY; evt_JPY_National_CPI_ex_Fresh_Food_YoY
-USDJPY,1,evt_JPY_Tokyo_Consumer_Price_Index_YoY,-0.0034013596345432435,0.9,evt_JPY_Tokyo_CPI_ex_Food_Energy_YoY; evt_JPY_Tokyo_CPI_ex_Fresh_Food_YoY
-USDJPY,1,evt_USD_Feds_Chair_Powell_testifies,-0.0041217381807529836,0.9,
-USDJPY,1,evt_USD_Feds_Kashkari_speech,0.003699173273271582,0.9,
-USDJPY,1,evt_USD_Feds_Logan_speech,-0.002185104374539923,0.9,
-USDJPY,1,evt_USD_Feds_Stanley_Fischer_speech,-0.009781205337553809,0.9,
-USDJPY,1,evt_USD_Michigan_Consumer_Sentiment_Index,0.007076621495576059,0.9,
-USDJPY,1,evt_USD_President_Trump_speech,0.0022548360654962925,0.9,
-USDJPY,1,evt_USD_Feds_Powell_speech,0.0012930302151838843,0.8,
-USDJPY,1,evt_USD_Jackson_Hole_Symposium,0.0008819491546782024,0.8,
-USDJPY,1,evt_USD_FOMC_Press_Conference,0.004076410172142707,0.7,
-USDJPY,1,evt_USD_IMF_Meeting,-0.0036897781915080172,0.7,
-USDJPY,1,evt_JPY_BoJ_Monetary_Policy_Meeting_Minutes,-0.0015018170162778342,0.6,
-USDJPY,1,evt_USD_Feds_Bullard_speech,0.0002943653605862627,0.4,
-USDJPY,5,evt_JPY_National_Consumer_Price_Index_YoY,-0.021444979032576535,1.0,evt_JPY_National_CPI_ex_Food_Energy_YoY; evt_JPY_National_CPI_ex_Fresh_Food_YoY
-USDJPY,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.013936908160454233,1.0,
-USDJPY,5,evt_USD_FOMC_Press_Conference,0.007208567856089824,1.0,
-USDJPY,5,evt_USD_Fed_Interest_Rate_Decision,0.03600594100257364,1.0,
-USDJPY,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.02243191395548193,1.0,evt_USD_ISM_Manufacturing_PMI
-USDJPY,5,evt_USD_Unemployment_Rate,0.01588834185109281,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-USDJPY,5,evt_USD_Former_Feds_Chair_Bernanke_speech,0.006680976577183097,0.9,
-USDJPY,5,evt_JPY_BoJ_Monetary_Policy_Statement,0.0024872685847601933,0.7,evt_JPY_BoJ_Interest_Rate_Decision
-USDJPY,5,evt_JPY_BoJs_Governor_Kuroda_speech,-0.001334988230183236,0.6,
-USDJPY,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.0005740536726317707,0.5,
-USDJPY,22,evt_USD_Fed_Interest_Rate_Decision,0.010491856565683301,0.9,
+AUDUSD,1,evt_AUD_ANZ_Job_Advertisements,-0.0110565424230466,1.0,
+AUDUSD,1,evt_AUD_AiG_Performance_of_Mfg_Index,0.006981623593058171,1.0,
+AUDUSD,1,evt_AUD_Building_Permits_YoY,0.011577876061598102,1.0,evt_AUD_Building_Permits_MoM
+AUDUSD,1,evt_AUD_Current_Account_Balance,-0.00459751122237485,1.0,
+AUDUSD,1,evt_AUD_Gross_Domestic_Product_YoY,0.011818791332822853,1.0,evt_AUD_Gross_Domestic_Product_QoQ
+AUDUSD,1,evt_AUD_Private_Capital_Expenditure,0.005281633788577105,1.0,
+AUDUSD,1,evt_AUD_Producer_Price_Index_YoY,0.017347273683676653,1.0,evt_AUD_Producer_Price_Index_QoQ
+AUDUSD,1,evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_YoY,0.04916201218197831,1.0,evt_AUD_Quarterly_Consumer_Price_Index_QoQ; evt_AUD_Quarterly_Consumer_Price_Index_YoY; evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_QoQ
+AUDUSD,1,evt_AUD_RBA_Interest_Rate_Decision,0.057793978296599824,1.0,evt_AUD_RBA_Rate_Statement
+AUDUSD,1,evt_AUD_RBA_Meeting_Minutes,0.006201361165300234,1.0,
+AUDUSD,1,evt_AUD_RBAs_Governor_Lowe_speech,0.011038710141056425,1.0,
+AUDUSD,1,evt_AUD_Retail_Sales_s_a_MoM,0.00739247248221086,1.0,
+AUDUSD,1,evt_AUD_TD_MI_Inflation_Gauge_MoM,-0.009874076337300471,1.0,evt_AUD_TD_MI_Inflation_Gauge_YoY
+AUDUSD,1,evt_AUD_Unemployment_Rate_s_a,0.075377630956042,1.0,evt_AUD_Employment_Change_s_a; evt_AUD_Full_Time_Employment; evt_AUD_Part_Time_Employment; evt_AUD_Participation_Rate
+AUDUSD,1,evt_AUD_Wage_Price_Index_YoY,0.006048520021386225,1.0,evt_AUD_Wage_Price_Index_QoQ
+AUDUSD,1,evt_AUD_Westpac_Consumer_Confidence_Index,0.010057067519704439,1.0,
+AUDUSD,1,evt_USD_30_Year_Bond_Auction,0.019934131774004975,1.0,
+AUDUSD,1,evt_USD_6_Month_Bill_Auction,0.012603883927046344,1.0,evt_USD_3_Month_Bill_Auction
+AUDUSD,1,evt_USD_API_Weekly_Crude_Oil_Stock,0.0213343742435902,1.0,
+AUDUSD,1,evt_USD_Baker_Hughes_US_Oil_Rig_Count,0.014641431039178497,1.0,
+AUDUSD,1,evt_USD_Challenger_Job_Cuts,0.0038140016142308437,1.0,
+AUDUSD,1,evt_USD_Chicago_Fed_National_Activity_Index,0.014230521350764292,1.0,
+AUDUSD,1,evt_USD_Chicago_PMI,0.026229873704356133,1.0,evt_AUD_Private_Sector_Credit_MoM; evt_AUD_Private_Sector_Credit_YoY
+AUDUSD,1,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.03801844122165675,1.0,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+AUDUSD,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.03189387235067985,1.0,
+AUDUSD,1,evt_USD_FOMC_Economic_Projections,0.050166171505808384,1.0,
+AUDUSD,1,evt_USD_FOMC_Minutes,0.016133216677664604,1.0,
+AUDUSD,1,evt_USD_Factory_Orders_MoM,0.009677977760919674,1.0,
+AUDUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.03156343668279788,1.0,
+AUDUSD,1,evt_USD_Feds_Beige_Book,0.007768991060175701,1.0,
+AUDUSD,1,evt_USD_Feds_Lockhart_speech,0.009771559728308888,1.0,
+AUDUSD,1,evt_USD_Feds_Powell_speech,0.010666081672373307,1.0,
+AUDUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.014281600784528515,1.0,
+AUDUSD,1,evt_USD_Housing_Starts_Change,-0.008528808562723037,1.0,evt_USD_Building_Permits_Change
+AUDUSD,1,evt_USD_ISM_Manufacturing_Prices_Paid,0.017674838937323387,1.0,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+AUDUSD,1,evt_USD_ISM_Services_PMI,0.005760564489609477,1.0,
+AUDUSD,1,evt_USD_Industrial_Production_MoM,-0.006716213694476577,1.0,evt_USD_Capacity_Utilization
+AUDUSD,1,evt_USD_Initial_Jobless_Claims,0.022392775927922947,1.0,evt_USD_Continuing_Jobless_Claims; evt_USD_EIA_Natural_Gas_Storage_Change
+AUDUSD,1,evt_USD_Jackson_Hole_Symposium,0.009516681314239233,1.0,
+AUDUSD,1,evt_USD_Labor_Market_Conditions_Index,-0.018151084954518462,1.0,
+AUDUSD,1,evt_USD_Loan_Officer_Survey,-0.015800451342090134,1.0,
+AUDUSD,1,evt_USD_Monthly_Budget_Statement,0.007785897292793521,1.0,
+AUDUSD,1,evt_USD_New_Home_Sales_MoM,0.008527023482426142,1.0,evt_USD_New_Home_Sales_Change_MoM
+AUDUSD,1,evt_USD_Personal_Income_MoM,-0.002492668333867074,1.0,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Spending
+AUDUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.01339722495247359,1.0,evt_USD_Business_Inventories; evt_USD_Retail_Sales_MoM
+AUDUSD,1,evt_USD_Richmond_Fed_Manufacturing_Index,-0.0069438353557973054,1.0,
+AUDUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.017563624306221624,1.0,
+AUDUSD,1,evt_USD_Total_Net_TIC_Flows,-0.004593136478157138,1.0,evt_USD_Net_Long_Term_TIC_Flows
+AUDUSD,1,evt_USD_Treasury_Sec_Lew_speech,0.006154883889255894,1.0,
+AUDUSD,1,evt_USD_Unemployment_Rate,0.06574557669661493,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+AUDUSD,1,evt_USD_Unit_Labor_Costs,-0.011882782981227516,1.0,evt_USD_Nonfarm_Productivity
+AUDUSD,1,evt_USD_Wholesale_Inventories,0.00799525664655049,1.0,
+AUDUSD,1,evt_AUD_Ai_Group_Manufacturing_PMI,0.006156088914556365,0.9,evt_AUD_AiG_Industry_Index; evt_AUD_Ai_Group_Construction_PMI
+AUDUSD,1,evt_AUD_Consumer_Price_Index_YoY,0.0038975053667720037,0.9,
+AUDUSD,1,evt_AUD_Westpac_Consumer_Confidence,0.0027507403724331783,0.9,
+AUDUSD,1,evt_USD_5_Year_Note_Auction,0.003584575560355193,0.9,
+AUDUSD,1,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.006115813370508826,0.9,
+AUDUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.017846418253919562,0.9,
+AUDUSD,1,evt_USD_Feds_Barr_speech,0.0012743206686240934,0.9,
+AUDUSD,1,evt_USD_Feds_Brainard_speech,-0.002879967985878919,0.9,
+AUDUSD,1,evt_USD_Feds_Chair_Yellen_speech,0.0015015432947131878,0.9,
+AUDUSD,1,evt_USD_Feds_Evans_speech,0.007530794996319065,0.9,
+AUDUSD,1,evt_USD_Feds_Goolsbee_speech,0.0008253165395684873,0.9,
+AUDUSD,1,evt_USD_Feds_Stanley_Fischer_speech,-0.00041120239838282,0.9,
+AUDUSD,1,evt_USD_IMF_Meeting,0.0005512442048741338,0.9,
+AUDUSD,1,evt_USD_ISM_NY_Business_Conditions_Index,0.005478974210835534,0.9,
+AUDUSD,1,evt_USD_Philadelphia_Feds_Plosser_speech,0.0007505608918102435,0.9,
+AUDUSD,1,evt_USD_President_Trump_speech,0.002777432394669744,0.9,
+AUDUSD,1,evt_USD_Total_Vehicle_Sales,0.0041911697048474935,0.9,
+AUDUSD,1,evt_AUD_House_Price_Index_YoY,0.0017579456251054942,0.8,evt_AUD_House_Price_Index_QoQ
+AUDUSD,1,evt_AUD_RBA_Foreign_Exchange_Transaction,0.004921023410524988,0.8,
+AUDUSD,1,evt_AUD_RBAs_Bullock_speech,0.0026853388789712398,0.8,
+AUDUSD,1,evt_AUD_S_P_Global_Manufacturing_PMI,0.004311329743336513,0.8,
+AUDUSD,1,evt_USD_10_year_TIPS_Auction,5.444686787074747e-05,0.8,
+AUDUSD,1,evt_USD_Feds_Daly_speech,-9.582845889308255e-07,0.8,
+AUDUSD,1,evt_USD_Goods_Trade_Balance,0.0025121399774221593,0.8,
+AUDUSD,1,evt_USD_Goods_and_Services_Trade_Balance,0.0019541915992286906,0.8,
+AUDUSD,1,evt_USD_NY_Empire_State_Manufacturing_Index,0.0025238912256729954,0.8,
+AUDUSD,1,evt_AUD_RBAs_Governor_Stevens_speech,0.0002668354493028991,0.7,
+AUDUSD,1,evt_USD_Employment_Cost_Index,0.0006193563095170704,0.7,
+AUDUSD,1,evt_USD_FOMC_Member_Powell_speech_dont_use,-0.0009214243726683339,0.7,
+AUDUSD,1,evt_USD_Feds_Bullard_speech,0.001479127278144117,0.7,
+AUDUSD,1,evt_USD_Feds_Dudley_speech,0.0004913761069448732,0.7,
+AUDUSD,1,evt_USD_Grain_Stock_Report,0.00031876014650490377,0.7,
+AUDUSD,1,evt_USD_Gross_Domestic_Product_Price_Index,0.0011875103550275234,0.7,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
+AUDUSD,1,evt_USD_Redbook_Index_YoY,0.004565601949322408,0.7,
+AUDUSD,1,evt_USD_Dallas_Fed_Manufacturing_Business_Index,0.00080942306704009,0.6,
+AUDUSD,1,evt_USD_Feds_Lacker_speech,0.00031275509600702184,0.6,
+AUDUSD,1,evt_AUD_Consumer_Inflation_Expectations,0.0006681557021239393,0.5,
+AUDUSD,1,evt_AUD_RBA_Bulletin,-0.00016928209497275577,0.5,
+AUDUSD,1,evt_AUD_Westpac_Leading_Index_MoM,4.600615909720019e-06,0.5,
+AUDUSD,1,evt_USD_ISM_Manufacturing_New_Orders_Index,0.0009253377089373588,0.5,evt_USD_ISM_Manufacturing_Employment_Index
+AUDUSD,1,evt_USD_MBA_Mortgage_Applications,0.0004108454195100326,0.5,
+AUDUSD,5,evt_AUD_Financial_Stability_Review,-0.005299217046257476,1.0,
+AUDUSD,5,evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_YoY,0.007050129580552691,1.0,evt_AUD_Quarterly_Consumer_Price_Index_QoQ; evt_AUD_Quarterly_Consumer_Price_Index_YoY; evt_AUD_Quarterly_RBA_Trimmed_Mean_CPI_QoQ
+AUDUSD,5,evt_AUD_Unemployment_Rate_s_a,0.015550151055366496,1.0,evt_AUD_Employment_Change_s_a; evt_AUD_Full_Time_Employment; evt_AUD_Part_Time_Employment; evt_AUD_Participation_Rate
+AUDUSD,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.008061318672061299,1.0,
+AUDUSD,5,evt_USD_FOMC_Press_Conference,0.013452250054923816,1.0,
+AUDUSD,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.018752108050229394,1.0,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+AUDUSD,5,evt_USD_President_Trump_speech,0.002873015494234701,1.0,
+AUDUSD,5,evt_USD_Total_Vehicle_Sales,0.021792437714610636,1.0,
+AUDUSD,5,evt_USD_Unemployment_Rate,0.011614706936538894,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+AUDUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.009885805846359183,0.9,
+AUDUSD,5,evt_USD_Fed_Monetary_Policy_Statement,0.01446363364111509,0.9,
+AUDUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.003548835014222682,0.9,
+AUDUSD,5,evt_USD_Treasury_Sec_Lew_speech,0.00569992014206486,0.9,
+AUDUSD,5,evt_USD_Factory_Orders_MoM,0.0038292046496289753,0.8,
+AUDUSD,5,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.00028220368415847843,0.8,
+AUDUSD,5,evt_USD_Feds_Evans_speech,0.0019570153448368287,0.8,
+AUDUSD,5,evt_USD_Feds_Lockhart_speech,0.0032687948606149953,0.7,
+AUDUSD,5,evt_USD_Durable_Goods_Orders_ex_Transportation,-0.0017137811088939056,0.6,evt_USD_Durable_Goods_Orders
+AUDUSD,5,evt_USD_52_Week_Bill_Auction,0.0002057232846813286,0.5,
+AUDUSD,5,evt_USD_ISM_Services_PMI,0.0004202074785432264,0.5,
+EURUSD,1,evt_EUR_10_y_Bond_Auction,0.002350041064311538,1.0,
+EURUSD,1,evt_EUR_10_y_Obligaciones_Auction,0.008742233489781535,1.0,
+EURUSD,1,evt_EUR_2_year_Notes_Auction,0.015124527550167598,1.0,
+EURUSD,1,evt_EUR_3_Month_Letras_Auction,0.004179333017794265,1.0,evt_EUR_9_Month_Letras_Auction
+EURUSD,1,evt_EUR_ECB_Main_Refinancing_Operations_Rate,0.11605594405275818,1.0,evt_EUR_ECB_Press_Conference
+EURUSD,1,evt_EUR_ECB_Monetary_Policy_Meeting_Accounts,-0.009069496574964569,1.0,
+EURUSD,1,evt_EUR_ECBs_C_ur_speech,-0.017660897285830986,1.0,
+EURUSD,1,evt_EUR_ECBs_De_Guindos_speech,0.006672799337403285,1.0,
+EURUSD,1,evt_EUR_ECBs_President_Draghi_speech,0.008740007757853697,1.0,
+EURUSD,1,evt_EUR_Eurogroup_Meeting,-0.0031082983357444043,1.0,
+EURUSD,1,evt_EUR_HCOB_Manufacturing_PMI,0.01666637042265239,1.0,
+EURUSD,1,evt_EUR_HCOB_Services_PMI,0.004603654787127385,1.0,evt_EUR_HCOB_Composite_PMI
+EURUSD,1,evt_EUR_IFO_Current_Assessment,0.010142471482168939,1.0,evt_EUR_IFO_Business_Climate; evt_EUR_IFO_Expectations
+EURUSD,1,evt_EUR_ILO_Unemployment,0.015882317211949222,1.0,
+EURUSD,1,evt_EUR_Industrial_Output_Cal_Adjusted_YoY,0.012245680402834724,1.0,
+EURUSD,1,evt_EUR_Industrial_Sales_s_a_MoM,0.007180821842362228,1.0,evt_EUR_Industrial_Sales_n_s_a_YoY
+EURUSD,1,evt_EUR_M3_Money_Supply_YoY,0.008202531694854368,1.0,evt_EUR_M3_Money_Supply_3m; evt_EUR_Private_Loans_YoY
+EURUSD,1,evt_EUR_Public_Deficit_GDP,-0.016528738724536828,1.0,
+EURUSD,1,evt_EUR_Retail_Sales_YoY,0.008875258461009663,1.0,
+EURUSD,1,evt_EUR_Sentix_Investor_Confidence,-0.020884499823418196,1.0,
+EURUSD,1,evt_EUR_Trade_Balance_EUR,-0.00670191798882029,1.0,evt_EUR_Exports_EUR; evt_EUR_Imports_EUR
+EURUSD,1,evt_EUR_ZEW_Survey_Economic_Sentiment,0.0031346273548948167,1.0,evt_EUR_ZEW_Survey_Current_Situation
+EURUSD,1,evt_USD_30_Year_Bond_Auction,0.016580747684459874,1.0,
+EURUSD,1,evt_USD_6_Month_Bill_Auction,0.035222065801131776,1.0,evt_USD_3_Month_Bill_Auction
+EURUSD,1,evt_USD_Chicago_Fed_National_Activity_Index,0.015046479201569853,1.0,
+EURUSD,1,evt_USD_Chicago_PMI,0.0387871598629906,1.0,evt_EUR_Current_Account_Balance
+EURUSD,1,evt_USD_Consumer_Credit_Change,0.0030334473049036885,1.0,
+EURUSD,1,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.042868926334703614,1.0,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+EURUSD,1,evt_USD_FOMC_Economic_Projections,0.03637999842828865,1.0,
+EURUSD,1,evt_USD_FOMC_Minutes,0.016265289451228526,1.0,
+EURUSD,1,evt_USD_FOMC_Press_Conference,0.009326343042442823,1.0,
+EURUSD,1,evt_USD_Factory_Orders_MoM,0.006422990827669734,1.0,
+EURUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.044346789850683216,1.0,
+EURUSD,1,evt_USD_Feds_Bullard_speech,0.009414255359673475,1.0,
+EURUSD,1,evt_USD_Feds_Powell_speech,0.014530684474842908,1.0,
+EURUSD,1,evt_USD_Feds_Rosengren_speech,0.004631530525825385,1.0,
+EURUSD,1,evt_USD_ISM_NY_Business_Conditions_Index,0.0031149978412767865,1.0,
+EURUSD,1,evt_USD_ISM_Services_PMI,0.0098671412429953,1.0,
+EURUSD,1,evt_USD_Initial_Jobless_Claims,0.03598163099502972,1.0,evt_USD_Continuing_Jobless_Claims; evt_USD_EIA_Natural_Gas_Storage_Change
+EURUSD,1,evt_USD_Labor_Market_Conditions_Index,-0.00921906828011242,1.0,
+EURUSD,1,evt_USD_Philadelphia_Fed_Manufacturing_Survey,0.014223313504543608,1.0,
+EURUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.026461203241019145,1.0,evt_USD_Business_Inventories; evt_USD_Retail_Sales_MoM
+EURUSD,1,evt_USD_Richmond_Fed_Manufacturing_Index,-0.002478850692837663,1.0,
+EURUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.017562370765653316,1.0,
+EURUSD,1,evt_USD_S_P_Global_Services_PMI,0.010815571374576921,1.0,evt_USD_S_P_Global_Composite_PMI
+EURUSD,1,evt_USD_Unemployment_Rate,0.08689407335508872,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+EURUSD,1,evt_USD_Wholesale_Inventories,0.017389292970414486,1.0,
+EURUSD,1,evt_EUR_Consumer_Price_Index_MoM,0.0036057161290902434,0.9,evt_EUR_Consumer_Price_Index_YoY
+EURUSD,1,evt_EUR_ECBs_Nagel_speech,-0.0021553553183267108,0.9,
+EURUSD,1,evt_EUR_ECBs_President_Lagarde_speech,0.0031221363245160175,0.9,
+EURUSD,1,evt_EUR_Economic_Bulletin,0.006334823179464254,0.9,
+EURUSD,1,evt_EUR_European_Commission_releases_Economic_Growth_Forecasts,0.004257370566647631,0.9,
+EURUSD,1,evt_EUR_German_Buba_Monthly_Report,-0.002911709827191495,0.9,
+EURUSD,1,evt_EUR_Harmonized_Index_of_Consumer_Prices_YoY,0.006105492283775781,0.9,
+EURUSD,1,evt_EUR_Labor_Cost_Index,-0.002485992367213796,0.9,
+EURUSD,1,evt_EUR_Producer_Prices_MoM,0.006336787955759512,0.9,
+EURUSD,1,evt_EUR_Unemployment_Survey,0.0037103549817411366,0.9,
+EURUSD,1,evt_USD_Baker_Hughes_US_Oil_Rig_Count,0.01054105083983843,0.9,
+EURUSD,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.005578571783193936,0.9,
+EURUSD,1,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.0030756426177455916,0.9,
+EURUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.00904603278893302,0.9,
+EURUSD,1,evt_USD_Feds_Barr_speech,0.0006664733748822501,0.9,
+EURUSD,1,evt_USD_Feds_Chair_Yellen_speech,0.005561881604210519,0.9,
+EURUSD,1,evt_USD_Feds_Lacker_speech,0.004411429500597748,0.9,
+EURUSD,1,evt_USD_Feds_Mester_speech,0.0036872633415115734,0.9,
+EURUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.007512292586052494,0.9,
+EURUSD,1,evt_USD_Gross_Domestic_Product_Price_Index,0.006851494824088344,0.9,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
+EURUSD,1,evt_USD_Loan_Officer_Survey,-0.004743890993689815,0.9,
+EURUSD,1,evt_USD_Philadelphia_Feds_Plosser_speech,-0.008249996856222352,0.9,
+EURUSD,1,evt_USD_U6_Underemployment_Rate,-0.01079494416446254,0.9,
+EURUSD,1,evt_EUR_Consumer_Confidence,0.003533573852049698,0.8,
+EURUSD,1,evt_EUR_ECBs_Mersch_speech,-0.0008312958422247905,0.8,
+EURUSD,1,evt_EUR_ECBs_Panetta_speech,0.0008084226671111932,0.8,
+EURUSD,1,evt_EUR_G20_Meeting,-0.0029886143943329726,0.8,
+EURUSD,1,evt_EUR_German_Buba_President_Weidmann_speech,0.0017803050458841398,0.8,
+EURUSD,1,evt_USD_52_Week_Bill_Auction,0.0022974314042160395,0.8,
+EURUSD,1,evt_USD_Feds_Barkin_speech,0.0019102745822824085,0.8,
+EURUSD,1,evt_USD_Feds_Evans_speech,0.002711357956474182,0.8,
+EURUSD,1,evt_USD_Feds_Lockhart_speech,0.0006838655662058437,0.8,
+EURUSD,1,evt_USD_Housing_Starts_Change,-0.0016564395241916892,0.8,evt_USD_Building_Permits_Change
+EURUSD,1,evt_USD_IMF_Meeting,0.0011368718959687033,0.8,
+EURUSD,1,evt_USD_Industrial_Production_MoM,-0.0022628493054056603,0.8,evt_USD_Capacity_Utilization
+EURUSD,1,evt_USD_Jackson_Hole_Symposium,0.002156810783909193,0.8,
+EURUSD,1,evt_USD_NY_Empire_State_Manufacturing_Index,0.0021745486889949935,0.8,
+EURUSD,1,evt_USD_Retail_Sales_YoY,-0.003058505028706468,0.8,
+EURUSD,1,evt_USD_Unit_Labor_Costs,-0.0034747948899941446,0.8,evt_USD_Nonfarm_Productivity
+EURUSD,1,evt_EUR_Core_Harmonized_Index_of_Consumer_Prices_MoM,-0.0020132382598207583,0.7,
+EURUSD,1,evt_EUR_Industrial_Output_MoM,-0.0022067987198681623,0.7,
+EURUSD,1,evt_USD_Feds_Kaplan_speech,0.00024244425921385234,0.7,
+EURUSD,1,evt_USD_Monthly_Budget_Statement,0.000978060513529966,0.7,
+EURUSD,1,evt_EUR_Trade_Balance_EU,-0.001159743690089643,0.6,evt_EUR_Global_Trade_Balance
+EURUSD,1,evt_USD_Feds_Brainard_speech,0.0006642895708127959,0.6,
+EURUSD,1,evt_EUR_Gross_Domestic_Product_w_d_a_YoY,0.0010977651088605886,0.5,
+EURUSD,1,evt_EUR_Wholesale_Price_Index_YoY,0.0012107632938851893,0.5,evt_EUR_Wholesale_Price_Index_MoM
+EURUSD,1,evt_USD_Employment_Cost_Index,0.0009694507381621604,0.5,
+EURUSD,1,evt_EUR_Gross_Domestic_Product_QoQ,0.0002214436357850082,0.4,evt_EUR_Gross_Domestic_Product_YoY
+EURUSD,1,evt_EUR_Inflation_ex_tobacco_MoM,-0.0002151179357176413,0.4,
+EURUSD,1,evt_EUR_Trade_Balance_non_EU,-0.00026231416893500903,0.4,
+EURUSD,1,evt_USD_Import_Price_Index_YoY,-2.833543942853981e-05,0.4,evt_USD_Export_Price_Index_MoM; evt_USD_Export_Price_Index_YoY; evt_USD_Import_Price_Index_MoM
+EURUSD,5,evt_EUR_2_year_Notes_Auction,0.014503998726135007,1.0,
+EURUSD,5,evt_EUR_Consumer_Price_Index_EU_Norm_YoY,0.01722015180147156,1.0,evt_EUR_Consumer_Price_Index_EU_Norm_MoM
+EURUSD,5,evt_EUR_ECB_Main_Refinancing_Operations_Rate,0.03621923099489166,1.0,evt_EUR_ECB_Press_Conference
+EURUSD,5,evt_EUR_ECBs_Mersch_speech,-0.019354084229540425,1.0,
+EURUSD,5,evt_EUR_G20_Meeting,-0.006074897081463611,1.0,
+EURUSD,5,evt_EUR_Harmonized_Index_of_Consumer_Prices_YoY,0.008735584604615324,1.0,
+EURUSD,5,evt_EUR_Retail_Sales_s_a_MoM,-0.00850957608934587,1.0,evt_EUR_Retail_Sales_n_s_a_YoY
+EURUSD,5,evt_USD_6_Month_Bill_Auction,0.008150110955191229,1.0,evt_USD_3_Month_Bill_Auction
+EURUSD,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.00790600359554751,1.0,
+EURUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.039154864296285855,1.0,
+EURUSD,5,evt_USD_Feds_Beige_Book,0.005161127085893648,1.0,
+EURUSD,5,evt_USD_Feds_Brainard_speech,0.008889321800099406,1.0,
+EURUSD,5,evt_USD_Feds_Evans_speech,0.0052325188224157364,1.0,
+EURUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.0149247526110983,1.0,
+EURUSD,5,evt_USD_S_P_Global_Manufacturing_PMI,0.015214890255806277,1.0,
+EURUSD,5,evt_USD_Unemployment_Rate,0.019135206956612246,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+EURUSD,5,evt_EUR_ECB_Monetary_Policy_Statement,0.0038737019326034144,0.9,
+EURUSD,5,evt_EUR_ECB_Monthly_Report,-0.00920107531880622,0.9,
+EURUSD,5,evt_EUR_European_Commission_releases_Economic_Growth_Forecasts,0.005684421437734785,0.9,
+EURUSD,5,evt_EUR_ILO_Unemployment,0.004810208457989288,0.9,
+EURUSD,5,evt_USD_20_Year_Bond_Auction,-0.0039007703520674095,0.9,
+EURUSD,5,evt_USD_FOMC_Economic_Projections,0.0032259107564278915,0.9,
+EURUSD,5,evt_USD_Feds_Mester_speech,0.0037887154535416437,0.9,
+EURUSD,5,evt_EUR_ECB_Monetary_Policy_Meeting_Accounts,-0.004547573470823378,0.8,
+EURUSD,5,evt_EUR_ECBs_Panetta_speech,0.0009035495231216103,0.8,
+EURUSD,5,evt_EUR_Gross_Domestic_Product_w_d_a_YoY,0.004716648541436748,0.8,
+EURUSD,5,evt_USD_FOMC_Press_Conference,0.0041732794782664865,0.8,
+EURUSD,5,evt_USD_Feds_Lockhart_speech,0.005473928267518557,0.8,
+EURUSD,5,evt_USD_Feds_Richard_Fisher_speech,0.0054402588225050934,0.8,
+EURUSD,5,evt_USD_Feds_Tarullo_speech,0.004548575452773054,0.8,
+EURUSD,5,evt_USD_Labor_Market_Conditions_Index,0.0017469035507411744,0.8,
+EURUSD,5,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.0007128492496458093,0.7,
+EURUSD,5,evt_USD_Feds_Chair_Yellen_speech,-0.0010851581407516828,0.7,
+EURUSD,5,evt_USD_ISM_Manufacturing_New_Orders_Index,0.0024370694342254204,0.7,evt_USD_ISM_Manufacturing_Employment_Index
+EURUSD,5,evt_USD_Jackson_Hole_Symposium,0.001416782104455853,0.7,
+EURUSD,5,evt_USD_Wholesale_Inventories,0.0025272861039406726,0.7,
+EURUSD,5,evt_EUR_ECBs_De_Guindos_speech,0.0005558462542494358,0.6,
+EURUSD,5,evt_USD_Challenger_Job_Cuts,0.0021018828082641433,0.6,
+EURUSD,5,evt_USD_Feds_Quarles_speech,-0.000707431629965683,0.6,
+EURUSD,5,evt_EUR_10_y_Bond_Auction,0.0007525034992769069,0.4,
+EURUSD,5,evt_EUR_M3_Money_Supply_YoY,0.0007186407382976513,0.4,evt_EUR_M3_Money_Supply_3m; evt_EUR_Private_Loans_YoY
+EURUSD,5,evt_EUR_Saxony_CPI_YoY,0.0002914625852047828,0.4,evt_EUR_Baden_Wuerttemberg_CPI_MoM; evt_EUR_Baden_Wuerttemberg_CPI_YoY; evt_EUR_Bavaria_CPI_MoM; evt_EUR_Bavaria_CPI_YoY; evt_EUR_Hesse_CPI_MoM; evt_EUR_Hesse_CPI_YoY; evt_EUR_North_Rhine_Westphalia_CPI_MoM; evt_EUR_North_Rhine_Westphalia_CPI_YoY; evt_EUR_Saxony_CPI_MoM
+EURUSD,5,evt_USD_Total_Vehicle_Sales,0.0014011317740977459,0.4,
+GBPUSD,1,evt_GBP_BRC_Like_For_Like_Retail_Sales_YoY,-0.007226121881274109,1.0,
+GBPUSD,1,evt_GBP_BoE_Interest_Rate_Decision,0.025133199694842956,1.0,evt_GBP_BoE_Asset_Purchase_Facility
+GBPUSD,1,evt_GBP_BoE_Minutes,0.030240410487402808,1.0,
+GBPUSD,1,evt_GBP_BoE_Monetary_Policy_Report,0.03401705253313677,1.0,
+GBPUSD,1,evt_GBP_BoEs_Governor_Carney_speech,0.023225069470938005,1.0,
+GBPUSD,1,evt_GBP_BoEs_Tenreyro_speech,0.012168444574948874,1.0,
+GBPUSD,1,evt_GBP_Consumer_Inflation_Expectations,0.01074848765864254,1.0,
+GBPUSD,1,evt_GBP_Financial_Stability_Report,0.005436622272223037,1.0,
+GBPUSD,1,evt_GBP_ILO_Unemployment_Rate_3M,0.014002310536650775,1.0,evt_GBP_Average_Earnings_Excluding_Bonus_3Mo_Yr; evt_GBP_Average_Earnings_Including_Bonus_3Mo_Yr; evt_GBP_Claimant_Count_Change; evt_GBP_Claimant_Count_Rate
+GBPUSD,1,evt_GBP_Mortgage_Approvals,0.008413092229875161,1.0,evt_GBP_Consumer_Credit; evt_GBP_M4_Money_Supply_MoM; evt_GBP_M4_Money_Supply_YoY; evt_GBP_Net_Lending_to_Individuals_MoM
+GBPUSD,1,evt_GBP_NIESR_GDP_Estimate_3M,0.017148998156440876,1.0,evt_GBP_Industrial_Production_MoM; evt_GBP_Industrial_Production_YoY; evt_GBP_Manufacturing_Production_MoM; evt_GBP_Manufacturing_Production_YoY
+GBPUSD,1,evt_GBP_Retail_Price_Index_YoY,0.016753078539736562,1.0,evt_GBP_Consumer_Price_Index_MoM; evt_GBP_Consumer_Price_Index_YoY; evt_GBP_Core_Consumer_Price_Index_YoY; evt_GBP_DCLG_House_Price_Index_YoY; evt_GBP_PPI_Core_Output_MoM_n_s_a; evt_GBP_PPI_Core_Output_YoY_n_s_a; evt_GBP_Producer_Price_Index_Input_MoM_n_s_a; evt_GBP_Producer_Price_Index_Input_YoY_n_s_a; evt_GBP_Producer_Price_Index_Output_MoM_n_s_a; evt_GBP_Producer_Price_Index_Output_YoY_n_s_a; evt_GBP_Retail_Price_Index_MoM
+GBPUSD,1,evt_GBP_Retail_Sales_ex_Fuel_YoY,0.014143286662917146,1.0,evt_GBP_Retail_Sales_MoM; evt_GBP_Retail_Sales_YoY; evt_GBP_Retail_Sales_ex_Fuel_MoM
+GBPUSD,1,evt_GBP_S_P_Global_Manufacturing_PMI,0.022403076535954813,1.0,
+GBPUSD,1,evt_GBP_S_P_Global_Services_PMI,0.00969494508318346,1.0,
+GBPUSD,1,evt_GBP_Total_Business_Investment_YoY,-0.004280273593038868,1.0,evt_GBP_Total_Business_Investment_QoQ
+GBPUSD,1,evt_USD_6_Month_Bill_Auction,0.027673767314777678,1.0,evt_USD_3_Month_Bill_Auction
+GBPUSD,1,evt_USD_API_Weekly_Crude_Oil_Stock,0.022102348662972195,1.0,
+GBPUSD,1,evt_USD_Building_Permits_MoM,0.004330005977337158,1.0,evt_USD_Housing_Starts_MoM
+GBPUSD,1,evt_USD_Chicago_PMI,0.04383276348812561,1.0,
+GBPUSD,1,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.03011608447023467,1.0,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+GBPUSD,1,evt_USD_FOMC_Economic_Projections,0.03281174907406545,1.0,
+GBPUSD,1,evt_USD_FOMC_Minutes,0.00880008525694183,1.0,
+GBPUSD,1,evt_USD_Fed_Interest_Rate_Decision,0.022298436868493355,1.0,
+GBPUSD,1,evt_USD_Fed_Monetary_Policy_Statement,0.00815038414675016,1.0,
+GBPUSD,1,evt_USD_Feds_Brainard_speech,0.007994210698219912,1.0,
+GBPUSD,1,evt_USD_Feds_Powell_speech,0.01031505653437352,1.0,
+GBPUSD,1,evt_USD_Feds_Rosengren_speech,0.0136617576930267,1.0,
+GBPUSD,1,evt_USD_IMF_Meeting,0.007621969249156457,1.0,
+GBPUSD,1,evt_USD_Initial_Jobless_Claims,0.014796024869241859,1.0,evt_USD_Continuing_Jobless_Claims; evt_USD_EIA_Natural_Gas_Storage_Change
+GBPUSD,1,evt_USD_Initial_Jobless_Claims_4_week_average,0.006722093690880777,1.0,
+GBPUSD,1,evt_USD_Labor_Market_Conditions_Index,-0.008589399610832068,1.0,
+GBPUSD,1,evt_USD_Loan_Officer_Survey,-0.0038921079573949603,1.0,
+GBPUSD,1,evt_USD_NAHB_Housing_Market_Index,-0.009007743330684733,1.0,
+GBPUSD,1,evt_USD_Personal_Income_MoM,0.006638024809157397,1.0,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Spending
+GBPUSD,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.024076305173550593,1.0,evt_USD_Business_Inventories; evt_USD_Retail_Sales_MoM
+GBPUSD,1,evt_USD_S_P_Global_Manufacturing_PMI,0.004745990947539889,1.0,
+GBPUSD,1,evt_USD_Treasury_Sec_Lew_speech,0.015737434955689297,1.0,
+GBPUSD,1,evt_USD_Unemployment_Rate,0.046386302183842376,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+GBPUSD,1,evt_GBP_10_y_Bond_Auction,-0.0012928222285367497,0.9,
+GBPUSD,1,evt_GBP_BoE_Credit_Conditions_Survey,0.0022853805166366085,0.9,
+GBPUSD,1,evt_GBP_BoEs_Broadbent_speech,-0.0030882094948321876,0.9,
+GBPUSD,1,evt_GBP_BoEs_Haldane_speech,0.0029781162090788114,0.9,
+GBPUSD,1,evt_GBP_Employment_Change_3M,0.00837370694674173,0.9,
+GBPUSD,1,evt_GBP_Index_of_Services_3M_3M,0.007145137264469406,0.9,
+GBPUSD,1,evt_GBP_Lloyds_House_Price_Index_YoY,0.004933155288371861,0.9,evt_GBP_Lloyds_House_Price_Index_MoM
+GBPUSD,1,evt_GBP_Trade_Balance_non_EU,0.00951295882236792,0.9,evt_GBP_Goods_Trade_Balance; evt_GBP_Total_Trade_Balance
+GBPUSD,1,evt_USD_7_Year_Note_Auction,0.008589236734651874,0.9,
+GBPUSD,1,evt_USD_American_Petroleum_Institute_Monthly_Report,-0.002651261919594892,0.9,
+GBPUSD,1,evt_USD_Chicago_Fed_National_Activity_Index,0.0047392478025585,0.9,
+GBPUSD,1,evt_USD_Feds_George_speech,0.009029722684392408,0.9,
+GBPUSD,1,evt_USD_Feds_Goolsbee_speech,0.003497500698604784,0.9,
+GBPUSD,1,evt_USD_Feds_Lockhart_speech,0.003667816793112927,0.9,
+GBPUSD,1,evt_USD_Feds_Mester_speech,0.007930775146604426,0.9,
+GBPUSD,1,evt_USD_Feds_Richard_Fisher_speech,-0.004963005733496637,0.9,
+GBPUSD,1,evt_USD_Feds_Stanley_Fischer_speech,0.007029951050266944,0.9,
+GBPUSD,1,evt_USD_Goods_Trade_Balance,0.002803432054702974,0.9,
+GBPUSD,1,evt_USD_Industrial_Production_MoM,-0.004605630159873371,0.9,evt_USD_Capacity_Utilization
+GBPUSD,1,evt_USD_MBA_Mortgage_Applications,0.01263940297742575,0.9,
+GBPUSD,1,evt_USD_Pending_Home_Sales_MoM,0.0041218614640897416,0.9,evt_USD_Pending_Home_Sales_YoY
+GBPUSD,1,evt_USD_Philadelphia_Fed_Manufacturing_Survey,0.0036539570682851577,0.9,
+GBPUSD,1,evt_USD_U6_Underemployment_Rate,-0.007786837243586817,0.9,
+GBPUSD,1,evt_USD_Wholesale_Inventories,0.005926488730850231,0.9,
+GBPUSD,1,evt_GBP_BoEs_Pill_speech,0.0006013104245019208,0.8,
+GBPUSD,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.0018009203335157104,0.8,
+GBPUSD,1,evt_USD_ISM_Services_PMI,0.0037857392606035073,0.8,
+GBPUSD,1,evt_USD_New_Home_Sales_MoM,0.0012151914360618997,0.8,evt_USD_New_Home_Sales_Change_MoM
+GBPUSD,1,evt_USD_Richmond_Fed_Manufacturing_Index,-0.002398189118361317,0.8,
+GBPUSD,1,evt_USD_2_Year_Note_Auction,0.0001464660389821359,0.7,
+GBPUSD,1,evt_USD_Feds_Cook_speech,5.68753067450741e-05,0.7,
+GBPUSD,1,evt_USD_USDA_WASDE_Report,-0.0016020847250870736,0.7,
+GBPUSD,1,evt_GBP_BoE_MPC_Vote_Rate_Unchanged,0.0016295085432492787,0.6,evt_GBP_BoE_MPC_Vote_Rate_Cut; evt_GBP_BoE_MPC_Vote_Rate_Hike
+GBPUSD,1,evt_GBP_CFTC_GBP_NC_Net_Positions,0.0012140471981585213,0.6,evt_USD_CFTC_Gold_NC_Net_Positions; evt_USD_CFTC_Oil_NC_Net_Positions; evt_USD_CFTC_S_P_500_NC_Net_Positions
+GBPUSD,1,evt_USD_Kansas_Fed_Manufacturing_Activity,0.001625396921225921,0.6,
+GBPUSD,1,evt_GBP_CBI_Distributive_Trades_Survey_Realized_MoM,-0.00040786193350296246,0.5,
+GBPUSD,1,evt_USD_Feds_Harker_speech,0.00024766730074540414,0.5,
+GBPUSD,1,evt_USD_Goods_and_Services_Trade_Balance,-0.001222969774444221,0.5,
+GBPUSD,1,evt_USD_Unit_Labor_Costs,-0.0004096743972662182,0.4,evt_USD_Nonfarm_Productivity
+GBPUSD,5,evt_GBP_BoE_Interest_Rate_Decision,0.010033820877018703,1.0,evt_GBP_BoE_Asset_Purchase_Facility
+GBPUSD,5,evt_GBP_BoE_Monetary_Policy_Summary,0.01863852774664511,1.0,
+GBPUSD,5,evt_GBP_BoEs_Governor_Carney_speech,0.007568287310617804,1.0,
+GBPUSD,5,evt_GBP_ILO_Unemployment_Rate_3M,0.00801792168776741,1.0,evt_GBP_Average_Earnings_Excluding_Bonus_3Mo_Yr; evt_GBP_Average_Earnings_Including_Bonus_3Mo_Yr; evt_GBP_Claimant_Count_Change; evt_GBP_Claimant_Count_Rate
+GBPUSD,5,evt_GBP_Total_Business_Investment_YoY,-0.01634481254232474,1.0,evt_GBP_Total_Business_Investment_QoQ
+GBPUSD,5,evt_USD_6_Month_Bill_Auction,0.005593041459045307,1.0,evt_USD_3_Month_Bill_Auction
+GBPUSD,5,evt_USD_Chicago_PMI,0.0049468850036639925,1.0,
+GBPUSD,5,evt_USD_Fed_Interest_Rate_Decision,0.016502554099311846,1.0,
+GBPUSD,5,evt_USD_Fed_Monetary_Policy_Statement,0.01250016466397306,1.0,
+GBPUSD,5,evt_USD_Feds_Brainard_speech,0.013068244999926407,1.0,
+GBPUSD,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.009294168418308985,1.0,
+GBPUSD,5,evt_GBP_30_y_Bond_Auction,0.003968560626655014,0.9,
+GBPUSD,5,evt_GBP_BoEs_Cunliffe_speech,0.0030108129064646575,0.9,
+GBPUSD,5,evt_GBP_BoEs_Tenreyro_speech,0.010010506205549661,0.9,
+GBPUSD,5,evt_GBP_Consumer_Inflation_Expectations,0.013893336313505105,0.9,
+GBPUSD,5,evt_USD_API_Weekly_Crude_Oil_Stock,0.0053362147212351945,0.9,
+GBPUSD,5,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.00701487313084502,0.9,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+GBPUSD,5,evt_USD_Existing_Home_Sales_MoM,-0.006023658134987652,0.9,evt_USD_Existing_Home_Sales_Change_MoM
+GBPUSD,5,evt_USD_Feds_Powell_speech,0.01642441341614227,0.9,
+GBPUSD,5,evt_USD_IMF_Meeting,0.005780268685584703,0.9,
+GBPUSD,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.012314078317934869,0.9,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+GBPUSD,5,evt_GBP_Employment_Change_3M,0.0008600144747725938,0.8,
+GBPUSD,5,evt_GBP_S_P_Global_Manufacturing_PMI,0.010107901101931637,0.8,
+GBPUSD,5,evt_USD_Feds_Chair_Yellen_speech,-0.0023593676523785347,0.8,
+GBPUSD,5,evt_USD_Feds_Mester_speech,0.0030878696040568523,0.8,
+GBPUSD,5,evt_USD_Retail_Sales_Control_Group,0.0056797402782244695,0.8,
+GBPUSD,5,evt_GBP_BRC_Shop_Price_Index_YoY,0.0029147087922818684,0.7,
+GBPUSD,5,evt_GBP_Financial_Stability_Report,0.001737356963376736,0.7,
+GBPUSD,5,evt_USD_Feds_Evans_speech,0.0017174762202895799,0.7,
+GBPUSD,5,evt_GBP_Mortgage_Approvals,0.0006214248640780994,0.6,evt_GBP_Consumer_Credit; evt_GBP_M4_Money_Supply_MoM; evt_GBP_M4_Money_Supply_YoY; evt_GBP_Net_Lending_to_Individuals_MoM
+GBPUSD,5,evt_USD_FOMC_Economic_Projections,0.003929251979796526,0.6,
+GBPUSD,5,evt_USD_NY_Empire_State_Manufacturing_Index,0.0023587688347910716,0.6,
+GBPUSD,5,evt_USD_Interest_Rate_Projections_Longer,0.00013450565673739096,0.5,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
+GBPUSD,5,evt_GBP_BBA_Mortgage_Approvals,-0.0016084284736969836,0.4,
+GBPUSD,22,evt_GBP_BoE_Monetary_Policy_Summary,0.04669657399758028,1.0,
+GBPUSD,22,evt_GBP_Consumer_Inflation_Expectations,0.013914456878449432,0.9,
+GBPUSD,22,evt_USD_Feds_Mester_speech,0.018142576459836704,0.9,
+GBPUSD,22,evt_USD_President_Trump_speech,0.009839857676497341,0.9,
+GBPUSD,22,evt_GBP_BoEs_Cunliffe_speech,0.014660822121112527,0.8,
+GBPUSD,22,evt_USD_Fed_Monetary_Policy_Statement,0.0021785902342255936,0.7,
+GBPUSD,22,evt_GBP_FPC_Meeting_Minutes,0.00030046009872662107,0.6,
+USDCHF,1,evt_CHF_Industrial_Production_QoQ,-0.015684319162847106,1.0,
+USDCHF,1,evt_CHF_SNB_Quarterly_Bulletin,-0.003950311959318177,1.0,
+USDCHF,1,evt_CHF_SVME_Purchasing_Managers_Index,0.00957155151168745,1.0,
+USDCHF,1,evt_CHF_ZEW_Survey_Expectations,0.0152047545925596,1.0,
+USDCHF,1,evt_USD_6_Month_Bill_Auction,0.015478488217424586,1.0,evt_USD_3_Month_Bill_Auction
+USDCHF,1,evt_USD_Chicago_Fed_National_Activity_Index,0.015864905482298356,1.0,
+USDCHF,1,evt_USD_Chicago_PMI,0.04676922863315724,1.0,
+USDCHF,1,evt_USD_Consumer_Credit_Change,0.00646354545225113,1.0,
+USDCHF,1,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.03978795458501723,1.0,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+USDCHF,1,evt_USD_Dallas_Fed_Manufacturing_Business_Index,0.005449784900863738,1.0,
+USDCHF,1,evt_USD_Employment_Cost_Index,0.009970758462043832,1.0,
+USDCHF,1,evt_USD_FOMC_Economic_Projections,0.033677545384555016,1.0,
+USDCHF,1,evt_USD_FOMC_Minutes,0.011764395023402948,1.0,
+USDCHF,1,evt_USD_Fed_Interest_Rate_Decision,0.03976443330598785,1.0,
+USDCHF,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.009203679677740774,1.0,
+USDCHF,1,evt_USD_Gross_Domestic_Product_Price_Index,0.01056336883098026,1.0,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
+USDCHF,1,evt_USD_ISM_Services_PMI,0.02448604158967196,1.0,
+USDCHF,1,evt_USD_Initial_Jobless_Claims,0.042471623905818316,1.0,evt_USD_Continuing_Jobless_Claims; evt_USD_EIA_Natural_Gas_Storage_Change
+USDCHF,1,evt_USD_Labor_Market_Conditions_Index,-0.022072598479524724,1.0,
+USDCHF,1,evt_USD_Loan_Officer_Survey,-0.005506378004655704,1.0,
+USDCHF,1,evt_USD_Personal_Income_MoM,-0.0060684890148262945,1.0,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Spending
+USDCHF,1,evt_USD_Philadelphia_Fed_Manufacturing_Survey,0.014887358153139867,1.0,
+USDCHF,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.017101991489772084,1.0,evt_USD_Business_Inventories; evt_USD_Retail_Sales_MoM
+USDCHF,1,evt_USD_S_P_Case_Shiller_Home_Price_Indices_YoY,0.0075791915240845465,1.0,evt_USD_Consumer_Confidence
+USDCHF,1,evt_USD_S_P_Global_Manufacturing_PMI,0.008125915729684158,1.0,
+USDCHF,1,evt_USD_U6_Underemployment_Rate,-0.02329080168184623,1.0,
+USDCHF,1,evt_USD_Unemployment_Rate,0.09129454389440061,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+USDCHF,1,evt_USD_Wholesale_Inventories,0.016526040478893528,1.0,
+USDCHF,1,evt_CHF_SECO_Consumer_Climate_3m,0.0016262463991308113,0.9,
+USDCHF,1,evt_CHF_SNB_Interest_Rate_Decision,0.03834153837361692,0.9,
+USDCHF,1,evt_CHF_SNB_Press_Conference,-0.009581971876163352,0.9,
+USDCHF,1,evt_CHF_SNBs_Chairman_Jordan_speech,0.013273893054468125,0.9,
+USDCHF,1,evt_USD_30_Year_Bond_Auction,0.004641063389890232,0.9,
+USDCHF,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.003957661509805687,0.9,
+USDCHF,1,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.0005081221576818024,0.9,
+USDCHF,1,evt_USD_Feds_Rosengren_speech,0.0025576782023131336,0.9,
+USDCHF,1,evt_USD_ISM_Manufacturing_New_Orders_Index,0.006999682226931751,0.9,evt_USD_ISM_Manufacturing_Employment_Index
+USDCHF,1,evt_USD_Monthly_Budget_Statement,0.003648426817959548,0.9,
+USDCHF,1,evt_USD_NAHB_Housing_Market_Index,-0.006116220025079521,0.9,
+USDCHF,1,evt_USD_NY_Empire_State_Manufacturing_Index,0.014468958239246137,0.9,
+USDCHF,1,evt_USD_New_Home_Sales_MoM,0.00490284947986357,0.9,evt_USD_New_Home_Sales_Change_MoM
+USDCHF,1,evt_USD_Treasury_Sec_Lew_speech,0.0015990022634888852,0.9,
+USDCHF,1,evt_CHF_KOF_Leading_Indicator,0.001333723189641975,0.8,
+USDCHF,1,evt_CHF_Real_Retail_Sales_YoY,-0.0009336628596246241,0.8,
+USDCHF,1,evt_CHF_World_Economic_Forum_Davos,0.0020001023282166554,0.8,
+USDCHF,1,evt_USD_Fed_Monetary_Policy_Statement,0.009609120019514675,0.8,
+USDCHF,1,evt_USD_Feds_Bowman_speech,0.0013270014444538435,0.8,
+USDCHF,1,evt_USD_Feds_Lockhart_speech,0.0024003486664262996,0.8,
+USDCHF,1,evt_USD_JOLTS_Job_Openings,-0.0020166646970701876,0.8,
+USDCHF,1,evt_CHF_Consumer_Price_Index_YoY,0.0016621614662870163,0.7,evt_CHF_Consumer_Price_Index_MoM
+USDCHF,1,evt_CHF_Industrial_Production_YoY,-0.000988172952525124,0.7,
+USDCHF,1,evt_USD_3_Year_Note_Auction,-0.002004933735327157,0.7,
+USDCHF,1,evt_USD_5_year_TIPS_Auction,-0.0005871850773604438,0.7,
+USDCHF,1,evt_USD_Feds_Kaplan_speech,0.0003199910355995294,0.7,
+USDCHF,1,evt_USD_Feds_Powell_speech,0.00011420626002333549,0.7,
+USDCHF,1,evt_USD_Jackson_Hole_Symposium,0.0023007634668986057,0.7,
+USDCHF,1,evt_CHF_SNB_Monetary_Policy_Assessment,0.0053245018328395045,0.6,
+USDCHF,1,evt_USD_Baker_Hughes_US_Oil_Rig_Count,0.0010613095769569903,0.6,
+USDCHF,1,evt_USD_Housing_Starts_Change,-0.0015577227993535947,0.6,evt_USD_Building_Permits_Change
+USDCHF,1,evt_USD_Import_Price_Index_YoY,-0.0009269440220936214,0.6,evt_USD_Export_Price_Index_MoM; evt_USD_Export_Price_Index_YoY; evt_USD_Import_Price_Index_MoM
+USDCHF,5,evt_CHF_SNB_Quarterly_Bulletin,-0.0076167062038952175,1.0,
+USDCHF,5,evt_CHF_ZEW_Survey_Expectations,0.0062371388661187025,1.0,
+USDCHF,5,evt_USD_6_Month_Bill_Auction,0.006702404467224908,1.0,evt_USD_3_Month_Bill_Auction
+USDCHF,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.007794272942843105,1.0,
+USDCHF,5,evt_USD_FOMC_Press_Conference,0.005183798824035047,1.0,
+USDCHF,5,evt_USD_Fed_Interest_Rate_Decision,0.030954926730084768,1.0,
+USDCHF,5,evt_USD_Feds_Beige_Book,0.010099985463095854,1.0,
+USDCHF,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.00542354442864636,1.0,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+USDCHF,5,evt_USD_Total_Vehicle_Sales,0.010480143215373681,1.0,
+USDCHF,5,evt_CHF_Real_Retail_Sales_YoY,0.009843410059166044,0.9,
+USDCHF,5,evt_CHF_SNB_Interest_Rate_Decision,0.018857143512241496,0.9,
+USDCHF,5,evt_USD_Chicago_PMI,0.005562578192700648,0.9,
+USDCHF,5,evt_USD_Feds_Lockhart_speech,0.011173945556301,0.9,
+USDCHF,5,evt_USD_Feds_Quarles_speech,-0.007438232799208979,0.9,
+USDCHF,5,evt_USD_Interest_Rate_Projections_Longer,0.004496939074767703,0.9,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
+USDCHF,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.007844990519116565,0.9,
+USDCHF,5,evt_CHF_Gross_Domestic_Product_YoY,0.00282742532723413,0.8,evt_CHF_Gross_Domestic_Product_QoQ
+USDCHF,5,evt_CHF_SNBs_Chairman_Jordan_speech,0.0028144646858083923,0.8,
+USDCHF,5,evt_USD_Challenger_Job_Cuts,0.0038544619113248715,0.8,
+USDCHF,5,evt_USD_Fed_Minneapoliss_Kocherlakota_speech,0.003146930525376433,0.8,
+USDCHF,5,evt_USD_Fed_Monetary_Policy_Statement,0.0048507536354296076,0.8,
+USDCHF,5,evt_USD_Existing_Home_Sales_MoM,-0.002725955000941293,0.7,evt_USD_Existing_Home_Sales_Change_MoM
+USDCHF,5,evt_USD_Labor_Market_Conditions_Index,0.00017379695941529383,0.6,
+USDCHF,5,evt_USD_MBA_Mortgage_Applications,-0.0003853712438517304,0.5,
+USDCHF,22,evt_USD_Feds_Quarles_speech,-0.027224294762212487,1.0,
+USDCHF,22,evt_CHF_SNB_Interest_Rate_Decision,0.012755783389817586,0.9,
+USDCHF,22,evt_CHF_World_Economic_Forum_Davos,0.015080790969440637,0.9,
+USDCHF,22,evt_USD_Fed_Interest_Rate_Decision,0.0077662411529904754,0.9,
+USDJPY,1,evt_JPY_BoJ_Monetary_Policy_Statement,0.0710825210414768,1.0,evt_JPY_BoJ_Interest_Rate_Decision
+USDJPY,1,evt_JPY_BoJ_Outlook_Report,0.02182079059438777,1.0,
+USDJPY,1,evt_JPY_BoJ_Summary_of_Opinions,0.024468247489586866,1.0,
+USDJPY,1,evt_JPY_CFTC_JPY_NC_Net_Positions,0.022106830354307765,1.0,evt_USD_CFTC_Gold_NC_Net_Positions; evt_USD_CFTC_Oil_NC_Net_Positions; evt_USD_CFTC_S_P_500_NC_Net_Positions
+USDJPY,1,evt_JPY_Current_Account_n_s_a,-0.027242145444840177,1.0,evt_JPY_Trade_Balance_BOP_Basis
+USDJPY,1,evt_JPY_Merchandise_Trade_Balance_Total,-0.012750875411043125,1.0,evt_JPY_Adjusted_Merchandise_Trade_Balance; evt_JPY_Exports_YoY; evt_JPY_Imports_YoY
+USDJPY,1,evt_JPY_Monetary_Base_YoY,-0.022723795985217638,1.0,
+USDJPY,1,evt_JPY_Overall_Household_Spending_YoY,-0.024365334362673605,1.0,
+USDJPY,1,evt_JPY_Producer_Price_Index_YoY,-0.012167942689031914,1.0,evt_JPY_Producer_Price_Index_MoM
+USDJPY,1,evt_JPY_Unemployment_Rate,-0.027475624065322307,1.0,evt_JPY_Jobs_Applicants_Ratio
+USDJPY,1,evt_USD_10_Year_Note_Auction,0.014538073551669134,1.0,
+USDJPY,1,evt_USD_6_Month_Bill_Auction,0.033729857547107514,1.0,evt_USD_3_Month_Bill_Auction
+USDJPY,1,evt_USD_ADP_Employment_Change,0.01693408576605946,1.0,
+USDJPY,1,evt_USD_Consumer_Credit_Change,0.016227935482303738,1.0,
+USDJPY,1,evt_USD_Consumer_Price_Index_n_s_a_MoM,0.036708418274193994,1.0,evt_USD_Consumer_Price_Index_Core_s_a; evt_USD_Consumer_Price_Index_MoM; evt_USD_Consumer_Price_Index_YoY; evt_USD_Consumer_Price_Index_ex_Food_Energy_MoM; evt_USD_Consumer_Price_Index_ex_Food_Energy_YoY
+USDJPY,1,evt_USD_Dallas_Fed_Manufacturing_Business_Index,0.018508325508002892,1.0,
+USDJPY,1,evt_USD_Employment_Cost_Index,0.013837756477821926,1.0,
+USDJPY,1,evt_USD_Existing_Home_Sales_MoM,-0.007472214402658161,1.0,evt_USD_Existing_Home_Sales_Change_MoM
+USDJPY,1,evt_USD_FOMC_Economic_Projections,0.04628442001780248,1.0,
+USDJPY,1,evt_USD_FOMC_Member_Powell_speech_dont_use,-0.006181035016090464,1.0,
+USDJPY,1,evt_USD_FOMC_Minutes,0.02746553907446886,1.0,
+USDJPY,1,evt_USD_Fed_Interest_Rate_Decision,0.03809253546486472,1.0,
+USDJPY,1,evt_USD_Feds_Barkin_speech,0.012619066392693643,1.0,
+USDJPY,1,evt_USD_Former_Feds_Chair_Bernanke_speech,0.00839083290114521,1.0,
+USDJPY,1,evt_USD_Gross_Domestic_Product_Price_Index,0.02322690742847011,1.0,evt_USD_Core_Personal_Consumption_Expenditures_QoQ; evt_USD_Gross_Domestic_Product_Annualized; evt_USD_Personal_Consumption_Expenditures_Prices_QoQ
+USDJPY,1,evt_USD_ISM_Services_PMI,0.0217798465640133,1.0,
+USDJPY,1,evt_USD_Import_Price_Index_YoY,-0.005926770392332899,1.0,evt_USD_Export_Price_Index_MoM; evt_USD_Export_Price_Index_YoY; evt_USD_Import_Price_Index_MoM
+USDJPY,1,evt_USD_Initial_Jobless_Claims,0.05640795448192291,1.0,evt_USD_Continuing_Jobless_Claims; evt_USD_EIA_Natural_Gas_Storage_Change
+USDJPY,1,evt_USD_Labor_Market_Conditions_Index,-0.015407008835031714,1.0,
+USDJPY,1,evt_USD_Loan_Officer_Survey,-0.02173220027233426,1.0,
+USDJPY,1,evt_USD_Monthly_Budget_Statement,0.019824926227873983,1.0,
+USDJPY,1,evt_USD_NAHB_Housing_Market_Index,-0.007122898990190503,1.0,
+USDJPY,1,evt_USD_NY_Empire_State_Manufacturing_Index,0.008273388209006744,1.0,
+USDJPY,1,evt_USD_Nondefense_Capital_Goods_Orders_ex_Aircraft,-0.009106213356305376,1.0,evt_USD_Durable_Goods_Orders_ex_Defense
+USDJPY,1,evt_USD_Personal_Income_MoM,-0.008382999011850824,1.0,evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Core_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Consumption_Expenditures_Price_Index_MoM; evt_USD_Personal_Consumption_Expenditures_Price_Index_YoY; evt_USD_Personal_Spending
+USDJPY,1,evt_USD_Philadelphia_Fed_Manufacturing_Survey,0.004792412482066556,1.0,
+USDJPY,1,evt_USD_Retail_Sales_ex_Autos_MoM,0.02053079569364407,1.0,evt_USD_Business_Inventories; evt_USD_Retail_Sales_MoM
+USDJPY,1,evt_USD_S_P_Global_Manufacturing_PMI,0.018555752723407353,1.0,
+USDJPY,1,evt_USD_Total_Vehicle_Sales,0.009921265421421119,1.0,
+USDJPY,1,evt_USD_U6_Underemployment_Rate,-0.06188237656161127,1.0,
+USDJPY,1,evt_USD_Unemployment_Rate,0.1329770337997097,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+USDJPY,1,evt_USD_Unit_Labor_Costs,-0.009813167233969937,1.0,evt_USD_Nonfarm_Productivity
+USDJPY,1,evt_USD_Wholesale_Inventories,0.03040460748608769,1.0,
+USDJPY,1,evt_JPY_BoJ_Governor_Ueda_speech,-0.01628710287747462,0.9,
+USDJPY,1,evt_JPY_BoJ_Monthly_Economic_Survey,-0.00962292633473164,0.9,
+USDJPY,1,evt_JPY_Capital_Spending,0.006327509652974225,0.9,
+USDJPY,1,evt_JPY_Foreign_Bond_Investment,0.005807461482942221,0.9,evt_JPY_Foreign_Investment_in_Japan_Stocks
+USDJPY,1,evt_JPY_Housing_Starts_YoY,0.010076678552488477,0.9,evt_JPY_Annualized_Housing_Starts; evt_JPY_Construction_Orders_YoY
+USDJPY,1,evt_USD_52_Week_Bill_Auction,0.006059775869328737,0.9,
+USDJPY,1,evt_USD_API_Weekly_Crude_Oil_Stock,0.011788160161915275,0.9,
+USDJPY,1,evt_USD_Chicago_PMI,0.008536904536636743,0.9,
+USDJPY,1,evt_USD_Feds_Barr_speech,0.0025499054500435674,0.9,
+USDJPY,1,evt_USD_Feds_Bostic_speech,-0.0015963393013326017,0.9,
+USDJPY,1,evt_USD_Feds_Bowman_speech,-0.004225359063436685,0.9,
+USDJPY,1,evt_USD_Feds_Chair_Powell_testifies,-0.004059572155459532,0.9,
+USDJPY,1,evt_USD_Feds_Collins_speech,0.004785531333014536,0.9,
+USDJPY,1,evt_USD_Feds_Daly_speech,0.004032588329925689,0.9,
+USDJPY,1,evt_USD_Feds_Kaplan_speech,0.006268321055847627,0.9,
+USDJPY,1,evt_USD_Feds_Stanley_Fischer_speech,-0.008449684486498176,0.9,
+USDJPY,1,evt_USD_Housing_Starts_Change,-0.004338985151492994,0.9,evt_USD_Building_Permits_Change
+USDJPY,1,evt_USD_ISM_Manufacturing_New_Orders_Index,0.008349231101342953,0.9,evt_USD_ISM_Manufacturing_Employment_Index
+USDJPY,1,evt_USD_ISM_Manufacturing_Prices_Paid,0.022586398138526465,0.9,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+USDJPY,1,evt_USD_OPEC_Monthly_Market_Report,0.009016354822321765,0.9,
+USDJPY,1,evt_USD_Philadelphia_Feds_Plosser_speech,0.004112793731506491,0.9,
+USDJPY,1,evt_USD_Redbook_Index_YoY,0.010030100009826284,0.9,
+USDJPY,1,evt_JPY_Capacity_Utilization,0.004698934407169049,0.8,
+USDJPY,1,evt_JPY_Consumer_Confidence_Index,0.002418955118694774,0.8,
+USDJPY,1,evt_USD_EIA_Crude_Oil_Stocks_Change,0.0069545822223492605,0.8,
+USDJPY,1,evt_USD_Feds_Dudley_speech,0.0028323506904109623,0.8,
+USDJPY,1,evt_USD_Feds_Evans_speech,0.0013561682405553081,0.8,
+USDJPY,1,evt_USD_Feds_George_speech,0.001774683347799158,0.8,
+USDJPY,1,evt_USD_Goods_Trade_Balance,0.002820416727806985,0.8,
+USDJPY,1,evt_USD_JOLTS_Job_Openings,0.00199015460864272,0.8,
+USDJPY,1,evt_USD_NFIB_Business_Optimism_Index,0.0009758006569402786,0.8,
+USDJPY,1,evt_USD_Retail_Sales_YoY,-0.005735426541175502,0.8,
+USDJPY,1,evt_JPY_BoJs_Governor_Kuroda_speech,-0.001888728355709581,0.7,
+USDJPY,1,evt_JPY_Corporate_Service_Price_Index_YoY,-0.004109418235181963,0.7,
+USDJPY,1,evt_JPY_Retail_Trade_s_a_MoM,0.00281579239539069,0.7,evt_JPY_Large_Retailer_Sales; evt_JPY_Retail_Trade_YoY
+USDJPY,1,evt_USD_5_year_TIPS_Auction,-0.002394824524056827,0.7,
+USDJPY,1,evt_USD_Building_Permits_MoM,-0.0008039897113982638,0.7,evt_USD_Housing_Starts_MoM
+USDJPY,1,evt_USD_Feds_Clarida_speech,6.939495196586244e-05,0.7,
+USDJPY,1,evt_USD_New_Home_Sales_MoM,0.0029605382133211034,0.7,evt_USD_New_Home_Sales_Change_MoM
+USDJPY,1,evt_USD_Pending_Home_Sales_MoM,0.0023941682616415026,0.7,evt_USD_Pending_Home_Sales_YoY
+USDJPY,1,evt_USD_S_P_Case_Shiller_Home_Price_Indices_YoY,0.0021910411294969907,0.7,evt_USD_Consumer_Confidence
+USDJPY,1,evt_USD_S_P_Global_Services_PMI,0.001901642369802088,0.7,evt_USD_S_P_Global_Composite_PMI
+USDJPY,1,evt_JPY_Labor_Cash_Earnings_YoY,-0.001309838090159265,0.6,
+USDJPY,1,evt_JPY_Machinery_Orders_MoM,0.0020331790304389747,0.6,evt_JPY_Machinery_Orders_YoY
+USDJPY,1,evt_USD_Interest_Rate_Projections_Longer,-0.0004685536014363848,0.6,evt_USD_Interest_Rate_Projections_1st_year; evt_USD_Interest_Rate_Projections_2nd_year; evt_USD_Interest_Rate_Projections_Current
+USDJPY,1,evt_USD_USDA_WASDE_Report,-0.0012291431570630074,0.6,
+USDJPY,1,evt_JPY_Bank_Lending_YoY,-0.0011741185825352649,0.5,
+USDJPY,1,evt_JPY_BoJ_Monetary_Policy_Meeting_Minutes,-4.855698520535711e-06,0.5,
+USDJPY,1,evt_USD_Chicago_Fed_National_Activity_Index,0.0006039234406834986,0.5,
+USDJPY,1,evt_USD_IMF_Meeting,-0.00021134370486823248,0.5,
+USDJPY,5,evt_JPY_National_Consumer_Price_Index_YoY,-0.018478254511222873,1.0,evt_JPY_National_CPI_ex_Food_Energy_YoY; evt_JPY_National_CPI_ex_Fresh_Food_YoY
+USDJPY,5,evt_USD_EIA_Crude_Oil_Stocks_Change,0.013455956915246085,1.0,
+USDJPY,5,evt_USD_Fed_Interest_Rate_Decision,0.037736000627367317,1.0,
+USDJPY,5,evt_USD_Feds_Evans_speech,0.011788249784344618,1.0,
+USDJPY,5,evt_USD_ISM_Manufacturing_Prices_Paid,0.015365036600522472,1.0,evt_USD_Construction_Spending_MoM; evt_USD_ISM_Manufacturing_PMI
+USDJPY,5,evt_USD_Labor_Market_Conditions_Index,0.017268747209509123,1.0,
+USDJPY,5,evt_JPY_Capital_Spending,0.0053724767100747865,0.9,
+USDJPY,5,evt_USD_6_Month_Bill_Auction,0.00349792300262333,0.9,evt_USD_3_Month_Bill_Auction
+USDJPY,5,evt_USD_FOMC_Press_Conference,0.007254123710692376,0.9,
+USDJPY,5,evt_USD_Feds_Bowman_speech,-0.002351699269434725,0.9,
+USDJPY,5,evt_USD_Former_Feds_Chair_Bernanke_speech,0.006818484666887932,0.9,
+USDJPY,5,evt_USD_Total_Vehicle_Sales,0.007263790628658195,0.9,
+USDJPY,5,evt_USD_Unemployment_Rate,0.0096104354485233,0.9,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
+USDJPY,5,evt_JPY_Overall_Household_Spending_YoY,-0.003960114835032349,0.8,
+USDJPY,5,evt_USD_Existing_Home_Sales_MoM,-0.0005298117044726655,0.7,evt_USD_Existing_Home_Sales_Change_MoM
+USDJPY,5,evt_USD_Feds_Lacker_speech,0.003438268710318507,0.7,
+USDJPY,5,evt_USD_Feds_Quarles_speech,-0.0009220860324313988,0.7,
+USDJPY,5,evt_JPY_BoJ_Monetary_Policy_Statement,9.15372500103665e-05,0.6,evt_JPY_BoJ_Interest_Rate_Decision
+USDJPY,5,evt_JPY_BoJ_Outlook_Report,0.0033584349875880296,0.6,
+USDJPY,5,evt_JPY_BoJs_Governor_Kuroda_speech,-0.0022221969931329947,0.6,
+USDJPY,5,evt_USD_Michigan_Consumer_Sentiment_Index,-0.0009255826288074154,0.6,
+USDJPY,5,evt_JPY_BSI_Large_Manufacturing_Conditions_Index_QoQ,0.0025029725924924215,0.5,
+USDJPY,5,evt_USD_Employment_Cost_Index,0.001967771298455075,0.5,
+USDJPY,22,evt_USD_Feds_Quarles_speech,-0.035288403466090426,1.0,
+USDJPY,22,evt_USD_Fed_Interest_Rate_Decision,0.017172154711882142,0.9,

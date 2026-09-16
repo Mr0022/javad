@@ -25,8 +25,8 @@ Models estimated (nested, in increasing order)
                 a Friday, CPI usually mid-week).
 
     HAR-X-agg   HAR+DOW + pooled release COUNTS over the forecast window
-                (impact decomposition + per-currency high-impact counts).
-                ~5 extra regressors, OLS, no regularisation needed.
+                (daily total + the non-USD side's count). 2 extra regressors
+                on this branch, OLS, no regularisation needed.
 
     N-HAR       HAR+DOW + ALL evt_* release-type dummies over the forecast
                 window, estimated by LASSO with blocked cross-validation.
@@ -95,7 +95,7 @@ from sklearn.linear_model import lasso_path
 
 # -- Local ---------------------------------------------------------------------
 from data_provider.event_preprocessing import (
-    DEFAULT_MIN_DAYS, DEFAULT_MIN_IMPACT, DEFAULT_ON_NONTRADING,
+    DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING,
     load_event_features, resolve_event_path, resolve_target_column)
 
 
@@ -240,21 +240,21 @@ def build_dow(index):
 def select_agg_columns(event_cols):
     """Pooled count regressors for HAR-X-agg, chosen to avoid exact collinearity.
 
-    The feature file carries several complete partitions of the same total:
-        n_events        = high + medium + low
-                        = sum over the pair's two currencies
-        event_score     = 1*low + 2*medium + 3*high      (exactly collinear)
-    so they cannot all enter. We keep the impact decomposition plus the
-    non-USD side's counts; the USD counts are then implied by the totals.
+    With the calendar's Impact column dropped, the impact decomposition
+    (n_events_high/medium/low) and the impact-weighted event_score no longer
+    exist. What survives is the daily total and the per-currency split, and
+    those form one partition:
+
+        n_events = sum over the pair's currencies (e.g. eur + usd)
+
+    so they cannot all enter. We keep the total plus the non-USD side; the USD
+    count is then implied. That is 2 regressors here against 5 on the
+    impact-aware branch, and the difference is most of why HAR-X-agg is weaker.
     'event_coverage' is a data-availability flag, not news, and is excluded.
     """
-    cand = ["n_events_high", "n_events_medium", "n_events_low"]
-    # the pair's non-USD currency, e.g. n_events_eur / n_events_eur_high
-    base = [c for c in event_cols
-            if c.startswith("n_events_")
-            and not c.startswith("n_events_usd")
-            and c not in ("n_events_high", "n_events_medium", "n_events_low")]
-    cand += sorted(base)
+    cand = ["n_events"]
+    cand += sorted(c for c in event_cols
+                   if c.startswith("n_events_") and not c.startswith("n_events_usd"))
     return [c for c in cand if c in event_cols]
 
 
@@ -648,8 +648,6 @@ def main():
                          "minimum, '1se' the largest lambda within one standard "
                          "error of it (more shrinkage, far steadier at h=22)")
     ap.add_argument("--event_min_days", type=int, default=DEFAULT_MIN_DAYS)
-    ap.add_argument("--event_min_impact", type=str, default=DEFAULT_MIN_IMPACT,
-                    choices=["LOW", "MEDIUM", "HIGH"])
     ap.add_argument("--event_on_nontrading", type=str,
                     default=DEFAULT_ON_NONTRADING, choices=["roll", "drop"])
     args = ap.parse_args()
@@ -660,7 +658,6 @@ def main():
                      f"known horizons are {sorted(HORIZONS)}")
 
     event_kwargs = {"min_days": args.event_min_days,
-                    "min_impact": args.event_min_impact,
                     "on_nontrading": args.event_on_nontrading}
 
     os.makedirs(args.output_dir, exist_ok=True)

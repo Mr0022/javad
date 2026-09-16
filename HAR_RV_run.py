@@ -8,12 +8,27 @@ Horizons : h = 1  (daily),  h = 5  (weekly),  h = 22  (monthly)
 
 Split logic mirrors Dataset_Custom (data_provider/data_loader.py) exactly:
     Dataset_Custom : train 2010-2021, val 2022-2023, test 2024-2025
-    HAR-RV (OLS)   : train 2010-2023, test 2024-2025
+    HAR-RV (OLS)   : train 2010-2023, test 2024-2025   [default]
 
     The validation window (2022-2023) is folded into the training sample
     because OLS has no hyperparameters to tune. The test window (2024-2025)
     is IDENTICAL to the deep learning baseline, enabling a fair
     out-of-sample comparison.
+
+Fitting sample (--refit_trainval), the same switch the deep models carry:
+    --refit_trainval true   train 2010-2023  (default; validation folded in)
+    --refit_trainval false  train 2010-2021  (validation held out)
+
+    The flag means the same thing here as in run.py -- is validation part of
+    the fitting sample? -- only the default differs, because each default is
+    that model family's established protocol. Comparing HAR-RV against the
+    deep models requires BOTH to be on the same setting: run.py with
+    --refit_trainval against the default here, or run.py without it against
+    --refit_trainval false here. Mixing the two hands one model two extra
+    years of data, and they are the two years closest to the test window.
+
+    Results are written to a different directory per setting, so neither run
+    overwrites the other.
 
 Target construction (Corsi, 2009; Bollerslev et al., 2016):
     For horizon h, the dependent variable is the h-day forward average:
@@ -36,8 +51,9 @@ HAC bandwidth (Patton & Sheppard, 2009; Bollerslev et al., 2016):
 Metrics   : MSE, MAE, QLIKE (Patton, 2011) -- computed on ln(RV) scale
 
 Usage:
-    python HAR_RV_run.py
-    python HAR_RV_run.py --data_path ./data/realized_volatility.csv
+    python HAR_RV_run.py                                    # EURUSD, train 2010-2023
+    python HAR_RV_run.py --refit_trainval false             # EURUSD, train 2010-2021
+    python HAR_RV_run.py --data_path ./data/AUDUSD_lnRV.csv
 ==============================================================================
 """
 
@@ -56,6 +72,9 @@ import matplotlib.pyplot as plt
 import matplotlib.dates  as mdates
 from   matplotlib.ticker import AutoMinorLocator
 
+from   data_provider.event_preprocessing import resolve_target_column
+from   utils.str2bool                     import str2bool
+
 import statsmodels.api as sm
 from   statsmodels.regression.linear_model import OLS
 from   statsmodels.stats.stattools         import durbin_watson
@@ -67,11 +86,20 @@ from   scipy                               import stats
 # 0.  CONFIGURATION
 # ==============================================================================
 
-DATA_FILE  = "./data/realized_volatility.csv"
+# The EUR/USD series is the one the deep-learning scripts default to
+# (data_provider.event_preprocessing.DEFAULT_DATA_PATH), so both sides of the
+# comparison read the same pair unless --data_path says otherwise. Other pairs
+# spell the column differently (AUDUSD_lnRV.csv uses 'lnRV'); load_base_features
+# resolves that the same way the deep loaders do.
+DATA_FILE  = "./data/EURUSD_lnRV.csv"
 
 # -- Output directory ----------------------------------------------------------
 # All figures and CSVs are written here. Created automatically if missing.
-OUTPUT_DIR = "HAR-RV results"
+# One directory per fitting sample, so a --refit_trainval false run never
+# overwrites the default 2010-2023 results (and vice versa). main() picks.
+OUTPUT_DIR_TRAINVAL   = "HAR-RV results"
+OUTPUT_DIR_TRAIN_ONLY = "HAR-RV results (train-only)"
+OUTPUT_DIR = OUTPUT_DIR_TRAINVAL
 
 def out_path(filename: str) -> str:
     """Return the full path inside OUTPUT_DIR for a given output filename."""
@@ -84,14 +112,23 @@ def out_path(filename: str) -> str:
 #       val_end   = (df['date'].dt.year <= 2023).sum()
 #       test      = remainder (year >= 2024)
 #
-#   HAR-RV folds val into train (OLS has no hyperparameters to tune):
+#   HAR-RV folds val into train by default (OLS has no hyperparameters to tune):
 #       TRAIN_END_YEAR  = 2023   -> train rows where year <= 2023
 #       TEST_START_YEAR = 2024   -> test  rows where year >= 2024
 #
-#   The test window 2024-2025 is identical to the DL model test set.
+#   --refit_trainval false instead cuts training at 2021, matching run.py's
+#   default train split, for the mirror-image protocol where validation is held
+#   out from every model. Either way the test window 2024-2025 is untouched and
+#   identical to the DL model test set.
 # ------------------------------------------------------------------------------
-TRAIN_END_YEAR  = 2023
-TEST_START_YEAR = 2024
+TRAIN_ONLY_END_YEAR = 2021   # Dataset_Custom train split ends here
+TRAINVAL_END_YEAR   = 2023   # ... plus the validation years 2022-2023
+TEST_START_YEAR     = 2024
+
+# Active fitting sample; main() rewrites it from --refit_trainval. Read at call
+# time by the printers and figure titles below, so they always label the run
+# that actually happened.
+TRAIN_END_YEAR = TRAINVAL_END_YEAR
 
 # Forecast horizons and their Newey-West bandwidths: L = 2*(h-1)
 HORIZONS = {
@@ -146,8 +183,12 @@ def load_base_features(filepath: str) -> pd.DataFrame:
     """
     Load ln(RV) series and build the three HAR regressors.
 
-    The CSV must have a date column (parsed as index) and a numeric column
-    named 'ln_RV' (or the first numeric column will be used).
+    The CSV must have a date column (parsed as index) and the ln(RV) column.
+    Its spelling differs per pair -- EURUSD_lnRV.csv calls it 'ln_RV' while
+    AUDUSD/USDCHF/USDJPY call it 'lnRV' -- so it is resolved with the same
+    helper the deep-learning loaders use (resolve_target_column), rather than
+    falling back to "the first numeric column", which would silently pick the
+    wrong series on a file that carries extra columns (e.g. RQ).
 
     Regressors are identical across all forecast horizons -- only the
     target variable Y^(h) changes.  All three use information available
@@ -160,7 +201,9 @@ def load_base_features(filepath: str) -> pd.DataFrame:
     """
     raw = pd.read_csv(filepath, index_col=0, parse_dates=True)
     raw.index.name = "date"
-    col = "ln_RV" if "ln_RV" in raw.columns else raw.select_dtypes("number").columns[0]
+    col = resolve_target_column(raw.columns, "ln_RV")
+    if col != "ln_RV":
+        print(f"  {os.path.basename(filepath)}: target 'ln_RV' -> column {col!r}")
     s   = raw[col].sort_index().dropna()
 
     df = pd.DataFrame({"ln_RV": s})
@@ -218,8 +261,8 @@ def build_horizon_target(df_base: pd.DataFrame, h: int) -> pd.DataFrame:
 #         border2s  = [train_end,  val_end,              len(df)]
 #
 #     For HAR-RV (no seq_len offset needed -- regressors are scalar lags,
-#     and val is folded into train):
-#         train : rows where index.year <= TRAIN_END_YEAR  (2023)
+#     and val is folded into train unless --refit_trainval false):
+#         train : rows where index.year <= TRAIN_END_YEAR  (2023, or 2021)
 #         test  : rows where index.year >= TEST_START_YEAR (2024)
 #
 #     The boundary is computed on the full date-indexed DataFrame BEFORE
@@ -227,21 +270,28 @@ def build_horizon_target(df_base: pd.DataFrame, h: int) -> pd.DataFrame:
 # ==============================================================================
 
 def split_by_year(df: pd.DataFrame,
-                  train_end_year: int  = TRAIN_END_YEAR,
-                  test_start_year: int = TEST_START_YEAR):
+                  train_end_year: int  = None,
+                  test_start_year: int = None):
     """
-    Chronological year-based split matching Dataset_Custom (val folded into train).
+    Chronological year-based split matching Dataset_Custom.
 
     Parameters
     ----------
     df               : DatetimeIndex DataFrame (post dropna)
-    train_end_year   : last year (inclusive) in training set  -> 2023
-    test_start_year  : first year (inclusive) in test set     -> 2024
+    train_end_year   : last year (inclusive) in training set. None -> the active
+                       TRAIN_END_YEAR, which --refit_trainval sets to 2023
+                       (validation folded in) or 2021 (validation held out).
+                       Resolved here rather than as a default argument, which
+                       would bind at import time and freeze the pre-flag value.
+    test_start_year  : first year (inclusive) in test set. None -> 2024
 
     Returns
     -------
     train, test : DataFrames
     """
+    train_end_year  = TRAIN_END_YEAR  if train_end_year  is None else train_end_year
+    test_start_year = TEST_START_YEAR if test_start_year is None else test_start_year
+
     train = df[df.index.year <= train_end_year].copy()
     test  = df[df.index.year >= test_start_year].copy()
 
@@ -331,7 +381,8 @@ def print_section(title: str):
 
 def print_split_info(train: pd.DataFrame, test: pd.DataFrame, h: int):
     """Print split summary matching Dataset_Custom style reporting."""
-    print(f"\n  -- Split (mirrors Dataset_Custom, val folded into train) ----")
+    folded = TRAIN_END_YEAR >= TRAINVAL_END_YEAR
+    print(f"\n  -- Split (mirrors Dataset_Custom, val {'folded into train' if folded else 'held out'}) ----")
     print(f"  {'Set':<8} {'Rows':>6}  {'Start':>12}  {'End':>12}  {'Years'}")
     print(f"  {THIN[:60]}")
     print(f"  {'Train':<8} {len(train):>6}  "
@@ -343,8 +394,14 @@ def print_split_info(train: pd.DataFrame, test: pd.DataFrame, h: int):
           f"{str(test.index[-1].date()):>12}  "
           f"{TEST_START_YEAR} - 2025")
     print(f"  {THIN[:60]}")
-    print(f"  Note: validation window (2022-2023) folded into train -- OLS")
-    print(f"        has no hyperparameters. Test window matches DL model.\n")
+    if folded:
+        print(f"  Note: validation window (2022-2023) folded into train -- OLS")
+        print(f"        has no hyperparameters. Compare against run.py")
+        print(f"        --refit_trainval. Test window matches DL model.\n")
+    else:
+        print(f"  Note: validation window (2022-2023) HELD OUT (--refit_trainval")
+        print(f"        false), matching run.py's default train split. Compare")
+        print(f"        against run.py without --refit_trainval.\n")
 
 def print_estimation_table(result, h: int):
     nw_lag   = HORIZONS[h]["nw_lag"]
@@ -654,11 +711,27 @@ def export_all(results_dict: dict, all_metrics: dict):
 # 10.  MAIN PIPELINE
 # ==============================================================================
 
-def main(data_file: str = DATA_FILE):
+def main(data_file: str = DATA_FILE, refit_trainval: bool = True):
+    """
+    Run the full HAR-RV pipeline.
+
+    refit_trainval selects the fitting sample, exactly as --refit_trainval does
+    for the deep models in run.py: True folds the validation years into the OLS
+    sample (2010-2023, the default and the protocol the committed results use),
+    False holds them out (2010-2021). The test window is the same either way.
+    Both the split boundary and the output directory are set here, so every
+    printer and figure title below labels the run that actually happened.
+    """
+    global TRAIN_END_YEAR, OUTPUT_DIR
+    TRAIN_END_YEAR = TRAINVAL_END_YEAR   if refit_trainval else TRAIN_ONLY_END_YEAR
+    OUTPUT_DIR     = OUTPUT_DIR_TRAINVAL if refit_trainval else OUTPUT_DIR_TRAIN_ONLY
+
     print(f"\n{SEP}")
     print("  HAR-RV MULTI-HORIZON MODEL  --  Corsi (2009)")
-    print("  EUR/USD Realized Volatility  |  Horizons: h = 1, 5, 22")
+    print("  Realized Volatility  |  Horizons: h = 1, 5, 22")
     print(f"  Split: Train 2010-{TRAIN_END_YEAR}  |  Test {TEST_START_YEAR}-2025")
+    print(f"  Fitting sample: validation {'FOLDED IN' if refit_trainval else 'HELD OUT'} "
+          f"(--refit_trainval {str(refit_trainval).lower()})")
     print(f"  (Split mirrors Dataset_Custom in data_loader.py for DL comparison)")
     print(SEP)
 
@@ -743,9 +816,13 @@ def main(data_file: str = DATA_FILE):
         print(f"  {HORIZONS[h]['label']:<14} {nwl:>8}  "
               f"{m['MSE']:>12.6f} {m['MAE']:>12.6f} {m['QLIKE']:>12.6f}")
     print(THIN)
+    if refit_trainval:
+        fit_note = "val folded in; compare against run.py --refit_trainval"
+    else:
+        fit_note = "val held out; compare against run.py without --refit_trainval"
     print(f"""
   Split:
-    Train  2010 - {TRAIN_END_YEAR}  (year <= {TRAIN_END_YEAR}, val folded in)
+    Train  2010 - {TRAIN_END_YEAR}  (year <= {TRAIN_END_YEAR}, {fit_note})
     Test   {TEST_START_YEAR} - 2025   (year >= {TEST_START_YEAR})
     Logic mirrors Dataset_Custom in data_loader.py -- test window is
     IDENTICAL to the deep learning baseline for a fair comparison.
@@ -767,6 +844,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="HAR-RV multi-horizon realized-volatility baseline (Corsi, 2009).")
     parser.add_argument("--data_path", type=str, default=DATA_FILE,
-                        help="Path to the ln(RV) CSV (date index + 'ln_RV' column).")
+                        help="Path to the ln(RV) CSV (date index + ln(RV) column). "
+                             f"Default: {DATA_FILE}")
+    parser.add_argument("--refit_trainval", type=str2bool, nargs="?", const=True, default=True,
+                        help="Whether the validation years (2022-2023) are part of the OLS "
+                             "fitting sample. true (default) fits 2010-2023, matching run.py "
+                             "--refit_trainval; false fits 2010-2021, matching run.py's default "
+                             "train split. Same meaning as the deep-learning flag -- only the "
+                             "default differs, since each default is that model family's "
+                             "established protocol. Compare HAR-RV against the deep models only "
+                             "on the SAME setting, otherwise one of them gets two extra years of "
+                             f"data. Output goes to '{OUTPUT_DIR_TRAINVAL}/' or "
+                             f"'{OUTPUT_DIR_TRAIN_ONLY}/' accordingly. "
+                             "The test window 2024-2025 is unchanged either way.")
     args = parser.parse_args()
-    main(args.data_path)
+    main(args.data_path, args.refit_trainval)

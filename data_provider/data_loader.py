@@ -7,10 +7,13 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from utils.timefeatures import time_features
 from data_provider.event_preprocessing import (
-    DEFAULT_DATA_PATH, load_event_features, resolve_event_path)
+    DEFAULT_DATA_PATH, load_event_features, resolve_event_path, resolve_target_column)
 import warnings
 
 warnings.filterwarnings('ignore')
+
+# (data_path, asked, resolved) triples already reported, to keep the log to one line
+_TARGET_NOTICES = set()
 
 
 
@@ -49,6 +52,16 @@ class Dataset_Custom(Dataset):
         self.scaler = StandardScaler()
         df_raw = pd.read_csv(os.path.join(self.root_path,
                                           self.data_path))
+        # series files disagree on the target column's spelling (ln_RV vs lnRV),
+        # so resolve it against this file and keep the resolved name
+        resolved = resolve_target_column(df_raw.columns, self.target)
+        if resolved != self.target:
+            note = (self.data_path, self.target, resolved)
+            if note not in _TARGET_NOTICES:            # once per run, not per split
+                _TARGET_NOTICES.add(note)
+                print(f'{self.data_path}: target {self.target!r} -> column {resolved!r}')
+            self.target = resolved
+
         # guard against blank/incomplete trailing rows (e.g. Excel exports):
         # NaN targets would silently poison windows and test metrics
         df_raw = df_raw.dropna(subset=['date', self.target]).reset_index(drop=True)

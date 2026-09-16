@@ -349,9 +349,39 @@ def load_event_features(root_path, event_path, trading_dates, **kwargs):
     return out.copy()
 
 
+def resolve_target_column(columns, target):
+    """Find ``target`` among ``columns``, tolerating naming drift between series.
+
+    The series files are exported per pair and do not agree on spelling:
+    EURUSD_lnRV.csv calls the column ``ln_RV`` while AUDUSD/USDCHF/USDJPY call it
+    ``lnRV``. Rather than force one ``--target`` per file, match exactly first,
+    then case- and separator-insensitively, then fall back to the only non-date
+    column when the file has just one. Anything more ambiguous raises.
+    """
+    cols = list(columns)
+    if target in cols:
+        return target
+
+    def norm(x):
+        return re.sub(r'[^0-9a-z]', '', str(x).lower())
+
+    hits = [c for c in cols if norm(c) == norm(target)]
+    if len(hits) == 1:
+        return hits[0]
+
+    others = [c for c in cols if c != 'date']
+    if len(others) == 1:
+        return others[0]
+
+    raise KeyError(
+        f'target column {target!r} not found; columns are {cols}. '
+        'Pass --target with one of those names.')
+
+
 def read_trading_dates(root_path, data_path, target):
     """The target series' dates, filtered exactly as ``Dataset_Custom`` filters them."""
     df = pd.read_csv(os.path.join(root_path, data_path))
+    target = resolve_target_column(df.columns, target)
     df = df.dropna(subset=['date', target]).reset_index(drop=True)
     return pd.to_datetime(df['date'])
 

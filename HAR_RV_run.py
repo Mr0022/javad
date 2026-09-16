@@ -37,7 +37,7 @@ Metrics   : MSE, MAE, QLIKE (Patton, 2011) -- computed on ln(RV) scale
 
 Usage:
     python HAR_RV_run.py
-    python HAR_RV_run.py --data_path ./data/realized_volatility.csv
+    python HAR_RV_run.py --data_path ./data/EURUSD_lnRV.csv
 ==============================================================================
 """
 
@@ -67,7 +67,7 @@ from   scipy                               import stats
 # 0.  CONFIGURATION
 # ==============================================================================
 
-DATA_FILE  = "./data/realized_volatility.csv"
+DATA_FILE  = "./data/EURUSD_lnRV.csv"
 
 # -- Output directory ----------------------------------------------------------
 # All figures and CSVs are written here. Created automatically if missing.

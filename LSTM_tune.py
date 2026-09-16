@@ -6,7 +6,7 @@ Usage:
     python LSTM_tune.py \
         --data custom \
         --root_path ./data/ \
-        --data_path forex_log_realized_volatility.csv \
+        --data_path EURUSD_lnRV.csv \
         --features S \
         --target EURUSD \
         --enc_in 1 \
@@ -314,12 +314,13 @@ def parse_tune_args():
     # Dataset
     p.add_argument('--data',      type=str, required=True, help='Dataset name, e.g. custom / ETTh1')
     p.add_argument('--root_path', type=str, required=True, help='Root path to data directory')
-    p.add_argument('--data_path', type=str, required=True, help='CSV filename')
+    p.add_argument('--data_path', type=str, default='EURUSD_lnRV.csv',
+                   help='CSV filename inside --root_path')
     p.add_argument('--enc_in',    type=int, required=True, help='Number of input variables')
 
     # Task
     p.add_argument('--features',  type=str, default='S',     help='M / S / MS')
-    p.add_argument('--target',    type=str, default='OT',    help='Target column for S/MS')
+    p.add_argument('--target',    type=str, default='ln_RV', help='Target column for S/MS')
     p.add_argument('--freq',      type=str, default='h',     help='Time feature frequency')
     p.add_argument('--embed',     type=str, default='timeF', help='Time embedding type')
     p.add_argument('--seq_len',   type=int, default=22,      help='Fallback look-back window (seq_len is searched over {22,35,70,180})')

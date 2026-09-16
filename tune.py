@@ -5,7 +5,7 @@ Usage:
     python tune.py \
         --data ETTh1 \
         --root_path ./all_six_datasets/ETT-small \
-        --data_path ETTh1.csv \
+        --data_path EURUSD_lnRV.csv \
         --enc_in 7 \
         --seq_len 336 \
         --pred_len 96 \
@@ -342,7 +342,8 @@ def parse_tune_args():
     # Dataset (required)
     p.add_argument('--data',      type=str, required=True, help='Dataset name, e.g. ETTh1')
     p.add_argument('--root_path', type=str, required=True, help='Root path to data directory')
-    p.add_argument('--data_path', type=str, required=True, help='CSV filename, e.g. ETTh1.csv')
+    p.add_argument('--data_path', type=str, default='EURUSD_lnRV.csv',
+                   help='CSV filename inside --root_path')
     p.add_argument('--enc_in',    type=int, required=True, help='Number of input variables')
 
     # Task

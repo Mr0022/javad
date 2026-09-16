@@ -115,6 +115,18 @@ parser.add_argument('--use_amp', action='store_true', help='use automatic mixed 
 parser.add_argument('--aggregate_mean', action='store_true', default=False,
                     help='when pred_len>1, predict the mean of the next pred_len steps '
                          'instead of each step individually (single-value output)')
+parser.add_argument('--refit_trainval', action='store_true', default=False,
+                    help='final refit: fit on train+validation (2010-2023) instead of train only '
+                         '(2010-2021), so the network is estimated on the same information set as '
+                         'the HAR-RV benchmark, which folds validation into its OLS sample. Use it '
+                         'only with hyper-parameters already selected on the validation years: '
+                         'nothing is held out any more, so early stopping is disabled and '
+                         '--train_epochs becomes a fixed budget -- set it to the best epoch the '
+                         'train-only run reports (also written to <checkpoints>/<setting>/'
+                         'train_meta.json). The 2024-2025 test window is unchanged, and validation '
+                         'precedes it in calendar time, so no look-ahead is introduced. Runs get a '
+                         "'_refit' suffix in the setting string and therefore their own checkpoint "
+                         'and results directories.')
 
 # news events
 parser.add_argument('--use_events', action='store_true', default=False,
@@ -184,6 +196,11 @@ if args.use_events:
         **event_kwargs_from_args(args))
     print('news events: {} feature columns from {}'.format(args.event_in, args.event_data_path))
 
+if args.refit_trainval:
+    print('refit_trainval: fitting on train+validation (2010-2023), matching the HAR-RV '
+          'estimation sample; early stopping is off and training runs for exactly '
+          '{} epochs'.format(args.train_epochs))
+
 if args.use_gpu and args.use_multi_gpu:
     args.dvices = args.devices.replace(' ', '')
     device_ids = args.devices.split(',')
@@ -229,6 +246,8 @@ if __name__ == '__main__':
                 ii)
             if args.use_events:
                 setting += '_ev{}d{}p{:d}f{:d}'.format(args.event_fusion[:3], args.event_dim, args.event_past, args.event_future)
+            if args.refit_trainval:
+                setting += '_refit'
 
             exp = Exp(args)  # set experiments
             print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
@@ -286,6 +305,8 @@ if __name__ == '__main__':
                                                                                                       args.des, ii)
         if args.use_events:
             setting += '_ev{}d{}p{:d}f{:d}'.format(args.event_fusion[:3], args.event_dim, args.event_past, args.event_future)
+        if args.refit_trainval:
+            setting += '_refit'
 
         exp = Exp(args)  # set experiments
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))

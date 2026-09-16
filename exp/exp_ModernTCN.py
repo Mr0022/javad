@@ -10,6 +10,7 @@ import torch.nn as nn
 from torch import optim
 from torch.optim import lr_scheduler
 
+import json
 import os
 import time
 
@@ -129,9 +130,30 @@ class Exp_Main(Exp_Basic):
         return total_loss
 
     def train(self, setting):
+        """
+        Fit the model.
+
+        Default protocol: fit on 2010-2021, early-stop on 2022-2023, restore the
+        best-validation checkpoint. The best epoch is reported at the end (and
+        written to <checkpoints>/<setting>/train_meta.json) because it is the
+        epoch budget the refit below needs.
+
+        --refit_trainval: the final fit, with hyper-parameters already fixed.
+        Training spans 2010-2023, so the validation years are inside the fitting
+        sample and there is nothing left to early-stop on; the run instead uses
+        --train_epochs as a fixed budget and keeps the final weights. Neither the
+        validation nor the test loader is built here: with no validation series,
+        a per-epoch test loss would be the only out-of-sample number on screen,
+        and reading it would turn the 2024-2025 test years into a selection set.
+        """
+        refit = bool(getattr(self.args, 'refit_trainval', False))
+
         train_data, train_loader = self._get_data(flag='train')
-        vali_data, vali_loader = self._get_data(flag='val')
-        test_data, test_loader = self._get_data(flag='test')
+        if refit:
+            vali_data = vali_loader = test_data = test_loader = None
+        else:
+            vali_data, vali_loader = self._get_data(flag='val')
+            test_data, test_loader = self._get_data(flag='test')
 
         path = os.path.join(self.args.checkpoints, setting)
         if not os.path.exists(path):
@@ -140,7 +162,7 @@ class Exp_Main(Exp_Basic):
         time_now = time.time()
 
         train_steps = len(train_loader)
-        early_stopping = EarlyStopping(patience=self.args.patience, verbose=True)
+        early_stopping = None if refit else EarlyStopping(patience=self.args.patience, verbose=True)
 
         model_optim = self._select_optimizer()
         criterion = self._select_criterion()
@@ -234,23 +256,49 @@ class Exp_Main(Exp_Basic):
 
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
-            vali_loss = self.vali(vali_data, vali_loader, criterion)
-            test_loss = self.vali(test_data, test_loader, criterion)
+            if refit:
+                print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} | refit on train+val, "
+                      "no held-out loss reported".format(epoch + 1, train_steps, train_loss))
+            else:
+                vali_loss = self.vali(vali_data, vali_loader, criterion)
+                test_loss = self.vali(test_data, test_loader, criterion)
 
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
-                epoch + 1, train_steps, train_loss, vali_loss, test_loss))
-            early_stopping(vali_loss, self.model, path)
-            if early_stopping.early_stop:
-                print("Early stopping")
-                break
+                print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
+                    epoch + 1, train_steps, train_loss, vali_loss, test_loss))
+                early_stopping(vali_loss, self.model, path)
+                if early_stopping.early_stop:
+                    print("Early stopping")
+                    break
 
             if self.args.lradj != 'TST':
                 adjust_learning_rate(model_optim, scheduler, epoch + 1, self.args)
             else:
                 print('Updating learning rate to {}'.format(scheduler.get_last_lr()[0]))
 
-        best_model_path = path + '/' + 'checkpoint.pth'
-        self.model.load_state_dict(torch.load(best_model_path))
+        if refit:
+            # No validation checkpoint to restore: after the fixed budget the
+            # current weights ARE the final model. Save them so that a later
+            # --is_training 0 run reloads this refit and not a stale train-only
+            # checkpoint (the setting string carries a '_refit' suffix).
+            torch.save(self.model.state_dict(), path + '/' + 'checkpoint.pth')
+            print('refit on train+val (2010-2023) finished after {} epochs (fixed budget)'.format(
+                self.args.train_epochs))
+        else:
+            best_model_path = path + '/' + 'checkpoint.pth'
+            self.model.load_state_dict(torch.load(best_model_path))
+
+            # the epoch budget for the train+val refit: there is no validation
+            # set left to early-stop on once 2022-2023 joins the training sample
+            print('best epoch on validation: {} (vali loss {:.7f}) -- rerun with '
+                  '--refit_trainval --train_epochs {} to refit on 2010-2023'.format(
+                      early_stopping.best_epoch, float(early_stopping.val_loss_min),
+                      early_stopping.best_epoch))
+            with open(os.path.join(path, 'train_meta.json'), 'w') as f:
+                json.dump({'best_epoch': int(early_stopping.best_epoch),
+                           'best_vali_loss': float(early_stopping.val_loss_min),
+                           'epochs_run': int(early_stopping.epochs_seen),
+                           'max_train_epochs': int(self.args.train_epochs),
+                           'patience': int(self.args.patience)}, f, indent=2)
 
         return self.model
 

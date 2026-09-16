@@ -69,3 +69,36 @@ python run.py --is_training 1 --model_id EventTCN_h22 --model ModernTCN \
   --learning_rate 0.0077943332090161695 --batch_size 256 \
   --train_epochs 40 --patience 8 --num_workers 2 --itr 5 \
   --use_events --event_dim 8 --event_fusion channel
+
+# =============================================================================
+# FINAL REFIT ON TRAIN + VALIDATION (--refit_trainval)
+# -----------------------------------------------------------------------------
+# Same two-step protocol as scripts/moderntcn.sh, which documents it in full.
+# In short: the runs above fit 2010-2021 and early-stop on 2022-2023, while the
+# HAR-RV benchmark is estimated on 2010-2023, so the network is short exactly the
+# two years closest to the test window. --refit_trainval refits the tuned model on
+# 2010-2023 to put both on the same information set.
+#
+# The event features follow the target series: the count columns (n_events*,
+# event_score) are standardised over the fitting years, so they too are computed
+# on 2010-2023 under --refit_trainval; the evt_* indicators stay raw 0/1.
+#
+# Step 1: run the command above, read "best_epoch": N from
+#         checkpoints/<setting>/train_meta.json (also printed at end of training).
+# Step 2: rerun the same command with --refit_trainval and --train_epochs N, e.g.
+#         for h = 1 if the train-only run reported best epoch 21:
+#
+#   python run.py --is_training 1 --model_id EventTCN_h1 --model ModernTCN \
+#     --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
+#     --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
+#     --aggregate_mean --seq_len 70 --pred_len 1 \
+#     ... (every other flag byte-identical to the tuned command above) ... \
+#     --num_workers 2 --itr 5 \
+#     --use_events --event_dim 4 --event_fusion channel \
+#     --refit_trainval --train_epochs 21
+#
+# Refit runs get a '_refit' suffix in the setting string, so they land in their own
+# checkpoints/, results/ and test_results/ directories. Fix the protocol before
+# reading the test metrics -- choosing the better of the two afterwards would make
+# 2024-2025 a selection set.
+# =============================================================================

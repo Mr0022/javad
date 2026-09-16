@@ -53,3 +53,46 @@ python run.py --is_training 1 --model_id ModernTCN_h22 --model ModernTCN \
   --use_multi_scale False --lradj TST --pct_start 0.3 \
   --learning_rate 0.0001385051157761346 --batch_size 256 \
   --train_epochs 40 --patience 8 --num_workers 2 --itr 5
+
+# =============================================================================
+# FINAL REFIT ON TRAIN + VALIDATION (--refit_trainval)
+# -----------------------------------------------------------------------------
+# The runs above fit 2010-2021 and early-stop on 2022-2023. HAR-RV (HAR_RV_run.py)
+# folds the validation years into its OLS sample and is estimated on 2010-2023,
+# so as they stand the two models are not fit to the same information set -- and
+# the two years the network is missing are the ones closest to the 2024-2025 test
+# window. --refit_trainval closes that gap: the final model is refit on 2010-2023
+# with the hyper-parameters already fixed above. Validation precedes test in
+# calendar time, so nothing leaks; the test window is untouched.
+#
+# Because 2022-2023 is now inside the training sample there is no series left to
+# early-stop on, so the epoch budget has to be fixed in advance. Each run above
+# prints its best validation epoch at the end of training and writes it to
+#     checkpoints/<setting>/train_meta.json   ->  {"best_epoch": N, ...}
+# Take that N (per horizon, and per seed -- use the modal or rounded-mean N across
+# the --itr runs) and pass it as --train_epochs to the refit. Everything else must
+# stay byte-identical to the tuned command, otherwise the refit is a different model.
+#
+# Step 1: run the command above, read N from train_meta.json.
+# Step 2: rerun it with --train_epochs N added and --refit_trainval, e.g. for h = 1
+#         if the train-only run reported best epoch 17:
+#
+#   python run.py --is_training 1 --model_id ModernTCN_h1 --model ModernTCN \
+#     --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
+#     --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
+#     --aggregate_mean --seq_len 70 --pred_len 1 \
+#     --patch_size 16 --patch_stride 8 --ffn_ratio 2 \
+#     --num_blocks 2 2 2 2 --large_size 27 27 27 27 --small_size 5 5 5 5 \
+#     --dims 32 32 32 32 --dw_dims 32 32 32 32 \
+#     --dropout 0.33157505058759384 --head_dropout 0.13413677333143775 --revin 1 \
+#     --use_multi_scale False --lradj TST --pct_start 0.3 \
+#     --learning_rate 0.0063484758647924695 --batch_size 256 \
+#     --num_workers 2 --itr 5 \
+#     --refit_trainval --train_epochs 17
+#
+# Refit runs carry a '_refit' suffix in the setting string, so their checkpoints,
+# results/ and test_results/ directories never overwrite the train-only ones and
+# both protocols can be reported side by side. Decide which protocol the paper
+# reports BEFORE looking at the test metrics: picking the better of the two after
+# the fact turns 2024-2025 into a model-selection set.
+# =============================================================================

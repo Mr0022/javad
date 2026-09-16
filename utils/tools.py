@@ -46,8 +46,16 @@ class EarlyStopping:
         self.early_stop = False
         self.val_loss_min = np.inf
         self.delta = delta
+        # 1-based index of the epoch whose checkpoint is currently on disk.
+        # Every caller invokes __call__ exactly once per epoch, so counting the
+        # calls recovers it without changing the signature. A train+val refit
+        # (--refit_trainval) has no validation series left to stop on and needs
+        # this number as its fixed epoch budget.
+        self.epochs_seen = 0
+        self.best_epoch = 0
 
     def __call__(self, val_loss, model, path):
+        self.epochs_seen += 1
         score = -val_loss
         if self.best_score is None:
             self.best_score = score
@@ -67,6 +75,7 @@ class EarlyStopping:
             print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')
         torch.save(model.state_dict(), path + '/' + 'checkpoint.pth')
         self.val_loss_min = val_loss
+        self.best_epoch = self.epochs_seen
 
 
 class dotdict(dict):

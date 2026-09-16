@@ -33,6 +33,10 @@ def data_provider(args, flag):
         freq = args.freq
 
     extra_kwargs = {}
+    # final refit on train+validation (2010-2023); Dataset_Pred and
+    # Dataset_HAR_Residual do not take the flag, hence the class check
+    if Data in (Dataset_Custom, Dataset_Custom_Events):
+        extra_kwargs['refit_trainval'] = bool(getattr(args, 'refit_trainval', False))
     if Data is Dataset_Custom_Events:
         extra_kwargs['event_path'] = resolve_event_path(
             args.root_path, args.data_path, getattr(args, 'event_data_path', None))

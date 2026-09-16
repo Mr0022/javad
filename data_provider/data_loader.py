@@ -20,9 +20,29 @@ _TARGET_NOTICES = set()
 
 
 class Dataset_Custom(Dataset):
+    """
+    Target series split chronologically: train 2010-2021, val 2022-2023,
+    test 2024-2025.
+
+    refit_trainval
+    --------------
+    Once hyper-parameters have been selected on the validation years, the final
+    model is refit on train+validation (2010-2023) so that it is estimated on
+    the same information set as the HAR-RV benchmark, which folds validation
+    into its OLS sample (see HAR_RV_run.py). Setting refit_trainval=True moves
+    only the TRAIN border to the end of 2023; the val and test rows keep their
+    original boundaries, so the 2024-2025 out-of-sample window is untouched and
+    no look-ahead is introduced (validation precedes test in calendar time).
+
+    Note that with refit_trainval=True the 'val' split is a subset of the
+    training sample and is therefore in-sample: it must not be used for early
+    stopping or any other model selection.
+    """
+
     def __init__(self, root_path, flag='train', size=None,
                  features='S', data_path=DEFAULT_DATA_PATH,
-                 target='ln_RV', scale=False, timeenc=0, freq='h'):
+                 target='ln_RV', scale=False, timeenc=0, freq='h',
+                 refit_trainval=False):
         # size [seq_len, label_len, pred_len]
         # info
         if size == None:
@@ -43,6 +63,7 @@ class Dataset_Custom(Dataset):
         self.scale = scale
         self.timeenc = timeenc
         self.freq = freq
+        self.refit_trainval = refit_trainval
 
         self.root_path = root_path
         self.data_path = data_path
@@ -78,8 +99,12 @@ class Dataset_Custom(Dataset):
         # train: 2010-2021, val: 2022-2023, test: 2024-2025
         train_end = int((df_raw['date'].dt.year <= 2021).sum())
         val_end = int((df_raw['date'].dt.year <= 2023).sum())
+        # refit_trainval folds the validation years into the fitting sample, so
+        # only border2s[0] moves. Every train-only statistic below is taken over
+        # border1s[0]:border2s[0] and therefore follows automatically.
+        fit_end = val_end if self.refit_trainval else train_end
         border1s = [0, train_end - self.seq_len, val_end - self.seq_len]
-        border2s = [train_end, val_end, len(df_raw)]
+        border2s = [fit_end, val_end, len(df_raw)]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 
@@ -144,8 +169,9 @@ class Dataset_Custom_Events(Dataset_Custom):
     treated as no-event days (all zeros).
 
     'evt_*' indicator columns are kept raw (0/1). All other event columns
-    (counts) are standardised with statistics from the TRAIN years only,
-    mirroring how the target series is scaled.
+    (counts) are standardised with statistics from the fitting years only
+    (2010-2021, or 2010-2023 under refit_trainval), mirroring how the target
+    series is scaled.
 
     __getitem__ additionally returns:
         seq_x_events : (seq_len,  n_event_features)  events on the look-back days
@@ -158,13 +184,14 @@ class Dataset_Custom_Events(Dataset_Custom):
     def __init__(self, root_path, flag='train', size=None,
                  features='S', data_path=DEFAULT_DATA_PATH,
                  target='ln_RV', scale=False, timeenc=0, freq='h',
-                 event_path=None, event_kwargs=None):
+                 event_path=None, event_kwargs=None, refit_trainval=False):
         # None -> the calendar paired with data_path by name
         self.event_path = resolve_event_path(root_path, data_path, event_path)
         self.event_kwargs = dict(event_kwargs or {})
         super().__init__(root_path=root_path, flag=flag, size=size,
                          features=features, data_path=data_path,
-                         target=target, scale=scale, timeenc=timeenc, freq=freq)
+                         target=target, scale=scale, timeenc=timeenc, freq=freq,
+                         refit_trainval=refit_trainval)
 
     def __read_data__(self):
         super().__read_data__()
@@ -181,20 +208,23 @@ class Dataset_Custom_Events(Dataset_Custom):
         ev_cols = [c for c in df_ev.columns if c != 'date']
         events = df_ev[ev_cols].to_numpy(dtype=np.float32, copy=True)
 
-        # standardise count columns on the TRAIN years only; keep evt_* binary
+        # standardise count columns on the fitting years only; keep evt_* binary
         train_end = int((df_raw['date'].dt.year <= 2021).sum())
+        val_end = int((df_raw['date'].dt.year <= 2023).sum())
+        # same rule as the target series: refit_trainval extends the fitting
+        # sample (and hence these statistics) through the validation years
+        fit_end = val_end if self.refit_trainval else train_end
         count_idx = [i for i, c in enumerate(ev_cols) if not c.startswith('evt_')]
         if count_idx:
-            tr = events[:train_end, count_idx]
+            tr = events[:fit_end, count_idx]
             mean, std = tr.mean(axis=0), tr.std(axis=0) + 1e-8
             events[:, count_idx] = (events[:, count_idx] - mean) / std
 
         self.event_cols = ev_cols
         self.n_event_features = events.shape[1]
         # slice with the same borders as data_x/data_y so indices line up
-        val_end = int((df_raw['date'].dt.year <= 2023).sum())
         border1s = [0, train_end - self.seq_len, val_end - self.seq_len]
-        border2s = [train_end, val_end, len(df_raw)]
+        border2s = [fit_end, val_end, len(df_raw)]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
         self.data_events = events[border1:border2]

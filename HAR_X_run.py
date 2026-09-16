@@ -12,6 +12,10 @@ adapted to this repository's split, horizons and per-pair event calendars.
 
 Models estimated (nested, in increasing order)
 ----------------------------------------------
+HAR and HAR+DOW are BASELINES, not contenders: N-HAR's whole reported number is
+its improvement over HAR+DOW, and HAR+DOW is also N-HAR's own unpenalised core,
+so neither can be removed without making the N-HAR row uninterpretable.
+
     HAR         Y = b0 + b_d*RV_d + b_w*RV_w + b_m*RV_m
                 Corsi (2009). Reference row; identical to HAR_RV_run.py.
 
@@ -23,10 +27,6 @@ Models estimated (nested, in increasing order)
                 This is the CONTROL: it is what stops "macro news helps"
                 from being a restatement of "Friday is busy" (NFP is always
                 a Friday, CPI usually mid-week).
-
-    HAR-X-agg   HAR+DOW + pooled release COUNTS over the forecast window
-                (daily total + the non-USD side's count). 2 extra regressors
-                on this branch, OLS, no regularisation needed.
 
     N-HAR       HAR+DOW + ALL evt_* release-type dummies over the forecast
                 window, estimated by LASSO with blocked cross-validation.
@@ -50,7 +50,7 @@ Target and split (mirrors HAR_RV_run.py exactly, so rows are comparable)
     Y_t^(h) = (1/h) * Sum_{k=1..h} ln(RV_{t+k})
     train: year <= 2023   (val folded in)      test: year >= 2024
 
-All four models at a given (pair, horizon) are estimated and scored on an
+All three models at a given (pair, horizon) are estimated and scored on an
 IDENTICAL row sample, so the loss differences are attributable to the
 specification and the per-observation losses can be fed to an MCS / DM test.
 
@@ -237,46 +237,6 @@ def build_dow(index):
 # 3.  EVENT REGRESSOR CONSTRUCTION
 # ==============================================================================
 
-def select_agg_columns(event_cols):
-    """Pooled count regressors for HAR-X-agg, chosen to avoid exact collinearity.
-
-    With the calendar's Impact column dropped, the impact decomposition
-    (n_events_high/medium/low) and the impact-weighted event_score no longer
-    exist. What survives is the daily total and the per-currency split, and
-    those form one partition:
-
-        n_events = sum over the pair's currencies (e.g. eur + usd)
-
-    so they cannot all enter. We keep the total plus the non-USD side; the USD
-    count is then implied. That is 2 regressors here against 5 on the
-    impact-aware branch, and the difference is most of why HAR-X-agg is weaker.
-    'event_coverage' is a data-availability flag, not news, and is excluded.
-    """
-    cand = ["n_events"]
-    cand += sorted(c for c in event_cols
-                   if c.startswith("n_events_") and not c.startswith("n_events_usd"))
-    return [c for c in cand if c in event_cols]
-
-
-def drop_rank_deficient(X, cols, tol=1e-8):
-    """Greedily keep the largest linearly independent subset of columns.
-
-    A defensive pass: the partitions above are checked analytically, but the
-    per-currency column set is generated from whatever currencies appear in
-    each pair's calendar, so the exact redundancies differ by pair.
-    """
-    keep, kept_idx = [], []
-    for j, c in enumerate(cols):
-        trial = kept_idx + [j]
-        M = X[:, trial]
-        M = M - M.mean(axis=0, keepdims=True)
-        s = np.linalg.svd(M, compute_uv=False)
-        if s[-1] > tol * max(s[0], 1.0):
-            keep.append(c)
-            kept_idx.append(j)
-    return keep, kept_idx
-
-
 def dedup_dummies(daily, cols, thresh=DEDUP_CORR):
     """Merge release types whose DAILY dummies correlate above `thresh`.
 
@@ -331,11 +291,11 @@ def dedup_dummies(daily, cols, thresh=DEDUP_CORR):
 # 4.  DESIGN MATRIX ASSEMBLY
 # ==============================================================================
 
-def assemble(series, events, h, agg_cols, evt_cols):
+def assemble(series, events, h, evt_cols):
     """One frame per horizon holding the target and every candidate regressor.
 
     Every model at this horizon is fitted on the rows that survive here, so
-    all four share an identical sample and their per-observation losses line
+    all three share an identical sample and their per-observation losses line
     up for the MCS / DM tests.
     """
     base = build_har_core(series)
@@ -346,7 +306,7 @@ def assemble(series, events, h, agg_cols, evt_cols):
         # interacted with lagged daily RV, not additive (Plihal Eq. 2)
         base[f"DOW_{c}"] = dow[c] * base["RV_d"]
 
-    fwd = forward_mean(events[agg_cols + evt_cols], h)
+    fwd = forward_mean(events[evt_cols], h)
     fwd.columns = [f"EV_{c}" for c in fwd.columns]
     out = pd.concat([base, fwd], axis=1)
 
@@ -542,9 +502,7 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
     events = events.set_index(pd.DatetimeIndex(events["date"])).drop(columns="date")
     events.index.name = "date"
 
-    all_cols = list(events.columns)
-    evt_all  = [c for c in all_cols if c.startswith("evt_")]
-    agg_cols = select_agg_columns(all_cols)
+    evt_all = [c for c in events.columns if c.startswith("evt_")]
 
     # dedup on TRAIN rows only -- the merge map must not see the test window
     train_mask = events.index.year <= TRAIN_END_YEAR
@@ -557,32 +515,22 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
         print(f"  calendar    : {event_path}")
         print(f"  evt_ dummies: {len(evt_all)} raw -> {len(evt_reps)} after "
               f"merging at |corr| >= {DEDUP_CORR}")
-        print(f"  agg counts  : {agg_cols}")
 
     rows, sel_rows, loss_rows = [], [], []
 
     for h in horizons:
-        df = assemble(series, events, h, agg_cols, evt_reps)
+        df = assemble(series, events, h, evt_reps)
         train, test = split_by_year(df)
 
         har_cols = ["RV_d", "RV_w", "RV_m"]
         dow_cols = ["DOW_MON", "DOW_TUE", "DOW_THU", "DOW_FRI"]
-        agg_ev   = [f"EV_{c}" for c in agg_cols]
         evt_ev   = [f"EV_{c}" for c in evt_reps]
-
-        # defensive rank check on the pooled-count block
-        agg_keep, _ = drop_rank_deficient(
-            train[har_cols + dow_cols + agg_ev].to_numpy(dtype=float),
-            har_cols + dow_cols + agg_ev)
-        agg_keep = [c for c in agg_keep if c in agg_ev]
 
         y_te = test["Y_h"].to_numpy(dtype=float)
         preds, extra = {}, {}
 
         _, preds["HAR"]     = fit_ols(train, test, har_cols, h)
         _, preds["HAR+DOW"] = fit_ols(train, test, har_cols + dow_cols, h)
-        _, preds["HAR-X-agg"] = fit_ols(
-            train, test, har_cols + dow_cols + agg_keep, h)
 
         info, preds["N-HAR"] = fit_nhar(
             train, test, har_cols + dow_cols, evt_ev, h, rule=rule)
@@ -597,7 +545,7 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
                   f"{'dMSE% vs HAR+DOW':>20}")
 
         base_mse = mse(y_te, preds["HAR+DOW"])
-        for name in ["HAR", "HAR+DOW", "HAR-X-agg", "N-HAR"]:
+        for name in ["HAR", "HAR+DOW", "N-HAR"]:
             m = compute_metrics(y_te, preds[name])
             imp = 100.0 * (m["MSE"] - base_mse) / base_mse
             rows.append({"pair": pair, "horizon": h, "model": name,
@@ -636,7 +584,7 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
 
 def main():
     ap = argparse.ArgumentParser(
-        description="HAR+DOW / HAR-X-agg / N-HAR event-aware linear baselines")
+        description="N-HAR event-aware linear baseline, with HAR / HAR+DOW references")
     ap.add_argument("--root_path", type=str, default="./data")
     ap.add_argument("--pairs", type=str, nargs="+", default=DEFAULT_PAIRS)
     ap.add_argument("--horizons", type=int, nargs="+", default=[1, 5, 22])
@@ -697,7 +645,7 @@ def main():
            .mean().round(4))
     print(piv.to_string())
 
-    order = ["HAR", "HAR+DOW", "HAR-X-agg", "N-HAR"]
+    order = ["HAR", "HAR+DOW", "N-HAR"]
     lines = ["| Pair | h | " + " | ".join(f"{m} MSE" for m in order) + " |",
              "|---|---|" + "---|" * len(order)]
     for (pair, h), g in metrics.groupby(["pair", "horizon"], sort=False):

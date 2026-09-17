@@ -78,7 +78,7 @@ HAR_RV_run.py:292, so rows are comparable across the whole model table.
 
 Usage
 -----
-    python HAR_X_run.py                       # EUR/USD, h = 1, 5, 22
+    python HAR_X_run.py                       # EUR/USD, h = 1, 5, 10
     python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD USDCHF USDJPY
     python HAR_X_run.py --horizons 1
 ==============================================================================
@@ -114,7 +114,9 @@ TRAIN_END_YEAR  = 2023
 TEST_START_YEAR = 2024
 
 # Forecast horizons and their Newey-West bandwidths: L = 2*(h-1)
-HORIZONS = {1: 0, 5: 8, 22: 42}
+# Newey-West bandwidth per horizon: L = 2*(h-1). Keep in step with
+# HAR_RV_run.py's HORIZONS table so the two scripts agree.
+HORIZONS = {1: 0, 5: 8, 10: 18}
 
 LAG_W = 5     # weekly HAR component window
 LAG_M = 22    # monthly HAR component window
@@ -368,7 +370,7 @@ def fit_ols(train, test, cols, h):
 #
 #   3. CV folds are contiguous BLOCKS, and observations within h rows of a
 #      held-out block are PURGED from that fold's training part. At h=5 and
-#      h=22 the targets overlap, so an unpurged split leaks the validation
+#      h>1 the targets overlap, so an unpurged split leaks the validation
 #      window into training through the overlap and picks too small a lambda.
 # ==============================================================================
 
@@ -600,14 +602,14 @@ def main():
         description="N-HAR event-aware linear baseline, with HAR / HAR+DOW references")
     ap.add_argument("--root_path", type=str, default="./data")
     ap.add_argument("--pairs", type=str, nargs="+", default=DEFAULT_PAIRS)
-    ap.add_argument("--horizons", type=int, nargs="+", default=[1, 5, 22])
+    ap.add_argument("--horizons", type=int, nargs="+", default=[1, 5, 10])
     ap.add_argument("--target", type=str, default="ln_RV")
     ap.add_argument("--output_dir", type=str, default="HAR-X results")
     ap.add_argument("--lambda_rule", type=str, default=LAMBDA_RULE,
                     choices=["1se", "min"],
                     help="LASSO lambda from blocked CV: 'min' takes the CV "
                          "minimum, '1se' the largest lambda within one standard "
-                         "error of it (more shrinkage, far steadier at h=22)")
+                         "error of it (more shrinkage, steadier at the longer horizons)")
     ap.add_argument("--event_min_days", type=int, default=DEFAULT_MIN_DAYS)
     ap.add_argument("--event_on_nontrading", type=str,
                     default=DEFAULT_ON_NONTRADING, choices=["roll", "drop"])

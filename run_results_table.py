@@ -1,5 +1,5 @@
 """
-Train+test every model at its Optuna-best hyperparameters (h = 1, 5, 22),
+Train+test every model at its Optuna-best hyperparameters (h = 1, 5),
 parse the test-set MSE / MAE / QLIKE, add the HAR-RV baseline, and emit a
 comparison table (CSV + Markdown).
 """
@@ -27,11 +27,6 @@ CONFIGS = {
    '--hidden_size','128','--num_layers','3','--dropout','0.06286059033500357',
    '--head_dropout','0.46748063314790966','--revin','1',
    '--learning_rate','0.00665668210175974','--batch_size','256','--pct_start','0.26239813663907'],
- ('LSTM', 22): ['python','LSTM_run.py','--is_training','1','--model_id','LSTM_best_h22',
-   '--data','custom','--enc_in','1','--aggregate_mean','--seq_len','22','--pred_len','22',
-   '--hidden_size','256','--num_layers','3','--dropout','0.1384357769833385',
-   '--head_dropout','0.32313582077506997','--bidirectional','--revin','0',
-   '--learning_rate','0.0033776477597474404','--batch_size','256','--pct_start','0.19707901510276543'],
  # ----- ModernTCN (custom, horizon-aggregated) -----
  ('ModernTCN', 1): ['python','run.py','--is_training','1','--model_id','ModernTCN_best_h1','--model','ModernTCN',
    '--data','custom','--enc_in','1','--dec_in','1','--c_out','1','--aggregate_horizon','--seq_len','22','--pred_len','1',
@@ -47,13 +42,6 @@ CONFIGS = {
    '--dims','256','256','256','256','--dw_dims','256','256','256','256',
    '--dropout','0.4085579485889118','--head_dropout','0.3912055316326212','--revin','1',
    '--use_multi_scale','False','--pct_start','0.3','--learning_rate','4.208053742775343e-05','--batch_size','256'],
- ('ModernTCN', 22): ['python','run.py','--is_training','1','--model_id','ModernTCN_best_h22','--model','ModernTCN',
-   '--data','custom','--enc_in','1','--dec_in','1','--c_out','1','--aggregate_horizon','--seq_len','22','--pred_len','22',
-   '--patch_size','16','--patch_stride','4','--ffn_ratio','4',
-   '--num_blocks','2','2','2','2','--large_size','51','51','51','51','--small_size','5','5','5','5',
-   '--dims','32','32','32','32','--dw_dims','32','32','32','32',
-   '--dropout','0.12202910269242769','--head_dropout','0.025825336475530227','--revin','1',
-   '--use_multi_scale','False','--pct_start','0.3','--learning_rate','0.00017992298020199686','--batch_size','256'],
 }
 
 METRIC_RE = re.compile(r'mse:\s*([\d.eE+-]+),\s*mae:\s*([\d.eE+-]+),\s*rse:\s*[\d.eE+-]+,\s*qlike:\s*([\d.eE+-]+)')
@@ -99,11 +87,11 @@ def main():
     df.to_csv(os.path.join(HERE, 'model_comparison_metrics.csv'), index=False)
 
     # ---- Markdown table (models as rows, metric×horizon as columns) ----
-    md = ['| Model | ' + ' | '.join(f'h={h} {m}' for h in (1,5,22) for m in ('MSE','MAE','QLIKE')) + ' |',
+    md = ['| Model | ' + ' | '.join(f'h={h} {m}' for h in (1,5) for m in ('MSE','MAE','QLIKE')) + ' |',
           '|' + '---|'*(1+9)]
     for model in order:
         cells = [model]
-        for h in (1,5,22):
+        for h in (1,5):
             r = df[(df.model==model) & (df.horizon==h)]
             if len(r):
                 cells += [f'{r.MSE.iloc[0]:.4f}', f'{r.MAE.iloc[0]:.4f}', f'{r.QLIKE.iloc[0]:.4f}']

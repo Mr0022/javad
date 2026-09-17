@@ -4,7 +4,6 @@
 # Hyper-parameters are the best Optuna trials from:
 #   tuningresults/ModernTCN1/best_params.json   (h = 1  day)
 #   tuningresults/ModernTCN5/best_params.json   (h = 5  days)
-#   tuningresults/ModernTCN22/best_params.json  (h = 22 days)
 #
 # tune.py expands single tuned values into 4-stage lists (dims == dw_dims ==
 # [dim]*4, etc.), so that is reproduced below. --itr 5 sweeps seeds 2021..2025.
@@ -39,17 +38,4 @@ python run.py --is_training 1 --model_id ModernTCN_h5 --model ModernTCN \
   --dropout 0.4744918542935045 --head_dropout 0.16435589854180058 --revin 1 \
   --use_multi_scale False --lradj TST --pct_start 0.3 \
   --learning_rate 9.048320833685613e-05 --batch_size 256 \
-  --train_epochs 40 --patience 8 --num_workers 2 --itr 5
-
-# ---- h = 22 (ModernTCN22) ---------------------------------------------------
-python run.py --is_training 1 --model_id ModernTCN_h22 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
-  --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
-  --aggregate_horizon --seq_len 22 --pred_len 22 \
-  --patch_size 16 --patch_stride 2 --ffn_ratio 3 \
-  --num_blocks 1 1 1 1 --large_size 51 51 51 51 --small_size 7 7 7 7 \
-  --dims 256 256 256 256 --dw_dims 256 256 256 256 \
-  --dropout 0.3222005482423507 --head_dropout 0.18550313066719137 --revin 1 \
-  --use_multi_scale False --lradj TST --pct_start 0.3 \
-  --learning_rate 0.0001385051157761346 --batch_size 256 \
   --train_epochs 40 --patience 8 --num_workers 2 --itr 5

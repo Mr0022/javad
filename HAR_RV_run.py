@@ -4,7 +4,7 @@ HAR-RV Model: Multi-Horizon Realized Volatility Forecasting
 Based on: Corsi, F. (2009). A simple approximate long-memory model of
           realized volatility. Journal of Financial Econometrics, 7(2), 174-196.
 
-Horizons : h = 1  (daily),  h = 5  (weekly),  h = 22  (monthly)
+Horizons : h = 1  (daily),  h = 5  (weekly),  h = 10  (biweekly)
 
 Split logic mirrors Dataset_Custom (data_provider/data_loader.py) exactly:
     Dataset_Custom : train 2010-2021, val 2022-2023, test 2024-2025
@@ -39,7 +39,7 @@ HAC bandwidth (Patton & Sheppard, 2009; Bollerslev et al., 2016):
     L = 2*(h-1), applied via Newey-West (1987) Bartlett kernel.
     h=1  -> L=0  (standard OLS SEs; no overlap)
     h=5  -> L=8
-    h=22 -> L=42
+    h=10 -> L=18
 
 Metrics   : MSE, MAE, QLIKE (Patton, 2011) -- computed on ln(RV) scale
 
@@ -119,11 +119,22 @@ TRAIN_END_YEAR  = 2023
 TEST_START_YEAR = 2024
 
 # Forecast horizons and their Newey-West bandwidths: L = 2*(h-1)
+# NOTE: LAG_W / LAG_M below are the HAR *regressor* windows (Corsi's weekly and
+# monthly components) and are independent of this table -- RV_m stays a 22-day
+# average whatever horizons are forecast.
 HORIZONS = {
-    1  : {"label": "Daily   (h=1)",  "nw_lag":  0},
-    5  : {"label": "Weekly  (h=5)",  "nw_lag":  8},
-    22 : {"label": "Monthly (h=22)", "nw_lag": 42},
+    1  : {"label": "Daily    (h=1)",  "nw_lag":  0},
+    5  : {"label": "Weekly   (h=5)",  "nw_lag":  8},
+    10 : {"label": "Biweekly (h=10)", "nw_lag": 18},
 }
+
+HORIZON_LIST = ", ".join(str(h) for h in HORIZONS)
+
+
+def panel_tag(i: int) -> str:
+    """'(A)', '(B)', ... so figures follow len(HORIZONS) instead of a fixed 3."""
+    return f"({chr(ord('A') + i)})"
+
 
 LAG_W    = 5    # weekly component window
 LAG_M    = 22   # monthly component window
@@ -131,7 +142,7 @@ DPI_SAVE = 300
 
 # -- Publication palette -------------------------------------------------------
 C_ACTUAL = "#1a1a2e"
-C_H      = {1: "#2166ac", 5: "#fc8d59", 22: "#d73027"}
+C_H      = {1: "#2166ac", 5: "#fc8d59", 10: "#d73027"}
 C_TRAIN  = "#2166ac"
 C_TEST   = "#d73027"
 
@@ -212,7 +223,7 @@ def build_horizon_target(df_base: pd.DataFrame, h: int) -> pd.DataFrame:
 
         h=1  -> Y_t = ln(      RV_{t+1} )
         h=5  -> Y_t = ln( (1/5) *(RV_{t+1} + ... + RV_{t+5})  )
-        h=22 -> Y_t = ln( (1/22)*(RV_{t+1} + ... + RV_{t+22}) )
+        h=10 -> Y_t = ln( (1/10)*(RV_{t+1} + ... + RV_{t+10}) )
 
     The series is stored as ln(RV), so this is a log-sum-exp over the window
     less ln(h); forward_log_mean_rv (utils/target_agg.py) holds the one
@@ -449,7 +460,6 @@ def figure_multi_horizon_forecast(results_dict):
                              figsize=(11, 3.8 * len(horizons)),
                              sharex=False)
     fig.subplots_adjust(hspace=0.52)
-    panel_letters = ["(A)", "(B)", "(C)"]
 
     for idx, h in enumerate(horizons):
         ax     = axes[idx]
@@ -465,7 +475,7 @@ def figure_multi_horizon_forecast(results_dict):
                         color="#aaaaaa", alpha=0.18, label="Error")
         ax.set_ylabel(f"$\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=10)
         ax.set_title(
-            f"{panel_letters[idx]}  {HORIZONS[h]['label']} -- Out-of-Sample Forecast  "
+            f"{panel_tag(idx)}  {HORIZONS[h]['label']} -- Out-of-Sample Forecast  "
             f"({TEST_START_YEAR}-2025)",
             loc="left", pad=4)
         ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
@@ -476,7 +486,7 @@ def figure_multi_horizon_forecast(results_dict):
         plt.setp(ax.xaxis.get_majorticklabels(), rotation=30, ha="right")
 
     fig.suptitle(
-        f"HAR-RV Multi-Horizon Forecasts: h = 1, 5, 22  (Corsi, 2009)\n"
+        f"HAR-RV Multi-Horizon Forecasts: h = {HORIZON_LIST}  (Corsi, 2009)\n"
         f"Train: 2010-{TRAIN_END_YEAR}  |  Test: {TEST_START_YEAR}-2025",
         fontsize=12, fontweight="bold", y=1.01)
     fig.savefig(out_path("har_rv_fig1_multihoriz_forecast.pdf"), bbox_inches="tight")
@@ -490,7 +500,6 @@ def figure_loss_comparison(all_metrics: dict):
     horizons      = list(HORIZONS.keys())
     labels        = [f"h={h}" for h in horizons]
     colors        = [C_H[h] for h in horizons]
-    panel_letters = ["(A)", "(B)", "(C)"]
 
     fig, axes = plt.subplots(1, 3, figsize=(12, 4))
     fig.subplots_adjust(wspace=0.4)
@@ -503,7 +512,7 @@ def figure_loss_comparison(all_metrics: dict):
             ax.text(bar.get_x() + bar.get_width() / 2,
                     bar.get_height() * 1.015,
                     f"{v:.4f}", ha="center", va="bottom", fontsize=8)
-        ax.set_title(f"{panel_letters[idx]}  {metric}", loc="left", pad=3)
+        ax.set_title(f"{panel_tag(idx)}  {metric}", loc="left", pad=3)
         ax.set_ylabel(metric)
         ax.set_xlabel("Forecast Horizon")
         ax.yaxis.set_minor_locator(AutoMinorLocator())
@@ -547,7 +556,7 @@ def figure_coefficients_across_horizons(results_dict: dict):
         ax.yaxis.set_minor_locator(AutoMinorLocator())
         ax.legend(fontsize=8)
 
-    fig.suptitle("HAR-RV: Coefficient Paths Across Forecast Horizons  (h = 1, 5, 22)",
+    fig.suptitle(f"HAR-RV: Coefficient Paths Across Forecast Horizons  (h = {HORIZON_LIST})",
                  fontsize=12, fontweight="bold", y=1.01)
     fig.savefig(out_path("har_rv_fig3_coeff_paths.pdf"), bbox_inches="tight")
     fig.savefig(out_path("har_rv_fig3_coeff_paths.png"), dpi=DPI_SAVE, bbox_inches="tight")
@@ -559,9 +568,7 @@ def figure_residual_diagnostics_multihoriz(results_dict: dict):
     horizons      = list(HORIZONS.keys())
     max_lag       = 44
     ci_mult       = 1.96
-    panel_letters = ["(A)", "(B)", "(C)"]
-
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4))
+    fig, axes = plt.subplots(1, len(horizons), figsize=(13, 4))
     fig.subplots_adjust(wspace=0.38)
     for idx, h in enumerate(horizons):
         ax    = axes[idx]
@@ -580,7 +587,7 @@ def figure_residual_diagnostics_multihoriz(results_dict: dict):
         if nw_l > 0:
             ax.axvline(nw_l, color=C_TEST, lw=1.0, ls=":",
                        label=f"NW lag L={nw_l}")
-        ax.set_title(f"{panel_letters[idx]}  h={h}  [{HORIZONS[h]['label']}]",
+        ax.set_title(f"{panel_tag(idx)}  h={h}  [{HORIZONS[h]['label']}]",
                      loc="left", pad=3)
         ax.set_xlabel("Lag (days)")
         ax.set_ylabel("ACF (squared residuals)")
@@ -600,9 +607,7 @@ def figure_residual_diagnostics_multihoriz(results_dict: dict):
 
 def figure_scatter_grid(results_dict: dict):
     horizons      = list(HORIZONS.keys())
-    panel_letters = ["(A)", "(B)", "(C)"]
-
-    fig, axes = plt.subplots(1, 3, figsize=(14, 5))
+    fig, axes = plt.subplots(1, len(horizons), figsize=(14, 5))
     fig.subplots_adjust(wspace=0.38)
     for idx, h in enumerate(horizons):
         ax   = axes[idx]
@@ -621,7 +626,7 @@ def figure_scatter_grid(results_dict: dict):
                 label=f"OLS fit  R2={r**2:.3f}")
         ax.set_xlabel(f"Predicted  $\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=9)
         ax.set_ylabel(f"Actual     $\\ln(\\overline{{RV}})^{{({h})}}$", fontsize=9)
-        ax.set_title(f"{panel_letters[idx]}  h={h}  [{HORIZONS[h]['label']}]",
+        ax.set_title(f"{panel_tag(idx)}  h={h}  [{HORIZONS[h]['label']}]",
                      loc="left", pad=3)
         ax.legend(fontsize=8)
         ax.xaxis.set_minor_locator(AutoMinorLocator())
@@ -716,7 +721,7 @@ def main(data_file: str = DATA_FILE, pair: str = None):
 
     print(f"\n{SEP}")
     print("  HAR-RV MULTI-HORIZON MODEL  --  Corsi (2009)")
-    print(f"  {PAIR_NAME} Realized Volatility  |  Horizons: h = 1, 5, 22")
+    print(f"  {PAIR_NAME} Realized Volatility  |  Horizons: h = {HORIZON_LIST}")
     print(f"  Split: Train 2010-{TRAIN_END_YEAR}  |  Test {TEST_START_YEAR}-2025")
     print(f"  (Split mirrors Dataset_Custom in data_loader.py for DL comparison)")
     print(SEP)

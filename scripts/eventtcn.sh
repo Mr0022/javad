@@ -4,7 +4,6 @@
 # Hyper-parameters are the best Optuna trials from:
 #   tuningresults/EVENTTCN1/best_params.json    (h = 1  day)
 #   tuningresults/EVENTTCN5/best_params.json    (h = 5  days)
-#   tuningresults/EVENTTCN22/best_params.json   (h = 22 days)
 #
 # Events were tuned with --event_fusion channel (tune.py default) and event_dim
 # in {4,8,16}; event_past/event_future stay on (defaults). --use_events auto-
@@ -55,17 +54,3 @@ python run.py --is_training 1 --model_id EventTCN_h5 --model ModernTCN \
   --learning_rate 0.004311298509350653 --batch_size 128 \
   --train_epochs 40 --patience 8 --num_workers 2 --itr 5 \
   --use_events --event_dim 4 --event_fusion channel
-
-# ---- h = 22 (EVENTTCN22, event_dim 8; patch_stride clamped 8 -> 4) ----------
-python run.py --is_training 1 --model_id EventTCN_h22 --model ModernTCN \
-  --data custom --root_path ./data/ --data_path EURUSD_lnRV.csv \
-  --features S --target ln_RV --enc_in 1 --dec_in 1 --c_out 1 \
-  --aggregate_horizon --seq_len 35 --pred_len 22 \
-  --patch_size 4 --patch_stride 4 --ffn_ratio 2 \
-  --num_blocks 1 1 1 1 --large_size 31 31 31 31 --small_size 5 5 5 5 \
-  --dims 32 32 32 32 --dw_dims 32 32 32 32 \
-  --dropout 0.2332348360983411 --head_dropout 0.32275773648706885 --revin 1 \
-  --use_multi_scale False --lradj TST --pct_start 0.3 \
-  --learning_rate 0.0077943332090161695 --batch_size 256 \
-  --train_epochs 40 --patience 8 --num_workers 2 --itr 5 \
-  --use_events --event_dim 8 --event_fusion channel

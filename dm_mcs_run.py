@@ -193,7 +193,7 @@ def main():
     print(f"  pairs    : {pairs}")
     print(f"  horizons : {horizons}")
 
-    dm_all, mcs_all, skipped = [], [], []
+    dm_all, mcs_all, skipped, misaligned = [], [], [], []
     for pair in pairs:
         for h in horizons:
             probe = aligned_panel(df, pair, h, "se")
@@ -201,8 +201,20 @@ def main():
             if len(have) < 2 or len(probe) < args.min_obs:
                 skipped.append((pair, h, len(have), len(probe)))
                 continue
-            print(f"\n  {pair} h={h}: {len(probe)} shared origins, "
-                  f"{len(have)} models {have}")
+
+            # every model should already be scored on the same origins
+            # (data_loader.TEST_ORIGIN_ALIGN); say so when they are not,
+            # rather than quietly testing whatever happens to overlap
+            raw = (df[(df["pair"] == pair) & (df["horizon"] == h)]
+                   .groupby("model")["date"].nunique())
+            counts = {m: int(raw.get(m, 0)) for m in have}
+            if len(set(counts.values())) > 1:
+                print(f"\n  {pair} h={h}: models were scored on DIFFERENT samples "
+                      f"{counts} -- testing the {len(probe)} origins they share")
+                misaligned.append((pair, h, counts, len(probe)))
+            else:
+                print(f"\n  {pair} h={h}: {len(probe)} shared origins, "
+                      f"{len(have)} models {have}")
             for loss in LOSS_COLS:
                 panel = aligned_panel(df, pair, h, loss)
                 d, m = run_cell(panel, pair, h, loss,
@@ -217,6 +229,13 @@ def main():
         print("\n  skipped cells (fewer than 2 models or too few shared origins):")
         for pair, h, nm, no in skipped:
             print(f"    {pair} h={h}: {nm} models, {no} shared origins")
+
+    if misaligned:
+        print(f"\n  ! {len(misaligned)} cell(s) had models scored on different "
+              f"samples; each was tested on the intersection. Expected 0 -- see "
+              f"data_provider/data_loader.py:TEST_ORIGIN_ALIGN")
+    else:
+        print("\n  every model was scored on the same origins in every cell")
 
     if not dm_all:
         raise SystemExit("\nnothing to test -- no cell had two aligned models")

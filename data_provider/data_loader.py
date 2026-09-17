@@ -16,6 +16,38 @@ warnings.filterwarnings('ignore')
 _TARGET_NOTICES = set()
 
 
+# The deep test slice is back-filled by seq_len so the model can forecast from
+# the very first test day. Left there, its first forecast ORIGIN is the last
+# 2023 trading day -- one origin earlier than HAR-RV / N-HAR, which index their
+# rows by the predictor date and so begin at the first 2024 row. That made the
+# deep models score one more observation than the linear ones at every horizon
+# (388 vs 387 at h=1 for EURUSD), on a sample that started a day earlier.
+#
+# Shifting the test slice forward by one row drops that extra leading origin,
+# so all four benchmark models are scored on an IDENTICAL set of forecast
+# origins and n_test matches across the table. Set to 0 to restore the older
+# behaviour (the deep models then forecast every 2024-25 target, but are no
+# longer directly comparable with HAR-RV / N-HAR).
+TEST_ORIGIN_ALIGN = 1
+
+
+def split_borders(n_rows, years, seq_len):
+    """(border1s, border2s) for train / val / test.
+
+    train 2010-2021, val 2022-2023, test 2024-. The val and test slices are
+    back-filled by seq_len so their first sample has a full look-back window;
+    the test slice additionally skips TEST_ORIGIN_ALIGN rows so its first
+    forecast origin lines up with HAR-RV / N-HAR (see above).
+    """
+    train_end = int((years <= 2021).sum())
+    val_end = int((years <= 2023).sum())
+    border1s = [0,
+                train_end - seq_len,
+                val_end - seq_len + TEST_ORIGIN_ALIGN]
+    border2s = [train_end, val_end, n_rows]
+    return border1s, border2s
+
+
 
 
 
@@ -76,10 +108,8 @@ class Dataset_Custom(Dataset):
 
         df_raw['date'] = pd.to_datetime(df_raw['date'])
         # train: 2010-2021, val: 2022-2023, test: 2024-2025
-        train_end = int((df_raw['date'].dt.year <= 2021).sum())
-        val_end = int((df_raw['date'].dt.year <= 2023).sum())
-        border1s = [0, train_end - self.seq_len, val_end - self.seq_len]
-        border2s = [train_end, val_end, len(df_raw)]
+        border1s, border2s = split_borders(len(df_raw), df_raw['date'].dt.year,
+                                           self.seq_len)
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 
@@ -206,9 +236,8 @@ class Dataset_Custom_Events(Dataset_Custom):
         self.event_cols = ev_cols
         self.n_event_features = events.shape[1]
         # slice with the same borders as data_x/data_y so indices line up
-        val_end = int((df_raw['date'].dt.year <= 2023).sum())
-        border1s = [0, train_end - self.seq_len, val_end - self.seq_len]
-        border2s = [train_end, val_end, len(df_raw)]
+        border1s, border2s = split_borders(len(df_raw), df_raw['date'].dt.year,
+                                           self.seq_len)
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
         self.data_events = events[border1:border2]

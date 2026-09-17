@@ -4,10 +4,11 @@ from data_provider.event_preprocessing import (
     event_kwargs_from_args, resolve_event_path)
 from torch.utils.data import DataLoader
 
-# Whether the TEST loader drops its final partial batch. True reproduces the
-# repo's original behaviour (and the metrics that go with it); False scores
-# every test window. See the note in data_provider() before changing it.
-DROP_LAST_TEST = True
+# Whether the TEST loader drops its final partial batch. False scores every
+# test window, which is what makes the deep models comparable with HAR-RV and
+# N-HAR; True reproduces the repo's original behaviour (and the metrics that go
+# with it) at the cost of that comparability. See the note in data_provider().
+DROP_LAST_TEST = False
 
 data_dict = {
     'custom': Dataset_Custom,
@@ -22,16 +23,17 @@ def data_provider(args, flag):
 
     if flag == 'test':
         shuffle_flag = False
-        # KNOWN CONSEQUENCE, kept deliberately: dropping the final partial test
-        # batch means only floor(n_test / batch_size) * batch_size windows are
-        # scored. At batch_size 256 with ~384 test windows that is the first
-        # 256 -- which for these series is 2024 almost exactly, so H1-2025 (a
-        # higher-volatility regime including the April 2025 spike) is excluded
-        # from every deep metric. The share scored also depends on batch_size:
-        # 64/128 score ~all, 256 scores 2/3, 512 scores nothing at all.
-        # The deep models therefore sit on a shorter, earlier sample than
-        # HAR-RV / N-HAR, and dm_mcs_run.py reports that mismatch and tests the
-        # intersection. Set DROP_LAST_TEST = False to score the whole window.
+        # DROP_LAST_TEST = False keeps the final partial batch, so every test
+        # window is scored and the deep models sit on the same sample as
+        # HAR-RV / N-HAR. Setting it True drops that batch: only
+        # floor(n_test / batch_size) * batch_size windows are then scored, and
+        # at batch_size 256 with ~385 test windows that is the FIRST 256 --
+        # which for these series is 2024 almost exactly, so H1-2025 (a
+        # higher-volatility regime including the April 2025 spike) drops out of
+        # every deep metric while the linear models keep it. The share scored
+        # would also depend on batch_size (64/128 score ~all, 256 scores 2/3,
+        # 512 scores nothing at all), making the deep sample an artefact of an
+        # optimiser setting. dm_mcs_run.py reports any such mismatch.
         drop_last = DROP_LAST_TEST
         batch_size = args.batch_size
         freq = args.freq

@@ -14,15 +14,19 @@ Reads the per-observation TEST losses every model writes and runs, for each
 Alignment is the whole point of this script
 -------------------------------------------
 Both tests require every model to be scored on an IDENTICAL sample. The two
-model families do not produce one by default: Dataset_Custom back-fills the
-deep models' test slice by seq_len, so they forecast from the last 2023
+model families would not produce one by default: Dataset_Custom back-fills the
+deep models' test slice by seq_len, so they would forecast from the last 2023
 trading day onwards, while HAR-RV and N-HAR index rows by the predictor date
-and start at the first 2024 row. Every loss file is therefore keyed by its
-FORECAST ORIGIN date -- the last day whose information the forecast used --
-and this script inner-joins on (pair, horizon, date). The deep models lose
-their one extra origin; nothing else is dropped. The surviving row count is
-reported per cell as `n`, and a cell where the join collapses is skipped
-loudly rather than tested on whatever happens to overlap.
+and start at the first 2024 row. Two settings remove that gap at the source --
+data_loader.TEST_ORIGIN_ALIGN = 1 drops the deep models' extra leading origin,
+and data_factory.DROP_LAST_TEST = False stops the test loader discarding its
+final partial batch -- so all four models arrive here on the same origins.
+Every loss file is keyed by its FORECAST ORIGIN date (the last day whose
+information the forecast used) and this script inner-joins on
+(pair, horizon, date), which should now drop nothing. The surviving row count
+is reported per cell as `n`; a cell whose models disagree on their origins is
+reported as misaligned and a cell where the join collapses is skipped loudly,
+rather than either being tested on whatever happens to overlap.
 
 Seeds
 -----

@@ -23,16 +23,16 @@ _TARGET_NOTICES = set()
 # deep models score one more observation than the linear ones at every horizon
 # (388 vs 387 at h=1 for EURUSD), on a sample that started a day earlier.
 #
-# Setting this to 1 shifts the test slice forward by one row, dropping that
-# extra leading origin so all four benchmark models score an IDENTICAL set of
+# It is 1: the test slice is shifted forward by one row, dropping that extra
+# leading origin so all four benchmark models score an IDENTICAL set of
 # forecast origins and n_test matches across the table.
 #
-# It is 0 -- the repo's original behaviour -- so the deep models forecast every
-# 2024-25 target and keep the extra origin. They are then NOT on the same
-# sample as HAR-RV / N-HAR (388 vs 387 at h=1 for EURUSD); dm_mcs_run.py
-# reports the mismatch and tests the intersection. Worth only ~0.1% of any
-# metric either way, since it is one observation in ~388.
-TEST_ORIGIN_ALIGN = 0
+# Setting it to 0 restores the repo's original behaviour, where the deep models
+# forecast every 2024-25 target and keep the extra origin. They are then NOT on
+# the same sample as HAR-RV / N-HAR (388 vs 387 at h=1 for EURUSD);
+# dm_mcs_run.py reports the mismatch and tests the intersection. Worth only
+# ~0.1% of any metric either way, since it is one observation in ~388.
+TEST_ORIGIN_ALIGN = 1
 
 
 def split_borders(n_rows, years, seq_len):

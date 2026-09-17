@@ -80,6 +80,20 @@ from   utils.target_agg                    import forward_log_mean_rv
 
 DATA_FILE  = "./data/EURUSD_lnRV.csv"
 
+# Pair label carried into har_rv_losses.csv so dm_mcs_run.py can key on it.
+# Derived from the data file's name (EURUSD_lnRV.csv -> EURUSD) unless --pair
+# overrides it; main() sets this before anything is exported.
+PAIR_NAME  = "EURUSD"
+
+
+def pair_from_path(path: str) -> str:
+    """'.../EURUSD_lnRV.csv' -> 'EURUSD'; falls back to the bare stem."""
+    stem = os.path.splitext(os.path.basename(path))[0]
+    for suffix in ("_lnRV", "_ln_RV", "_RV"):
+        if stem.endswith(suffix):
+            return stem[: -len(suffix)]
+    return stem
+
 # -- Output directory ----------------------------------------------------------
 # All figures and CSVs are written here. Created automatically if missing.
 OUTPUT_DIR = "HAR-RV results"
@@ -310,6 +324,12 @@ def qlike(actual_ln: np.ndarray, predicted_ln: np.ndarray) -> float:
     valid   = (rv_act > 0) & (rv_pred > 0)
     ratio   = rv_act[valid] / rv_pred[valid]
     return float(np.mean(ratio - np.log(ratio) - 1))
+
+def qlike_per_obs(actual_ln: np.ndarray, predicted_ln: np.ndarray) -> np.ndarray:
+    """Per-observation QLIKE, for the DM / MCS stage (see dm_mcs_run.py)."""
+    ratio = np.exp(actual_ln) / np.exp(predicted_ln)
+    return ratio - np.log(ratio) - 1
+
 
 def compute_metrics(actual: np.ndarray, predicted: np.ndarray) -> dict:
     return {"MSE": mse(actual, predicted),
@@ -636,6 +656,28 @@ def export_all(results_dict: dict, all_metrics: dict):
         full.to_csv(fname)
         print(f"  -> Saved: {fname}")
 
+    # -- 9a2. Per-observation TEST losses, for the DM / MCS stage -------------
+    #
+    # Indexed by the FORECAST ORIGIN date t (the row's predictor date), which
+    # is the key dm_mcs_run.py joins the four models on -- the deep models'
+    # test slice starts one origin earlier, so an inner join on this column is
+    # what puts every model on an identical sample.
+    loss_rows = []
+    for h, res in results_dict.items():
+        y_te  = res["df_test"]["Y_h"].to_numpy(dtype=float)
+        yhat  = res["y_hat_test"].to_numpy(dtype=float)
+        loss_rows.append(pd.DataFrame({
+            "pair"   : PAIR_NAME,
+            "horizon": h,
+            "model"  : "HAR-RV",
+            "date"   : res["df_test"].index,
+            "se"     : (y_te - yhat) ** 2,
+            "ae"     : np.abs(y_te - yhat),
+            "qlike"  : qlike_per_obs(y_te, yhat)}))
+    loss_path = out_path("har_rv_losses.csv")
+    pd.concat(loss_rows, ignore_index=True).to_csv(loss_path, index=False)
+    print(f"  -> Saved: {loss_path}")
+
     # -- 9b. Consolidated metrics table ---------------------------------------
     rows = []
     for h in results_dict:
@@ -668,10 +710,13 @@ def export_all(results_dict: dict, all_metrics: dict):
 # 10.  MAIN PIPELINE
 # ==============================================================================
 
-def main(data_file: str = DATA_FILE):
+def main(data_file: str = DATA_FILE, pair: str = None):
+    global PAIR_NAME
+    PAIR_NAME = pair or pair_from_path(data_file)
+
     print(f"\n{SEP}")
     print("  HAR-RV MULTI-HORIZON MODEL  --  Corsi (2009)")
-    print("  EUR/USD Realized Volatility  |  Horizons: h = 1, 5, 22")
+    print(f"  {PAIR_NAME} Realized Volatility  |  Horizons: h = 1, 5, 22")
     print(f"  Split: Train 2010-{TRAIN_END_YEAR}  |  Test {TEST_START_YEAR}-2025")
     print(f"  (Split mirrors Dataset_Custom in data_loader.py for DL comparison)")
     print(SEP)
@@ -782,5 +827,8 @@ if __name__ == "__main__":
         description="HAR-RV multi-horizon realized-volatility baseline (Corsi, 2009).")
     parser.add_argument("--data_path", type=str, default=DATA_FILE,
                         help="Path to the ln(RV) CSV (date index + 'ln_RV' column).")
+    parser.add_argument("--pair", type=str, default=None,
+                        help="Pair label written into har_rv_losses.csv. Defaults to the "
+                             "data file's name (EURUSD_lnRV.csv -> EURUSD).")
     args = parser.parse_args()
-    main(args.data_path)
+    main(args.data_path, args.pair)

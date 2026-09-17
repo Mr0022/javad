@@ -121,6 +121,12 @@ parser.add_argument('--aggregate_horizon', '--aggregate_mean', dest='aggregate_h
                          'as an alias for the older spelling, when the aggregate was the '
                          'mean of the logs rather than the log of the mean variance')
 
+parser.add_argument('--loss_dir', type=str, default='./losses',
+                    help="directory for per-observation TEST losses, one csv per run "
+                         "('<loss_dir>/<setting>.csv', keyed by forecast-origin date). "
+                         "These are what dm_mcs_run.py consumes for the Diebold-Mariano "
+                         "and Model Confidence Set tests. Empty string disables the dump.")
+
 # news events
 parser.add_argument('--use_events', action='store_true', default=False,
                     help='condition on the daily macro news-event calendar: past events are '
@@ -205,6 +211,7 @@ if __name__ == '__main__':
             # each run is a distinct seed = random_seed + ii, so e.g.
             # --random_seed 2021 --itr 5 sweeps seeds 2021, 2022, ..., 2025
             seed = args.random_seed + ii
+            args.run_seed = seed          # recorded in the per-run loss csv
             random.seed(seed)
             torch.manual_seed(seed)
             np.random.seed(seed)

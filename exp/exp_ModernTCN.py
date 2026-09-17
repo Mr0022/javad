@@ -5,6 +5,7 @@ from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params
 from utils.metrics import metric
 
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 from torch import optim
@@ -65,6 +66,58 @@ class Exp_Main(Exp_Basic):
             h = y.shape[1]                       # == pred_len, the axis reduced
             y = torch.logsumexp(y, dim=1, keepdim=True) - math.log(h)
         return y
+
+    def _save_losses(self, setting, test_data, preds, trues):
+        """Write this run's per-observation TEST losses for the DM / MCS stage.
+
+        One row per forecast origin, keyed by the origin's calendar date so
+        dm_mcs_run.py can inner-join the deep models with HAR-RV and N-HAR,
+        which index their rows by the same predictor date.
+
+        With --aggregate_horizon the prediction is already a single value per
+        origin. Without it the model emits pred_len steps, and the losses are
+        averaged over the horizon so every model still contributes exactly one
+        number per origin.
+        """
+        loss_dir = getattr(self.args, 'loss_dir', None)
+        if not loss_dir:
+            return
+        if not hasattr(test_data, 'origin_dates'):
+            print('losses: dataset exposes no origin_dates(), skipping')
+            return
+
+        dates = np.asarray(test_data.origin_dates())
+        if len(dates) != len(preds):
+            print(f'losses: {len(preds)} predictions vs {len(dates)} origin dates '
+                  f'-- skipping rather than writing a misaligned file')
+            return
+
+        p = preds.reshape(len(preds), -1).astype(np.float64)
+        t = trues.reshape(len(trues), -1).astype(np.float64)
+        ratio = np.exp(t - p)                       # RV_actual / RV_predicted
+        with np.errstate(over='ignore', invalid='ignore'):
+            qlike = ratio - np.log(ratio) - 1.0
+
+        pair = os.path.splitext(os.path.basename(self.args.data_path))[0]
+        for suffix in ('_lnRV', '_ln_RV', '_RV'):
+            if pair.endswith(suffix):
+                pair = pair[: -len(suffix)]
+                break
+
+        df = pd.DataFrame({
+            'pair': pair,
+            'horizon': int(self.args.pred_len),
+            'model': 'FiLM-TCN' if getattr(self.args, 'use_events', False) else 'ModernTCN',
+            'seed': getattr(self.args, 'run_seed', -1),
+            'date': pd.to_datetime(dates),
+            'se': ((p - t) ** 2).mean(axis=1),
+            'ae': np.abs(p - t).mean(axis=1),
+            'qlike': np.nanmean(qlike, axis=1),
+        })
+        os.makedirs(loss_dir, exist_ok=True)
+        out = os.path.join(loss_dir, f'{setting}.csv')
+        df.to_csv(out, index=False)
+        print(f'losses -> {out}  ({len(df)} origins)')
 
     def _unpack_batch(self, batch):
         """Event datasets yield 6 tensors (past/future events last), plain ones 4."""
@@ -340,19 +393,18 @@ class Exp_Main(Exp_Basic):
                 if i % 20 == 0:
                     input = batch_x.detach().cpu().numpy()
                     gt = np.concatenate((input[0, :, -1], true[0, :, -1]), axis=0)
-                    pd = np.concatenate((input[0, :, -1], pred[0, :, -1]), axis=0)
-                    visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
+                    # not `pd`: that shadows the pandas import used below
+                    pv = np.concatenate((input[0, :, -1], pred[0, :, -1]), axis=0)
+                    visual(gt, pv, os.path.join(folder_path, str(i) + '.pdf'))
 
         if self.args.test_flop:
             test_params_flop((batch_x.shape[1], batch_x.shape[2]))
             exit()
-        preds = np.array(preds)
-        trues = np.array(trues)
-        inputx = np.array(inputx)
-
-        preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
-        trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
-        inputx = inputx.reshape(-1, inputx.shape[-2], inputx.shape[-1])
+        # the test loader keeps its final partial batch (data_factory.py), so the
+        # per-batch arrays are ragged in their first axis -- concatenate, don't stack
+        preds = np.concatenate(preds, axis=0)
+        trues = np.concatenate(trues, axis=0)
+        inputx = np.concatenate(inputx, axis=0)
 
         # result save
         folder_path = './results/' + setting + '/'
@@ -367,6 +419,8 @@ class Exp_Main(Exp_Basic):
         f.write('\n')
         f.write('\n')
         f.close()
+
+        self._save_losses(setting, test_data, preds, trues)
 
         # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
         np.save(folder_path + 'pred.npy', preds)

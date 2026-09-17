@@ -17,7 +17,12 @@ def data_provider(args, flag):
 
     if flag == 'test':
         shuffle_flag = False
-        drop_last = True
+        # never drop the tail of the TEST set: with batch_size 256 and 384 test
+        # windows, drop_last=True scored only the first 256 and silently threw
+        # away a third of the test window -- and left the deep models on a
+        # shorter, earlier sample than HAR-RV / N-HAR, which the DM / MCS stage
+        # would then have to truncate everyone down to.
+        drop_last = False
         batch_size = args.batch_size
         freq = args.freq
     elif flag == 'pred':

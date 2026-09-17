@@ -110,6 +110,20 @@ class Dataset_Custom(Dataset):
         self.data_x = data[border1:border2]
         self.data_y = data[border1:border2]
         self.data_stamp = data_stamp
+        # calendar dates of the rows in this slice, for origin_dates() below
+        self.data_dates = pd.to_datetime(df_raw['date'].to_numpy()[border1:border2])
+
+    def origin_dates(self):
+        """Forecast-origin date of every sample, in __getitem__ order.
+
+        Sample `index` reads the look-back window [index, index+seq_len) and
+        predicts [index+seq_len, index+seq_len+pred_len), so the newest
+        information it uses is the row at index+seq_len-1. That row's date is
+        the forecast origin, and it is the key dm_mcs_run.py joins the deep
+        models to HAR-RV / N-HAR on -- those index their rows by the same
+        predictor date.
+        """
+        return self.data_dates[self.seq_len - 1: self.seq_len - 1 + len(self)]
 
     def __getitem__(self, index):
         s_begin = index

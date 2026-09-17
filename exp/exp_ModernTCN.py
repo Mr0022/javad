@@ -87,7 +87,15 @@ class Exp_Main(Exp_Basic):
             return
 
         dates = np.asarray(test_data.origin_dates())
-        if len(dates) != len(preds):
+        if len(preds) < len(dates):
+            # the test loader is sequential and unshuffled, so when it drops its
+            # final partial batch (data_factory.DROP_LAST_TEST) the scored
+            # windows are the FIRST len(preds) origins and the tail is missing
+            print(f'losses: {len(dates) - len(preds)} of {len(dates)} test windows '
+                  f'were not scored (the test loader dropped its last partial '
+                  f'batch); writing the {len(preds)} that were')
+            dates = dates[:len(preds)]
+        elif len(preds) != len(dates):
             print(f'losses: {len(preds)} predictions vs {len(dates)} origin dates '
                   f'-- skipping rather than writing a misaligned file')
             return

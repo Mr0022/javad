@@ -4,6 +4,11 @@ from data_provider.event_preprocessing import (
     event_kwargs_from_args, resolve_event_path)
 from torch.utils.data import DataLoader
 
+# Whether the TEST loader drops its final partial batch. True reproduces the
+# repo's original behaviour (and the metrics that go with it); False scores
+# every test window. See the note in data_provider() before changing it.
+DROP_LAST_TEST = True
+
 data_dict = {
     'custom': Dataset_Custom,
     'custom_events': Dataset_Custom_Events,
@@ -17,12 +22,17 @@ def data_provider(args, flag):
 
     if flag == 'test':
         shuffle_flag = False
-        # never drop the tail of the TEST set: with batch_size 256 and 384 test
-        # windows, drop_last=True scored only the first 256 and silently threw
-        # away a third of the test window -- and left the deep models on a
-        # shorter, earlier sample than HAR-RV / N-HAR, which the DM / MCS stage
-        # would then have to truncate everyone down to.
-        drop_last = False
+        # KNOWN CONSEQUENCE, kept deliberately: dropping the final partial test
+        # batch means only floor(n_test / batch_size) * batch_size windows are
+        # scored. At batch_size 256 with ~384 test windows that is the first
+        # 256 -- which for these series is 2024 almost exactly, so H1-2025 (a
+        # higher-volatility regime including the April 2025 spike) is excluded
+        # from every deep metric. The share scored also depends on batch_size:
+        # 64/128 score ~all, 256 scores 2/3, 512 scores nothing at all.
+        # The deep models therefore sit on a shorter, earlier sample than
+        # HAR-RV / N-HAR, and dm_mcs_run.py reports that mismatch and tests the
+        # intersection. Set DROP_LAST_TEST = False to score the whole window.
+        drop_last = DROP_LAST_TEST
         batch_size = args.batch_size
         freq = args.freq
     elif flag == 'pred':

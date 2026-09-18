@@ -206,7 +206,7 @@ class ModernTCN(nn.Module):
                  nvars, small_kernel_merged=False, backbone_dropout=0.1, head_dropout=0.1, use_multi_scale=True, revin=True, affine=True,
                  subtract_last=False, freq=None, seq_len=512, c_in=7, individual=False, target_window=96,
                  use_events=False, event_in=0, event_dim=8, event_past=True, event_future=True,
-                 event_fusion='inject'):
+                 event_fusion='inject', event_untie=False, event_linear=False):
 
         super(ModernTCN, self).__init__()
 
@@ -261,10 +261,33 @@ class ModernTCN(nn.Module):
         # dropped again just before the head, so RevIN/head/loss see value vars only.
         self.event_as_channel = bool(use_events and event_past and event_fusion == 'channel')
         backbone_nvars = nvars + 1 if self.event_as_channel else nvars
+        # give the FiLM conditioner its own embedding instead of reading the one
+        # the past-event stream trains. Shared, the two paths pull one matrix:
+        # with 'channel' fusion at pred_len 1 the look-back contributes seq_len
+        # timesteps of gradient against the horizon's one, so the event_dim
+        # subspace is shaped by the past-stream objective and FiLM only reads
+        # whatever came out of it.
+        self.event_untie = bool(use_events and event_future and event_untie)
+        # additive per-release-type coefficients on the horizon-mean schedule --
+        # the same N_j,t^(h) = (1/h) * Sum_k D_j,t+k that N-HAR regresses on
+        # (HAR_X_run.py:38). Applied after RevIN de-normalisation, so a weight is
+        # a shift in ln(RV) units and is directly comparable with N-HAR's
+        # coefficients; zero-init keeps the model unconditioned at step 0. L1 on
+        # this weight is the penalty that makes 'add a LASSO' well posed: one
+        # free coefficient per release type, on the same regressor, rather than a
+        # penalty on a rank-event_dim bottleneck.
+        self.use_event_linear = bool(use_events and event_future and event_linear)
+        self.event_embed_future = None
+        self.event_linear_head = None
         if use_events:
             # a multi-hot day vector through this linear layer = the sum of the
             # per-event-type embeddings scheduled that day (+ learned baseline)
             self.event_embed = nn.Linear(event_in, event_dim)
+            if self.event_untie:
+                self.event_embed_future = nn.Linear(event_in, event_dim)
+            if self.use_event_linear:
+                self.event_linear_head = nn.Linear(event_in, target_window, bias=False)
+                nn.init.zeros_(self.event_linear_head.weight)
             if event_past:
                 # embed all event columns, then patch with the SAME geometry as the
                 # value stem but a SEPARATE conv (its own stem, kept outside RevIN).
@@ -330,6 +353,16 @@ class ModernTCN(nn.Module):
             self.head = Flatten_Head(self.individual, self.n_vars, self.head_nf, target_window,
                                      head_dropout=head_dropout)
 
+    def future_event_embed(self):
+        """The embedding the FiLM generator reads: its own when untied."""
+        return self.event_embed if self.event_embed_future is None else self.event_embed_future
+
+    def event_l1(self):
+        """L1 norm of the additive event head, or None when it is not built."""
+        if self.event_linear_head is None:
+            return None
+        return self.event_linear_head.weight.abs().sum()
+
     def up_sample(self, x, upsample_ratio):
         _, _, _, N = x.shape
         return F.upsample(x, size=N, scale_factor=upsample_ratio, mode='bilinear')
@@ -388,7 +421,7 @@ class ModernTCN(nn.Module):
         x = self.forward_feature(x,te,event_x)
         if self.use_events and self.event_future and event_y is not None:
             # pool the horizon's known schedule, FiLM the final feature map
-            cond = self.event_embed(event_y).mean(dim=1)    # (B, event_dim)
+            cond = self.future_event_embed()(event_y).mean(dim=1)   # (B, event_dim)
             gamma, beta = self.film(cond).chunk(2, dim=-1)  # (B, d_model) each
             x = x * (1.0 + gamma[:, None, :, None]) + beta[:, None, :, None]
         x = self.head(x)
@@ -397,6 +430,13 @@ class ModernTCN(nn.Module):
             x = x.permute(0, 2, 1)
             x = self.revin_layer(x, 'denorm')
             x = x.permute(0, 2, 1)
+        if self.event_linear_head is not None and event_y is not None:
+            # (B, pred_len, event_in) -> horizon mean -> (B, target_window),
+            # broadcast over the value variables. Outside RevIN on purpose: the
+            # coefficients stay in ln(RV) units rather than being rescaled by
+            # each look-back window's own standard deviation.
+            add = self.event_linear_head(event_y.mean(dim=1))
+            x = x + add.unsqueeze(1)
         return x
 
     def structural_reparam(self):
@@ -445,6 +485,8 @@ class Model(nn.Module):
         self.event_past = getattr(configs, 'event_past', True)
         self.event_future = getattr(configs, 'event_future', True)
         self.event_fusion = getattr(configs, 'event_fusion', 'inject')
+        self.event_untie = getattr(configs, 'event_untie', False)
+        self.event_linear = getattr(configs, 'event_linear', False)
 
         # decomp
         self.decomposition = configs.decomposition
@@ -454,18 +496,32 @@ class Model(nn.Module):
                  nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
-                 event_fusion=self.event_fusion)
+                 event_fusion=self.event_fusion, event_untie=self.event_untie,
+                 event_linear=self.event_linear)
             self.model_trend = ModernTCN(patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
                  nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
-                 event_fusion=self.event_fusion)
+                 event_fusion=self.event_fusion, event_untie=self.event_untie,
+                 event_linear=self.event_linear)
         else:
             self.model = ModernTCN(patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
                  nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
-                 event_fusion=self.event_fusion)
+                 event_fusion=self.event_fusion, event_untie=self.event_untie,
+                 event_linear=self.event_linear)
+
+    def event_l1(self):
+        """L1 norm of the additive event head(s), or None when none is built.
+
+        exp_ModernTCN adds `--event_l1 * this` to the TRAINING loss only; the
+        reported train/val/test losses stay pure MSE so they remain comparable
+        with every other row of the benchmark.
+        """
+        subs = (self.model_res, self.model_trend) if self.decomposition else (self.model,)
+        terms = [t for t in (m.event_l1() for m in subs) if t is not None]
+        return sum(terms) if terms else None
 
     def forward(self, x, te=None, event_x=None, event_y=None):
 

@@ -150,6 +150,22 @@ class Exp_Main(Exp_Basic):
         criterion = nn.MSELoss()
         return criterion
 
+    def _event_l1(self):
+        """--event_l1 * |W_event_linear|_1, as a term for the TRAINING loss.
+
+        Returns None when there is nothing to penalise, so the reported
+        train/val/test losses stay pure MSE and remain comparable with every
+        other row of the benchmark.
+        """
+        lam = float(getattr(self.args, 'event_l1', 0.0) or 0.0)
+        if lam <= 0:
+            return None
+        core = self.model.module if isinstance(self.model, nn.DataParallel) else self.model
+        if not hasattr(core, 'event_l1'):
+            return None
+        pen = core.event_l1()
+        return None if pen is None else lam * pen
+
     def vali(self, vali_data, vali_loader, criterion):
         total_loss = []
         self.model.eval()
@@ -268,6 +284,11 @@ class Exp_Main(Exp_Basic):
                         batch_y = self._get_target(batch_y, f_dim)
                         loss = criterion(outputs, batch_y)
                         train_loss.append(loss.item())
+                        # logged above as pure MSE; the penalty enters only the
+                        # tensor that gets backpropagated
+                        pen = self._event_l1()
+                        if pen is not None:
+                            loss = loss + pen
                 else:
                     if 'Linear' in self.args.model or 'TST' in self.args.model:
                         outputs = self.model(batch_x)
@@ -286,6 +307,9 @@ class Exp_Main(Exp_Basic):
                     batch_y = self._get_target(batch_y, f_dim)
                     loss = criterion(outputs, batch_y)
                     train_loss.append(loss.item())
+                    pen = self._event_l1()
+                    if pen is not None:
+                        loss = loss + pen
 
                 if (i + 1) % 100 == 0:
                     print("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))

@@ -160,6 +160,23 @@ parser.add_argument('--event_fusion', type=str, default='inject', choices=['inje
                          "cross-variable ConvFFN mixes value<->events at every stage (events keep "
                          "their own patch stem and stay outside RevIN). Future events use FiLM in "
                          "both modes.")
+parser.add_argument('--event_untie', type=str2bool, default=False,
+                    help="give the FiLM conditioner its own event embedding instead of sharing "
+                         "the one the past-event stream trains. Shared (the default, and what "
+                         "every existing result used) the two paths pull a single matrix, and "
+                         "with --event_fusion channel at pred_len 1 the look-back contributes "
+                         "seq_len timesteps of gradient against the horizon's one")
+parser.add_argument('--event_linear', type=str2bool, default=False,
+                    help="add a per-release-type linear term on the horizon-mean future "
+                         "schedule, straight onto the forecast after RevIN de-normalisation. "
+                         "This is N-HAR's event regressor (HAR_X_run.py:38) inside the network: "
+                         "one free coefficient per release type in ln(RV) units, zero-init. "
+                         "Penalise it with --event_l1")
+parser.add_argument('--event_l1', type=float, default=0.0,
+                    help="L1 penalty on the --event_linear weight, added to the TRAINING loss "
+                         "only (reported train/val/test losses stay pure MSE). Comparable with "
+                         "N-HAR's alpha: sklearn minimises (1/2)*MSE + alpha*|b|_1, so this "
+                         "equals 2*alpha. Ignored unless --event_linear")
 
 # GPU
 parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
@@ -192,6 +209,22 @@ if args.use_events:
         args.root_path, args.data_path, args.target, args.event_data_path,
         **event_kwargs_from_args(args))
     print('news events: {} feature columns from {}'.format(args.event_in, args.event_data_path))
+
+def event_setting_suffix(args):
+    """The event flags that change what is trained, folded into the run name.
+
+    Anything that alters the trained model has to appear here: checkpoints,
+    results and loss files are all keyed by `setting`, so two configs sharing a
+    name would silently overwrite each other's numbers.
+    """
+    s = '_ev{}d{}p{:d}f{:d}'.format(args.event_fusion[:3], args.event_dim,
+                                    args.event_past, args.event_future)
+    if args.event_untie:
+        s += 'u'
+    if args.event_linear:
+        s += 'lin{}'.format(('%g' % args.event_l1).replace('.', 'p'))
+    return s
+
 
 if args.use_gpu and args.use_multi_gpu:
     args.dvices = args.devices.replace(' ', '')
@@ -238,7 +271,7 @@ if __name__ == '__main__':
                 args.des,
                 ii)
             if args.use_events:
-                setting += '_ev{}d{}p{:d}f{:d}'.format(args.event_fusion[:3], args.event_dim, args.event_past, args.event_future)
+                setting += event_setting_suffix(args)
 
             exp = Exp(args)  # set experiments
             print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
@@ -295,7 +328,7 @@ if __name__ == '__main__':
                                                                                                       args.distil,
                                                                                                       args.des, ii)
         if args.use_events:
-            setting += '_ev{}d{}p{:d}f{:d}'.format(args.event_fusion[:3], args.event_dim, args.event_past, args.event_future)
+            setting += event_setting_suffix(args)
 
         exp = Exp(args)  # set experiments
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))

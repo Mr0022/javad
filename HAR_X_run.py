@@ -28,9 +28,24 @@ so neither can be removed without making the N-HAR row uninterpretable.
                 from being a restatement of "Friday is busy" (NFP is always
                 a Friday, CPI usually mid-week).
 
+    HAR-NEWS    HAR+DOW + the SAME evt_* release-type dummies as N-HAR,
+                estimated by plain OLS: no penalty, no selection, every
+                candidate release keeps a free coefficient. Not in Plihal.
+                This is the second CONTROL, and it separates the two readings
+                of N-HAR's gain -- "the release calendar carries signal" and
+                "the L1 shrinkage is what turns that signal into out-of-sample
+                accuracy". HAR+DOW pins the first at zero events; HAR-NEWS
+                pins the second at zero shrinkage. If HAR-NEWS already
+                captures most of N-HAR's improvement then the penalty is
+                incidental and the news content is the story; if it degrades,
+                the shrinkage IS the mechanism and the N-HAR row should be
+                read as a statement about estimation, not about news.
+
     N-HAR       HAR+DOW + ALL evt_* release-type dummies over the forecast
                 window, estimated by LASSO with blocked cross-validation.
                 Plihal's headline model (his Section 4.2 / Table 3).
+                HAR-NEWS is this model with the penalty removed, so the pair
+                is a clean estimator comparison on one design matrix.
 
 The event regressor
 -------------------
@@ -112,6 +127,10 @@ from utils.target_agg import forward_log_mean_rv
 
 TRAIN_END_YEAR  = 2023
 TEST_START_YEAR = 2024
+
+# Nested, in increasing order. Every table, loss dump and summary reads this,
+# so a model is added in exactly one place.
+MODEL_ORDER = ["HAR", "HAR+DOW", "HAR-NEWS", "N-HAR"]
 
 # Forecast horizons and their Newey-West bandwidths: L = 2*(h-1)
 # Newey-West bandwidth per horizon: L = 2*(h-1). Keep in step with
@@ -352,7 +371,60 @@ def fit_ols(train, test, cols, h):
 
 
 # ==============================================================================
-# 6.  LASSO WITH BLOCKED CROSS-VALIDATION  (N-HAR)
+# 6.  HAR-NEWS: THE SAME DESIGN, ESTIMATED BY OLS
+# ==============================================================================
+#
+# N-HAR with the penalty taken out. Same HAR core, same weekday interactions,
+# same release-type dummies over the forecast window, one free coefficient
+# each, chosen by least squares.
+#
+# Two things worth stating before reading its row:
+#
+#   1. It is not a regularised model in disguise. The dummies are still merged
+#      at |corr| >= DEDUP_CORR before they arrive, but that merge is not a
+#      shrinkage choice -- the raw set contains exact duplicates (CPI MoM and
+#      CPI YoY are released the same morning, so their dummies are identical
+#      columns) and without merging the normal equations are singular rather
+#      than merely ill-conditioned. N-HAR gets the same merged set, so the two
+#      models differ in the estimator and nothing else.
+#
+#   2. The design is wide and the observations overlap. For EUR/USD that is
+#      ~219 free parameters on ~3,080 rows whose targets overlap whenever
+#      h > 1, whereas N-HAR at the CV minimum keeps ~81 of them and shrinks
+#      those. In-sample fit therefore has to improve and out-of-sample fit may
+#      not; that asymmetry is the whole point of carrying the row. `rank` is
+#      reported next to the parameter count so a collinear design shows up as
+#      a number rather than as a silently pseudo-inverted fit.
+# ==============================================================================
+
+def fit_har_news(train, test, z_cols, x_cols, h):
+    """HAR+DOW + every candidate release dummy, by OLS. No penalty, no selection."""
+    # the live-column rule is fit_nhar's, so both models see one candidate set:
+    # a dummy that never fires on the train window is unidentified either way
+    sd = train[x_cols].to_numpy(dtype=float).std(axis=0)
+    live_cols = [c for c, keep in zip(x_cols, sd > 1e-12) if keep]
+    cols = list(z_cols) + live_cols
+
+    res, pred = fit_ols(train, test, cols, h)
+
+    X = sm.add_constant(train[cols], has_constant="add").to_numpy(dtype=float)
+    info = {
+        # it keeps every candidate by construction -- reported so the table's
+        # n_selected column reads "211 of 211" against N-HAR's "81 of 211"
+        "n_selected": len(live_cols),
+        "n_candidates": len(live_cols),
+        "alpha": np.nan,                        # no penalty
+        "n_params": X.shape[1],                 # includes the intercept
+        "rank": int(np.linalg.matrix_rank(X)),
+        "coef": {c: float(res.params.get(c, np.nan)) for c in live_cols},
+        "core": {c: float(res.params.get(c, np.nan))
+                 for c in ["const"] + list(z_cols)},
+    }
+    return info, pred
+
+
+# ==============================================================================
+# 7.  LASSO WITH BLOCKED CROSS-VALIDATION  (N-HAR)
 # ==============================================================================
 #
 # Three points that are not in the paper but decide whether this works:
@@ -503,7 +575,7 @@ def fit_nhar(train, test, z_cols, x_cols, h, rule=LAMBDA_RULE):
 
 
 # ==============================================================================
-# 7.  PER-PAIR DRIVER
+# 8.  PER-PAIR DRIVER
 # ==============================================================================
 
 def run_pair(pair, root_path, target, horizons, event_kwargs,
@@ -547,20 +619,29 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
         _, preds["HAR"]     = fit_ols(train, test, har_cols, h)
         _, preds["HAR+DOW"] = fit_ols(train, test, har_cols + dow_cols, h)
 
+        extra["HAR-NEWS"], preds["HAR-NEWS"] = fit_har_news(
+            train, test, har_cols + dow_cols, evt_ev, h)
+
         info, preds["N-HAR"] = fit_nhar(
             train, test, har_cols + dow_cols, evt_ev, h, rule=rule)
         extra["N-HAR"] = info
 
         if verbose:
+            news = extra["HAR-NEWS"]
             print(f"\n  h = {h:<3} train={len(train):>5}  test={len(test):>5}  "
                   f"candidates={info['n_candidates']:>3}  "
                   f"selected={info['n_selected']:>3}  "
                   f"alpha={info['alpha']:.5f}({rule})  cv_folds={info['cv_folds']}")
+            rank_note = ("" if news["rank"] == news["n_params"]
+                         else f"  <-- RANK DEFICIENT by {news['n_params'] - news['rank']}")
+            print(f"    HAR-NEWS (OLS, no penalty): {news['n_params']} params, "
+                  f"rank {news['rank']}, {len(train)} train rows"
+                  f"{rank_note}")
             print(f"    {'model':<12}{'MSE':>12}{'MAE':>12}{'QLIKE':>12}"
                   f"{'dMSE% vs HAR+DOW':>20}")
 
         base_mse = mse(y_te, preds["HAR+DOW"])
-        for name in ["HAR", "HAR+DOW", "N-HAR"]:
+        for name in MODEL_ORDER:
             m = compute_metrics(y_te, preds[name])
             imp = 100.0 * (m["MSE"] - base_mse) / base_mse
             rows.append({"pair": pair, "horizon": h, "model": name,
@@ -594,7 +675,7 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
 
 
 # ==============================================================================
-# 8.  MAIN
+# 9.  MAIN
 # ==============================================================================
 
 def main():
@@ -660,7 +741,7 @@ def main():
            .mean().round(4))
     print(piv.to_string())
 
-    order = ["HAR", "HAR+DOW", "N-HAR"]
+    order = MODEL_ORDER
     lines = ["| Pair | h | " + " | ".join(f"{m} MSE" for m in order) + " |",
              "|---|---|" + "---|" * len(order)]
     for (pair, h), g in metrics.groupby(["pair", "horizon"], sort=False):

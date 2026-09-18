@@ -61,7 +61,7 @@ from utils.forecast_tests import dm_test, mcs
 
 LOSS_COLS = ["se", "ae", "qlike"]
 LOSS_LABEL = {"se": "MSE", "ae": "MAE", "qlike": "QLIKE"}
-DEFAULT_MODELS = ["HAR-RV", "N-HAR", "ModernTCN", "FiLM-TCN"]
+DEFAULT_MODELS = ["HAR-RV", "HAR-NEWS", "N-HAR", "ModernTCN", "FiLM-TCN"]
 KEY = ["pair", "horizon", "model", "date"]
 
 

@@ -329,17 +329,18 @@ class SelectOnSplitExp(Exp_Main):
                     adjust_learning_rate(model_optim, scheduler, epoch + 1, a, printout=False)
                     scheduler.step()
 
+            # only the monitored split is scored per epoch. The reference split
+            # is scored once, from the reloaded best checkpoint below -- that is
+            # the value reported, so a per-epoch pass over it was pure cost
             mon = self.evaluate(monitor_loader)
-            ref = self.evaluate(reference_loader)
             score = mon[a.objective]
 
             if score < best_score:
                 best_score, best_epoch = score, epoch + 1
 
             if a.verbose:
-                print(f'    epoch {epoch + 1:>3}/{a.train_epochs} | train {np.average(train_loss):.6f} '
-                      f'| {monitored} {a.objective} {score:.6f} | {reference} {a.objective} '
-                      f'{ref[a.objective]:.6f}')
+                print(f'    epoch {epoch + 1:>3}/{a.train_epochs} | train '
+                      f'{np.average(train_loss):.6f} | {monitored} {a.objective} {score:.6f}')
 
             if trial is not None:
                 trial.report(float(score), epoch)

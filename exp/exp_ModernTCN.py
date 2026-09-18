@@ -67,6 +67,25 @@ class Exp_Main(Exp_Basic):
             y = torch.logsumexp(y, dim=1, keepdim=True) - math.log(h)
         return y
 
+    def _model_label(self):
+        """The model name this run reports itself as in its loss file.
+
+        It has to separate every variant that trains differently, because
+        dm_mcs_run.py groups per-observation losses by
+        (pair, horizon, model, date) and averages them: two variants sharing a
+        label are silently merged into one row instead of being compared, and
+        the one whose name never appears is dropped from the panel entirely.
+        These names are what the benchmark notebook's MODELS list expects.
+        """
+        if not getattr(self.args, 'use_events', False):
+            return 'ModernTCN'
+        name = 'FiLM-TCN'
+        if getattr(self.args, 'event_linear', False):
+            name += '-L1'
+        if getattr(self.args, 'event_untie', False):
+            name += '-U'
+        return name
+
     def _save_losses(self, setting, test_data, preds, trues):
         """Write this run's per-observation TEST losses for the DM / MCS stage.
 
@@ -115,7 +134,7 @@ class Exp_Main(Exp_Basic):
         df = pd.DataFrame({
             'pair': pair,
             'horizon': int(self.args.pred_len),
-            'model': 'FiLM-TCN' if getattr(self.args, 'use_events', False) else 'ModernTCN',
+            'model': self._model_label(),
             'seed': getattr(self.args, 'run_seed', -1),
             'date': pd.to_datetime(dates),
             'se': ((p - t) ** 2).mean(axis=1),

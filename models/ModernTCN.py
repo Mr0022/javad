@@ -124,13 +124,17 @@ class ReparamLargeKernelConv(nn.Module):
             self.__delattr__('small_conv')
 
 class Block(nn.Module):
-    def __init__(self, large_size, small_size, dmodel, dff, nvars, small_kernel_merged=False, drop=0.1):
+    def __init__(self, large_size, small_size, dmodel, dff, nvars, small_kernel_merged=False, drop=0.1,
+                 norm_affine=True):
 
         super(Block, self).__init__()
         self.dw = ReparamLargeKernelConv(in_channels=nvars * dmodel, out_channels=nvars * dmodel,
                                          kernel_size=large_size, stride=1, groups=nvars * dmodel,
                                          small_kernel=small_size, small_kernel_merged=small_kernel_merged, nvars=nvars)
-        self.norm = nn.BatchNorm1d(dmodel)
+        # a FiLM-ed Block turns BN's own affine off: FiLM's (gamma, beta) take
+        # its place (Perez et al. 2018, sec. 2.2), and the FiLM generator's
+        # bias is what the unconditioned affine becomes
+        self.norm = nn.BatchNorm1d(dmodel, affine=norm_affine)
 
         #convffn1
         self.ffn1pw1 = nn.Conv1d(in_channels=nvars * dmodel, out_channels=nvars * dff, kernel_size=1, stride=1,
@@ -151,7 +155,7 @@ class Block(nn.Module):
         self.ffn2drop2 = nn.Dropout(drop)
 
         self.ffn_ratio = dff//dmodel
-    def forward(self,x):
+    def forward(self,x, film=None):
 
         input = x
         B, M, D, N = x.shape
@@ -161,6 +165,12 @@ class Block(nn.Module):
         x = x.reshape(B*M,D,N)
         x = self.norm(x)
         x = x.reshape(B, M, D, N)
+        if film is not None:
+            # post-BN FiLM inside the residual branch, so the ConvFFNs' GELUs
+            # act on the modulated features. (B, D) each, shared across
+            # variables and patches exactly as BN's affine was
+            gamma, beta = film
+            x = x * (1.0 + gamma[:, None, :, None]) + beta[:, None, :, None]
         x = x.reshape(B, M * D, N)
 
         x = self.ffn1drop1(self.ffn1pw1(x))
@@ -182,21 +192,22 @@ class Block(nn.Module):
 
 class Stage(nn.Module):
     def __init__(self, ffn_ratio, num_blocks, large_size, small_size, dmodel, dw_model, nvars,
-                 small_kernel_merged=False, drop=0.1):
+                 small_kernel_merged=False, drop=0.1, norm_affine=True):
 
         super(Stage, self).__init__()
         d_ffn = dmodel * ffn_ratio
         blks = []
         for i in range(num_blocks):
-            blk = Block(large_size=large_size, small_size=small_size, dmodel=dmodel, dff=d_ffn, nvars=nvars, small_kernel_merged=small_kernel_merged, drop=drop)
+            blk = Block(large_size=large_size, small_size=small_size, dmodel=dmodel, dff=d_ffn, nvars=nvars, small_kernel_merged=small_kernel_merged, drop=drop,
+                        norm_affine=norm_affine)
             blks.append(blk)
 
         self.blocks = nn.ModuleList(blks)
 
-    def forward(self, x):
-
-        for blk in self.blocks:
-            x = blk(x)
+    def forward(self, x, film=None):
+        # film: one (gamma, beta) per Block, or None for an unconditioned stage
+        for i, blk in enumerate(self.blocks):
+            x = blk(x, None if film is None else film[i])
 
         return x
 
@@ -206,7 +217,7 @@ class ModernTCN(nn.Module):
                  nvars, small_kernel_merged=False, backbone_dropout=0.1, head_dropout=0.1, use_multi_scale=True, revin=True, affine=True,
                  subtract_last=False, freq=None, seq_len=512, c_in=7, individual=False, target_window=96,
                  use_events=False, event_in=0, event_dim=8, event_past=True, event_future=True,
-                 event_fusion='inject', event_untie=False, event_linear=False):
+                 event_fusion='inject', event_untie=False, event_linear=False, film_loc='head'):
 
         super(ModernTCN, self).__init__()
 
@@ -277,6 +288,18 @@ class ModernTCN(nn.Module):
         # free coefficient per release type, on the same regressor, rather than a
         # penalty on a rank-event_dim bottleneck.
         self.use_event_linear = bool(use_events and event_future and event_linear)
+        # where the future-schedule FiLM acts. 'head': once, on the final
+        # feature map, where only the linear head follows it. 'stage0': after
+        # BN in every Block of the first stage, inside the residual branch, so
+        # the rest of the backbone processes the modulated features -- the
+        # paper's placement, and its finding that one early FiLM is enough
+        # (Perez et al. 2018, Table 2: 'No FiLM in ResBlock 2-4').
+        if film_loc not in ('head', 'stage0'):
+            raise ValueError("film_loc must be 'head' or 'stage0', got {!r}".format(film_loc))
+        self.film_loc = film_loc
+        self.film_stage0 = bool(use_events and event_future and film_loc == 'stage0')
+        self.film = None
+        self.film_blocks = None
         self.event_embed_future = None
         self.event_linear_head = None
         if use_events:
@@ -301,9 +324,18 @@ class ModernTCN(nn.Module):
                 # zero-init => gamma=1, beta=0, so training starts as the
                 # unconditioned model and the event path only activates
                 # where it reduces loss
-                self.film = nn.Linear(event_dim, 2 * dims[-1])
-                nn.init.zeros_(self.film.weight)
-                nn.init.zeros_(self.film.bias)
+                if self.film_stage0:
+                    # one generator per stage-0 Block, as the paper predicts
+                    # (gamma^n, beta^n) for each n-th ResBlock
+                    self.film_blocks = nn.ModuleList(
+                        nn.Linear(event_dim, 2 * dims[0]) for _ in range(num_blocks[0]))
+                    gens = list(self.film_blocks)
+                else:
+                    self.film = nn.Linear(event_dim, 2 * dims[-1])
+                    gens = [self.film]
+                for g in gens:
+                    nn.init.zeros_(g.weight)
+                    nn.init.zeros_(g.bias)
 
         # backbone
 
@@ -311,7 +343,8 @@ class ModernTCN(nn.Module):
         self.stages = nn.ModuleList()
         for stage_idx in range(self.num_stage):
             layer = Stage(ffn_ratio, num_blocks[stage_idx], large_size[stage_idx], small_size[stage_idx], dmodel=dims[stage_idx],
-                          dw_model=dw_dims[stage_idx], nvars=backbone_nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout)
+                          dw_model=dw_dims[stage_idx], nvars=backbone_nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout,
+                          norm_affine=not (self.film_stage0 and stage_idx == 0))
             self.stages.append(layer)
 
         # Multi scale fusing (if needed)
@@ -367,7 +400,22 @@ class ModernTCN(nn.Module):
         _, _, _, N = x.shape
         return F.upsample(x, size=N, scale_factor=upsample_ratio, mode='bilinear')
 
-    def forward_feature(self, x, te=None, event_x=None):
+    def stage0_film(self, event_y, batch_size, device):
+        """Per-Block (gamma, beta) for stage 0, or None when it is not FiLM-ed.
+
+        Those Blocks' BN has no affine of its own, so they are always
+        modulated: without a schedule the condition is zero and each Block
+        falls back to its generator's bias, the unconditioned affine.
+        """
+        if self.film_blocks is None:
+            return None
+        if event_y is not None:
+            cond = self.future_event_embed()(event_y).mean(dim=1)   # (B, event_dim)
+        else:
+            cond = torch.zeros(batch_size, self.film_blocks[0].in_features, device=device)
+        return [g(cond).chunk(2, dim=-1) for g in self.film_blocks]
+
+    def forward_feature(self, x, te=None, event_x=None, film=None):
 
         B,M,L=x.shape
 
@@ -405,7 +453,7 @@ class ModernTCN(nn.Module):
                 else:
                     # 'inject': add the (shared) event calendar to every variable
                     x = x + ev_feat
-            x = self.stages[i](x)
+            x = self.stages[i](x, film if i == 0 else None)
         if self.event_as_channel:
             # drop the event variable so the head/RevIN see value variables only
             x = x[:, :self.value_nvars]
@@ -418,8 +466,9 @@ class ModernTCN(nn.Module):
             x = x.permute(0, 2, 1)
             x = self.revin_layer(x, 'norm')
             x = x.permute(0, 2, 1)
-        x = self.forward_feature(x,te,event_x)
-        if self.use_events and self.event_future and event_y is not None:
+        film = self.stage0_film(event_y, x.shape[0], x.device)
+        x = self.forward_feature(x,te,event_x,film)
+        if self.film is not None and event_y is not None:
             # pool the horizon's known schedule, FiLM the final feature map
             cond = self.future_event_embed()(event_y).mean(dim=1)   # (B, event_dim)
             gamma, beta = self.film(cond).chunk(2, dim=-1)  # (B, d_model) each
@@ -487,6 +536,7 @@ class Model(nn.Module):
         self.event_fusion = getattr(configs, 'event_fusion', 'inject')
         self.event_untie = getattr(configs, 'event_untie', False)
         self.event_linear = getattr(configs, 'event_linear', False)
+        self.film_loc = getattr(configs, 'film_loc', 'head')
 
         # decomp
         self.decomposition = configs.decomposition
@@ -497,20 +547,20 @@ class Model(nn.Module):
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
                  event_fusion=self.event_fusion, event_untie=self.event_untie,
-                 event_linear=self.event_linear)
+                 event_linear=self.event_linear, film_loc=self.film_loc)
             self.model_trend = ModernTCN(patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
                  nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
                  event_fusion=self.event_fusion, event_untie=self.event_untie,
-                 event_linear=self.event_linear)
+                 event_linear=self.event_linear, film_loc=self.film_loc)
         else:
             self.model = ModernTCN(patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
                  nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
                  subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, individual=self.individual, target_window=self.target_window,
                  use_events=self.use_events, event_in=self.event_in, event_dim=self.event_dim, event_past=self.event_past, event_future=self.event_future,
                  event_fusion=self.event_fusion, event_untie=self.event_untie,
-                 event_linear=self.event_linear)
+                 event_linear=self.event_linear, film_loc=self.film_loc)
 
     def event_l1(self):
         """L1 norm of the additive event head(s), or None when none is built.

@@ -131,7 +131,8 @@ parser.add_argument('--loss_dir', type=str, default='./losses',
 parser.add_argument('--use_events', action='store_true', default=False,
                     help='condition on the daily macro news-event calendar: past events are '
                          'embedded and injected at the stem; the KNOWN future event schedule '
-                         '(release calendar over the pred_len horizon) FiLM-conditions the head')
+                         '(release calendar over the pred_len horizon) FiLM-conditions the '
+                         'backbone (--film_loc)')
 parser.add_argument('--event_data_path', type=str, default=None,
                     help='event calendar csv inside root_path. Defaults to the calendar paired '
                          'with --data_path by name (AUDUSD_lnRV.csv -> AUDUSD_EVENTS.csv), so it '
@@ -152,7 +153,8 @@ parser.add_argument('--event_dim', type=int, default=8,
 parser.add_argument('--event_past', type=str2bool, default=True,
                     help='ablation switch: inject look-back events into the stem')
 parser.add_argument('--event_future', type=str2bool, default=True,
-                    help='ablation switch: FiLM-condition the head on the future event schedule')
+                    help='ablation switch: FiLM-condition on the future event schedule '
+                         '(where: --film_loc)')
 parser.add_argument('--event_fusion', type=str, default='inject', choices=['inject', 'channel'],
                     help="how PAST events enter the backbone: 'inject' (default) adds the shared "
                          "event embedding onto the stem feature map; 'channel' makes past events a "
@@ -177,6 +179,14 @@ parser.add_argument('--event_l1', type=float, default=0.0,
                          "only (reported train/val/test losses stay pure MSE). Comparable with "
                          "N-HAR's alpha: sklearn minimises (1/2)*MSE + alpha*|b|_1, so this "
                          "equals 2*alpha. Ignored unless --event_linear")
+parser.add_argument('--film_loc', type=str, default='head', choices=['head', 'stage0'],
+                    help="where the future-schedule FiLM acts. 'head' (the default, and what "
+                         "every existing result used): once on the final feature map, "
+                         "followed only by the linear head. 'stage0': after BN in every Block "
+                         "of the first stage, inside the residual branch, with those BNs' own "
+                         "affine turned off -- FiLM paper placement (Perez et al. 2018), so "
+                         "every later Block processes the modulated features. Ignored unless "
+                         "--use_events with --event_future")
 
 # GPU
 parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
@@ -223,6 +233,8 @@ def event_setting_suffix(args):
         s += 'u'
     if args.event_linear:
         s += 'lin{}'.format(('%g' % args.event_l1).replace('.', 'p'))
+    if args.event_future and args.film_loc != 'head':
+        s += 'fs0'
     return s
 
 

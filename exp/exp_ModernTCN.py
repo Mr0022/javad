@@ -80,9 +80,9 @@ class Exp_Main(Exp_Basic):
         if not getattr(self.args, 'use_events', False):
             return 'ModernTCN'
         name = 'FiLM-TCN'
-        if (getattr(self.args, 'event_future', True)
-                and getattr(self.args, 'film_loc', 'head') == 'stage0'):
-            name += '-S0'
+        if getattr(self.args, 'event_future', True):
+            name += {'stage0': '-S0', 'all': '-A'}.get(
+                getattr(self.args, 'film_loc', 'head'), '')
         if getattr(self.args, 'event_linear', False):
             name += '-L1'
         if getattr(self.args, 'event_untie', False):

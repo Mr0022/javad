@@ -293,11 +293,18 @@ class ModernTCN(nn.Module):
         # BN in every Block of the first stage, inside the residual branch, so
         # the rest of the backbone processes the modulated features -- the
         # paper's placement, and its finding that one early FiLM is enough
-        # (Perez et al. 2018, Table 2: 'No FiLM in ResBlock 2-4').
-        if film_loc not in ('head', 'stage0'):
-            raise ValueError("film_loc must be 'head' or 'stage0', got {!r}".format(film_loc))
+        # (Perez et al. 2018, Table 2: 'No FiLM in ResBlock 2-4'). 'all': the
+        # same post-BN FiLM in every Block of every stage, the paper's own
+        # architecture (one (gamma, beta) per ResBlock).
+        if film_loc not in ('head', 'stage0', 'all'):
+            raise ValueError("film_loc must be 'head', 'stage0' or 'all', got {!r}".format(film_loc))
         self.film_loc = film_loc
-        self.film_stage0 = bool(use_events and event_future and film_loc == 'stage0')
+        if not (use_events and event_future) or film_loc == 'head':
+            self.film_stages = ()
+        elif film_loc == 'stage0':
+            self.film_stages = (0,)
+        else:
+            self.film_stages = tuple(range(len(num_blocks)))
         self.film = None
         self.film_blocks = None
         self.event_embed_future = None
@@ -324,12 +331,15 @@ class ModernTCN(nn.Module):
                 # zero-init => gamma=1, beta=0, so training starts as the
                 # unconditioned model and the event path only activates
                 # where it reduces loss
-                if self.film_stage0:
-                    # one generator per stage-0 Block, as the paper predicts
-                    # (gamma^n, beta^n) for each n-th ResBlock
+                if self.film_stages:
+                    # one generator per FiLM-ed Block, as the paper predicts
+                    # (gamma^n, beta^n) for each n-th ResBlock; film_blocks[s]
+                    # holds stage s's, and is empty for an unconditioned stage
                     self.film_blocks = nn.ModuleList(
-                        nn.Linear(event_dim, 2 * dims[0]) for _ in range(num_blocks[0]))
-                    gens = list(self.film_blocks)
+                        nn.ModuleList(nn.Linear(event_dim, 2 * dims[s])
+                                      for _ in range(num_blocks[s] if s in self.film_stages else 0))
+                        for s in range(len(num_blocks)))
+                    gens = [g for stage in self.film_blocks for g in stage]
                 else:
                     self.film = nn.Linear(event_dim, 2 * dims[-1])
                     gens = [self.film]
@@ -344,7 +354,7 @@ class ModernTCN(nn.Module):
         for stage_idx in range(self.num_stage):
             layer = Stage(ffn_ratio, num_blocks[stage_idx], large_size[stage_idx], small_size[stage_idx], dmodel=dims[stage_idx],
                           dw_model=dw_dims[stage_idx], nvars=backbone_nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout,
-                          norm_affine=not (self.film_stage0 and stage_idx == 0))
+                          norm_affine=stage_idx not in self.film_stages)
             self.stages.append(layer)
 
         # Multi scale fusing (if needed)
@@ -400,10 +410,11 @@ class ModernTCN(nn.Module):
         _, _, _, N = x.shape
         return F.upsample(x, size=N, scale_factor=upsample_ratio, mode='bilinear')
 
-    def stage0_film(self, event_y, batch_size, device):
-        """Per-Block (gamma, beta) for stage 0, or None when it is not FiLM-ed.
+    def block_film(self, event_y, batch_size, device):
+        """Per-stage lists of per-Block (gamma, beta); None for a stage that is
+        not FiLM-ed, and None overall when no Block is.
 
-        Those Blocks' BN has no affine of its own, so they are always
+        FiLM-ed Blocks' BN has no affine of its own, so they are always
         modulated: without a schedule the condition is zero and each Block
         falls back to its generator's bias, the unconditioned affine.
         """
@@ -412,8 +423,10 @@ class ModernTCN(nn.Module):
         if event_y is not None:
             cond = self.future_event_embed()(event_y).mean(dim=1)   # (B, event_dim)
         else:
-            cond = torch.zeros(batch_size, self.film_blocks[0].in_features, device=device)
-        return [g(cond).chunk(2, dim=-1) for g in self.film_blocks]
+            in_features = self.film_blocks[self.film_stages[0]][0].in_features
+            cond = torch.zeros(batch_size, in_features, device=device)
+        return [[g(cond).chunk(2, dim=-1) for g in stage] if len(stage) else None
+                for stage in self.film_blocks]
 
     def forward_feature(self, x, te=None, event_x=None, film=None):
 
@@ -453,7 +466,7 @@ class ModernTCN(nn.Module):
                 else:
                     # 'inject': add the (shared) event calendar to every variable
                     x = x + ev_feat
-            x = self.stages[i](x, film if i == 0 else None)
+            x = self.stages[i](x, None if film is None else film[i])
         if self.event_as_channel:
             # drop the event variable so the head/RevIN see value variables only
             x = x[:, :self.value_nvars]
@@ -466,7 +479,7 @@ class ModernTCN(nn.Module):
             x = x.permute(0, 2, 1)
             x = self.revin_layer(x, 'norm')
             x = x.permute(0, 2, 1)
-        film = self.stage0_film(event_y, x.shape[0], x.device)
+        film = self.block_film(event_y, x.shape[0], x.device)
         x = self.forward_feature(x,te,event_x,film)
         if self.film is not None and event_y is not None:
             # pool the horizon's known schedule, FiLM the final feature map

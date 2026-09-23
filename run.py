@@ -179,13 +179,14 @@ parser.add_argument('--event_l1', type=float, default=0.0,
                          "only (reported train/val/test losses stay pure MSE). Comparable with "
                          "N-HAR's alpha: sklearn minimises (1/2)*MSE + alpha*|b|_1, so this "
                          "equals 2*alpha. Ignored unless --event_linear")
-parser.add_argument('--film_loc', type=str, default='head', choices=['head', 'stage0'],
+parser.add_argument('--film_loc', type=str, default='head', choices=['head', 'stage0', 'all'],
                     help="where the future-schedule FiLM acts. 'head' (the default, and what "
                          "every existing result used): once on the final feature map, "
                          "followed only by the linear head. 'stage0': after BN in every Block "
                          "of the first stage, inside the residual branch, with those BNs' own "
                          "affine turned off -- FiLM paper placement (Perez et al. 2018), so "
-                         "every later Block processes the modulated features. Ignored unless "
+                         "every later Block processes the modulated features. 'all': the "
+                         "same post-BN FiLM in every Block of every stage. Ignored unless "
                          "--use_events with --event_future")
 
 # GPU
@@ -234,7 +235,7 @@ def event_setting_suffix(args):
     if args.event_linear:
         s += 'lin{}'.format(('%g' % args.event_l1).replace('.', 'p'))
     if args.event_future and args.film_loc != 'head':
-        s += 'fs0'
+        s += {'stage0': 'fs0', 'all': 'fall'}[args.film_loc]
     return s
 
 

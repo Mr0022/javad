@@ -96,6 +96,7 @@ Usage
     python HAR_X_run.py                       # EUR/USD, h = 1, 5, 10
     python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD USDCHF USDJPY
     python HAR_X_run.py --horizons 1
+    python HAR_X_run.py --event_suffix _CORE  # release-level calendar
 ==============================================================================
 """
 
@@ -579,9 +580,13 @@ def fit_nhar(train, test, z_cols, x_cols, h, rule=LAMBDA_RULE):
 # ==============================================================================
 
 def run_pair(pair, root_path, target, horizons, event_kwargs,
-             rule=LAMBDA_RULE, verbose=True):
+             rule=LAMBDA_RULE, verbose=True, event_suffix=""):
     data_path  = f"{pair}_lnRV.csv"
-    event_path = resolve_event_path(root_path, data_path, None)
+    # '' -> <PAIR>_EVENTS.csv; '_CORE' -> the release-level calendar written by
+    # scripts/build_core_events.py
+    event_path = resolve_event_path(
+        root_path, data_path,
+        f"{pair}_EVENTS{event_suffix}.csv" if event_suffix else None)
 
     series = load_series(root_path, data_path, target)
     events = load_event_features(root_path, event_path, series.index,
@@ -694,6 +699,9 @@ def main():
     ap.add_argument("--event_min_days", type=int, default=DEFAULT_MIN_DAYS)
     ap.add_argument("--event_on_nontrading", type=str,
                     default=DEFAULT_ON_NONTRADING, choices=["roll", "drop"])
+    ap.add_argument("--event_suffix", type=str, default="",
+                    help="read data/<PAIR>_EVENTS<suffix>.csv instead of the raw "
+                         "calendar, e.g. '_CORE' for the release-level set")
     args = ap.parse_args()
 
     for h in args.horizons:
@@ -711,7 +719,8 @@ def main():
         try:
             rows, sel, loss = run_pair(pair, args.root_path, args.target,
                                        args.horizons, event_kwargs,
-                                       rule=args.lambda_rule)
+                                       rule=args.lambda_rule,
+                                       event_suffix=args.event_suffix)
         except FileNotFoundError as e:
             print(f"\n[skip] {pair}: {e}", file=sys.stderr)
             continue

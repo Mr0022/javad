@@ -1,0 +1,345 @@
+currency,country,release_id,release,frequency,category,sector,member
+USD,US,U01,"GDP (advance, second, third)",quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Annualized
+USD,US,U01,"GDP (advance, second, third)",quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Price Index
+USD,US,U01,"GDP (advance, second, third)",quarterly,Real Activity,National Accounts (GDP),Core Personal Consumption Expenditures (QoQ)
+USD,US,U01,"GDP (advance, second, third)",quarterly,Real Activity,National Accounts (GDP),Personal Consumption Expenditures Prices (QoQ)
+USD,US,U02,Employment Cost Index,quarterly,Prices,Labor Market,Employment Cost Index
+USD,US,U03,Productivity and Unit Labor Costs,quarterly,Real Activity,Labor Market,Nonfarm Productivity
+USD,US,U03,Productivity and Unit Labor Costs,quarterly,Real Activity,Labor Market,Unit Labor Costs
+USD,US,U04,Current Account,quarterly,Net Exports,Intl Trade & BoP,Current Account
+USD,US,U05,Senior Loan Officer Survey,quarterly,Monetary,Monetary Sector,Loan Officer Survey
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Nonfarm Payrolls
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Unemployment Rate
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Average Hourly Earnings (MoM)
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Average Hourly Earnings (YoY)
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Average Weekly Hours
+USD,US,U06,Employment Situation (Nonfarm Payrolls),monthly,Real Activity,Labor Market,Labor Force Participation Rate
+USD,US,U07,ADP Employment Change,monthly,Real Activity,Labor Market,ADP Employment Change
+USD,US,U08,Challenger Job Cuts,monthly,Real Activity,Labor Market,Challenger Job Cuts
+USD,US,U09,JOLTS Job Openings,monthly,Real Activity,Labor Market,JOLTS Job Openings
+USD,US,U10,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales (MoM)
+USD,US,U10,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales ex Autos (MoM)
+USD,US,U11,Total Vehicle Sales,monthly,Consumption,Retail & Wholesale Sector,Total Vehicle Sales
+USD,US,U12,Business Inventories,monthly,Investment,Retail & Wholesale Sector,Business Inventories
+USD,US,U13,Wholesale Inventories,monthly,Investment,Retail & Wholesale Sector,Wholesale Inventories
+USD,US,U14,Industrial Production and Capacity Utilization,monthly,Real Activity,Industrial Sector,Industrial Production (MoM)
+USD,US,U14,Industrial Production and Capacity Utilization,monthly,Real Activity,Industrial Sector,Capacity Utilization
+USD,US,U15,Durable Goods Orders,monthly,Investment,Industrial Sector,Durable Goods Orders
+USD,US,U15,Durable Goods Orders,monthly,Investment,Industrial Sector,Durable Goods Orders ex Transportation
+USD,US,U16,Factory Orders,monthly,Investment,Industrial Sector,Factory Orders (MoM)
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Personal Income (MoM)
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Personal Spending
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Personal Consumption Expenditures - Price Index (MoM)
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Personal Consumption Expenditures - Price Index (YoY)
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Core Personal Consumption Expenditures - Price Index (MoM)
+USD,US,U17,Personal Income and Outlays (incl. PCE prices),monthly,Consumption,Personal/Household Sector,Core Personal Consumption Expenditures - Price Index (YoY)
+USD,US,U18,Consumer Credit,monthly,Monetary,Monetary Sector,Consumer Credit Change
+USD,US,U19,Housing Starts and Building Permits,monthly,Forward-Looking,Housing and Real Estate,Housing Starts (MoM)
+USD,US,U19,Housing Starts and Building Permits,monthly,Forward-Looking,Housing and Real Estate,Building Permits (MoM)
+USD,US,U20,New Home Sales,monthly,Consumption,Housing and Real Estate,New Home Sales (MoM)
+USD,US,U20,New Home Sales,monthly,Consumption,Housing and Real Estate,New Home Sales Change (MoM)
+USD,US,U21,Existing Home Sales,monthly,Consumption,Housing and Real Estate,Existing Home Sales (MoM)
+USD,US,U21,Existing Home Sales,monthly,Consumption,Housing and Real Estate,Existing Home Sales Change (MoM)
+USD,US,U22,Pending Home Sales,monthly,Forward-Looking,Housing and Real Estate,Pending Home Sales (MoM)
+USD,US,U22,Pending Home Sales,monthly,Forward-Looking,Housing and Real Estate,Pending Home Sales (YoY)
+USD,US,U23,Construction Spending,monthly,Investment,Housing and Real Estate,Construction Spending (MoM)
+USD,US,U24,NAHB Housing Market Index,monthly,Forward-Looking,Housing and Real Estate,NAHB Housing Market Index
+USD,US,U25,S&P/Case-Shiller Home Prices,monthly,Prices,Housing and Real Estate,S&P/Case-Shiller Home Price Indices (YoY)
+USD,US,U26,FHFA House Price Index,monthly,Prices,Housing and Real Estate,Housing Price Index (MoM)
+USD,US,U27,Trade Balance (goods and services),monthly,Net Exports,Intl Trade & BoP,Goods and Services Trade Balance
+USD,US,U28,TIC Capital Flows,monthly,Net Exports,Intl Trade & BoP,Net Long-Term TIC Flows
+USD,US,U28,TIC Capital Flows,monthly,Net Exports,Intl Trade & BoP,Total Net TIC Flows
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (MoM)
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (YoY)
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index Core s.a
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index ex Food & Energy (MoM)
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index ex Food & Energy (YoY)
+USD,US,U29,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index n.s.a (MoM)
+USD,US,U30,Producer Price Index,monthly,Prices,Prices,Producer Price Index (MoM)
+USD,US,U30,Producer Price Index,monthly,Prices,Prices,Producer Price Index (YoY)
+USD,US,U30,Producer Price Index,monthly,Prices,Prices,Producer Price Index ex Food & Energy (MoM)
+USD,US,U30,Producer Price Index,monthly,Prices,Prices,Producer Price Index ex Food & Energy (YoY)
+USD,US,U31,Import and Export Prices,monthly,Prices,Prices,Import Price Index (MoM)
+USD,US,U31,Import and Export Prices,monthly,Prices,Prices,Import Price Index (YoY)
+USD,US,U31,Import and Export Prices,monthly,Prices,Prices,Export Price Index (MoM)
+USD,US,U31,Import and Export Prices,monthly,Prices,Prices,Export Price Index (YoY)
+USD,US,U32,ISM Manufacturing PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,ISM Manufacturing PMI
+USD,US,U32,ISM Manufacturing PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,ISM Manufacturing Prices Paid
+USD,US,U33,ISM Services PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,ISM Services PMI
+USD,US,U34,S&P Global Manufacturing PMI (flash and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Manufacturing PMI
+USD,US,U35,S&P Global Services/Composite PMI (flash and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Services PMI
+USD,US,U35,S&P Global Services/Composite PMI (flash and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Composite PMI
+USD,US,U36,Consumer Confidence (Conference Board),monthly,Forward-Looking,Surveys/Cyclical Indicators,Consumer Confidence
+USD,US,U37,Michigan Consumer Sentiment (prelim. and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,Michigan Consumer Sentiment Index
+USD,US,U38,NFIB Small Business Optimism,monthly,Forward-Looking,Surveys/Cyclical Indicators,NFIB Business Optimism Index
+USD,US,U39,RCM/TIPP Economic Optimism,monthly,Forward-Looking,Surveys/Cyclical Indicators,RealClearMarkets/TIPP Economic Optimism (MoM)
+USD,US,U40,Chicago Fed National Activity Index,monthly,Forward-Looking,Surveys/Cyclical Indicators,Chicago Fed National Activity Index
+USD,US,U41,Monthly Treasury Budget Statement,monthly,Government,Government Finance,Monthly Budget Statement
+USD,US,U42,"FOMC Rate Decision (statement, projections)",policy meeting,Monetary,Monetary Sector,Fed Interest Rate Decision
+USD,US,U42,"FOMC Rate Decision (statement, projections)",policy meeting,Monetary,Monetary Sector,Fed Monetary Policy Statement
+USD,US,U42,"FOMC Rate Decision (statement, projections)",policy meeting,Monetary,Monetary Sector,FOMC Economic Projections
+USD,US,U43,Initial and Continuing Jobless Claims,weekly,Real Activity,Labor Market,Initial Jobless Claims
+USD,US,U43,Initial and Continuing Jobless Claims,weekly,Real Activity,Labor Market,Continuing Jobless Claims
+USD,US,U44,MBA Mortgage Applications,weekly,Forward-Looking,Housing and Real Estate,MBA Mortgage Applications
+USD,US,U45,Redbook Same-Store Sales,weekly,Consumption,Retail & Wholesale Sector,Redbook Index (YoY)
+EUR,EA,E01,"GDP, euro area (flash, second, final)",quarterly,Real Activity,National Accounts (GDP),eur Gross Domestic Product s.a. (QoQ)
+EUR,EA,E01,"GDP, euro area (flash, second, final)",quarterly,Real Activity,National Accounts (GDP),eur Gross Domestic Product s.a. (YoY)
+EUR,EA,E02,"Employment, euro area",quarterly,Real Activity,Labor Market,eur Employment Change (QoQ)
+EUR,EA,E02,"Employment, euro area",quarterly,Real Activity,Labor Market,eur Employment Change (YoY)
+EUR,EA,E03,"Labour Cost Index, euro area",quarterly,Prices,Labor Market,eur Labor Cost Index
+EUR,EA,E04,"Unemployment Rate, euro area",monthly,Real Activity,Labor Market,eur Unemployment Rate
+EUR,EA,E05,"Industrial Production, euro area",monthly,Real Activity,Industrial Sector,eur Industrial Production s.a. (MoM)
+EUR,EA,E05,"Industrial Production, euro area",monthly,Real Activity,Industrial Sector,eur Industrial Production w.d.a. (YoY)
+EUR,EA,E06,"Retail Sales, euro area",monthly,Consumption,Retail & Wholesale Sector,eur Retail Sales (MoM)
+EUR,EA,E06,"Retail Sales, euro area",monthly,Consumption,Retail & Wholesale Sector,eur Retail Sales (YoY)
+EUR,EA,E07,"Construction Output, euro area",monthly,Investment,Housing and Real Estate,eur Construction Output s.a (MoM)
+EUR,EA,E07,"Construction Output, euro area",monthly,Investment,Housing and Real Estate,eur Construction Output w.d.a (YoY)
+EUR,EA,E08,"Trade Balance, euro area",monthly,Net Exports,Intl Trade & BoP,eur Trade Balance s.a.
+EUR,EA,E08,"Trade Balance, euro area",monthly,Net Exports,Intl Trade & BoP,eur Trade Balance n.s.a.
+EUR,EA,E09,"Current Account, euro area",monthly,Net Exports,Intl Trade & BoP,eur Current Account s.a
+EUR,EA,E09,"Current Account, euro area",monthly,Net Exports,Intl Trade & BoP,eur Current Account n.s.a
+EUR,EA,E10,"HICP, euro area (flash and final)",monthly,Prices,Prices,eur Harmonized Index of Consumer Prices (YoY)
+EUR,EA,E10,"HICP, euro area (flash and final)",monthly,Prices,Prices,eur Harmonized Index of Consumer Prices (MoM)
+EUR,EA,E10,"HICP, euro area (flash and final)",monthly,Prices,Prices,eur Core Harmonized Index of Consumer Prices (YoY)
+EUR,EA,E11,"Producer Price Index, euro area",monthly,Prices,Prices,eur Producer Price Index (MoM)
+EUR,EA,E11,"Producer Price Index, euro area",monthly,Prices,Prices,eur Producer Price Index (YoY)
+EUR,EA,E12,M3 Money Supply and Private Loans,monthly,Monetary,Monetary Sector,eur M3 Money Supply (YoY)
+EUR,EA,E12,M3 Money Supply and Private Loans,monthly,Monetary,Monetary Sector,eur M3 Money Supply (3m)
+EUR,EA,E12,M3 Money Supply and Private Loans,monthly,Monetary,Monetary Sector,eur Private Loans (YoY)
+EUR,EA,E13,Economic Sentiment Indicator (EC survey),monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Economic Sentiment Indicator
+EUR,EA,E13,Economic Sentiment Indicator (EC survey),monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Industrial Confidence
+EUR,EA,E13,Economic Sentiment Indicator (EC survey),monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Services Sentiment
+EUR,EA,E13,Economic Sentiment Indicator (EC survey),monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Business Climate
+EUR,EA,E14,"Consumer Confidence, euro area (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Consumer Confidence
+EUR,EA,E15,Sentix Investor Confidence,monthly,Forward-Looking,Surveys/Cyclical Indicators,eur Sentix Investor Confidence
+EUR,EA,E16,"HCOB Manufacturing PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,eur HCOB Manufacturing PMI
+EUR,EA,E16,"HCOB Manufacturing PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,ger HCOB Manufacturing PMI
+EUR,EA,E16,"HCOB Manufacturing PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,fra HCOB Manufacturing PMI
+EUR,EA,E17,"HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,eur HCOB Services PMI
+EUR,EA,E17,"HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,eur HCOB Composite PMI
+EUR,EA,E17,"HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,ger HCOB Services PMI
+EUR,EA,E17,"HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,fra HCOB Services PMI
+EUR,EA,E17,"HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,fra HCOB Composite PMI
+EUR,EA,E18,ECB Rate Decision,policy meeting,Monetary,Monetary Sector,eur ECB Main Refinancing Operations Rate
+EUR,EA,E18,ECB Rate Decision,policy meeting,Monetary,Monetary Sector,eur ECB Rate On Deposit Facility
+EUR,DE,D01,"GDP, Germany",quarterly,Real Activity,National Accounts (GDP),ger Gross Domestic Product (QoQ)
+EUR,DE,D01,"GDP, Germany",quarterly,Real Activity,National Accounts (GDP),ger Gross Domestic Product (YoY)
+EUR,DE,D01,"GDP, Germany",quarterly,Real Activity,National Accounts (GDP),ger Gross Domestic Product w.d.a (YoY)
+EUR,DE,D02,"Unemployment, Germany",monthly,Real Activity,Labor Market,ger Unemployment Change
+EUR,DE,D02,"Unemployment, Germany",monthly,Real Activity,Labor Market,ger Unemployment Rate s.a.
+EUR,DE,D03,"Industrial Production, Germany",monthly,Real Activity,Industrial Sector,ger Industrial Production s.a. (MoM)
+EUR,DE,D03,"Industrial Production, Germany",monthly,Real Activity,Industrial Sector,ger Industrial Production n.s.a. w.d.a. (YoY)
+EUR,DE,D04,"Factory Orders, Germany",monthly,Investment,Industrial Sector,ger Factory Orders s.a. (MoM)
+EUR,DE,D04,"Factory Orders, Germany",monthly,Investment,Industrial Sector,ger Factory Orders n.s.a. (YoY)
+EUR,DE,D05,"Retail Sales, Germany",monthly,Consumption,Retail & Wholesale Sector,ger Retail Sales (MoM)
+EUR,DE,D05,"Retail Sales, Germany",monthly,Consumption,Retail & Wholesale Sector,ger Retail Sales (YoY)
+EUR,DE,D06,"Trade Balance, Germany",monthly,Net Exports,Intl Trade & BoP,ger Trade Balance s.a.
+EUR,DE,D06,"Trade Balance, Germany",monthly,Net Exports,Intl Trade & BoP,ger Exports (MoM)
+EUR,DE,D06,"Trade Balance, Germany",monthly,Net Exports,Intl Trade & BoP,ger Imports (MoM)
+EUR,DE,D07,"Current Account, Germany",monthly,Net Exports,Intl Trade & BoP,ger Current Account n.s.a.
+EUR,DE,D08,"Consumer Prices, Germany (prelim. and final, CPI and HICP)",monthly,Prices,Prices,ger Consumer Price Index (MoM)
+EUR,DE,D08,"Consumer Prices, Germany (prelim. and final, CPI and HICP)",monthly,Prices,Prices,ger Consumer Price Index (YoY)
+EUR,DE,D08,"Consumer Prices, Germany (prelim. and final, CPI and HICP)",monthly,Prices,Prices,ger Harmonized Index of Consumer Prices (MoM)
+EUR,DE,D08,"Consumer Prices, Germany (prelim. and final, CPI and HICP)",monthly,Prices,Prices,ger Harmonized Index of Consumer Prices (YoY)
+EUR,DE,D09,"Producer Prices, Germany",monthly,Prices,Prices,ger Producer Price Index (MoM)
+EUR,DE,D09,"Producer Prices, Germany",monthly,Prices,Prices,ger Producer Price Index (YoY)
+EUR,DE,D10,"Import Prices, Germany",monthly,Prices,Prices,ger Import Price Index (MoM)
+EUR,DE,D10,"Import Prices, Germany",monthly,Prices,Prices,ger Import Price Index (YoY)
+EUR,DE,D11,"Wholesale Prices, Germany",monthly,Prices,Prices,ger Wholesale Price Index (MoM)
+EUR,DE,D11,"Wholesale Prices, Germany",monthly,Prices,Prices,ger Wholesale Price Index (YoY)
+EUR,DE,D12,Ifo Business Climate,monthly,Forward-Looking,Surveys/Cyclical Indicators,ger IFO – Business Climate
+EUR,DE,D12,Ifo Business Climate,monthly,Forward-Looking,Surveys/Cyclical Indicators,ger IFO – Current Assessment
+EUR,DE,D12,Ifo Business Climate,monthly,Forward-Looking,Surveys/Cyclical Indicators,ger IFO – Expectations
+EUR,DE,D13,ZEW Economic Sentiment (Germany and euro area),monthly,Forward-Looking,Surveys/Cyclical Indicators,ger ZEW Survey – Economic Sentiment
+EUR,DE,D13,ZEW Economic Sentiment (Germany and euro area),monthly,Forward-Looking,Surveys/Cyclical Indicators,ger ZEW Survey – Current Situation
+EUR,DE,D13,ZEW Economic Sentiment (Germany and euro area),monthly,Forward-Looking,Surveys/Cyclical Indicators,eur ZEW Survey – Economic Sentiment
+EUR,DE,D14,GfK Consumer Climate,monthly,Forward-Looking,Surveys/Cyclical Indicators,ger GfK Consumer Confidence Survey
+EUR,FR,F01,"GDP, France",quarterly,Real Activity,National Accounts (GDP),fra Gross Domestic Product (QoQ)
+EUR,FR,F02,"ILO Unemployment Rate, France",quarterly,Real Activity,Labor Market,fra ILO Unemployment
+EUR,FR,F03,"Private Payrolls, France",quarterly,Real Activity,Labor Market,fra Nonfarm Payrolls (QoQ)
+EUR,FR,F04,"Industrial Output, France",monthly,Real Activity,Industrial Sector,fra Industrial Output (MoM)
+EUR,FR,F05,"Household Consumption, France",monthly,Consumption,Personal/Household Sector,fra Consumer Spending (MoM)
+EUR,FR,F06,"Trade Balance, France",monthly,Net Exports,Intl Trade & BoP,fra Trade Balance EUR
+EUR,FR,F06,"Trade Balance, France",monthly,Net Exports,Intl Trade & BoP,"fra Exports, EUR"
+EUR,FR,F06,"Trade Balance, France",monthly,Net Exports,Intl Trade & BoP,"fra Imports, EUR"
+EUR,FR,F07,"Current Account, France",monthly,Net Exports,Intl Trade & BoP,fra Current Account
+EUR,FR,F08,"Consumer Prices, France (prelim. and final)",monthly,Prices,Prices,fra Consumer Price Index (EU norm) (YoY)
+EUR,FR,F08,"Consumer Prices, France (prelim. and final)",monthly,Prices,Prices,fra Consumer Price Index (EU norm) (MoM)
+EUR,FR,F08,"Consumer Prices, France (prelim. and final)",monthly,Prices,Prices,fra Inflation ex-tobacco (MoM)
+EUR,FR,F09,"Producer Prices, France",monthly,Prices,Prices,fra Producer Prices (MoM)
+EUR,FR,F10,"Consumer Confidence, France",monthly,Forward-Looking,Surveys/Cyclical Indicators,fra Consumer Confidence
+EUR,FR,F11,"Business Climate in Manufacturing, France",monthly,Forward-Looking,Surveys/Cyclical Indicators,fra Business Climate in Manufacturing
+EUR,FR,F14,"Central Government Budget Balance, France",monthly,Government,Government Finance,fra Budget Balance
+GBP,UK,G01,"GDP (first, second, final) incl. Business Investment",quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ)
+GBP,UK,G01,"GDP (first, second, final) incl. Business Investment",quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (YoY)
+GBP,UK,G01,"GDP (first, second, final) incl. Business Investment",quarterly,Real Activity,National Accounts (GDP),Total Business Investment (QoQ)
+GBP,UK,G01,"GDP (first, second, final) incl. Business Investment",quarterly,Real Activity,National Accounts (GDP),Total Business Investment (YoY)
+GBP,UK,G02,Current Account,quarterly,Net Exports,Intl Trade & BoP,Current Account
+GBP,UK,G03,BoE Credit Conditions Survey,quarterly,Monetary,Monetary Sector,BoE Credit Conditions Survey
+GBP,UK,G04,BoE/Ipsos Inflation Attitudes Survey,quarterly,Prices,Prices,Consumer Inflation Expectations
+GBP,UK,G05,"Labour Market (ILO unemployment, claimant count, earnings)",monthly,Real Activity,Labor Market,ILO Unemployment Rate (3M)
+GBP,UK,G05,"Labour Market (ILO unemployment, claimant count, earnings)",monthly,Real Activity,Labor Market,Claimant Count Change
+GBP,UK,G05,"Labour Market (ILO unemployment, claimant count, earnings)",monthly,Real Activity,Labor Market,Claimant Count Rate
+GBP,UK,G05,"Labour Market (ILO unemployment, claimant count, earnings)",monthly,Real Activity,Labor Market,Average Earnings Including Bonus (3Mo/Yr)
+GBP,UK,G05,"Labour Market (ILO unemployment, claimant count, earnings)",monthly,Real Activity,Labor Market,Average Earnings Excluding Bonus (3Mo/Yr)
+GBP,UK,G06,"Consumer Price Inflation (CPI, core CPI, RPI)",monthly,Prices,Prices,Consumer Price Index (YoY)
+GBP,UK,G06,"Consumer Price Inflation (CPI, core CPI, RPI)",monthly,Prices,Prices,Consumer Price Index (MoM)
+GBP,UK,G06,"Consumer Price Inflation (CPI, core CPI, RPI)",monthly,Prices,Prices,Core Consumer Price Index (YoY)
+GBP,UK,G06,"Consumer Price Inflation (CPI, core CPI, RPI)",monthly,Prices,Prices,Retail Price Index (MoM)
+GBP,UK,G06,"Consumer Price Inflation (CPI, core CPI, RPI)",monthly,Prices,Prices,Retail Price Index (YoY)
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,Producer Price Index - Output (MoM) n.s.a
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,Producer Price Index - Output (YoY) n.s.a
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,Producer Price Index - Input (MoM) n.s.a
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,Producer Price Index - Input (YoY) n.s.a
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,PPI Core Output (MoM) n.s.a
+GBP,UK,G07,Producer Price Inflation (input and output),monthly,Prices,Prices,PPI Core Output (YoY) n.s.a
+GBP,UK,G08,BRC Shop Price Index,monthly,Prices,Prices,BRC Shop Price Index (YoY)
+GBP,UK,G09,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales (MoM)
+GBP,UK,G09,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales (YoY)
+GBP,UK,G09,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales ex-Fuel (MoM)
+GBP,UK,G09,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales ex-Fuel (YoY)
+GBP,UK,G10,BRC Like-for-Like Retail Sales,monthly,Consumption,Retail & Wholesale Sector,BRC Like-For-Like Retail Sales (YoY)
+GBP,UK,G11,Industrial and Manufacturing Production,monthly,Real Activity,Industrial Sector,Industrial Production (MoM)
+GBP,UK,G11,Industrial and Manufacturing Production,monthly,Real Activity,Industrial Sector,Industrial Production (YoY)
+GBP,UK,G11,Industrial and Manufacturing Production,monthly,Real Activity,Industrial Sector,Manufacturing Production (MoM)
+GBP,UK,G11,Industrial and Manufacturing Production,monthly,Real Activity,Industrial Sector,Manufacturing Production (YoY)
+GBP,UK,G12,Index of Services,monthly,Real Activity,National Accounts (GDP),Index of Services (3M/3M)
+GBP,UK,G13,NIESR Monthly GDP Tracker,monthly,Real Activity,National Accounts (GDP),NIESR GDP Estimate (3M)
+GBP,UK,G14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Goods Trade Balance
+GBP,UK,G14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Total Trade Balance
+GBP,UK,G14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Trade Balance; non-EU
+GBP,UK,G15,Nationwide House Price Index,monthly,Prices,Housing and Real Estate,Nationwide Housing Prices s.a (MoM)
+GBP,UK,G15,Nationwide House Price Index,monthly,Prices,Housing and Real Estate,Nationwide Housing Prices n.s.a (YoY)
+GBP,UK,G16,Halifax House Price Index,monthly,Prices,Housing and Real Estate,Lloyds House Price Index (MoM)
+GBP,UK,G16,Halifax House Price Index,monthly,Prices,Housing and Real Estate,Lloyds House Price Index (YoY)
+GBP,UK,G17,Rightmove House Price Index,monthly,Prices,Housing and Real Estate,Rightmove House Price Index (MoM)
+GBP,UK,G17,Rightmove House Price Index,monthly,Prices,Housing and Real Estate,Rightmove House Price Index (YoY)
+GBP,UK,G18,RICS Housing Price Balance,monthly,Forward-Looking,Housing and Real Estate,RICS Housing Price Balance
+GBP,UK,G19,ONS House Price Index,monthly,Prices,Housing and Real Estate,DCLG House Price Index (YoY)
+GBP,UK,G20,"BoE Money and Credit (M4, consumer credit, mortgage approvals)",monthly,Monetary,Monetary Sector,M4 Money Supply (MoM)
+GBP,UK,G20,"BoE Money and Credit (M4, consumer credit, mortgage approvals)",monthly,Monetary,Monetary Sector,M4 Money Supply (YoY)
+GBP,UK,G20,"BoE Money and Credit (M4, consumer credit, mortgage approvals)",monthly,Monetary,Monetary Sector,Consumer Credit
+GBP,UK,G20,"BoE Money and Credit (M4, consumer credit, mortgage approvals)",monthly,Monetary,Monetary Sector,Net Lending to Individuals (MoM)
+GBP,UK,G20,"BoE Money and Credit (M4, consumer credit, mortgage approvals)",monthly,Monetary,Monetary Sector,Mortgage Approvals
+GBP,UK,G21,Public Sector Net Borrowing,monthly,Government,Government Finance,Public Sector Net Borrowing
+GBP,UK,G22,S&P Global Manufacturing PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Manufacturing PMI
+GBP,UK,G23,S&P Global Services PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Services PMI
+GBP,UK,G24,S&P Global Construction PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Construction PMI
+GBP,UK,G25,GfK Consumer Confidence,monthly,Forward-Looking,Surveys/Cyclical Indicators,GfK Consumer Confidence
+GBP,UK,G26,BoE Rate Decision,policy meeting,Monetary,Monetary Sector,BoE Interest Rate Decision
+JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ)
+JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Annualized
+JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Deflator (YoY)
+JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large Manufacturing Index
+JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large Manufacturing Outlook
+JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Non - Manufacturing Index
+JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Non - Manufacturing Outlook
+JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large All Industry Capex
+JPY,JP,J03,MoF Business Outlook Survey (BSI),quarterly,Forward-Looking,Surveys/Cyclical Indicators,BSI Large Manufacturing Conditions Index (QoQ)
+JPY,JP,J04,MoF Corporate Capital Spending,quarterly,Investment,Industrial Sector,Capital Spending
+JPY,JP,J05,Unemployment Rate and Jobs/Applicants Ratio,monthly,Real Activity,Labor Market,Unemployment Rate
+JPY,JP,J05,Unemployment Rate and Jobs/Applicants Ratio,monthly,Real Activity,Labor Market,Jobs / Applicants Ratio
+JPY,JP,J06,Labour Cash Earnings,monthly,Real Activity,Labor Market,Labor Cash Earnings (YoY)
+JPY,JP,J07,Household Spending,monthly,Consumption,Personal/Household Sector,Overall Household Spending (YoY)
+JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Retail Trade (YoY)
+JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Retail Trade s.a (MoM)
+JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Large Retailer Sales
+JPY,JP,J09,Industrial Production (prelim. and final),monthly,Real Activity,Industrial Sector,Industrial Production (MoM)
+JPY,JP,J09,Industrial Production (prelim. and final),monthly,Real Activity,Industrial Sector,Industrial Production (YoY)
+JPY,JP,J10,Capacity Utilization,monthly,Real Activity,Industrial Sector,Capacity Utilization
+JPY,JP,J11,Core Machinery Orders,monthly,Investment,Industrial Sector,Machinery Orders (MoM)
+JPY,JP,J11,Core Machinery Orders,monthly,Investment,Industrial Sector,Machinery Orders (YoY)
+JPY,JP,J12,Machine Tool Orders,monthly,Investment,Industrial Sector,Machine Tool Orders (YoY)
+JPY,JP,J13,Tertiary Industry Activity Index,monthly,Real Activity,Industrial Sector,Tertiary Industry Index (MoM)
+JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Annualized Housing Starts
+JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Housing Starts (YoY)
+JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Construction Orders (YoY)
+JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Merchandise Trade Balance Total
+JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Adjusted Merchandise Trade Balance
+JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Exports (YoY)
+JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Imports (YoY)
+JPY,JP,J16,Balance of Payments (current account),monthly,Net Exports,Intl Trade & BoP,Current Account n.s.a.
+JPY,JP,J16,Balance of Payments (current account),monthly,Net Exports,Intl Trade & BoP,Trade Balance - BOP Basis
+JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,National Consumer Price Index (YoY)
+JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,National CPI ex Fresh Food (YoY)
+JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,"National CPI ex Food, Energy (YoY)"
+JPY,JP,J18,Producer (Corporate Goods) Price Index,monthly,Prices,Prices,Producer Price Index (MoM)
+JPY,JP,J18,Producer (Corporate Goods) Price Index,monthly,Prices,Prices,Producer Price Index (YoY)
+JPY,JP,J19,Corporate Services Price Index,monthly,Prices,Prices,Corporate Service Price Index (YoY)
+JPY,JP,J20,Consumer Confidence Index,monthly,Forward-Looking,Surveys/Cyclical Indicators,Consumer Confidence Index
+JPY,JP,J21,Economy Watchers Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,Eco Watchers Survey: Current
+JPY,JP,J21,Economy Watchers Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,Eco Watchers Survey: Outlook
+JPY,JP,J22,"Composite Index (leading and coincident, prelim. and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,Leading Economic Index
+JPY,JP,J22,"Composite Index (leading and coincident, prelim. and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,Coincident Index
+JPY,JP,J23,Jibun Bank Manufacturing PMI (flash and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,Jibun Bank Manufacturing PMI
+JPY,JP,J24,Jibun Bank Services PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,Jibun Bank Services PMI
+JPY,JP,J25,Monetary Base,monthly,Monetary,Monetary Sector,Monetary Base (YoY)
+JPY,JP,J26,Money Stock M2,monthly,Monetary,Monetary Sector,Money Supply M2+CD (YoY)
+JPY,JP,J27,Bank Lending,monthly,Monetary,Monetary Sector,Bank Lending (YoY)
+JPY,JP,J28,Foreign Reserves,monthly,Monetary,Monetary Sector,JP Foreign Reserves
+JPY,JP,J29,BoJ Rate Decision (policy statement),policy meeting,Monetary,Monetary Sector,BoJ Interest Rate Decision
+JPY,JP,J29,BoJ Rate Decision (policy statement),policy meeting,Monetary,Monetary Sector,BoJ Monetary Policy Statement
+JPY,JP,J30,Portfolio Investment Flows (MoF weekly),weekly,Net Exports,Intl Trade & BoP,Foreign Bond Investment
+JPY,JP,J30,Portfolio Investment Flows (MoF weekly),weekly,Net Exports,Intl Trade & BoP,Foreign Investment in Japan Stocks
+AUD,AU,A01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ)
+AUD,AU,A01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (YoY)
+AUD,AU,A02,Wage Price Index,quarterly,Prices,Labor Market,Wage Price Index (QoQ)
+AUD,AU,A02,Wage Price Index,quarterly,Prices,Labor Market,Wage Price Index (YoY)
+AUD,AU,A03,Consumer Price Index (incl. trimmed mean),quarterly,Prices,Prices,Quarterly Consumer Price Index (QoQ)
+AUD,AU,A03,Consumer Price Index (incl. trimmed mean),quarterly,Prices,Prices,Quarterly Consumer Price Index (YoY)
+AUD,AU,A03,Consumer Price Index (incl. trimmed mean),quarterly,Prices,Prices,Quarterly RBA Trimmed Mean CPI (QoQ)
+AUD,AU,A03,Consumer Price Index (incl. trimmed mean),quarterly,Prices,Prices,Quarterly RBA Trimmed Mean CPI (YoY)
+AUD,AU,A04,Producer Price Index,quarterly,Prices,Prices,Producer Price Index (QoQ)
+AUD,AU,A04,Producer Price Index,quarterly,Prices,Prices,Producer Price Index (YoY)
+AUD,AU,A05,Import and Export Price Indexes,quarterly,Prices,Prices,Import Price Index (QoQ)
+AUD,AU,A05,Import and Export Price Indexes,quarterly,Prices,Prices,Export Price Index (QoQ)
+AUD,AU,A06,Company Gross Operating Profits,quarterly,Investment,National Accounts (GDP),Company Gross Operating Profits (QoQ)
+AUD,AU,A07,Private Capital Expenditure,quarterly,Investment,Industrial Sector,Private Capital Expenditure
+AUD,AU,A08,Construction Work Done,quarterly,Investment,Housing and Real Estate,Construction Work Done
+AUD,AU,A09,Current Account,quarterly,Net Exports,Intl Trade & BoP,Current Account Balance
+AUD,AU,A10,NAB Quarterly Business Confidence,quarterly,Forward-Looking,Surveys/Cyclical Indicators,National Australia Bank's Business Confidence (QoQ)
+AUD,AU,A11,"Labour Force (employment, unemployment)",monthly,Real Activity,Labor Market,Employment Change s.a.
+AUD,AU,A11,"Labour Force (employment, unemployment)",monthly,Real Activity,Labor Market,Unemployment Rate s.a.
+AUD,AU,A11,"Labour Force (employment, unemployment)",monthly,Real Activity,Labor Market,Full-Time Employment
+AUD,AU,A11,"Labour Force (employment, unemployment)",monthly,Real Activity,Labor Market,Part-Time Employment
+AUD,AU,A11,"Labour Force (employment, unemployment)",monthly,Real Activity,Labor Market,Participation Rate
+AUD,AU,A12,ANZ Job Advertisements,monthly,Real Activity,Labor Market,ANZ Job Advertisements
+AUD,AU,A13,Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Retail Sales s.a. (MoM)
+AUD,AU,A14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Trade Balance (MoM)
+AUD,AU,A14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Exports (MoM)
+AUD,AU,A14,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Imports (MoM)
+AUD,AU,A15,Building Approvals,monthly,Investment,Housing and Real Estate,Building Permits (MoM)
+AUD,AU,A15,Building Approvals,monthly,Investment,Housing and Real Estate,Building Permits (YoY)
+AUD,AU,A16,Lending Indicators (housing finance),monthly,Investment,Housing and Real Estate,Home Loans
+AUD,AU,A16,Lending Indicators (housing finance),monthly,Investment,Housing and Real Estate,Investment Lending for Homes
+AUD,AU,A17,Private Sector Credit,monthly,Monetary,Monetary Sector,Private Sector Credit (MoM)
+AUD,AU,A17,Private Sector Credit,monthly,Monetary,Monetary Sector,Private Sector Credit (YoY)
+AUD,AU,A18,TD-MI Inflation Gauge,monthly,Prices,Prices,TD-MI Inflation Gauge (MoM)
+AUD,AU,A18,TD-MI Inflation Gauge,monthly,Prices,Prices,TD-MI Inflation Gauge (YoY)
+AUD,AU,A19,MI Consumer Inflation Expectations,monthly,Prices,Prices,Consumer Inflation Expectations
+AUD,AU,A20,RBA Commodity Price Index,monthly,Prices,Prices,RBA Commodity Index SDR (YoY)
+AUD,AU,A21,NAB Monthly Business Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,National Australia Bank's Business Conditions
+AUD,AU,A21,NAB Monthly Business Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,National Australia Bank's Business Confidence
+AUD,AU,A22,Westpac-MI Consumer Sentiment,monthly,Forward-Looking,Surveys/Cyclical Indicators,Westpac Consumer Confidence
+AUD,AU,A23,Westpac-MI Leading Index,monthly,Forward-Looking,Surveys/Cyclical Indicators,Westpac Leading Index (MoM)
+AUD,AU,A24,RBA Rate Decision (statement),policy meeting,Monetary,Monetary Sector,RBA Interest Rate Decision
+AUD,AU,A24,RBA Rate Decision (statement),policy meeting,Monetary,Monetary Sector,RBA Rate Statement
+CHF,CH,C01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ)
+CHF,CH,C01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (YoY)
+CHF,CH,C02,Employment Level,quarterly,Real Activity,Labor Market,Employment Level (QoQ)
+CHF,CH,C03,Industrial Production,quarterly,Real Activity,Industrial Sector,Industrial Production (YoY)
+CHF,CH,C04,SECO Consumer Sentiment,quarterly,Forward-Looking,Surveys/Cyclical Indicators,SECO Consumer Climate (3m)
+CHF,CH,C05,Unemployment Rate,monthly,Real Activity,Labor Market,Unemployment Rate s.a (MoM)
+CHF,CH,C06,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (MoM)
+CHF,CH,C06,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (YoY)
+CHF,CH,C07,Producer and Import Prices,monthly,Prices,Prices,Producer and Import Prices (MoM)
+CHF,CH,C07,Producer and Import Prices,monthly,Prices,Prices,Producer and Import Prices (YoY)
+CHF,CH,C08,Real Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Real Retail Sales (YoY)
+CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Trade Balance
+CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Exports (MoM)
+CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Imports (MoM)
+CHF,CH,C10,Foreign Currency Reserves,monthly,Monetary,Monetary Sector,Foreign Currency Reserves
+CHF,CH,C11,KOF Economic Barometer,monthly,Forward-Looking,Surveys/Cyclical Indicators,KOF Leading Indicator
+CHF,CH,C12,procure.ch Manufacturing PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,SVME - Purchasing Managers' Index
+CHF,CH,C13,UBS-CFA/ZEW Economic Expectations,monthly,Forward-Looking,Surveys/Cyclical Indicators,ZEW Survey – Expectations
+CHF,CH,C14,SNB Rate Decision,policy meeting,Monetary,Monetary Sector,SNB Interest Rate Decision

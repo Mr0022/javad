@@ -8,9 +8,7 @@ times = json.load(open(f'{S}/times_final.json'))          # fid -> {time, tz, no
 PANELS = [('USD', 'U.S. (USD) News Announcements', 'ET'),
           ('EUR', 'Euro-Area (EUR) News Announcements: euro area, Germany, France', 'CET'),
           ('GBP', 'U.K. (GBP) News Announcements', 'UK time'),
-          ('JPY', 'Japanese (JPY) News Announcements', 'JST'),
-          ('AUD', 'Australian (AUD) News Announcements', 'Sydney time'),
-          ('CHF', 'Swiss (CHF) News Announcements', 'CET')]
+          ('AUD', 'Australian (AUD) News Announcements', 'Sydney time')]
 FREQ = [('Q', 'Quarterly Announcements'), ('M', 'Monthly Announcements'),
         ('P', 'Monetary Policy Decisions'), ('W', 'Weekly Announcements')]
 CATS = ['Real Activity', 'Consumption', 'Investment', 'Government', 'Net Exports', 'Prices', 'Forward-Looking', 'Monetary']
@@ -48,7 +46,7 @@ table1 = '\n'.join(out)
 SECT = ['Housing and Real Estate', 'Industrial Sector', 'Intl Trade & BoP', 'Labor Market', 'Monetary Sector',
         'National Accounts (GDP)', 'Personal/Household Sector', 'Prices', 'Retail & Wholesale Sector',
         'Surveys/Cyclical Indicators', 'Government Finance']
-COLS = [('USD', 'US'), ('EUR', 'EA'), ('GBP', 'UK'), ('JPY', 'JP'), ('AUD', 'AU'), ('CHF', 'CH')]
+COLS = [('USD', 'US'), ('EUR', 'EA'), ('GBP', 'UK'), ('AUD', 'AU')]
 df = pd.DataFrame(fams)
 ct = pd.crosstab(df.sector, df.cur).reindex(index=SECT, columns=[c for c, _ in COLS]).fillna(0).astype(int)
 t2 = ['**Table 2: The Number of Different News Announcements by Sector**\n',

@@ -142,39 +142,6 @@ G('G24','S&P Global Construction PMI','M','Forward-Looking','Surveys/Cyclical In
 G('G25','GfK Consumer Confidence','M','Forward-Looking','Surveys/Cyclical Indicators',['GfK Consumer Confidence'])
 G('G26','BoE Rate Decision','P','Monetary','Monetary Sector',['BoE Interest Rate Decision'])
 
-# ---------------- JPY ----------------
-J = lambda *a: f('JPY', 'JP', *a)
-J('J01','GDP (preliminary and revised)','Q','Real Activity','National Accounts (GDP)',['Gross Domestic Product (QoQ)','Gross Domestic Product Annualized','Gross Domestic Product Deflator (YoY)'])
-J('J02','BoJ Tankan Survey','Q','Forward-Looking','Surveys/Cyclical Indicators',
-  ['Tankan Large Manufacturing Index','Tankan Large Manufacturing Outlook','Tankan Non - Manufacturing Index','Tankan Non - Manufacturing Outlook','Tankan Large All Industry Capex'])
-J('J03','MoF Business Outlook Survey (BSI)','Q','Forward-Looking','Surveys/Cyclical Indicators',['BSI Large Manufacturing Conditions Index (QoQ)'])
-J('J04','MoF Corporate Capital Spending','Q','Investment','Industrial Sector',['Capital Spending'])
-J('J05','Unemployment Rate and Jobs/Applicants Ratio','M','Real Activity','Labor Market',['Unemployment Rate','Jobs / Applicants Ratio'])
-J('J06','Labour Cash Earnings','M','Real Activity','Labor Market',['Labor Cash Earnings (YoY)'])
-J('J07','Household Spending','M','Consumption','Personal/Household Sector',['Overall Household Spending (YoY)'])
-J('J08','Retail Trade (commercial sales)','M','Consumption','Retail & Wholesale Sector',['Retail Trade (YoY)','Retail Trade s.a (MoM)','Large Retailer Sales'])
-J('J09','Industrial Production (prelim. and final)','M','Real Activity','Industrial Sector',['Industrial Production (MoM)','Industrial Production (YoY)'])
-J('J10','Capacity Utilization','M','Real Activity','Industrial Sector',['Capacity Utilization'])
-J('J11','Core Machinery Orders','M','Investment','Industrial Sector',['Machinery Orders (MoM)','Machinery Orders (YoY)'])
-J('J12','Machine Tool Orders','M','Investment','Industrial Sector',['Machine Tool Orders (YoY)'])
-J('J13','Tertiary Industry Activity Index','M','Real Activity','Industrial Sector',['Tertiary Industry Index (MoM)'])
-J('J14','Housing Starts and Construction Orders','M','Investment','Housing and Real Estate',['Annualized Housing Starts','Housing Starts (YoY)','Construction Orders (YoY)'])
-J('J15','Merchandise Trade Balance','M','Net Exports','Intl Trade & BoP',['Merchandise Trade Balance Total','Adjusted Merchandise Trade Balance','Exports (YoY)','Imports (YoY)'])
-J('J16','Balance of Payments (current account)','M','Net Exports','Intl Trade & BoP',['Current Account n.s.a.','Trade Balance - BOP Basis'])
-J('J17','National Consumer Price Index','M','Prices','Prices',['National Consumer Price Index (YoY)','National CPI ex Fresh Food (YoY)','National CPI ex Food, Energy (YoY)'])
-J('J18','Producer (Corporate Goods) Price Index','M','Prices','Prices',['Producer Price Index (MoM)','Producer Price Index (YoY)'])
-J('J19','Corporate Services Price Index','M','Prices','Prices',['Corporate Service Price Index (YoY)'])
-J('J20','Consumer Confidence Index','M','Forward-Looking','Surveys/Cyclical Indicators',['Consumer Confidence Index'])
-J('J21','Economy Watchers Survey','M','Forward-Looking','Surveys/Cyclical Indicators',['Eco Watchers Survey: Current','Eco Watchers Survey: Outlook'])
-J('J22','Composite Index (leading and coincident, prelim. and final)','M','Forward-Looking','Surveys/Cyclical Indicators',['Leading Economic Index','Coincident Index'])
-J('J23','Jibun Bank Manufacturing PMI (flash and final)','M','Forward-Looking','Surveys/Cyclical Indicators',['Jibun Bank Manufacturing PMI'])
-J('J24','Jibun Bank Services PMI','M','Forward-Looking','Surveys/Cyclical Indicators',['Jibun Bank Services PMI'])
-J('J25','Monetary Base','M','Monetary','Monetary Sector',['Monetary Base (YoY)'])
-J('J26','Money Stock M2','M','Monetary','Monetary Sector',['Money Supply M2+CD (YoY)'])
-J('J27','Bank Lending','M','Monetary','Monetary Sector',['Bank Lending (YoY)'])
-J('J28','Foreign Reserves','M','Monetary','Monetary Sector',['JP Foreign Reserves'])
-J('J29','BoJ Rate Decision (policy statement)','P','Monetary','Monetary Sector',['BoJ Interest Rate Decision','BoJ Monetary Policy Statement'])
-J('J30','Portfolio Investment Flows (MoF weekly)','W','Net Exports','Intl Trade & BoP',['Foreign Bond Investment','Foreign Investment in Japan Stocks'])
 
 # ---------------- AUD ----------------
 A = lambda *a: f('AUD', 'AU', *a)
@@ -205,22 +172,6 @@ A('A22','Westpac-MI Consumer Sentiment','M','Forward-Looking','Surveys/Cyclical 
 A('A23','Westpac-MI Leading Index','M','Forward-Looking','Surveys/Cyclical Indicators',['Westpac Leading Index (MoM)'])
 A('A24','RBA Rate Decision (statement)','P','Monetary','Monetary Sector',['RBA Interest Rate Decision','RBA Rate Statement'])
 
-# ---------------- CHF ----------------
-C = lambda *a: f('CHF', 'CH', *a)
-C('C01','GDP','Q','Real Activity','National Accounts (GDP)',['Gross Domestic Product (QoQ)','Gross Domestic Product (YoY)'])
-C('C02','Employment Level','Q','Real Activity','Labor Market',['Employment Level (QoQ)'])
-C('C03','Industrial Production','Q','Real Activity','Industrial Sector',['Industrial Production (YoY)'])
-C('C04','SECO Consumer Sentiment','Q','Forward-Looking','Surveys/Cyclical Indicators',['SECO Consumer Climate (3m)'])
-C('C05','Unemployment Rate','M','Real Activity','Labor Market',['Unemployment Rate s.a (MoM)'])
-C('C06','Consumer Price Index','M','Prices','Prices',['Consumer Price Index (MoM)','Consumer Price Index (YoY)'])
-C('C07','Producer and Import Prices','M','Prices','Prices',['Producer and Import Prices (MoM)','Producer and Import Prices (YoY)'])
-C('C08','Real Retail Sales','M','Consumption','Retail & Wholesale Sector',['Real Retail Sales (YoY)'])
-C('C09','Trade Balance','M','Net Exports','Intl Trade & BoP',['Trade Balance','Exports (MoM)','Imports (MoM)'])
-C('C10','Foreign Currency Reserves','M','Monetary','Monetary Sector',['Foreign Currency Reserves'])
-C('C11','KOF Economic Barometer','M','Forward-Looking','Surveys/Cyclical Indicators',['KOF Leading Indicator'])
-C('C12','procure.ch Manufacturing PMI','M','Forward-Looking','Surveys/Cyclical Indicators',["SVME - Purchasing Managers' Index"])
-C('C13','UBS-CFA/ZEW Economic Expectations','M','Forward-Looking','Surveys/Cyclical Indicators',['ZEW Survey – Expectations'])
-C('C14','SNB Rate Decision','P','Monetary','Monetary Sector',['SNB Interest Rate Decision'])
 
 # excluded covered raw types with the rule that removes them
 EXCL_RULE = [
@@ -228,8 +179,8 @@ EXCL_RULE = [
  (r'speech|testifies|Minutes|Press Conference|Beige Book|Monetary Policy Report|Outlook Report|Bulletin|Financial Stability|FPC|Monetary Policy Statement$|RBA Monetary Policy Statement', 'R1 central-bank communication'),
  (r'CFTC|Stress Test', 'R1 positioning / supervisory release'),
  (r'EIA |OPEC|WASDE|Crude|Rig Count|Petroleum', 'R1 commodity-market report'),
- (r'IMF|G20|G7|EcoFin|Eurogroup|Election|summit|Council|Davos|European Commission|SECO Economic Forecasts|Budget Report|Budget Release', 'R1 political / supranational event or forecast'),
- (r'Chicago PMI|Dallas Fed|Kansas Fed|NY Empire|Philadelphia Fed|Richmond Fed|Tokyo|Baden|Bavaria|Brandenburg|Hesse|Westphalia|Saxony', 'R2 sub-national release'),
+ (r'IMF|G20|G7|EcoFin|Eurogroup|Election|summit|Council|European Commission|Budget Report|Budget Release', 'R1 political / supranational event or forecast'),
+ (r'Chicago PMI|Dallas Fed|Kansas Fed|NY Empire|Philadelphia Fed|Richmond Fed|Baden|Bavaria|Brandenburg|Hesse|Westphalia|Saxony', 'R2 sub-national release'),
  (r'Real GDP Growth', 'R5 fewer than 24 releases (annual)'),
  (r'MPC Vote', 'R4 vote split: published with the minutes until Aug-2015, on the decision day afterwards'),
 ]

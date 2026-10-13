@@ -40,21 +40,11 @@ HEADLINE = {
          "S&P Global Construction PMI","GfK Consumer Confidence","CBI Industrial Trends Survey – Orders (MoM)",
          "Public Sector Net Borrowing","Mortgage Approvals","Nationwide Housing Prices s.a (MoM)",
          "BoE Interest Rate Decision","BoE Minutes"],
- 'JPY': ["Gross Domestic Product (QoQ)","Unemployment Rate","Jobs / Applicants Ratio","Industrial Production (MoM)",
-         "Retail Trade (YoY)","Overall Household Spending (YoY)","Merchandise Trade Balance Total","Current Account n.s.a.",
-         "National CPI ex Fresh Food (YoY)","Tokyo CPI ex Fresh Food (YoY)","Producer Price Index (YoY)","Machinery Orders (MoM)",
-         "Housing Starts (YoY)","Capital Spending","Tankan Large Manufacturing Index","Jibun Bank Manufacturing PMI",
-         "Consumer Confidence Index","Eco Watchers Survey: Current","Leading Economic Index",
-         "BoJ Interest Rate Decision","BoJ Monetary Policy Meeting Minutes"],
  'AUD': ["Gross Domestic Product (QoQ)","Employment Change s.a.","Unemployment Rate s.a.","Wage Price Index (QoQ)",
          "Retail Sales s.a. (MoM)","Trade Balance (MoM)","Current Account Balance","Quarterly Consumer Price Index (QoQ)",
          "Quarterly RBA Trimmed Mean CPI (QoQ)","Producer Price Index (QoQ)","Building Permits (MoM)","Private Capital Expenditure",
          "National Australia Bank's Business Confidence","Westpac Consumer Confidence","Private Sector Credit (MoM)",
          "S&P Global Manufacturing PMI","RBA Interest Rate Decision","RBA Meeting Minutes"],
- 'CHF': ["Gross Domestic Product (QoQ)","Unemployment Rate s.a (MoM)","Real Retail Sales (YoY)","Trade Balance",
-         "Industrial Production (YoY)","Consumer Price Index (YoY)","Producer and Import Prices (YoY)",
-         "SVME - Purchasing Managers' Index","KOF Leading Indicator","ZEW Survey – Expectations","SECO Consumer Climate (3m)",
-         "Foreign Currency Reserves","SNB Interest Rate Decision"],
 }
 
 def key(cur, name):
@@ -118,7 +108,7 @@ def run(pair, horizons=(1, 5), sets=('HEADLINE', 'PLIHAL', 'ALL')):
     return rows
 
 if __name__ == "__main__":
-    pairs = sys.argv[1:] or ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCHF"]
+    pairs = sys.argv[1:] or ["EURUSD", "GBPUSD", "AUDUSD"]
     out = []
     for p in pairs:
         out += run(p)

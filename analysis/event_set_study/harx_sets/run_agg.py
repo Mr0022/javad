@@ -15,7 +15,7 @@ from data_provider.event_preprocessing import load_event_features, resolve_event
 
 D = os.path.dirname(os.path.abspath(__file__))
 rows = []
-for pair in ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCHF"]:
+for pair in ["EURUSD", "GBPUSD", "AUDUSD"]:
     dp = f"{pair}_lnRV.csv"
     series = H.load_series("data", dp, "ln_RV")
     ev = load_event_features("data", resolve_event_path("data", dp, None), series.index, verbose=False)

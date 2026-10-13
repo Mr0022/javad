@@ -1,6 +1,6 @@
 import re, sys, pandas as pd
 u = pd.read_csv(sys.argv[1])
-u = u[~((u.Currency == 'USD') & (u.pair != 'USDJPY'))]   # USD set is identical in every pair file
+u = u[~((u.Currency == 'USD') & (u.pair != 'GBPUSD'))]   # USD set is identical in every pair file
 u['n'] = u.Name.str.replace(r'^(eur|ger|fra|usd) ', '', regex=True)
 
 # ordered (sector, regex) rules; first match wins
@@ -39,6 +39,6 @@ if len(miss): print('UNCLASSIFIED:', miss[['Currency','Name']].values.tolist())
 u.to_csv(sys.argv[2], index=False)
 for s in ORDER:
     print(f'\n== {s}')
-    for c in ['USD','EUR','GBP','JPY','AUD','CHF']:
+    for c in ['USD','EUR','GBP','AUD']:
         x = u[(u.sector == s) & (u.Currency == c)].Name.tolist()
         if x: print(f'  {c} ({len(x)}): ' + ' | '.join(x))

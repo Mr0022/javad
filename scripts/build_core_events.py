@@ -19,8 +19,8 @@ Selection rules
                  and supranational events, and official forecasts.
   R2 Geography   national aggregates; for the euro area the area aggregate plus
                  its two largest economies (Germany, France). Sub-national
-                 releases (regional Fed surveys, Chicago PMI, Tokyo CPI, German
-                 state CPIs) are excluded.
+                 releases (regional Fed surveys, Chicago PMI, German state
+                 CPIs) are excluded.
   R3 Continuity  a series enters only if it is published throughout the sample:
                  first release on or before 31 Dec 2014 and still published in
                  2025 (checked on the 2012-01-12 .. 2025-06-30 RV sample).
@@ -49,7 +49,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_provider.event_preprocessing import _read_raw  # noqa: E402
 
-PAIRS = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCHF"]
+PAIRS = ["EURUSD", "GBPUSD", "AUDUSD"]
 
 
 def build(root, map_path, suffix="_CORE", pairs=PAIRS):

@@ -9,7 +9,7 @@ from data_provider.event_preprocessing import _read_raw
 OUT = sys.argv[1]
 os.makedirs(OUT, exist_ok=True)
 fam_of = {(x['cur'], m): x['name'] for x in F for m in x['members']}
-for pair in ['EURUSD', 'GBPUSD', 'USDJPY', 'AUDUSD', 'USDCHF']:
+for pair in ['EURUSD', 'GBPUSD', 'AUDUSD']:
     raw = _read_raw(f'/home/user/javad/data/{pair}_EVENTS.csv')
     # EURUSD_EVENTS.csv prefixes its USD names with 'usd '; the release map uses the bare names
     key = [(c, re.sub(r'^usd ', '', n) if c == 'USD' else n) for c, n in zip(raw.Currency, raw.Name)]

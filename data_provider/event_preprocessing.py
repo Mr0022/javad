@@ -335,7 +335,7 @@ def resolve_target_column(columns, target):
     """Find ``target`` among ``columns``, tolerating naming drift between series.
 
     The series files are exported per pair and do not agree on spelling:
-    EURUSD_lnRV.csv calls the column ``ln_RV`` while AUDUSD/USDCHF/USDJPY call it
+    EURUSD_lnRV.csv calls the column ``ln_RV`` while AUDUSD/GBPUSD call it
     ``lnRV``. Rather than force one ``--target`` per file, match exactly first,
     then case- and separator-insensitively, then fall back to the only non-date
     column when the file has just one. Anything more ambiguous raises.

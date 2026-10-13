@@ -3,7 +3,7 @@ from scipy import stats
 D = os.path.dirname(os.path.abspath(__file__))
 r = pd.concat(pd.read_csv(f) for f in sorted(glob.glob(f"{D}/nodow_[A-Z]*.csv")))
 L = pd.concat(pd.read_csv(f) for f in sorted(glob.glob(f"{D}/nodow_losses_*.csv")))
-PAIRS = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCHF"]; SETS = ["HEADLINE", "PLIHAL", "ALL"]
+PAIRS = ["EURUSD", "GBPUSD", "AUDUSD"]; SETS = ["HEADLINE", "PLIHAL", "ALL"]
 
 def dm(d, h):
     d = np.asarray(d, float); T = len(d); u = d - d.mean(); Lg = max(h - 1, 0)

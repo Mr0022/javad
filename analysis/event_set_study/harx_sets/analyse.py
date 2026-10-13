@@ -3,7 +3,7 @@ from scipy import stats
 D = os.path.dirname(os.path.abspath(__file__))
 res = pd.concat(pd.read_csv(f) for f in sorted(glob.glob(f"{D}/results2_*.csv")))
 los = pd.concat(pd.read_csv(f) for f in sorted(glob.glob(f"{D}/losses_*.csv")))
-PAIRS = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCHF"]; SETS = ["HEADLINE", "PLIHAL", "ALL"]
+PAIRS = ["EURUSD", "GBPUSD", "AUDUSD"]; SETS = ["HEADLINE", "PLIHAL", "ALL"]
 
 def dm(d, h):
     """Diebold-Mariano with Newey-West (lag h-1) and the HLN small-sample correction."""

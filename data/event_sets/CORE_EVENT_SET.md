@@ -1,14 +1,13 @@
 # CORE news-announcement set
 
-Release-level calendar of scheduled macroeconomic announcements for the five
-pairs (EUR/USD, GBP/USD, USD/JPY, AUD/USD, USD/CHF), built by
-`scripts/build_core_events.py` from `data/event_sets/core_release_map.csv`
-into `data/<PAIR>_EVENTS_CORE.csv`.
+Release-level calendar of scheduled macroeconomic announcements for the three
+pairs (EUR/USD, GBP/USD, AUD/USD), built by `scripts/build_core_events.py`
+from `data/event_sets/core_release_map.csv` into `data/<PAIR>_EVENTS_CORE.csv`.
 
 ## Selection rules
 
 - **R1 Scope.** Scheduled official statistics and nationally representative surveys of the domestic economy, plus central-bank policy-rate decisions. Excluded: central-bank communication (speeches, minutes, press conferences, reports, testimony), government debt auctions, positioning and supervisory releases (CFTC, stress tests), commodity-market reports (EIA, OPEC, WASDE), political and supranational events, and official forecasts.
-- **R2 Geography.** National aggregates; for the euro area, the area aggregate plus its two largest economies (Germany, France). Sub-national releases (regional Fed surveys, Chicago PMI, Tokyo CPI, German state CPIs) are excluded.
+- **R2 Geography.** National aggregates; for the euro area, the area aggregate plus its two largest economies (Germany, France). Sub-national releases (regional Fed surveys, Chicago PMI, German state CPIs) are excluded.
 - **R3 Continuity.** A series enters only if it is published throughout the sample: first release on or before 31 Dec 2014 and still published in 2025.
 - **R4 Release as the unit.** All series published in one statistical release (MoM/YoY, s.a./n.s.a., headline/core, sub-indices, flash and final prints, and one producer's same-day multi-country flash PMIs) form one announcement, dated on every day any of them is published.
 - **R5 Frequency.** At least 24 announcements in the sample.
@@ -178,124 +177,50 @@ Sample: 12 Jan 2012 – 30 Jun 2025 (the RV sample).
 | ***Monetary Policy Decisions*** | | | |
 | 115- BoE Rate Decision | 129 | 01/12/12–06/19/25 | 12:00 |
 
-**Table 1 (continued): Japanese (JPY) News Announcements**
-
-| Announcement | Obs.¹ | Dates² | Announcement Time (JST)³ |
-|---|---|---|---|
-| ***Quarterly Announcements*** | | | |
-| 116- GDP (preliminary and revised) | 109 | 02/12/12–06/08/25 | 8:50 |
-| 117- BoJ Tankan Survey | 54 | 04/01/12–06/30/25 | 8:50 |
-| 118- MoF Business Outlook Survey (BSI) | 54 | 03/13/12–06/11/25 | 8:50 |
-| 119- MoF Corporate Capital Spending | 54 | 02/29/12–06/01/25 | 8:50 |
-| ***Monthly Announcements*** | | | |
-| *Real Activity* | | | |
-| 120- Unemployment Rate and Jobs/Applicants Ratio | 170 | 01/30/12–06/26/25 | 8:30 |
-| 121- Labour Cash Earnings | 161 | 02/01/12–06/04/25 | 8:30 |
-| 122- Industrial Production (prelim. and final) | 324 | 01/18/12–06/29/25 | 8:50 prelim. / 13:30 final |
-| 123- Capacity Utilization | 162 | 01/18/12–06/13/25 | 13:30 |
-| 124- Tertiary Industry Activity Index | 162 | 01/16/12–06/13/25 | 13:30 |
-| *Consumption* | | | |
-| 125- Household Spending | 161 | 01/30/12–06/05/25 | 8:30 |
-| 126- Retail Trade (commercial sales) | 162 | 01/26/12–06/26/25 | 8:50 |
-| *Investment* | | | |
-| 127- Core Machinery Orders | 163 | 01/15/12–06/17/25 | 8:50 |
-| 128- Machine Tool Orders | 162 | 01/12/12–06/10/25 | 15:00 |
-| 129- Housing Starts and Construction Orders | 163 | 01/31/12–06/30/25 | 14:00 |
-| *Net Exports* | | | |
-| 130- Merchandise Trade Balance | 164 | 01/24/12–06/17/25 | 8:50 |
-| 131- Balance of Payments (current account) | 161 | 02/07/12–06/08/25 | 8:50 |
-| *Prices* | | | |
-| 132- National Consumer Price Index | 162 | 01/26/12–06/19/25 | 8:30 |
-| 133- Producer (Corporate Goods) Price Index | 162 | 01/15/12–06/10/25 | 8:50 |
-| 134- Corporate Services Price Index | 162 | 01/25/12–06/24/25 | 8:50 |
-| *Forward-Looking* | | | |
-| 135- Consumer Confidence Index | 162 | 01/16/12–05/29/25 | 14:00 |
-| 136- Economy Watchers Survey | 163 | 01/12/12–06/09/25 | 14:00 |
-| 137- Composite Index (leading and coincident, prelim. and final) | 323 | 01/20/12–06/25/25 | 14:00 |
-| 138- Jibun Bank Manufacturing PMI (flash and final) | 295 | 01/30/12–06/23/25 | 9:30 flash / 9:30 final |
-| 139- Jibun Bank Services PMI | 175 | 01/06/14–06/23/25 | 9:30 |
-| *Money and Credit* | | | |
-| 140- Monetary Base | 161 | 02/01/12–06/02/25 | 8:50 |
-| 141- Money Stock M2 | 162 | 01/12/12–06/09/25 | 8:50 |
-| 142- Bank Lending | 162 | 01/12/12–06/08/25 | 8:50 |
-| 143- Foreign Reserves | 157 | 03/07/12–06/05/25 | 14:00 |
-| ***Monetary Policy Decisions*** | | | |
-| 144- BoJ Rate Decision (policy statement) | 136 | 01/24/12–06/17/25 | no fixed time (around noon) |
-| ***Weekly Announcements*** | | | |
-| 145- Portfolio Investment Flows (MoF weekly) | 648 | 06/21/12–06/25/25 | 8:50 |
-
 **Table 1 (continued): Australian (AUD) News Announcements**
 
 | Announcement | Obs.¹ | Dates² | Announcement Time (Sydney time)³ |
 |---|---|---|---|
 | ***Quarterly Announcements*** | | | |
-| 146- GDP | 54 | 03/07/12–06/04/25 | 11:30 |
-| 147- Wage Price Index | 54 | 02/22/12–05/14/25 | 11:30 |
-| 148- Consumer Price Index (incl. trimmed mean) | 55 | 01/25/12–04/30/25 | 11:30 |
-| 149- Producer Price Index | 54 | 01/23/12–05/02/25 | 11:30 |
-| 150- Import and Export Price Indexes | 54 | 01/20/12–05/01/25 | 11:30 |
-| 151- Company Gross Operating Profits | 54 | 03/05/12–06/03/25 | 11:30 |
-| 152- Private Capital Expenditure | 54 | 03/01/12–05/29/25 | 11:30 |
-| 153- Construction Work Done | 54 | 02/29/12–05/28/25 | 11:30 |
-| 154- Current Account | 54 | 03/06/12–06/03/25 | 11:30 |
-| 155- NAB Quarterly Business Confidence | 54 | 02/08/12–04/17/25 | 11:30 |
+| 116- GDP | 54 | 03/07/12–06/04/25 | 11:30 |
+| 117- Wage Price Index | 54 | 02/22/12–05/14/25 | 11:30 |
+| 118- Consumer Price Index (incl. trimmed mean) | 55 | 01/25/12–04/30/25 | 11:30 |
+| 119- Producer Price Index | 54 | 01/23/12–05/02/25 | 11:30 |
+| 120- Import and Export Price Indexes | 54 | 01/20/12–05/01/25 | 11:30 |
+| 121- Company Gross Operating Profits | 54 | 03/05/12–06/03/25 | 11:30 |
+| 122- Private Capital Expenditure | 54 | 03/01/12–05/29/25 | 11:30 |
+| 123- Construction Work Done | 54 | 02/29/12–05/28/25 | 11:30 |
+| 124- Current Account | 54 | 03/06/12–06/03/25 | 11:30 |
+| 125- NAB Quarterly Business Confidence | 54 | 02/08/12–04/17/25 | 11:30 |
 | ***Monthly Announcements*** | | | |
 | *Real Activity* | | | |
-| 156- Labour Force (employment, unemployment) | 162 | 01/19/12–06/19/25 | 11:30 |
-| 157- ANZ Job Advertisements | 157 | 01/16/12–06/02/25 | 11:30 |
+| 126- Labour Force (employment, unemployment) | 162 | 01/19/12–06/19/25 | 11:30 |
+| 127- ANZ Job Advertisements | 157 | 01/16/12–06/02/25 | 11:30 |
 | *Consumption* | | | |
-| 158- Retail Sales | 178 | 02/06/12–05/30/25 | 11:30 |
+| 128- Retail Sales | 178 | 02/06/12–05/30/25 | 11:30 |
 | *Investment* | | | |
-| 159- Building Approvals | 161 | 02/02/12–05/30/25 | 11:30 |
-| 160- Lending Indicators (housing finance) | 157 | 01/16/12–05/14/25 | 11:30 |
+| 129- Building Approvals | 161 | 02/02/12–05/30/25 | 11:30 |
+| 130- Lending Indicators (housing finance) | 157 | 01/16/12–05/14/25 | 11:30 |
 | *Net Exports* | | | |
-| 161- Trade Balance | 167 | 02/02/12–06/05/25 | 11:30 |
+| 131- Trade Balance | 167 | 02/02/12–06/05/25 | 11:30 |
 | *Prices* | | | |
-| 162- TD-MI Inflation Gauge | 163 | 01/15/12–06/30/25 | 11:00 |
-| 163- MI Consumer Inflation Expectations | 161 | 01/19/12–06/12/25 | 11:00 |
-| 164- RBA Commodity Price Index | 161 | 02/01/12–06/02/25 | 16:30 |
+| 132- TD-MI Inflation Gauge | 163 | 01/15/12–06/30/25 | 11:00 |
+| 133- MI Consumer Inflation Expectations | 161 | 01/19/12–06/12/25 | 11:00 |
+| 134- RBA Commodity Price Index | 161 | 02/01/12–06/02/25 | 16:30 |
 | *Forward-Looking* | | | |
-| 165- NAB Monthly Business Survey | 163 | 01/31/12–06/10/25 | 11:30 |
-| 166- Westpac-MI Consumer Sentiment | 163 | 01/17/12–06/10/25 | 10:30 |
-| 167- Westpac-MI Leading Index | 161 | 01/24/12–06/18/25 | 10:30 |
+| 135- NAB Monthly Business Survey | 163 | 01/31/12–06/10/25 | 11:30 |
+| 136- Westpac-MI Consumer Sentiment | 163 | 01/17/12–06/10/25 | 10:30 |
+| 137- Westpac-MI Leading Index | 161 | 01/24/12–06/18/25 | 10:30 |
 | *Money and Credit* | | | |
-| 168- Private Sector Credit | 162 | 01/31/12–06/30/25 | 11:30 |
+| 138- Private Sector Credit | 162 | 01/31/12–06/30/25 | 11:30 |
 | ***Monetary Policy Decisions*** | | | |
-| 169- RBA Rate Decision (statement) | 144 | 02/07/12–05/20/25 | 14:30 |
-
-**Table 1 (continued): Swiss (CHF) News Announcements**
-
-| Announcement | Obs.¹ | Dates² | Announcement Time (CET)³ |
-|---|---|---|---|
-| ***Quarterly Announcements*** | | | |
-| 170- GDP | 54 | 03/01/12–06/02/25 | 7:45 |
-| 171- Employment Level | 53 | 02/28/12–05/26/25 | 8:30 |
-| 172- Industrial Production | 54 | 03/20/12–05/16/25 | 8:30 |
-| 173- SECO Consumer Sentiment | 54 | 02/09/12–05/09/25 | 7:45 |
-| ***Monthly Announcements*** | | | |
-| *Real Activity* | | | |
-| 174- Unemployment Rate | 161 | 02/08/12–06/05/25 | 7:45 |
-| *Consumption* | | | |
-| 175- Real Retail Sales | 161 | 02/01/12–06/02/25 | 8:30 |
-| *Net Exports* | | | |
-| 176- Trade Balance | 162 | 02/02/12–06/19/25 | 8:00 |
-| *Prices* | | | |
-| 177- Consumer Price Index | 161 | 02/10/12–06/03/25 | 8:30 |
-| 178- Producer and Import Prices | 162 | 01/16/12–06/16/25 | 8:30 |
-| *Forward-Looking* | | | |
-| 179- KOF Economic Barometer | 162 | 01/27/12–06/30/25 | 9:00 |
-| 180- procure.ch Manufacturing PMI | 161 | 02/01/12–06/02/25 | 9:30 |
-| 181- UBS-CFA/ZEW Economic Expectations | 162 | 01/18/12–06/25/25 | 10:00 |
-| *Money and Credit* | | | |
-| 182- Foreign Currency Reserves | 160 | 02/07/12–06/06/25 | 9:00 |
-| ***Monetary Policy Decisions*** | | | |
-| 183- SNB Rate Decision | 57 | 03/15/12–06/19/25 | 9:30 |
+| 139- RBA Rate Decision (statement) | 144 | 02/07/12–05/20/25 | 14:30 |
 
 Notes: Monthly announcements are grouped into real activity, the components of GDP (consumption, investment, government purchases, net exports), prices, forward-looking indicators, and money and credit.
 
 1. Number of announcement days in the sample (a day counts once even if several series of the release are published that day; flash and final prints count separately).
 2. First and last announcement in the sample.
-3. Scheduled local time of the publisher: U.S. Eastern Time; Central European Time for the euro area, Germany, France and Switzerland; UK local time; Japan Standard Time; Sydney local time.
+3. Scheduled local time of the publisher: U.S. Eastern Time; Central European Time for the euro area, Germany and France; UK local time; Sydney local time.
 1. ⁽1⁾ Advance estimate at 8:30 since Jul-2015 (Advance Economic Indicators).
 2. ⁽2⁾ Until Mar-2013 the statement came out at 12:30 on press-conference meetings and 14:15 otherwise.
 3. ⁽3⁾ The 30-day flash estimate (from Jul-2020) is published at 10:00.
@@ -303,23 +228,23 @@ Notes: Monthly announcements are grouped into real activity, the components of G
 5. ⁽5⁾ 13:45 until Jun-2022.
 6. ⁽6⁾ 9:30 until 2018.
 
-Also: U.K. producer prices end on 02/19/25 because the ONS suspended the PPI publication in 2025. JOLTS, the S&P Global U.S. services PMI and the Jibun Bank services PMI enter the calendar in Dec 2013 / Jan 2014 and satisfy R3.
+Also: U.K. producer prices end on 02/19/25 because the ONS suspended the PPI publication in 2025. JOLTS and the S&P Global U.S. services PMI enter the calendar in Dec 2013 and satisfy R3.
 
 **Table 2: The Number of Different News Announcements by Sector**
 
-| # | Sector | US | EA | UK | JP | AU | CH | Total |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Housing and Real Estate | 9 | 1 | 5 | 1 | 3 | 0 | 19 |
-| 2 | Industrial Sector | 3 | 4 | 1 | 6 | 1 | 1 | 16 |
-| 3 | Intl Trade & BoP | 3 | 6 | 2 | 3 | 2 | 1 | 17 |
-| 4 | Labor Market | 7 | 6 | 1 | 2 | 3 | 2 | 21 |
-| 5 | Monetary Sector | 3 | 2 | 3 | 5 | 2 | 2 | 17 |
-| 6 | National Accounts (GDP) | 1 | 3 | 3 | 1 | 2 | 1 | 11 |
-| 7 | Personal/Household Sector | 1 | 1 | 0 | 1 | 0 | 0 | 3 |
-| 8 | Prices | 3 | 8 | 4 | 3 | 6 | 2 | 26 |
-| 9 | Retail & Wholesale Sector | 5 | 2 | 2 | 1 | 1 | 1 | 12 |
-| 10 | Surveys/Cyclical Indicators | 9 | 10 | 4 | 7 | 4 | 4 | 38 |
-| 11 | Government Finance | 1 | 1 | 1 | 0 | 0 | 0 | 3 |
-| | **Total** | **45** | **44** | **26** | **30** | **24** | **14** | **183** |
+| # | Sector | US | EA | UK | AU | Total |
+|---|---|---|---|---|---|---|
+| 1 | Housing and Real Estate | 9 | 1 | 5 | 3 | 18 |
+| 2 | Industrial Sector | 3 | 4 | 1 | 1 | 9 |
+| 3 | Intl Trade & BoP | 3 | 6 | 2 | 2 | 13 |
+| 4 | Labor Market | 7 | 6 | 1 | 3 | 17 |
+| 5 | Monetary Sector | 3 | 2 | 3 | 2 | 10 |
+| 6 | National Accounts (GDP) | 1 | 3 | 3 | 2 | 9 |
+| 7 | Personal/Household Sector | 1 | 1 | 0 | 0 | 2 |
+| 8 | Prices | 3 | 8 | 4 | 6 | 21 |
+| 9 | Retail & Wholesale Sector | 5 | 2 | 2 | 1 | 10 |
+| 10 | Surveys/Cyclical Indicators | 9 | 10 | 4 | 4 | 27 |
+| 11 | Government Finance | 1 | 1 | 1 | 0 | 3 |
+| | **Total** | **45** | **44** | **26** | **24** | **139** |
 
 Notes: Number of different announcements (releases) per currency, classified into Plihal's Bloomberg sectors. Agriculture and Energy are empty under R1 (commodity-market reports are excluded) and are omitted; Government Finance (budget statements, public-sector borrowing) is added. EA covers the euro area, Germany and France.

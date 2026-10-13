@@ -22,8 +22,3 @@ GBPUSD,1,evt_USD_FOMC_Economic_Projections,0.012786554222756959,1.0,
 GBPUSD,1,evt_GBP_BoE_Minutes,0.017290572349522065,0.9,
 GBPUSD,1,evt_GBP_BoE_MPC_Vote_Rate_Unchanged,0.004284142415880863,0.8,evt_GBP_BoE_MPC_Vote_Rate_Cut; evt_GBP_BoE_MPC_Vote_Rate_Hike
 GBPUSD,1,evt_GBP_BoE_Monetary_Policy_Summary,0.00028784695564411573,0.2,
-USDJPY,1,evt_USD_Fed_Interest_Rate_Decision,0.01622972635482269,1.0,
-USDJPY,1,evt_USD_Unemployment_Rate,0.041838661923479833,1.0,evt_USD_Average_Hourly_Earnings_MoM; evt_USD_Average_Hourly_Earnings_YoY; evt_USD_Average_Weekly_Hours; evt_USD_Labor_Force_Participation_Rate; evt_USD_Nonfarm_Payrolls
-USDJPY,1,evt_JPY_BoJ_Monetary_Policy_Statement,0.04189903682305637,0.9,evt_JPY_BoJ_Interest_Rate_Decision
-USDJPY,1,evt_USD_FOMC_Economic_Projections,0.008913140380732749,0.9,
-USDJPY,1,evt_JPY_BoJ_Outlook_Report,0.00019072592569842242,0.5,

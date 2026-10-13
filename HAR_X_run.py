@@ -94,7 +94,7 @@ HAR_RV_run.py:292, so rows are comparable across the whole model table.
 Usage
 -----
     python HAR_X_run.py                       # EUR/USD, h = 1, 5, 10
-    python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD USDCHF USDJPY
+    python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD
     python HAR_X_run.py --horizons 1
     python HAR_X_run.py --event_suffix _CORE  # release-level calendar
 ==============================================================================
@@ -142,7 +142,7 @@ LAG_W = 5     # weekly HAR component window
 LAG_M = 22    # monthly HAR component window
 
 # EUR/USD is the project-wide default series (EURUSD_lnRV.csv); pass
-# --pairs AUDUSD EURUSD GBPUSD USDCHF USDJPY for the full cross-pair table.
+# --pairs AUDUSD EURUSD GBPUSD for the full cross-pair table.
 DEFAULT_PAIRS = ["EURUSD"]
 
 # Plihal p. 12: news types whose dummies are correlated above this are merged

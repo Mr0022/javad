@@ -227,60 +227,6 @@ GBP,UK,G23,S&P Global Services PMI,monthly,Forward-Looking,Surveys/Cyclical Indi
 GBP,UK,G24,S&P Global Construction PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,S&P Global Construction PMI,9:30,,UK
 GBP,UK,G25,GfK Consumer Confidence,monthly,Forward-Looking,Surveys/Cyclical Indicators,GfK Consumer Confidence,0:01,,UK
 GBP,UK,G26,BoE Rate Decision,policy meeting,Monetary,Monetary Sector,BoE Interest Rate Decision,12:00,,UK
-JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ),8:50,,JST
-JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Annualized,8:50,,JST
-JPY,JP,J01,GDP (preliminary and revised),quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product Deflator (YoY),8:50,,JST
-JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large Manufacturing Index,8:50,,JST
-JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large Manufacturing Outlook,8:50,,JST
-JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Non - Manufacturing Index,8:50,,JST
-JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Non - Manufacturing Outlook,8:50,,JST
-JPY,JP,J02,BoJ Tankan Survey,quarterly,Forward-Looking,Surveys/Cyclical Indicators,Tankan Large All Industry Capex,8:50,,JST
-JPY,JP,J03,MoF Business Outlook Survey (BSI),quarterly,Forward-Looking,Surveys/Cyclical Indicators,BSI Large Manufacturing Conditions Index (QoQ),8:50,,JST
-JPY,JP,J04,MoF Corporate Capital Spending,quarterly,Investment,Industrial Sector,Capital Spending,8:50,,JST
-JPY,JP,J05,Unemployment Rate and Jobs/Applicants Ratio,monthly,Real Activity,Labor Market,Unemployment Rate,8:30,,JST
-JPY,JP,J05,Unemployment Rate and Jobs/Applicants Ratio,monthly,Real Activity,Labor Market,Jobs / Applicants Ratio,8:30,,JST
-JPY,JP,J06,Labour Cash Earnings,monthly,Real Activity,Labor Market,Labor Cash Earnings (YoY),8:30,,JST
-JPY,JP,J07,Household Spending,monthly,Consumption,Personal/Household Sector,Overall Household Spending (YoY),8:30,,JST
-JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Retail Trade (YoY),8:50,,JST
-JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Retail Trade s.a (MoM),8:50,,JST
-JPY,JP,J08,Retail Trade (commercial sales),monthly,Consumption,Retail & Wholesale Sector,Large Retailer Sales,8:50,,JST
-JPY,JP,J09,Industrial Production (prelim. and final),monthly,Real Activity,Industrial Sector,Industrial Production (MoM),8:50 prelim. / 13:30 final,,JST
-JPY,JP,J09,Industrial Production (prelim. and final),monthly,Real Activity,Industrial Sector,Industrial Production (YoY),8:50 prelim. / 13:30 final,,JST
-JPY,JP,J10,Capacity Utilization,monthly,Real Activity,Industrial Sector,Capacity Utilization,13:30,,JST
-JPY,JP,J11,Core Machinery Orders,monthly,Investment,Industrial Sector,Machinery Orders (MoM),8:50,,JST
-JPY,JP,J11,Core Machinery Orders,monthly,Investment,Industrial Sector,Machinery Orders (YoY),8:50,,JST
-JPY,JP,J12,Machine Tool Orders,monthly,Investment,Industrial Sector,Machine Tool Orders (YoY),15:00,,JST
-JPY,JP,J13,Tertiary Industry Activity Index,monthly,Real Activity,Industrial Sector,Tertiary Industry Index (MoM),13:30,,JST
-JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Annualized Housing Starts,14:00,,JST
-JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Housing Starts (YoY),14:00,,JST
-JPY,JP,J14,Housing Starts and Construction Orders,monthly,Investment,Housing and Real Estate,Construction Orders (YoY),14:00,,JST
-JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Merchandise Trade Balance Total,8:50,,JST
-JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Adjusted Merchandise Trade Balance,8:50,,JST
-JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Exports (YoY),8:50,,JST
-JPY,JP,J15,Merchandise Trade Balance,monthly,Net Exports,Intl Trade & BoP,Imports (YoY),8:50,,JST
-JPY,JP,J16,Balance of Payments (current account),monthly,Net Exports,Intl Trade & BoP,Current Account n.s.a.,8:50,,JST
-JPY,JP,J16,Balance of Payments (current account),monthly,Net Exports,Intl Trade & BoP,Trade Balance - BOP Basis,8:50,,JST
-JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,National Consumer Price Index (YoY),8:30,,JST
-JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,National CPI ex Fresh Food (YoY),8:30,,JST
-JPY,JP,J17,National Consumer Price Index,monthly,Prices,Prices,"National CPI ex Food, Energy (YoY)",8:30,,JST
-JPY,JP,J18,Producer (Corporate Goods) Price Index,monthly,Prices,Prices,Producer Price Index (MoM),8:50,,JST
-JPY,JP,J18,Producer (Corporate Goods) Price Index,monthly,Prices,Prices,Producer Price Index (YoY),8:50,,JST
-JPY,JP,J19,Corporate Services Price Index,monthly,Prices,Prices,Corporate Service Price Index (YoY),8:50,,JST
-JPY,JP,J20,Consumer Confidence Index,monthly,Forward-Looking,Surveys/Cyclical Indicators,Consumer Confidence Index,14:00,,JST
-JPY,JP,J21,Economy Watchers Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,Eco Watchers Survey: Current,14:00,,JST
-JPY,JP,J21,Economy Watchers Survey,monthly,Forward-Looking,Surveys/Cyclical Indicators,Eco Watchers Survey: Outlook,14:00,,JST
-JPY,JP,J22,"Composite Index (leading and coincident, prelim. and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,Leading Economic Index,14:00,,JST
-JPY,JP,J22,"Composite Index (leading and coincident, prelim. and final)",monthly,Forward-Looking,Surveys/Cyclical Indicators,Coincident Index,14:00,,JST
-JPY,JP,J23,Jibun Bank Manufacturing PMI (flash and final),monthly,Forward-Looking,Surveys/Cyclical Indicators,Jibun Bank Manufacturing PMI,9:30 flash / 9:30 final,,JST
-JPY,JP,J24,Jibun Bank Services PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,Jibun Bank Services PMI,9:30,,JST
-JPY,JP,J25,Monetary Base,monthly,Monetary,Monetary Sector,Monetary Base (YoY),8:50,,JST
-JPY,JP,J26,Money Stock M2,monthly,Monetary,Monetary Sector,Money Supply M2+CD (YoY),8:50,,JST
-JPY,JP,J27,Bank Lending,monthly,Monetary,Monetary Sector,Bank Lending (YoY),8:50,,JST
-JPY,JP,J28,Foreign Reserves,monthly,Monetary,Monetary Sector,JP Foreign Reserves,14:00,,JST
-JPY,JP,J29,BoJ Rate Decision (policy statement),policy meeting,Monetary,Monetary Sector,BoJ Interest Rate Decision,no fixed time (around noon),,JST
-JPY,JP,J29,BoJ Rate Decision (policy statement),policy meeting,Monetary,Monetary Sector,BoJ Monetary Policy Statement,no fixed time (around noon),,JST
-JPY,JP,J30,Portfolio Investment Flows (MoF weekly),weekly,Net Exports,Intl Trade & BoP,Foreign Bond Investment,8:50,,JST
-JPY,JP,J30,Portfolio Investment Flows (MoF weekly),weekly,Net Exports,Intl Trade & BoP,Foreign Investment in Japan Stocks,8:50,,JST
 AUD,AU,A01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ),11:30,,Sydney
 AUD,AU,A01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (YoY),11:30,,Sydney
 AUD,AU,A02,Wage Price Index,quarterly,Prices,Labor Market,Wage Price Index (QoQ),11:30,,Sydney
@@ -324,22 +270,3 @@ AUD,AU,A22,Westpac-MI Consumer Sentiment,monthly,Forward-Looking,Surveys/Cyclica
 AUD,AU,A23,Westpac-MI Leading Index,monthly,Forward-Looking,Surveys/Cyclical Indicators,Westpac Leading Index (MoM),10:30,,Sydney
 AUD,AU,A24,RBA Rate Decision (statement),policy meeting,Monetary,Monetary Sector,RBA Interest Rate Decision,14:30,,Sydney
 AUD,AU,A24,RBA Rate Decision (statement),policy meeting,Monetary,Monetary Sector,RBA Rate Statement,14:30,,Sydney
-CHF,CH,C01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (QoQ),7:45,,CET
-CHF,CH,C01,GDP,quarterly,Real Activity,National Accounts (GDP),Gross Domestic Product (YoY),7:45,,CET
-CHF,CH,C02,Employment Level,quarterly,Real Activity,Labor Market,Employment Level (QoQ),8:30,,CET
-CHF,CH,C03,Industrial Production,quarterly,Real Activity,Industrial Sector,Industrial Production (YoY),8:30,,CET
-CHF,CH,C04,SECO Consumer Sentiment,quarterly,Forward-Looking,Surveys/Cyclical Indicators,SECO Consumer Climate (3m),7:45,,CET
-CHF,CH,C05,Unemployment Rate,monthly,Real Activity,Labor Market,Unemployment Rate s.a (MoM),7:45,,CET
-CHF,CH,C06,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (MoM),8:30,,CET
-CHF,CH,C06,Consumer Price Index,monthly,Prices,Prices,Consumer Price Index (YoY),8:30,,CET
-CHF,CH,C07,Producer and Import Prices,monthly,Prices,Prices,Producer and Import Prices (MoM),8:30,,CET
-CHF,CH,C07,Producer and Import Prices,monthly,Prices,Prices,Producer and Import Prices (YoY),8:30,,CET
-CHF,CH,C08,Real Retail Sales,monthly,Consumption,Retail & Wholesale Sector,Real Retail Sales (YoY),8:30,,CET
-CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Trade Balance,8:00,,CET
-CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Exports (MoM),8:00,,CET
-CHF,CH,C09,Trade Balance,monthly,Net Exports,Intl Trade & BoP,Imports (MoM),8:00,,CET
-CHF,CH,C10,Foreign Currency Reserves,monthly,Monetary,Monetary Sector,Foreign Currency Reserves,9:00,,CET
-CHF,CH,C11,KOF Economic Barometer,monthly,Forward-Looking,Surveys/Cyclical Indicators,KOF Leading Indicator,9:00,,CET
-CHF,CH,C12,procure.ch Manufacturing PMI,monthly,Forward-Looking,Surveys/Cyclical Indicators,SVME - Purchasing Managers' Index,9:30,,CET
-CHF,CH,C13,UBS-CFA/ZEW Economic Expectations,monthly,Forward-Looking,Surveys/Cyclical Indicators,ZEW Survey – Expectations,10:00,,CET
-CHF,CH,C14,SNB Rate Decision,policy meeting,Monetary,Monetary Sector,SNB Interest Rate Decision,9:30,,CET

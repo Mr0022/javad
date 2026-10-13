@@ -97,6 +97,7 @@ Usage
     python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD
     python HAR_X_run.py --horizons 1
     python HAR_X_run.py --event_suffix _CORE  # release-level calendar
+    python HAR_X_run.py --no_dow              # no weekday controls
 ==============================================================================
 """
 
@@ -580,7 +581,7 @@ def fit_nhar(train, test, z_cols, x_cols, h, rule=LAMBDA_RULE):
 # ==============================================================================
 
 def run_pair(pair, root_path, target, horizons, event_kwargs,
-             rule=LAMBDA_RULE, verbose=True, event_suffix=""):
+             rule=LAMBDA_RULE, verbose=True, event_suffix="", dow=True):
     data_path  = f"{pair}_lnRV.csv"
     # '' -> <PAIR>_EVENTS.csv; '_CORE' -> the release-level calendar written by
     # scripts/build_core_events.py
@@ -610,19 +611,27 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
 
     rows, sel_rows, loss_rows = [], [], []
 
+    # dow=False (--no_dow) drops the weekday controls: HAR-NEWS and N-HAR then
+    # sit on the plain HAR core, HAR+DOW is not estimated, and gains are
+    # measured against HAR instead
+    models = MODEL_ORDER if dow else [m for m in MODEL_ORDER if m != "HAR+DOW"]
+    base = "HAR+DOW" if dow else "HAR"
+    gain_col = "dMSE_pct_vs_HAR_DOW" if dow else "dMSE_pct_vs_HAR"
+
     for h in horizons:
         df = assemble(series, events, h, evt_reps)
         train, test = split_by_year(df)
 
         har_cols = ["RV_d", "RV_w", "RV_m"]
-        dow_cols = ["DOW_MON", "DOW_TUE", "DOW_THU", "DOW_FRI"]
+        dow_cols = ["DOW_MON", "DOW_TUE", "DOW_THU", "DOW_FRI"] if dow else []
         evt_ev   = [f"EV_{c}" for c in evt_reps]
 
         y_te = test["Y_h"].to_numpy(dtype=float)
         preds, extra = {}, {}
 
         _, preds["HAR"]     = fit_ols(train, test, har_cols, h)
-        _, preds["HAR+DOW"] = fit_ols(train, test, har_cols + dow_cols, h)
+        if dow:
+            _, preds["HAR+DOW"] = fit_ols(train, test, har_cols + dow_cols, h)
 
         extra["HAR-NEWS"], preds["HAR-NEWS"] = fit_har_news(
             train, test, har_cols + dow_cols, evt_ev, h)
@@ -643,15 +652,15 @@ def run_pair(pair, root_path, target, horizons, event_kwargs,
                   f"rank {news['rank']}, {len(train)} train rows"
                   f"{rank_note}")
             print(f"    {'model':<12}{'MSE':>12}{'MAE':>12}{'QLIKE':>12}"
-                  f"{'dMSE% vs HAR+DOW':>20}")
+                  f"{'dMSE% vs ' + base:>20}")
 
-        base_mse = mse(y_te, preds["HAR+DOW"])
-        for name in MODEL_ORDER:
+        base_mse = mse(y_te, preds[base])
+        for name in models:
             m = compute_metrics(y_te, preds[name])
             imp = 100.0 * (m["MSE"] - base_mse) / base_mse
             rows.append({"pair": pair, "horizon": h, "model": name,
                          "n_train": len(train), "n_test": len(test),
-                         **m, "dMSE_pct_vs_HAR_DOW": imp,
+                         **m, gain_col: imp,
                          "n_selected": extra.get(name, {}).get("n_selected", np.nan),
                          "alpha": extra.get(name, {}).get("alpha", np.nan)})
             if verbose:
@@ -702,6 +711,9 @@ def main():
     ap.add_argument("--event_suffix", type=str, default="",
                     help="read data/<PAIR>_EVENTS<suffix>.csv instead of the raw "
                          "calendar, e.g. '_CORE' for the release-level set")
+    ap.add_argument("--no_dow", action="store_true",
+                    help="drop the weekday x RV_d controls: HAR-NEWS and N-HAR are "
+                         "fitted on the plain HAR core and HAR+DOW is not estimated")
     args = ap.parse_args()
 
     for h in args.horizons:
@@ -720,7 +732,8 @@ def main():
             rows, sel, loss = run_pair(pair, args.root_path, args.target,
                                        args.horizons, event_kwargs,
                                        rule=args.lambda_rule,
-                                       event_suffix=args.event_suffix)
+                                       event_suffix=args.event_suffix,
+                                       dow=not args.no_dow)
         except FileNotFoundError as e:
             print(f"\n[skip] {pair}: {e}", file=sys.stderr)
             continue
@@ -750,7 +763,7 @@ def main():
            .mean().round(4))
     print(piv.to_string())
 
-    order = MODEL_ORDER
+    order = [m for m in MODEL_ORDER if m in set(metrics["model"])]
     lines = ["| Pair | h | " + " | ".join(f"{m} MSE" for m in order) + " |",
              "|---|---|" + "---|" * len(order)]
     for (pair, h), g in metrics.groupby(["pair", "horizon"], sort=False):

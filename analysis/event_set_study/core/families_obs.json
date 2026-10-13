@@ -1,0 +1,3091 @@
+[
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U01",
+  "name": "GDP (advance, second, third)",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Gross Domestic Product Annualized",
+   "Gross Domestic Product Price Index",
+   "Core Personal Consumption Expenditures (QoQ)",
+   "Personal Consumption Expenditures Prices (QoQ)"
+  ],
+  "obs": 161,
+  "first": "01/27/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U02",
+  "name": "Employment Cost Index",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Labor Market",
+  "members": [
+   "Employment Cost Index"
+  ],
+  "obs": 54,
+  "first": "01/31/12",
+  "last": "04/30/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U03",
+  "name": "Productivity and Unit Labor Costs",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Nonfarm Productivity",
+   "Unit Labor Costs"
+  ],
+  "obs": 108,
+  "first": "02/02/12",
+  "last": "06/05/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U04",
+  "name": "Current Account",
+  "freq": "Q",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Current Account"
+  ],
+  "obs": 54,
+  "first": "03/14/12",
+  "last": "06/24/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U05",
+  "name": "Senior Loan Officer Survey",
+  "freq": "Q",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Loan Officer Survey"
+  ],
+  "obs": 52,
+  "first": "01/30/12",
+  "last": "05/12/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U06",
+  "name": "Employment Situation (Nonfarm Payrolls)",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Nonfarm Payrolls",
+   "Unemployment Rate",
+   "Average Hourly Earnings (MoM)",
+   "Average Hourly Earnings (YoY)",
+   "Average Weekly Hours",
+   "Labor Force Participation Rate"
+  ],
+  "obs": 161,
+  "first": "02/03/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U07",
+  "name": "ADP Employment Change",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "ADP Employment Change"
+  ],
+  "obs": 159,
+  "first": "02/01/12",
+  "last": "06/04/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U08",
+  "name": "Challenger Job Cuts",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Challenger Job Cuts"
+  ],
+  "obs": 161,
+  "first": "02/02/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U09",
+  "name": "JOLTS Job Openings",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "JOLTS Job Openings"
+  ],
+  "obs": 139,
+  "first": "12/10/13",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U10",
+  "name": "Retail Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Retail Sales (MoM)",
+   "Retail Sales ex Autos (MoM)"
+  ],
+  "obs": 163,
+  "first": "01/12/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U11",
+  "name": "Total Vehicle Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Total Vehicle Sales"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U12",
+  "name": "Business Inventories",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Business Inventories"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U13",
+  "name": "Wholesale Inventories",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Wholesale Inventories"
+  ],
+  "obs": 263,
+  "first": "02/09/12",
+  "last": "06/26/25",
+  "per_year_median": 22.5
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U14",
+  "name": "Industrial Production and Capacity Utilization",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Industrial Production (MoM)",
+   "Capacity Utilization"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U15",
+  "name": "Durable Goods Orders",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Durable Goods Orders",
+   "Durable Goods Orders ex Transportation"
+  ],
+  "obs": 162,
+  "first": "01/26/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U16",
+  "name": "Factory Orders",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Factory Orders (MoM)"
+  ],
+  "obs": 160,
+  "first": "02/03/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U17",
+  "name": "Personal Income and Outlays (incl. PCE prices)",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Personal/Household Sector",
+  "members": [
+   "Personal Income (MoM)",
+   "Personal Spending",
+   "Personal Consumption Expenditures - Price Index (MoM)",
+   "Personal Consumption Expenditures - Price Index (YoY)",
+   "Core Personal Consumption Expenditures - Price Index (MoM)",
+   "Core Personal Consumption Expenditures - Price Index (YoY)"
+  ],
+  "obs": 161,
+  "first": "01/30/12",
+  "last": "06/27/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U18",
+  "name": "Consumer Credit",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Consumer Credit Change"
+  ],
+  "obs": 161,
+  "first": "02/07/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U19",
+  "name": "Housing Starts and Building Permits",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Housing Starts (MoM)",
+   "Building Permits (MoM)"
+  ],
+  "obs": 161,
+  "first": "01/19/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U20",
+  "name": "New Home Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "New Home Sales (MoM)",
+   "New Home Sales Change (MoM)"
+  ],
+  "obs": 161,
+  "first": "01/26/12",
+  "last": "06/25/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U21",
+  "name": "Existing Home Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Existing Home Sales (MoM)",
+   "Existing Home Sales Change (MoM)"
+  ],
+  "obs": 162,
+  "first": "01/20/12",
+  "last": "06/23/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U22",
+  "name": "Pending Home Sales",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Pending Home Sales (MoM)",
+   "Pending Home Sales (YoY)"
+  ],
+  "obs": 163,
+  "first": "01/25/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U23",
+  "name": "Construction Spending",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Construction Spending (MoM)"
+  ],
+  "obs": 160,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U24",
+  "name": "NAHB Housing Market Index",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "NAHB Housing Market Index"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U25",
+  "name": "S&P/Case-Shiller Home Prices",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "S&P/Case-Shiller Home Price Indices (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/31/12",
+  "last": "06/24/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U26",
+  "name": "FHFA House Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Housing Price Index (MoM)"
+  ],
+  "obs": 162,
+  "first": "01/25/12",
+  "last": "06/24/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U27",
+  "name": "Trade Balance (goods and services)",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Goods and Services Trade Balance"
+  ],
+  "obs": 162,
+  "first": "01/13/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U28",
+  "name": "TIC Capital Flows",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Net Long-Term TIC Flows",
+   "Total Net TIC Flows"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U29",
+  "name": "Consumer Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Consumer Price Index (MoM)",
+   "Consumer Price Index (YoY)",
+   "Consumer Price Index Core s.a",
+   "Consumer Price Index ex Food & Energy (MoM)",
+   "Consumer Price Index ex Food & Energy (YoY)",
+   "Consumer Price Index n.s.a (MoM)"
+  ],
+  "obs": 163,
+  "first": "01/19/12",
+  "last": "06/11/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U30",
+  "name": "Producer Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Producer Price Index (MoM)",
+   "Producer Price Index (YoY)",
+   "Producer Price Index ex Food & Energy (MoM)",
+   "Producer Price Index ex Food & Energy (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U31",
+  "name": "Import and Export Prices",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Import Price Index (MoM)",
+   "Import Price Index (YoY)",
+   "Export Price Index (MoM)",
+   "Export Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/13/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U32",
+  "name": "ISM Manufacturing PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ISM Manufacturing PMI",
+   "ISM Manufacturing Prices Paid"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U33",
+  "name": "ISM Services PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ISM Services PMI"
+  ],
+  "obs": 161,
+  "first": "02/03/12",
+  "last": "06/04/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U34",
+  "name": "S&P Global Manufacturing PMI (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "S&P Global Manufacturing PMI"
+  ],
+  "obs": 316,
+  "first": "04/25/12",
+  "last": "06/23/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U35",
+  "name": "S&P Global Services/Composite PMI (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "S&P Global Services PMI",
+   "S&P Global Composite PMI"
+  ],
+  "obs": 277,
+  "first": "12/04/13",
+  "last": "06/23/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U36",
+  "name": "Consumer Confidence (Conference Board)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Consumer Confidence"
+  ],
+  "obs": 153,
+  "first": "01/31/12",
+  "last": "06/24/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U37",
+  "name": "Michigan Consumer Sentiment (prelim. and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Michigan Consumer Sentiment Index"
+  ],
+  "obs": 324,
+  "first": "01/13/12",
+  "last": "06/27/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U38",
+  "name": "NFIB Small Business Optimism",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "NFIB Business Optimism Index"
+  ],
+  "obs": 161,
+  "first": "02/14/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U39",
+  "name": "RCM/TIPP Economic Optimism",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "RealClearMarkets/TIPP Economic Optimism (MoM)"
+  ],
+  "obs": 161,
+  "first": "02/07/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U40",
+  "name": "Chicago Fed National Activity Index",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Chicago Fed National Activity Index"
+  ],
+  "obs": 161,
+  "first": "01/26/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U41",
+  "name": "Monthly Treasury Budget Statement",
+  "freq": "M",
+  "cat": "Government",
+  "sector": "Government Finance",
+  "members": [
+   "Monthly Budget Statement"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/11/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U42",
+  "name": "FOMC Rate Decision (statement, projections)",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Fed Interest Rate Decision",
+   "Fed Monetary Policy Statement",
+   "FOMC Economic Projections"
+  ],
+  "obs": 109,
+  "first": "01/25/12",
+  "last": "06/18/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U43",
+  "name": "Initial and Continuing Jobless Claims",
+  "freq": "W",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Initial Jobless Claims",
+   "Continuing Jobless Claims"
+  ],
+  "obs": 704,
+  "first": "01/12/12",
+  "last": "06/26/25",
+  "per_year_median": 52.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U44",
+  "name": "MBA Mortgage Applications",
+  "freq": "W",
+  "cat": "Forward-Looking",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "MBA Mortgage Applications"
+  ],
+  "obs": 690,
+  "first": "01/18/12",
+  "last": "06/25/25",
+  "per_year_median": 51.0
+ },
+ {
+  "cur": "USD",
+  "country": "US",
+  "fid": "U45",
+  "name": "Redbook Same-Store Sales",
+  "freq": "W",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Redbook Index (YoY)"
+  ],
+  "obs": 676,
+  "first": "07/03/12",
+  "last": "06/24/25",
+  "per_year_median": 52.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E01",
+  "name": "GDP, euro area (flash, second, final)",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "eur Gross Domestic Product s.a. (QoQ)",
+   "eur Gross Domestic Product s.a. (YoY)"
+  ],
+  "obs": 153,
+  "first": "02/15/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E02",
+  "name": "Employment, euro area",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "eur Employment Change (QoQ)",
+   "eur Employment Change (YoY)"
+  ],
+  "obs": 81,
+  "first": "03/15/12",
+  "last": "06/06/25",
+  "per_year_median": 4.5
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E03",
+  "name": "Labour Cost Index, euro area",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Labor Market",
+  "members": [
+   "eur Labor Cost Index"
+  ],
+  "obs": 54,
+  "first": "03/15/12",
+  "last": "06/16/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E04",
+  "name": "Unemployment Rate, euro area",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "eur Unemployment Rate"
+  ],
+  "obs": 161,
+  "first": "01/31/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E05",
+  "name": "Industrial Production, euro area",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "eur Industrial Production s.a. (MoM)",
+   "eur Industrial Production w.d.a. (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/13/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E06",
+  "name": "Retail Sales, euro area",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "eur Retail Sales (MoM)",
+   "eur Retail Sales (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/03/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E07",
+  "name": "Construction Output, euro area",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "eur Construction Output s.a (MoM)",
+   "eur Construction Output w.d.a (YoY)"
+  ],
+  "obs": 161,
+  "first": "01/18/12",
+  "last": "06/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E08",
+  "name": "Trade Balance, euro area",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "eur Trade Balance s.a.",
+   "eur Trade Balance n.s.a."
+  ],
+  "obs": 163,
+  "first": "01/13/12",
+  "last": "06/13/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E09",
+  "name": "Current Account, euro area",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "eur Current Account s.a",
+   "eur Current Account n.s.a"
+  ],
+  "obs": 162,
+  "first": "01/19/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E10",
+  "name": "HICP, euro area (flash and final)",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "eur Harmonized Index of Consumer Prices (YoY)",
+   "eur Harmonized Index of Consumer Prices (MoM)",
+   "eur Core Harmonized Index of Consumer Prices (YoY)"
+  ],
+  "obs": 323,
+  "first": "01/17/12",
+  "last": "06/18/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E11",
+  "name": "Producer Price Index, euro area",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "eur Producer Price Index (MoM)",
+   "eur Producer Price Index (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/02/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E12",
+  "name": "M3 Money Supply and Private Loans",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "eur M3 Money Supply (YoY)",
+   "eur M3 Money Supply (3m)",
+   "eur Private Loans (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/27/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E13",
+  "name": "Economic Sentiment Indicator (EC survey)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "eur Economic Sentiment Indicator",
+   "eur Industrial Confidence",
+   "eur Services Sentiment",
+   "eur Business Climate"
+  ],
+  "obs": 162,
+  "first": "01/30/12",
+  "last": "06/27/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E14",
+  "name": "Consumer Confidence, euro area (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "eur Consumer Confidence"
+  ],
+  "obs": 324,
+  "first": "01/23/12",
+  "last": "06/27/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E15",
+  "name": "Sentix Investor Confidence",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "eur Sentix Investor Confidence"
+  ],
+  "obs": 161,
+  "first": "02/06/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E16",
+  "name": "HCOB Manufacturing PMI, euro area/Germany/France (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "eur HCOB Manufacturing PMI",
+   "ger HCOB Manufacturing PMI",
+   "fra HCOB Manufacturing PMI"
+  ],
+  "obs": 323,
+  "first": "01/24/12",
+  "last": "06/23/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E17",
+  "name": "HCOB Services/Composite PMI, euro area/Germany/France (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "eur HCOB Services PMI",
+   "eur HCOB Composite PMI",
+   "ger HCOB Services PMI",
+   "fra HCOB Services PMI",
+   "fra HCOB Composite PMI"
+  ],
+  "obs": 323,
+  "first": "01/24/12",
+  "last": "06/23/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "EA",
+  "fid": "E18",
+  "name": "ECB Rate Decision",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "eur ECB Main Refinancing Operations Rate",
+   "eur ECB Rate On Deposit Facility"
+  ],
+  "obs": 125,
+  "first": "01/12/12",
+  "last": "06/05/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D01",
+  "name": "GDP, Germany",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "ger Gross Domestic Product (QoQ)",
+   "ger Gross Domestic Product (YoY)",
+   "ger Gross Domestic Product w.d.a (YoY)"
+  ],
+  "obs": 108,
+  "first": "02/15/12",
+  "last": "05/23/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D02",
+  "name": "Unemployment, Germany",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "ger Unemployment Change",
+   "ger Unemployment Rate s.a."
+  ],
+  "obs": 161,
+  "first": "01/31/12",
+  "last": "05/28/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D03",
+  "name": "Industrial Production, Germany",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "ger Industrial Production s.a. (MoM)",
+   "ger Industrial Production n.s.a. w.d.a. (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/07/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D04",
+  "name": "Factory Orders, Germany",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "ger Factory Orders s.a. (MoM)",
+   "ger Factory Orders n.s.a. (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/06/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D05",
+  "name": "Retail Sales, Germany",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "ger Retail Sales (MoM)",
+   "ger Retail Sales (YoY)"
+  ],
+  "obs": 160,
+  "first": "01/31/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D06",
+  "name": "Trade Balance, Germany",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "ger Trade Balance s.a.",
+   "ger Exports (MoM)",
+   "ger Imports (MoM)"
+  ],
+  "obs": 161,
+  "first": "02/08/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D07",
+  "name": "Current Account, Germany",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "ger Current Account n.s.a."
+  ],
+  "obs": 161,
+  "first": "02/08/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D08",
+  "name": "Consumer Prices, Germany (prelim. and final, CPI and HICP)",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "ger Consumer Price Index (MoM)",
+   "ger Consumer Price Index (YoY)",
+   "ger Harmonized Index of Consumer Prices (MoM)",
+   "ger Harmonized Index of Consumer Prices (YoY)"
+  ],
+  "obs": 325,
+  "first": "01/12/12",
+  "last": "06/30/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D09",
+  "name": "Producer Prices, Germany",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "ger Producer Price Index (MoM)",
+   "ger Producer Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/20/12",
+  "last": "06/20/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D10",
+  "name": "Import Prices, Germany",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "ger Import Price Index (MoM)",
+   "ger Import Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/27/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D11",
+  "name": "Wholesale Prices, Germany",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "ger Wholesale Price Index (MoM)",
+   "ger Wholesale Price Index (YoY)"
+  ],
+  "obs": 161,
+  "first": "01/16/12",
+  "last": "06/13/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D12",
+  "name": "Ifo Business Climate",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ger IFO \u2013 Business Climate",
+   "ger IFO \u2013 Current Assessment",
+   "ger IFO \u2013 Expectations"
+  ],
+  "obs": 163,
+  "first": "01/25/12",
+  "last": "06/24/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D13",
+  "name": "ZEW Economic Sentiment (Germany and euro area)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ger ZEW Survey \u2013 Economic Sentiment",
+   "ger ZEW Survey \u2013 Current Situation",
+   "eur ZEW Survey \u2013 Economic Sentiment"
+  ],
+  "obs": 162,
+  "first": "01/17/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "DE",
+  "fid": "D14",
+  "name": "GfK Consumer Climate",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ger GfK Consumer Confidence Survey"
+  ],
+  "obs": 162,
+  "first": "01/26/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F01",
+  "name": "GDP, France",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "fra Gross Domestic Product (QoQ)"
+  ],
+  "obs": 122,
+  "first": "02/15/12",
+  "last": "05/28/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F02",
+  "name": "ILO Unemployment Rate, France",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "fra ILO Unemployment"
+  ],
+  "obs": 54,
+  "first": "03/01/12",
+  "last": "05/16/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F03",
+  "name": "Private Payrolls, France",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "fra Nonfarm Payrolls (QoQ)"
+  ],
+  "obs": 108,
+  "first": "02/14/12",
+  "last": "05/28/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F04",
+  "name": "Industrial Output, France",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "fra Industrial Output (MoM)"
+  ],
+  "obs": 161,
+  "first": "02/10/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F05",
+  "name": "Household Consumption, France",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Personal/Household Sector",
+  "members": [
+   "fra Consumer Spending (MoM)"
+  ],
+  "obs": 158,
+  "first": "01/31/12",
+  "last": "06/27/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F06",
+  "name": "Trade Balance, France",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "fra Trade Balance EUR",
+   "fra Exports, EUR",
+   "fra Imports, EUR"
+  ],
+  "obs": 161,
+  "first": "02/07/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F07",
+  "name": "Current Account, France",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "fra Current Account"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F08",
+  "name": "Consumer Prices, France (prelim. and final)",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "fra Consumer Price Index (EU norm) (YoY)",
+   "fra Consumer Price Index (EU norm) (MoM)",
+   "fra Inflation ex-tobacco (MoM)"
+  ],
+  "obs": 272,
+  "first": "01/12/12",
+  "last": "06/27/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F09",
+  "name": "Producer Prices, France",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "fra Producer Prices (MoM)"
+  ],
+  "obs": 161,
+  "first": "01/31/12",
+  "last": "06/27/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F10",
+  "name": "Consumer Confidence, France",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "fra Consumer Confidence"
+  ],
+  "obs": 161,
+  "first": "01/26/12",
+  "last": "06/25/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F11",
+  "name": "Business Climate in Manufacturing, France",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "fra Business Climate in Manufacturing"
+  ],
+  "obs": 162,
+  "first": "01/23/12",
+  "last": "06/20/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "EUR",
+  "country": "FR",
+  "fid": "F14",
+  "name": "Central Government Budget Balance, France",
+  "freq": "M",
+  "cat": "Government",
+  "sector": "Government Finance",
+  "members": [
+   "fra Budget Balance"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G01",
+  "name": "GDP (first, second, final) incl. Business Investment",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Gross Domestic Product (QoQ)",
+   "Gross Domestic Product (YoY)",
+   "Total Business Investment (QoQ)",
+   "Total Business Investment (YoY)"
+  ],
+  "obs": 134,
+  "first": "01/25/12",
+  "last": "06/30/25",
+  "per_year_median": 9.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G02",
+  "name": "Current Account",
+  "freq": "Q",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Current Account"
+  ],
+  "obs": 54,
+  "first": "03/28/12",
+  "last": "06/30/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G03",
+  "name": "BoE Credit Conditions Survey",
+  "freq": "Q",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "BoE Credit Conditions Survey"
+  ],
+  "obs": 53,
+  "first": "03/28/12",
+  "last": "04/17/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G04",
+  "name": "BoE/Ipsos Inflation Attitudes Survey",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Consumer Inflation Expectations"
+  ],
+  "obs": 53,
+  "first": "03/09/12",
+  "last": "06/13/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G05",
+  "name": "Labour Market (ILO unemployment, claimant count, earnings)",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "ILO Unemployment Rate (3M)",
+   "Claimant Count Change",
+   "Claimant Count Rate",
+   "Average Earnings Including Bonus (3Mo/Yr)",
+   "Average Earnings Excluding Bonus (3Mo/Yr)"
+  ],
+  "obs": 163,
+  "first": "01/18/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G06",
+  "name": "Consumer Price Inflation (CPI, core CPI, RPI)",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Consumer Price Index (YoY)",
+   "Consumer Price Index (MoM)",
+   "Core Consumer Price Index (YoY)",
+   "Retail Price Index (MoM)",
+   "Retail Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/17/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G07",
+  "name": "Producer Price Inflation (input and output)",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Producer Price Index - Output (MoM) n.s.a",
+   "Producer Price Index - Output (YoY) n.s.a",
+   "Producer Price Index - Input (MoM) n.s.a",
+   "Producer Price Index - Input (YoY) n.s.a",
+   "PPI Core Output (MoM) n.s.a",
+   "PPI Core Output (YoY) n.s.a"
+  ],
+  "obs": 157,
+  "first": "01/13/12",
+  "last": "02/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G08",
+  "name": "BRC Shop Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "BRC Shop Price Index (YoY)"
+  ],
+  "obs": 163,
+  "first": "02/08/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G09",
+  "name": "Retail Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Retail Sales (MoM)",
+   "Retail Sales (YoY)",
+   "Retail Sales ex-Fuel (MoM)",
+   "Retail Sales ex-Fuel (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/20/12",
+  "last": "06/20/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G10",
+  "name": "BRC Like-for-Like Retail Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "BRC Like-For-Like Retail Sales (YoY)"
+  ],
+  "obs": 162,
+  "first": "02/07/12",
+  "last": "06/09/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G11",
+  "name": "Industrial and Manufacturing Production",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Industrial Production (MoM)",
+   "Industrial Production (YoY)",
+   "Manufacturing Production (MoM)",
+   "Manufacturing Production (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G12",
+  "name": "Index of Services",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Index of Services (3M/3M)"
+  ],
+  "obs": 162,
+  "first": "01/25/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G13",
+  "name": "NIESR Monthly GDP Tracker",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "NIESR GDP Estimate (3M)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G14",
+  "name": "Trade Balance",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Goods Trade Balance",
+   "Total Trade Balance",
+   "Trade Balance; non-EU"
+  ],
+  "obs": 161,
+  "first": "02/09/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G15",
+  "name": "Nationwide House Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Nationwide Housing Prices s.a (MoM)",
+   "Nationwide Housing Prices n.s.a (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G16",
+  "name": "Halifax House Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Lloyds House Price Index (MoM)",
+   "Lloyds House Price Index (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/06/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G17",
+  "name": "Rightmove House Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Rightmove House Price Index (MoM)",
+   "Rightmove House Price Index (YoY)"
+  ],
+  "obs": 160,
+  "first": "01/16/12",
+  "last": "06/15/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G18",
+  "name": "RICS Housing Price Balance",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "RICS Housing Price Balance"
+  ],
+  "obs": 161,
+  "first": "02/14/12",
+  "last": "06/11/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G19",
+  "name": "ONS House Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "DCLG House Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/17/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G20",
+  "name": "BoE Money and Credit (M4, consumer credit, mortgage approvals)",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "M4 Money Supply (MoM)",
+   "M4 Money Supply (YoY)",
+   "Consumer Credit",
+   "Net Lending to Individuals (MoM)",
+   "Mortgage Approvals"
+  ],
+  "obs": 163,
+  "first": "01/31/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G21",
+  "name": "Public Sector Net Borrowing",
+  "freq": "M",
+  "cat": "Government",
+  "sector": "Government Finance",
+  "members": [
+   "Public Sector Net Borrowing"
+  ],
+  "obs": 162,
+  "first": "01/24/12",
+  "last": "06/20/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G22",
+  "name": "S&P Global Manufacturing PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "S&P Global Manufacturing PMI"
+  ],
+  "obs": 230,
+  "first": "02/01/12",
+  "last": "06/23/25",
+  "per_year_median": 12.5
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G23",
+  "name": "S&P Global Services PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "S&P Global Services PMI"
+  ],
+  "obs": 230,
+  "first": "02/03/12",
+  "last": "06/23/25",
+  "per_year_median": 12.5
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G24",
+  "name": "S&P Global Construction PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "S&P Global Construction PMI"
+  ],
+  "obs": 161,
+  "first": "02/02/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G25",
+  "name": "GfK Consumer Confidence",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "GfK Consumer Confidence"
+  ],
+  "obs": 166,
+  "first": "01/31/12",
+  "last": "06/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "GBP",
+  "country": "UK",
+  "fid": "G26",
+  "name": "BoE Rate Decision",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "BoE Interest Rate Decision"
+  ],
+  "obs": 129,
+  "first": "01/12/12",
+  "last": "06/19/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J01",
+  "name": "GDP (preliminary and revised)",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Gross Domestic Product (QoQ)",
+   "Gross Domestic Product Annualized",
+   "Gross Domestic Product Deflator (YoY)"
+  ],
+  "obs": 109,
+  "first": "02/12/12",
+  "last": "06/08/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J02",
+  "name": "BoJ Tankan Survey",
+  "freq": "Q",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Tankan Large Manufacturing Index",
+   "Tankan Large Manufacturing Outlook",
+   "Tankan Non - Manufacturing Index",
+   "Tankan Non - Manufacturing Outlook",
+   "Tankan Large All Industry Capex"
+  ],
+  "obs": 54,
+  "first": "04/01/12",
+  "last": "06/30/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J03",
+  "name": "MoF Business Outlook Survey (BSI)",
+  "freq": "Q",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "BSI Large Manufacturing Conditions Index (QoQ)"
+  ],
+  "obs": 54,
+  "first": "03/13/12",
+  "last": "06/11/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J04",
+  "name": "MoF Corporate Capital Spending",
+  "freq": "Q",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Capital Spending"
+  ],
+  "obs": 54,
+  "first": "02/29/12",
+  "last": "06/01/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J05",
+  "name": "Unemployment Rate and Jobs/Applicants Ratio",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Unemployment Rate",
+   "Jobs / Applicants Ratio"
+  ],
+  "obs": 170,
+  "first": "01/30/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J06",
+  "name": "Labour Cash Earnings",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Labor Cash Earnings (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/04/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J07",
+  "name": "Household Spending",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Personal/Household Sector",
+  "members": [
+   "Overall Household Spending (YoY)"
+  ],
+  "obs": 161,
+  "first": "01/30/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J08",
+  "name": "Retail Trade (commercial sales)",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Retail Trade (YoY)",
+   "Retail Trade s.a (MoM)",
+   "Large Retailer Sales"
+  ],
+  "obs": 162,
+  "first": "01/26/12",
+  "last": "06/26/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J09",
+  "name": "Industrial Production (prelim. and final)",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Industrial Production (MoM)",
+   "Industrial Production (YoY)"
+  ],
+  "obs": 324,
+  "first": "01/18/12",
+  "last": "06/29/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J10",
+  "name": "Capacity Utilization",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Capacity Utilization"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/13/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J11",
+  "name": "Core Machinery Orders",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Machinery Orders (MoM)",
+   "Machinery Orders (YoY)"
+  ],
+  "obs": 163,
+  "first": "01/15/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J12",
+  "name": "Machine Tool Orders",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Machine Tool Orders (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J13",
+  "name": "Tertiary Industry Activity Index",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Tertiary Industry Index (MoM)"
+  ],
+  "obs": 162,
+  "first": "01/16/12",
+  "last": "06/13/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J14",
+  "name": "Housing Starts and Construction Orders",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Annualized Housing Starts",
+   "Housing Starts (YoY)",
+   "Construction Orders (YoY)"
+  ],
+  "obs": 163,
+  "first": "01/31/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J15",
+  "name": "Merchandise Trade Balance",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Merchandise Trade Balance Total",
+   "Adjusted Merchandise Trade Balance",
+   "Exports (YoY)",
+   "Imports (YoY)"
+  ],
+  "obs": 164,
+  "first": "01/24/12",
+  "last": "06/17/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J16",
+  "name": "Balance of Payments (current account)",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Current Account n.s.a.",
+   "Trade Balance - BOP Basis"
+  ],
+  "obs": 161,
+  "first": "02/07/12",
+  "last": "06/08/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J17",
+  "name": "National Consumer Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "National Consumer Price Index (YoY)",
+   "National CPI ex Fresh Food (YoY)",
+   "National CPI ex Food, Energy (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/26/12",
+  "last": "06/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J18",
+  "name": "Producer (Corporate Goods) Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Producer Price Index (MoM)",
+   "Producer Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/15/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J19",
+  "name": "Corporate Services Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Corporate Service Price Index (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/25/12",
+  "last": "06/24/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J20",
+  "name": "Consumer Confidence Index",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Consumer Confidence Index"
+  ],
+  "obs": 162,
+  "first": "01/16/12",
+  "last": "05/29/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J21",
+  "name": "Economy Watchers Survey",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Eco Watchers Survey: Current",
+   "Eco Watchers Survey: Outlook"
+  ],
+  "obs": 163,
+  "first": "01/12/12",
+  "last": "06/09/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J22",
+  "name": "Composite Index (leading and coincident, prelim. and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Leading Economic Index",
+   "Coincident Index"
+  ],
+  "obs": 323,
+  "first": "01/20/12",
+  "last": "06/25/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J23",
+  "name": "Jibun Bank Manufacturing PMI (flash and final)",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Jibun Bank Manufacturing PMI"
+  ],
+  "obs": 295,
+  "first": "01/30/12",
+  "last": "06/23/25",
+  "per_year_median": 24.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J24",
+  "name": "Jibun Bank Services PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Jibun Bank Services PMI"
+  ],
+  "obs": 175,
+  "first": "01/06/14",
+  "last": "06/23/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J25",
+  "name": "Monetary Base",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Monetary Base (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J26",
+  "name": "Money Stock M2",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Money Supply M2+CD (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/09/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J27",
+  "name": "Bank Lending",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Bank Lending (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/12/12",
+  "last": "06/08/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J28",
+  "name": "Foreign Reserves",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "JP Foreign Reserves"
+  ],
+  "obs": 157,
+  "first": "03/07/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J29",
+  "name": "BoJ Rate Decision (policy statement)",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "BoJ Interest Rate Decision",
+   "BoJ Monetary Policy Statement"
+  ],
+  "obs": 136,
+  "first": "01/24/12",
+  "last": "06/17/25",
+  "per_year_median": 8.0
+ },
+ {
+  "cur": "JPY",
+  "country": "JP",
+  "fid": "J30",
+  "name": "Portfolio Investment Flows (MoF weekly)",
+  "freq": "W",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Foreign Bond Investment",
+   "Foreign Investment in Japan Stocks"
+  ],
+  "obs": 648,
+  "first": "06/21/12",
+  "last": "06/25/25",
+  "per_year_median": 50.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A01",
+  "name": "GDP",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Gross Domestic Product (QoQ)",
+   "Gross Domestic Product (YoY)"
+  ],
+  "obs": 54,
+  "first": "03/07/12",
+  "last": "06/04/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A02",
+  "name": "Wage Price Index",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Labor Market",
+  "members": [
+   "Wage Price Index (QoQ)",
+   "Wage Price Index (YoY)"
+  ],
+  "obs": 54,
+  "first": "02/22/12",
+  "last": "05/14/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A03",
+  "name": "Consumer Price Index (incl. trimmed mean)",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Quarterly Consumer Price Index (QoQ)",
+   "Quarterly Consumer Price Index (YoY)",
+   "Quarterly RBA Trimmed Mean CPI (QoQ)",
+   "Quarterly RBA Trimmed Mean CPI (YoY)"
+  ],
+  "obs": 55,
+  "first": "01/25/12",
+  "last": "04/30/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A04",
+  "name": "Producer Price Index",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Producer Price Index (QoQ)",
+   "Producer Price Index (YoY)"
+  ],
+  "obs": 54,
+  "first": "01/23/12",
+  "last": "05/02/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A05",
+  "name": "Import and Export Price Indexes",
+  "freq": "Q",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Import Price Index (QoQ)",
+   "Export Price Index (QoQ)"
+  ],
+  "obs": 54,
+  "first": "01/20/12",
+  "last": "05/01/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A06",
+  "name": "Company Gross Operating Profits",
+  "freq": "Q",
+  "cat": "Investment",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Company Gross Operating Profits (QoQ)"
+  ],
+  "obs": 54,
+  "first": "03/05/12",
+  "last": "06/03/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A07",
+  "name": "Private Capital Expenditure",
+  "freq": "Q",
+  "cat": "Investment",
+  "sector": "Industrial Sector",
+  "members": [
+   "Private Capital Expenditure"
+  ],
+  "obs": 54,
+  "first": "03/01/12",
+  "last": "05/29/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A08",
+  "name": "Construction Work Done",
+  "freq": "Q",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Construction Work Done"
+  ],
+  "obs": 54,
+  "first": "02/29/12",
+  "last": "05/28/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A09",
+  "name": "Current Account",
+  "freq": "Q",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Current Account Balance"
+  ],
+  "obs": 54,
+  "first": "03/06/12",
+  "last": "06/03/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A10",
+  "name": "NAB Quarterly Business Confidence",
+  "freq": "Q",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "National Australia Bank's Business Confidence (QoQ)"
+  ],
+  "obs": 54,
+  "first": "02/08/12",
+  "last": "04/17/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A11",
+  "name": "Labour Force (employment, unemployment)",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Employment Change s.a.",
+   "Unemployment Rate s.a.",
+   "Full-Time Employment",
+   "Part-Time Employment",
+   "Participation Rate"
+  ],
+  "obs": 162,
+  "first": "01/19/12",
+  "last": "06/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A12",
+  "name": "ANZ Job Advertisements",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "ANZ Job Advertisements"
+  ],
+  "obs": 157,
+  "first": "01/16/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A13",
+  "name": "Retail Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Retail Sales s.a. (MoM)"
+  ],
+  "obs": 178,
+  "first": "02/06/12",
+  "last": "05/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A14",
+  "name": "Trade Balance",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Trade Balance (MoM)",
+   "Exports (MoM)",
+   "Imports (MoM)"
+  ],
+  "obs": 167,
+  "first": "02/02/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A15",
+  "name": "Building Approvals",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Building Permits (MoM)",
+   "Building Permits (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/02/12",
+  "last": "05/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A16",
+  "name": "Lending Indicators (housing finance)",
+  "freq": "M",
+  "cat": "Investment",
+  "sector": "Housing and Real Estate",
+  "members": [
+   "Home Loans",
+   "Investment Lending for Homes"
+  ],
+  "obs": 157,
+  "first": "01/16/12",
+  "last": "05/14/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A17",
+  "name": "Private Sector Credit",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Private Sector Credit (MoM)",
+   "Private Sector Credit (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/31/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A18",
+  "name": "TD-MI Inflation Gauge",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "TD-MI Inflation Gauge (MoM)",
+   "TD-MI Inflation Gauge (YoY)"
+  ],
+  "obs": 163,
+  "first": "01/15/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A19",
+  "name": "MI Consumer Inflation Expectations",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Consumer Inflation Expectations"
+  ],
+  "obs": 161,
+  "first": "01/19/12",
+  "last": "06/12/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A20",
+  "name": "RBA Commodity Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "RBA Commodity Index SDR (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A21",
+  "name": "NAB Monthly Business Survey",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "National Australia Bank's Business Conditions",
+   "National Australia Bank's Business Confidence"
+  ],
+  "obs": 163,
+  "first": "01/31/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A22",
+  "name": "Westpac-MI Consumer Sentiment",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Westpac Consumer Confidence"
+  ],
+  "obs": 163,
+  "first": "01/17/12",
+  "last": "06/10/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A23",
+  "name": "Westpac-MI Leading Index",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "Westpac Leading Index (MoM)"
+  ],
+  "obs": 161,
+  "first": "01/24/12",
+  "last": "06/18/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "AUD",
+  "country": "AU",
+  "fid": "A24",
+  "name": "RBA Rate Decision (statement)",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "RBA Interest Rate Decision",
+   "RBA Rate Statement"
+  ],
+  "obs": 144,
+  "first": "02/07/12",
+  "last": "05/20/25",
+  "per_year_median": 11.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C01",
+  "name": "GDP",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "National Accounts (GDP)",
+  "members": [
+   "Gross Domestic Product (QoQ)",
+   "Gross Domestic Product (YoY)"
+  ],
+  "obs": 54,
+  "first": "03/01/12",
+  "last": "06/02/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C02",
+  "name": "Employment Level",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Employment Level (QoQ)"
+  ],
+  "obs": 53,
+  "first": "02/28/12",
+  "last": "05/26/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C03",
+  "name": "Industrial Production",
+  "freq": "Q",
+  "cat": "Real Activity",
+  "sector": "Industrial Sector",
+  "members": [
+   "Industrial Production (YoY)"
+  ],
+  "obs": 54,
+  "first": "03/20/12",
+  "last": "05/16/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C04",
+  "name": "SECO Consumer Sentiment",
+  "freq": "Q",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "SECO Consumer Climate (3m)"
+  ],
+  "obs": 54,
+  "first": "02/09/12",
+  "last": "05/09/25",
+  "per_year_median": 4.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C05",
+  "name": "Unemployment Rate",
+  "freq": "M",
+  "cat": "Real Activity",
+  "sector": "Labor Market",
+  "members": [
+   "Unemployment Rate s.a (MoM)"
+  ],
+  "obs": 161,
+  "first": "02/08/12",
+  "last": "06/05/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C06",
+  "name": "Consumer Price Index",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Consumer Price Index (MoM)",
+   "Consumer Price Index (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/10/12",
+  "last": "06/03/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C07",
+  "name": "Producer and Import Prices",
+  "freq": "M",
+  "cat": "Prices",
+  "sector": "Prices",
+  "members": [
+   "Producer and Import Prices (MoM)",
+   "Producer and Import Prices (YoY)"
+  ],
+  "obs": 162,
+  "first": "01/16/12",
+  "last": "06/16/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C08",
+  "name": "Real Retail Sales",
+  "freq": "M",
+  "cat": "Consumption",
+  "sector": "Retail & Wholesale Sector",
+  "members": [
+   "Real Retail Sales (YoY)"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C09",
+  "name": "Trade Balance",
+  "freq": "M",
+  "cat": "Net Exports",
+  "sector": "Intl Trade & BoP",
+  "members": [
+   "Trade Balance",
+   "Exports (MoM)",
+   "Imports (MoM)"
+  ],
+  "obs": 162,
+  "first": "02/02/12",
+  "last": "06/19/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C10",
+  "name": "Foreign Currency Reserves",
+  "freq": "M",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "Foreign Currency Reserves"
+  ],
+  "obs": 160,
+  "first": "02/07/12",
+  "last": "06/06/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C11",
+  "name": "KOF Economic Barometer",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "KOF Leading Indicator"
+  ],
+  "obs": 162,
+  "first": "01/27/12",
+  "last": "06/30/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C12",
+  "name": "procure.ch Manufacturing PMI",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "SVME - Purchasing Managers' Index"
+  ],
+  "obs": 161,
+  "first": "02/01/12",
+  "last": "06/02/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C13",
+  "name": "UBS-CFA/ZEW Economic Expectations",
+  "freq": "M",
+  "cat": "Forward-Looking",
+  "sector": "Surveys/Cyclical Indicators",
+  "members": [
+   "ZEW Survey \u2013 Expectations"
+  ],
+  "obs": 162,
+  "first": "01/18/12",
+  "last": "06/25/25",
+  "per_year_median": 12.0
+ },
+ {
+  "cur": "CHF",
+  "country": "CH",
+  "fid": "C14",
+  "name": "SNB Rate Decision",
+  "freq": "P",
+  "cat": "Monetary",
+  "sector": "Monetary Sector",
+  "members": [
+   "SNB Interest Rate Decision"
+  ],
+  "obs": 57,
+  "first": "03/15/12",
+  "last": "06/19/25",
+  "per_year_median": 4.0
+ }
+]

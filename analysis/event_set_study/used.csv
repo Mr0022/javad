@@ -1,0 +1,1290 @@
+Currency,Name,days,pair
+EUR,eur Business Climate,160,EURUSD
+EUR,eur CFTC EUR NC Net Positions,490,EURUSD
+EUR,eur Construction Output s.a (MoM),161,EURUSD
+EUR,eur Construction Output w.d.a (YoY),161,EURUSD
+EUR,eur Consumer Confidence,324,EURUSD
+EUR,eur Core Harmonized Index of Consumer Prices (MoM),152,EURUSD
+EUR,eur Core Harmonized Index of Consumer Prices (YoY),306,EURUSD
+EUR,eur Current Account n.s.a,161,EURUSD
+EUR,eur Current Account s.a,162,EURUSD
+EUR,eur ECB Bank Lending Survey,25,EURUSD
+EUR,eur ECB Main Refinancing Operations Rate,120,EURUSD
+EUR,eur ECB Monetary Policy Meeting Accounts,84,EURUSD
+EUR,eur ECB Monetary Policy Statement,33,EURUSD
+EUR,eur ECB Monthly Report,36,EURUSD
+EUR,eur ECB Press Conference,116,EURUSD
+EUR,eur ECB Rate On Deposit Facility,88,EURUSD
+EUR,eur ECB's Cipollone speech,43,EURUSD
+EUR,eur ECB's Cœuré speech,65,EURUSD
+EUR,eur ECB's De Guindos speech,217,EURUSD
+EUR,eur ECB's Elderson speech,83,EURUSD
+EUR,eur ECB's Lane speech,180,EURUSD
+EUR,eur ECB's Lautenschläger speech,41,EURUSD
+EUR,eur ECB's Mersch speech,56,EURUSD
+EUR,eur ECB's Nagel speech,112,EURUSD
+EUR,eur ECB's Panetta speech,77,EURUSD
+EUR,eur ECB's Praet speech,55,EURUSD
+EUR,eur ECB's President Draghi speech,187,EURUSD
+EUR,eur ECB's President Lagarde speech,252,EURUSD
+EUR,eur ECB's Schnabel speech,131,EURUSD
+EUR,eur EU Financial Stability Review,24,EURUSD
+EUR,eur EU leaders summit,50,EURUSD
+EUR,eur EcoFin Meeting,163,EURUSD
+EUR,eur Economic Bulletin,85,EURUSD
+EUR,eur Economic Sentiment Indicator,162,EURUSD
+EUR,eur Employment Change (QoQ),81,EURUSD
+EUR,eur Employment Change (YoY),80,EURUSD
+EUR,eur Eurogroup Meeting,180,EURUSD
+EUR,eur European Commission releases Economic Growth Forecasts,47,EURUSD
+EUR,eur European Council Meeting,53,EURUSD
+EUR,eur G20 Meeting,62,EURUSD
+EUR,eur G7 Meeting,33,EURUSD
+EUR,eur Gross Domestic Product s.a. (QoQ),153,EURUSD
+EUR,eur Gross Domestic Product s.a. (YoY),148,EURUSD
+EUR,eur HCOB Composite PMI,313,EURUSD
+EUR,eur HCOB Manufacturing PMI,323,EURUSD
+EUR,eur HCOB Services PMI,323,EURUSD
+EUR,eur Harmonized Index of Consumer Prices (MoM),197,EURUSD
+EUR,eur Harmonized Index of Consumer Prices (YoY),323,EURUSD
+EUR,eur Industrial Confidence,161,EURUSD
+EUR,eur Industrial Production s.a. (MoM),162,EURUSD
+EUR,eur Industrial Production w.d.a. (YoY),162,EURUSD
+EUR,eur Labor Cost Index,54,EURUSD
+EUR,eur M3 Money Supply (3m),162,EURUSD
+EUR,eur M3 Money Supply (YoY),162,EURUSD
+EUR,eur Non-Monetary Policy ECB Meeting,111,EURUSD
+EUR,eur Private Loans (YoY),160,EURUSD
+EUR,eur Producer Price Index (MoM),161,EURUSD
+EUR,eur Producer Price Index (YoY),161,EURUSD
+EUR,eur Retail Sales (MoM),161,EURUSD
+EUR,eur Retail Sales (YoY),161,EURUSD
+EUR,eur Sentix Investor Confidence,161,EURUSD
+EUR,eur Services Sentiment,162,EURUSD
+EUR,eur Trade Balance n.s.a.,162,EURUSD
+EUR,eur Trade Balance s.a.,161,EURUSD
+EUR,eur Unemployment Rate,161,EURUSD
+EUR,eur ZEW Survey – Economic Sentiment,162,EURUSD
+EUR,fra 10-y Bond Auction,151,EURUSD
+EUR,fra Budget Balance,162,EURUSD
+EUR,fra Business Climate in Manufacturing,162,EURUSD
+EUR,fra Consumer Confidence,161,EURUSD
+EUR,fra Consumer Price Index (EU norm) (MoM),245,EURUSD
+EUR,fra Consumer Price Index (EU norm) (YoY),272,EURUSD
+EUR,fra Consumer Spending (MoM),158,EURUSD
+EUR,fra Current Account,162,EURUSD
+EUR,"fra Exports, EUR",161,EURUSD
+EUR,fra Gross Domestic Product (QoQ),122,EURUSD
+EUR,fra Gross Domestic Product (YoY),36,EURUSD
+EUR,fra HCOB Composite PMI,253,EURUSD
+EUR,fra HCOB Manufacturing PMI,323,EURUSD
+EUR,fra HCOB Services PMI,322,EURUSD
+EUR,fra ILO Unemployment,54,EURUSD
+EUR,"fra Imports, EUR",161,EURUSD
+EUR,fra Individual Investment (Current Year),37,EURUSD
+EUR,fra Industrial Output (MoM),161,EURUSD
+EUR,fra Inflation ex-tobacco (MoM),162,EURUSD
+EUR,fra Nonfarm Payrolls (QoQ),108,EURUSD
+EUR,fra Producer Prices (MoM),161,EURUSD
+EUR,fra Trade Balance EUR,161,EURUSD
+EUR,ger 10-y Bond Auction,185,EURUSD
+EUR,ger 2-year Notes Auction,40,EURUSD
+EUR,ger 30-y Bond Auction,121,EURUSD
+EUR,ger 5-y Note Auction,72,EURUSD
+EUR,ger Baden-Wuerttemberg CPI (MoM),54,EURUSD
+EUR,ger Baden-Wuerttemberg CPI (YoY),54,EURUSD
+EUR,ger Bavaria CPI (MoM),54,EURUSD
+EUR,ger Bavaria CPI (YoY),54,EURUSD
+EUR,ger Brandenburg CPI (MoM),54,EURUSD
+EUR,ger Brandenburg CPI (YoY),54,EURUSD
+EUR,ger Consumer Price Index (MoM),324,EURUSD
+EUR,ger Consumer Price Index (YoY),324,EURUSD
+EUR,ger Current Account n.s.a.,161,EURUSD
+EUR,ger Exports (MoM),159,EURUSD
+EUR,ger Factory Orders n.s.a. (YoY),161,EURUSD
+EUR,ger Factory Orders s.a. (MoM),161,EURUSD
+EUR,ger German Buba Monthly Report,126,EURUSD
+EUR,ger German Buba President Weidmann speech,129,EURUSD
+EUR,ger GfK Consumer Confidence Survey,162,EURUSD
+EUR,ger Gross Domestic Product (QoQ),108,EURUSD
+EUR,ger Gross Domestic Product (YoY),108,EURUSD
+EUR,ger Gross Domestic Product w.d.a (YoY),108,EURUSD
+EUR,ger HCOB Composite PMI,253,EURUSD
+EUR,ger HCOB Manufacturing PMI,323,EURUSD
+EUR,ger HCOB Services PMI,323,EURUSD
+EUR,ger Harmonized Index of Consumer Prices (MoM),316,EURUSD
+EUR,ger Harmonized Index of Consumer Prices (YoY),316,EURUSD
+EUR,ger Hesse CPI (MoM),54,EURUSD
+EUR,ger Hesse CPI (YoY),54,EURUSD
+EUR,ger IFO – Business Climate,163,EURUSD
+EUR,ger IFO – Current Assessment,163,EURUSD
+EUR,ger IFO – Expectations,162,EURUSD
+EUR,ger Import Price Index (MoM),162,EURUSD
+EUR,ger Import Price Index (YoY),159,EURUSD
+EUR,ger Imports (MoM),159,EURUSD
+EUR,ger Industrial Production n.s.a. w.d.a. (YoY),161,EURUSD
+EUR,ger Industrial Production s.a. (MoM),161,EURUSD
+EUR,ger North Rhine-Westphalia CPI (MoM),54,EURUSD
+EUR,ger North Rhine-Westphalia CPI (YoY),54,EURUSD
+EUR,ger Producer Price Index (MoM),162,EURUSD
+EUR,ger Producer Price Index (YoY),162,EURUSD
+EUR,ger Retail Sales (MoM),159,EURUSD
+EUR,ger Retail Sales (YoY),160,EURUSD
+EUR,ger Saxony CPI (MoM),54,EURUSD
+EUR,ger Saxony CPI (YoY),54,EURUSD
+EUR,ger Trade Balance s.a.,161,EURUSD
+EUR,ger Unemployment Change,161,EURUSD
+EUR,ger Unemployment Rate s.a.,161,EURUSD
+EUR,ger Wholesale Price Index (MoM),161,EURUSD
+EUR,ger Wholesale Price Index (YoY),161,EURUSD
+EUR,ger ZEW Survey – Current Situation,162,EURUSD
+EUR,ger ZEW Survey – Economic Sentiment,162,EURUSD
+USD,usd 10-Year Note Auction,159,EURUSD
+USD,usd 10-year TIPS Auction,34,EURUSD
+USD,usd 2-Year Note Auction,161,EURUSD
+USD,usd 20-Year Bond Auction,62,EURUSD
+USD,usd 3-Month Bill Auction,678,EURUSD
+USD,usd 3-Year Note Auction,157,EURUSD
+USD,usd 30-Year Bond Auction,162,EURUSD
+USD,usd 4-Week Bill Auction,678,EURUSD
+USD,usd 5-Year Note Auction,159,EURUSD
+USD,usd 52-Week Bill Auction,173,EURUSD
+USD,usd 6-Month Bill Auction,681,EURUSD
+USD,usd 7-Year Note Auction,154,EURUSD
+USD,usd ADP Employment Change,159,EURUSD
+USD,usd API Weekly Crude Oil Stock,521,EURUSD
+USD,usd American Petroleum Institute Monthly Report,32,EURUSD
+USD,usd Average Hourly Earnings (MoM),161,EURUSD
+USD,usd Average Hourly Earnings (YoY),161,EURUSD
+USD,usd Average Weekly Hours,161,EURUSD
+USD,usd Baker Hughes US Oil Rig Count,522,EURUSD
+USD,usd Building Permits (MoM),161,EURUSD
+USD,usd Building Permits Change,114,EURUSD
+USD,usd Business Inventories,162,EURUSD
+USD,usd CFTC Gold NC Net Positions,489,EURUSD
+USD,usd CFTC Oil NC Net Positions,489,EURUSD
+USD,usd CFTC S&P 500 NC Net Positions,489,EURUSD
+USD,usd Capacity Utilization,162,EURUSD
+USD,usd Challenger Job Cuts,161,EURUSD
+USD,usd Chicago Fed National Activity Index,161,EURUSD
+USD,usd Chicago PMI,162,EURUSD
+USD,usd Construction Spending (MoM),160,EURUSD
+USD,usd Consumer Confidence,153,EURUSD
+USD,usd Consumer Credit Change,161,EURUSD
+USD,usd Consumer Price Index (MoM),162,EURUSD
+USD,usd Consumer Price Index (YoY),162,EURUSD
+USD,usd Consumer Price Index Core s.a,162,EURUSD
+USD,usd Consumer Price Index ex Food & Energy (MoM),162,EURUSD
+USD,usd Consumer Price Index ex Food & Energy (YoY),162,EURUSD
+USD,usd Consumer Price Index n.s.a (MoM),162,EURUSD
+USD,usd Continuing Jobless Claims,702,EURUSD
+USD,usd Core Personal Consumption Expenditures (QoQ),159,EURUSD
+USD,usd Core Personal Consumption Expenditures - Price Index (MoM),161,EURUSD
+USD,usd Core Personal Consumption Expenditures - Price Index (YoY),161,EURUSD
+USD,usd Current Account,54,EURUSD
+USD,usd Dallas Fed Manufacturing Business Index,161,EURUSD
+USD,usd Durable Goods Orders,162,EURUSD
+USD,usd Durable Goods Orders ex Defense,81,EURUSD
+USD,usd Durable Goods Orders ex Transportation,162,EURUSD
+USD,usd EIA Crude Oil Stocks Change,700,EURUSD
+USD,usd EIA Distillate Stocks Change,70,EURUSD
+USD,usd EIA Gasoline Stocks Change,70,EURUSD
+USD,usd EIA Heating Oil Stocks Change,70,EURUSD
+USD,usd EIA Natural Gas Storage Change,694,EURUSD
+USD,usd Employment Cost Index,54,EURUSD
+USD,usd Existing Home Sales (MoM),162,EURUSD
+USD,usd Existing Home Sales Change (MoM),162,EURUSD
+USD,usd Export Price Index (MoM),160,EURUSD
+USD,usd Export Price Index (YoY),160,EURUSD
+USD,usd FOMC Economic Projections,54,EURUSD
+USD,usd FOMC Member Powell speech (don't use),44,EURUSD
+USD,usd FOMC Minutes,107,EURUSD
+USD,usd FOMC Press Conference,63,EURUSD
+USD,usd Factory Orders (MoM),160,EURUSD
+USD,usd Fed Interest Rate Decision,109,EURUSD
+USD,usd Fed Minneapolis's Kocherlakota speech,56,EURUSD
+USD,usd Fed Monetary Policy Statement,84,EURUSD
+USD,usd Fed's Barkin speech,77,EURUSD
+USD,usd Fed's Barr speech,32,EURUSD
+USD,usd Fed's Beige Book,107,EURUSD
+USD,usd Fed's Bostic speech,153,EURUSD
+USD,usd Fed's Bowman speech,99,EURUSD
+USD,usd Fed's Brainard speech,89,EURUSD
+USD,usd Fed's Bullard speech,160,EURUSD
+USD,usd Fed's Chair Powell testifies,43,EURUSD
+USD,usd Fed's Chair Yellen speech,56,EURUSD
+USD,usd Fed's Clarida speech,50,EURUSD
+USD,usd Fed's Collins speech,25,EURUSD
+USD,usd Fed's Cook speech,41,EURUSD
+USD,usd Fed's Daly speech,72,EURUSD
+USD,usd Fed's Dudley speech,107,EURUSD
+USD,usd Fed's Evans speech,150,EURUSD
+USD,usd Fed's George speech,60,EURUSD
+USD,usd Fed's Goolsbee speech,78,EURUSD
+USD,usd Fed's Harker speech,88,EURUSD
+USD,usd Fed's Jefferson speech,29,EURUSD
+USD,usd Fed's Kaplan speech,67,EURUSD
+USD,usd Fed's Kashkari speech,114,EURUSD
+USD,usd Fed's Kugler speech,27,EURUSD
+USD,usd Fed's Lacker speech,37,EURUSD
+USD,usd Fed's Lockhart speech,79,EURUSD
+USD,usd Fed's Logan speech,29,EURUSD
+USD,usd Fed's Mester speech,115,EURUSD
+USD,usd Fed's Powell speech,115,EURUSD
+USD,usd Fed's Quarles speech,63,EURUSD
+USD,usd Fed's Richard Fisher speech,35,EURUSD
+USD,usd Fed's Rosengren speech,75,EURUSD
+USD,usd Fed's Stanley Fischer speech,37,EURUSD
+USD,usd Fed's Tarullo speech,35,EURUSD
+USD,usd Fed's Waller speech,75,EURUSD
+USD,usd Fed's Williams speech,278,EURUSD
+USD,usd Former Fed's Chair Bernanke speech,46,EURUSD
+USD,usd Goods Trade Balance,173,EURUSD
+USD,usd Goods and Services Trade Balance,162,EURUSD
+USD,usd Gross Domestic Product Annualized,161,EURUSD
+USD,usd Gross Domestic Product Price Index,161,EURUSD
+USD,usd Housing Price Index (MoM),162,EURUSD
+USD,usd Housing Starts (MoM),160,EURUSD
+USD,usd Housing Starts Change,114,EURUSD
+USD,usd IMF Meeting,81,EURUSD
+USD,usd ISM Manufacturing Employment Index,91,EURUSD
+USD,usd ISM Manufacturing New Orders Index,91,EURUSD
+USD,usd ISM Manufacturing PMI,161,EURUSD
+USD,usd ISM Manufacturing Prices Paid,161,EURUSD
+USD,usd ISM Services Employment Index,91,EURUSD
+USD,usd ISM Services New Orders Index,91,EURUSD
+USD,usd ISM Services PMI,161,EURUSD
+USD,usd ISM Services Prices Paid,91,EURUSD
+USD,usd ISM-NY Business Conditions Index,109,EURUSD
+USD,usd Import Price Index (MoM),162,EURUSD
+USD,usd Import Price Index (YoY),162,EURUSD
+USD,usd Industrial Production (MoM),162,EURUSD
+USD,usd Initial Jobless Claims,703,EURUSD
+USD,usd Initial Jobless Claims 4-week average,339,EURUSD
+USD,usd JOLTS Job Openings,139,EURUSD
+USD,usd Jackson Hole Symposium,37,EURUSD
+USD,usd Kansas Fed Manufacturing Activity,160,EURUSD
+USD,usd Labor Force Participation Rate,138,EURUSD
+USD,usd Labor Market Conditions Index,43,EURUSD
+USD,usd Loan Officer Survey,52,EURUSD
+USD,usd MBA Mortgage Applications,690,EURUSD
+USD,usd Michigan Consumer Expectations Index,134,EURUSD
+USD,usd Michigan Consumer Sentiment Index,324,EURUSD
+USD,usd Monthly Budget Statement,162,EURUSD
+USD,usd NAHB Housing Market Index,162,EURUSD
+USD,usd NFIB Business Optimism Index,161,EURUSD
+USD,usd NY Empire State Manufacturing Index,162,EURUSD
+USD,usd Net Long-Term TIC Flows,162,EURUSD
+USD,usd New Home Sales (MoM),161,EURUSD
+USD,usd New Home Sales Change (MoM),161,EURUSD
+USD,usd Nondefense Capital Goods Orders ex Aircraft,91,EURUSD
+USD,usd Nonfarm Payrolls,161,EURUSD
+USD,usd Nonfarm Productivity,107,EURUSD
+USD,usd OPEC Meeting,79,EURUSD
+USD,usd Pending Home Sales (MoM),162,EURUSD
+USD,usd Pending Home Sales (YoY),155,EURUSD
+USD,usd Personal Consumption Expenditures - Price Index (MoM),161,EURUSD
+USD,usd Personal Consumption Expenditures - Price Index (YoY),161,EURUSD
+USD,usd Personal Consumption Expenditures Prices (QoQ),155,EURUSD
+USD,usd Personal Income (MoM),161,EURUSD
+USD,usd Personal Spending,160,EURUSD
+USD,usd Philadelphia Fed Manufacturing Survey,162,EURUSD
+USD,usd Philadelphia Fed's Plosser speech,40,EURUSD
+USD,usd President Biden speech,28,EURUSD
+USD,usd President Trump speech,34,EURUSD
+USD,usd Producer Price Index (MoM),162,EURUSD
+USD,usd Producer Price Index (YoY),162,EURUSD
+USD,usd Producer Price Index ex Food & Energy (MoM),162,EURUSD
+USD,usd Producer Price Index ex Food & Energy (YoY),162,EURUSD
+USD,usd RealClearMarkets/TIPP Economic Optimism (MoM),161,EURUSD
+USD,usd Redbook Index (MoM),456,EURUSD
+USD,usd Redbook Index (YoY),676,EURUSD
+USD,usd Retail Sales (MoM),162,EURUSD
+USD,usd Retail Sales (YoY),67,EURUSD
+USD,usd Retail Sales Control Group,126,EURUSD
+USD,usd Retail Sales ex Autos (MoM),162,EURUSD
+USD,usd Richmond Fed Manufacturing Index,162,EURUSD
+USD,usd S&P Global Composite PMI,266,EURUSD
+USD,usd S&P Global Manufacturing PMI,316,EURUSD
+USD,usd S&P Global Services PMI,277,EURUSD
+USD,usd S&P/Case-Shiller Home Price Indices (YoY),162,EURUSD
+USD,usd Total Net TIC Flows,162,EURUSD
+USD,usd Total Vehicle Sales,161,EURUSD
+USD,usd Treasury Sec Lew speech,29,EURUSD
+USD,usd U6 Underemployment Rate,103,EURUSD
+USD,usd USDA WASDE Report,73,EURUSD
+USD,usd Unemployment Rate,161,EURUSD
+USD,usd Unit Labor Costs,108,EURUSD
+USD,usd UoM 1-year Consumer Inflation Expectations,134,EURUSD
+USD,usd UoM 5-year Consumer Inflation Expectation,134,EURUSD
+USD,usd Wholesale Inventories,263,EURUSD
+GBP,10-y Bond Auction,134,GBPUSD
+GBP,30-y Bond Auction,75,GBPUSD
+GBP,Average Earnings Excluding Bonus (3Mo/Yr),162,GBPUSD
+GBP,Average Earnings Including Bonus (3Mo/Yr),162,GBPUSD
+GBP,BBA Mortgage Approvals,97,GBPUSD
+GBP,BRC Like-For-Like Retail Sales (YoY),162,GBPUSD
+GBP,BRC Shop Price Index (YoY),163,GBPUSD
+GBP,BoE Asset Purchase Facility,102,GBPUSD
+GBP,BoE Credit Conditions Survey,53,GBPUSD
+GBP,BoE Interest Rate Decision,129,GBPUSD
+GBP,BoE MPC Vote Rate Cut,112,GBPUSD
+GBP,BoE MPC Vote Rate Hike,112,GBPUSD
+GBP,BoE MPC Vote Rate Unchanged,112,GBPUSD
+GBP,BoE Minutes,128,GBPUSD
+GBP,BoE Monetary Policy Report,54,GBPUSD
+GBP,BoE Monetary Policy Report Hearings,46,GBPUSD
+GBP,BoE Monetary Policy Summary,79,GBPUSD
+GBP,BoE Quarterly Bulletin,47,GBPUSD
+GBP,BoE's Broadbent speech,38,GBPUSD
+GBP,BoE's Cunliffe speech,57,GBPUSD
+GBP,BoE's Governor Bailey speech,129,GBPUSD
+GBP,BoE's Governor Carney speech,161,GBPUSD
+GBP,BoE's Haldane speech,57,GBPUSD
+GBP,BoE's Haskel speech,30,GBPUSD
+GBP,BoE's Mann speech,41,GBPUSD
+GBP,BoE's Pill speech,64,GBPUSD
+GBP,BoE's Ramsden speech,36,GBPUSD
+GBP,BoE's Tenreyro speech,40,GBPUSD
+GBP,CBI Distributive Trades Survey – Realized (MoM),105,GBPUSD
+GBP,CBI Industrial Trends Survey – Orders (MoM),105,GBPUSD
+GBP,CFTC GBP NC Net Positions,490,GBPUSD
+GBP,Claimant Count Change,162,GBPUSD
+GBP,Claimant Count Rate,162,GBPUSD
+GBP,Consumer Credit,162,GBPUSD
+GBP,Consumer Inflation Expectations,53,GBPUSD
+GBP,Consumer Price Index (MoM),162,GBPUSD
+GBP,Consumer Price Index (YoY),162,GBPUSD
+GBP,Core Consumer Price Index (YoY),162,GBPUSD
+GBP,Current Account,54,GBPUSD
+GBP,DCLG House Price Index (YoY),162,GBPUSD
+GBP,Employment Change (3M),67,GBPUSD
+GBP,FPC Meeting Minutes,27,GBPUSD
+GBP,FPC Statement,44,GBPUSD
+GBP,Financial Stability Report,28,GBPUSD
+GBP,GfK Consumer Confidence,166,GBPUSD
+GBP,Goods Trade Balance,161,GBPUSD
+GBP,Gross Domestic Product (MoM),84,GBPUSD
+GBP,Gross Domestic Product (QoQ),134,GBPUSD
+GBP,Gross Domestic Product (YoY),134,GBPUSD
+GBP,ILO Unemployment Rate (3M),162,GBPUSD
+GBP,Index of Services (3M/3M),162,GBPUSD
+GBP,Industrial Production (MoM),162,GBPUSD
+GBP,Industrial Production (YoY),162,GBPUSD
+GBP,Lloyds House Price Index (MoM),161,GBPUSD
+GBP,Lloyds House Price Index (YoY),161,GBPUSD
+GBP,M4 Money Supply (MoM),162,GBPUSD
+GBP,M4 Money Supply (YoY),161,GBPUSD
+GBP,Manufacturing Production (MoM),162,GBPUSD
+GBP,Manufacturing Production (YoY),162,GBPUSD
+GBP,Mortgage Approvals,162,GBPUSD
+GBP,NIESR GDP Estimate (3M),162,GBPUSD
+GBP,Nationwide Housing Prices n.s.a (YoY),161,GBPUSD
+GBP,Nationwide Housing Prices s.a (MoM),161,GBPUSD
+GBP,Net Lending to Individuals (MoM),159,GBPUSD
+GBP,PPI Core Output (MoM) n.s.a,157,GBPUSD
+GBP,PPI Core Output (YoY) n.s.a,156,GBPUSD
+GBP,Producer Price Index - Input (MoM) n.s.a,157,GBPUSD
+GBP,Producer Price Index - Input (YoY) n.s.a,157,GBPUSD
+GBP,Producer Price Index - Output (MoM) n.s.a,157,GBPUSD
+GBP,Producer Price Index - Output (YoY) n.s.a,157,GBPUSD
+GBP,Public Sector Net Borrowing,162,GBPUSD
+GBP,RICS Housing Price Balance,161,GBPUSD
+GBP,Retail Price Index (MoM),162,GBPUSD
+GBP,Retail Price Index (YoY),162,GBPUSD
+GBP,Retail Sales (MoM),162,GBPUSD
+GBP,Retail Sales (YoY),162,GBPUSD
+GBP,Retail Sales ex-Fuel (MoM),162,GBPUSD
+GBP,Retail Sales ex-Fuel (YoY),162,GBPUSD
+GBP,Rightmove House Price Index (MoM),160,GBPUSD
+GBP,Rightmove House Price Index (YoY),159,GBPUSD
+GBP,S&P Global Composite PMI,134,GBPUSD
+GBP,S&P Global Construction PMI,161,GBPUSD
+GBP,S&P Global Manufacturing PMI,230,GBPUSD
+GBP,S&P Global Services PMI,230,GBPUSD
+GBP,Total Business Investment (QoQ),106,GBPUSD
+GBP,Total Business Investment (YoY),107,GBPUSD
+GBP,Total Trade Balance,154,GBPUSD
+GBP,Trade Balance; non-EU,161,GBPUSD
+USD,10-Year Note Auction,159,GBPUSD
+USD,10-year TIPS Auction,34,GBPUSD
+USD,2-Year Note Auction,161,GBPUSD
+USD,20-Year Bond Auction,62,GBPUSD
+USD,3-Month Bill Auction,678,GBPUSD
+USD,3-Year Note Auction,157,GBPUSD
+USD,30-Year Bond Auction,162,GBPUSD
+USD,4-Week Bill Auction,678,GBPUSD
+USD,5-Year Note Auction,159,GBPUSD
+USD,52-Week Bill Auction,173,GBPUSD
+USD,6-Month Bill Auction,681,GBPUSD
+USD,7-Year Note Auction,154,GBPUSD
+USD,ADP Employment Change,159,GBPUSD
+USD,API Weekly Crude Oil Stock,521,GBPUSD
+USD,American Petroleum Institute Monthly Report,32,GBPUSD
+USD,Average Hourly Earnings (MoM),161,GBPUSD
+USD,Average Hourly Earnings (YoY),161,GBPUSD
+USD,Average Weekly Hours,161,GBPUSD
+USD,Baker Hughes US Oil Rig Count,522,GBPUSD
+USD,Building Permits (MoM),161,GBPUSD
+USD,Building Permits Change,114,GBPUSD
+USD,Business Inventories,162,GBPUSD
+USD,CFTC Gold NC Net Positions,489,GBPUSD
+USD,CFTC Oil NC Net Positions,489,GBPUSD
+USD,CFTC S&P 500 NC Net Positions,489,GBPUSD
+USD,Capacity Utilization,162,GBPUSD
+USD,Challenger Job Cuts,161,GBPUSD
+USD,Chicago Fed National Activity Index,161,GBPUSD
+USD,Chicago PMI,162,GBPUSD
+USD,Construction Spending (MoM),160,GBPUSD
+USD,Consumer Confidence,153,GBPUSD
+USD,Consumer Credit Change,161,GBPUSD
+USD,Consumer Price Index (MoM),162,GBPUSD
+USD,Consumer Price Index (YoY),162,GBPUSD
+USD,Consumer Price Index Core s.a,162,GBPUSD
+USD,Consumer Price Index ex Food & Energy (MoM),162,GBPUSD
+USD,Consumer Price Index ex Food & Energy (YoY),162,GBPUSD
+USD,Consumer Price Index n.s.a (MoM),162,GBPUSD
+USD,Continuing Jobless Claims,702,GBPUSD
+USD,Core Personal Consumption Expenditures (QoQ),159,GBPUSD
+USD,Core Personal Consumption Expenditures - Price Index (MoM),161,GBPUSD
+USD,Core Personal Consumption Expenditures - Price Index (YoY),161,GBPUSD
+USD,Current Account,54,GBPUSD
+USD,Dallas Fed Manufacturing Business Index,161,GBPUSD
+USD,Durable Goods Orders,162,GBPUSD
+USD,Durable Goods Orders ex Defense,81,GBPUSD
+USD,Durable Goods Orders ex Transportation,162,GBPUSD
+USD,EIA Crude Oil Stocks Change,700,GBPUSD
+USD,EIA Distillate Stocks Change,70,GBPUSD
+USD,EIA Gasoline Stocks Change,70,GBPUSD
+USD,EIA Heating Oil Stocks Change,70,GBPUSD
+USD,EIA Natural Gas Storage Change,694,GBPUSD
+USD,Employment Cost Index,54,GBPUSD
+USD,Existing Home Sales (MoM),162,GBPUSD
+USD,Existing Home Sales Change (MoM),162,GBPUSD
+USD,Export Price Index (MoM),160,GBPUSD
+USD,Export Price Index (YoY),160,GBPUSD
+USD,FOMC Economic Projections,54,GBPUSD
+USD,FOMC Member Powell speech (don't use),44,GBPUSD
+USD,FOMC Minutes,107,GBPUSD
+USD,FOMC Press Conference,63,GBPUSD
+USD,Factory Orders (MoM),160,GBPUSD
+USD,Fed Interest Rate Decision,109,GBPUSD
+USD,Fed Minneapolis's Kocherlakota speech,56,GBPUSD
+USD,Fed Monetary Policy Statement,84,GBPUSD
+USD,Fed's Barkin speech,77,GBPUSD
+USD,Fed's Barr speech,32,GBPUSD
+USD,Fed's Beige Book,107,GBPUSD
+USD,Fed's Bostic speech,153,GBPUSD
+USD,Fed's Bowman speech,99,GBPUSD
+USD,Fed's Brainard speech,89,GBPUSD
+USD,Fed's Bullard speech,160,GBPUSD
+USD,Fed's Chair Powell testifies,43,GBPUSD
+USD,Fed's Chair Yellen speech,56,GBPUSD
+USD,Fed's Clarida speech,50,GBPUSD
+USD,Fed's Collins speech,25,GBPUSD
+USD,Fed's Cook speech,41,GBPUSD
+USD,Fed's Daly speech,72,GBPUSD
+USD,Fed's Dudley speech,107,GBPUSD
+USD,Fed's Evans speech,150,GBPUSD
+USD,Fed's George speech,60,GBPUSD
+USD,Fed's Goolsbee speech,78,GBPUSD
+USD,Fed's Harker speech,88,GBPUSD
+USD,Fed's Jefferson speech,29,GBPUSD
+USD,Fed's Kaplan speech,67,GBPUSD
+USD,Fed's Kashkari speech,114,GBPUSD
+USD,Fed's Kugler speech,27,GBPUSD
+USD,Fed's Lacker speech,37,GBPUSD
+USD,Fed's Lockhart speech,79,GBPUSD
+USD,Fed's Logan speech,29,GBPUSD
+USD,Fed's Mester speech,115,GBPUSD
+USD,Fed's Powell speech,115,GBPUSD
+USD,Fed's Quarles speech,63,GBPUSD
+USD,Fed's Richard Fisher speech,35,GBPUSD
+USD,Fed's Rosengren speech,75,GBPUSD
+USD,Fed's Stanley Fischer speech,37,GBPUSD
+USD,Fed's Tarullo speech,35,GBPUSD
+USD,Fed's Waller speech,75,GBPUSD
+USD,Fed's Williams speech,278,GBPUSD
+USD,Former Fed's Chair Bernanke speech,46,GBPUSD
+USD,Goods Trade Balance,173,GBPUSD
+USD,Goods and Services Trade Balance,162,GBPUSD
+USD,Gross Domestic Product Annualized,161,GBPUSD
+USD,Gross Domestic Product Price Index,161,GBPUSD
+USD,Housing Price Index (MoM),162,GBPUSD
+USD,Housing Starts (MoM),160,GBPUSD
+USD,Housing Starts Change,114,GBPUSD
+USD,IMF Meeting,81,GBPUSD
+USD,ISM Manufacturing Employment Index,91,GBPUSD
+USD,ISM Manufacturing New Orders Index,91,GBPUSD
+USD,ISM Manufacturing PMI,161,GBPUSD
+USD,ISM Manufacturing Prices Paid,161,GBPUSD
+USD,ISM Services Employment Index,91,GBPUSD
+USD,ISM Services New Orders Index,91,GBPUSD
+USD,ISM Services PMI,161,GBPUSD
+USD,ISM Services Prices Paid,91,GBPUSD
+USD,ISM-NY Business Conditions Index,109,GBPUSD
+USD,Import Price Index (MoM),162,GBPUSD
+USD,Import Price Index (YoY),162,GBPUSD
+USD,Industrial Production (MoM),162,GBPUSD
+USD,Initial Jobless Claims,703,GBPUSD
+USD,Initial Jobless Claims 4-week average,339,GBPUSD
+USD,JOLTS Job Openings,139,GBPUSD
+USD,Jackson Hole Symposium,37,GBPUSD
+USD,Kansas Fed Manufacturing Activity,160,GBPUSD
+USD,Labor Force Participation Rate,138,GBPUSD
+USD,Labor Market Conditions Index,43,GBPUSD
+USD,Loan Officer Survey,52,GBPUSD
+USD,MBA Mortgage Applications,690,GBPUSD
+USD,Michigan Consumer Expectations Index,134,GBPUSD
+USD,Michigan Consumer Sentiment Index,324,GBPUSD
+USD,Monthly Budget Statement,162,GBPUSD
+USD,NAHB Housing Market Index,162,GBPUSD
+USD,NFIB Business Optimism Index,161,GBPUSD
+USD,NY Empire State Manufacturing Index,162,GBPUSD
+USD,Net Long-Term TIC Flows,162,GBPUSD
+USD,New Home Sales (MoM),161,GBPUSD
+USD,New Home Sales Change (MoM),161,GBPUSD
+USD,Nondefense Capital Goods Orders ex Aircraft,91,GBPUSD
+USD,Nonfarm Payrolls,161,GBPUSD
+USD,Nonfarm Productivity,107,GBPUSD
+USD,OPEC Meeting,79,GBPUSD
+USD,Pending Home Sales (MoM),162,GBPUSD
+USD,Pending Home Sales (YoY),155,GBPUSD
+USD,Personal Consumption Expenditures - Price Index (MoM),161,GBPUSD
+USD,Personal Consumption Expenditures - Price Index (YoY),161,GBPUSD
+USD,Personal Consumption Expenditures Prices (QoQ),155,GBPUSD
+USD,Personal Income (MoM),161,GBPUSD
+USD,Personal Spending,160,GBPUSD
+USD,Philadelphia Fed Manufacturing Survey,162,GBPUSD
+USD,Philadelphia Fed's Plosser speech,40,GBPUSD
+USD,President Biden speech,28,GBPUSD
+USD,President Trump speech,34,GBPUSD
+USD,Producer Price Index (MoM),162,GBPUSD
+USD,Producer Price Index (YoY),162,GBPUSD
+USD,Producer Price Index ex Food & Energy (MoM),162,GBPUSD
+USD,Producer Price Index ex Food & Energy (YoY),162,GBPUSD
+USD,RealClearMarkets/TIPP Economic Optimism (MoM),161,GBPUSD
+USD,Redbook Index (MoM),456,GBPUSD
+USD,Redbook Index (YoY),676,GBPUSD
+USD,Retail Sales (MoM),162,GBPUSD
+USD,Retail Sales (YoY),67,GBPUSD
+USD,Retail Sales Control Group,126,GBPUSD
+USD,Retail Sales ex Autos (MoM),162,GBPUSD
+USD,Richmond Fed Manufacturing Index,162,GBPUSD
+USD,S&P Global Composite PMI,266,GBPUSD
+USD,S&P Global Manufacturing PMI,316,GBPUSD
+USD,S&P Global Services PMI,277,GBPUSD
+USD,S&P/Case-Shiller Home Price Indices (YoY),162,GBPUSD
+USD,Total Net TIC Flows,162,GBPUSD
+USD,Total Vehicle Sales,161,GBPUSD
+USD,Treasury Sec Lew speech,29,GBPUSD
+USD,U6 Underemployment Rate,103,GBPUSD
+USD,USDA WASDE Report,73,GBPUSD
+USD,Unemployment Rate,161,GBPUSD
+USD,Unit Labor Costs,108,GBPUSD
+USD,UoM 1-year Consumer Inflation Expectations,134,GBPUSD
+USD,UoM 5-year Consumer Inflation Expectation,134,GBPUSD
+USD,Wholesale Inventories,263,GBPUSD
+JPY,10-y Bond Auction,92,USDJPY
+JPY,Adjusted Merchandise Trade Balance,162,USDJPY
+JPY,All Industry Activity Index (MoM),105,USDJPY
+JPY,Annualized Housing Starts,158,USDJPY
+JPY,BSI Large Manufacturing Conditions Index (QoQ),54,USDJPY
+JPY,Bank Lending (YoY),162,USDJPY
+JPY,BoJ Interest Rate Decision,128,USDJPY
+JPY,BoJ Monetary Policy Meeting Minutes,130,USDJPY
+JPY,BoJ Monetary Policy Statement,133,USDJPY
+JPY,BoJ Monthly Economic Survey,48,USDJPY
+JPY,BoJ Outlook Report,46,USDJPY
+JPY,BoJ Press Conference,108,USDJPY
+JPY,BoJ Summary of Opinions,75,USDJPY
+JPY,BoJ's Governor Kuroda speech,145,USDJPY
+JPY,CFTC JPY NC Net Positions,490,USDJPY
+JPY,Capacity Utilization,162,USDJPY
+JPY,Capital Spending,54,USDJPY
+JPY,Coincident Index,323,USDJPY
+JPY,Construction Orders (YoY),162,USDJPY
+JPY,Consumer Confidence Index,162,USDJPY
+JPY,Corporate Service Price Index (YoY),162,USDJPY
+JPY,Current Account n.s.a.,161,USDJPY
+JPY,Eco Watchers Survey: Current,162,USDJPY
+JPY,Eco Watchers Survey: Outlook,162,USDJPY
+JPY,Exports (YoY),160,USDJPY
+JPY,Foreign Bond Investment,648,USDJPY
+JPY,Foreign Investment in Japan Stocks,647,USDJPY
+JPY,Gross Domestic Product (QoQ),109,USDJPY
+JPY,Gross Domestic Product Annualized,109,USDJPY
+JPY,Gross Domestic Product Deflator (YoY),106,USDJPY
+JPY,Housing Starts (YoY),162,USDJPY
+JPY,Imports (YoY),160,USDJPY
+JPY,Industrial Production (MoM),324,USDJPY
+JPY,Industrial Production (YoY),324,USDJPY
+JPY,JP Foreign Reserves,157,USDJPY
+JPY,Jibun Bank Manufacturing PMI,294,USDJPY
+JPY,Jibun Bank Services PMI,175,USDJPY
+JPY,Jobs / Applicants Ratio,162,USDJPY
+JPY,Labor Cash Earnings (YoY),161,USDJPY
+JPY,Large Retailer Sales,161,USDJPY
+JPY,Leading Economic Index,323,USDJPY
+JPY,Machine Tool Orders (YoY),162,USDJPY
+JPY,Machinery Orders (MoM),162,USDJPY
+JPY,Machinery Orders (YoY),160,USDJPY
+JPY,Merchandise Trade Balance Total,162,USDJPY
+JPY,Monetary Base (YoY),161,USDJPY
+JPY,Money Supply M2+CD (YoY),162,USDJPY
+JPY,"National CPI ex Food, Energy (YoY)",162,USDJPY
+JPY,National CPI ex Fresh Food (YoY),162,USDJPY
+JPY,National Consumer Price Index (YoY),162,USDJPY
+JPY,Overall Household Spending (YoY),161,USDJPY
+JPY,Producer Price Index (MoM),162,USDJPY
+JPY,Producer Price Index (YoY),162,USDJPY
+JPY,Retail Trade (YoY),162,USDJPY
+JPY,Retail Trade s.a (MoM),162,USDJPY
+JPY,Tankan Large All Industry Capex,54,USDJPY
+JPY,Tankan Large Manufacturing Index,54,USDJPY
+JPY,Tankan Large Manufacturing Outlook,53,USDJPY
+JPY,Tankan Non - Manufacturing Index,54,USDJPY
+JPY,Tankan Non - Manufacturing Outlook,54,USDJPY
+JPY,Tertiary Industry Index (MoM),162,USDJPY
+JPY,"Tokyo CPI ex Food, Energy (YoY)",162,USDJPY
+JPY,Tokyo CPI ex Fresh Food (YoY),162,USDJPY
+JPY,Tokyo Consumer Price Index (YoY),162,USDJPY
+JPY,Trade Balance - BOP Basis,159,USDJPY
+JPY,Unemployment Rate,162,USDJPY
+JPY,Vehicle Production (YoY),81,USDJPY
+JPY,Vehicle Sales (YoY),82,USDJPY
+USD,10-Year Note Auction,159,USDJPY
+USD,10-year TIPS Auction,34,USDJPY
+USD,2-Year Note Auction,161,USDJPY
+USD,20-Year Bond Auction,62,USDJPY
+USD,3-Month Bill Auction,678,USDJPY
+USD,3-Year Note Auction,157,USDJPY
+USD,30-Year Bond Auction,162,USDJPY
+USD,4-Week Bill Auction,678,USDJPY
+USD,5-Year Note Auction,159,USDJPY
+USD,52-Week Bill Auction,173,USDJPY
+USD,6-Month Bill Auction,681,USDJPY
+USD,7-Year Note Auction,154,USDJPY
+USD,ADP Employment Change,159,USDJPY
+USD,API Weekly Crude Oil Stock,521,USDJPY
+USD,American Petroleum Institute Monthly Report,32,USDJPY
+USD,Average Hourly Earnings (MoM),161,USDJPY
+USD,Average Hourly Earnings (YoY),161,USDJPY
+USD,Average Weekly Hours,161,USDJPY
+USD,Baker Hughes US Oil Rig Count,522,USDJPY
+USD,Building Permits (MoM),161,USDJPY
+USD,Building Permits Change,114,USDJPY
+USD,Business Inventories,162,USDJPY
+USD,CFTC Gold NC Net Positions,489,USDJPY
+USD,CFTC Oil NC Net Positions,489,USDJPY
+USD,CFTC S&P 500 NC Net Positions,489,USDJPY
+USD,Capacity Utilization,162,USDJPY
+USD,Challenger Job Cuts,161,USDJPY
+USD,Chicago Fed National Activity Index,161,USDJPY
+USD,Chicago PMI,162,USDJPY
+USD,Construction Spending (MoM),160,USDJPY
+USD,Consumer Confidence,153,USDJPY
+USD,Consumer Credit Change,161,USDJPY
+USD,Consumer Price Index (MoM),162,USDJPY
+USD,Consumer Price Index (YoY),162,USDJPY
+USD,Consumer Price Index Core s.a,162,USDJPY
+USD,Consumer Price Index ex Food & Energy (MoM),162,USDJPY
+USD,Consumer Price Index ex Food & Energy (YoY),162,USDJPY
+USD,Consumer Price Index n.s.a (MoM),162,USDJPY
+USD,Continuing Jobless Claims,702,USDJPY
+USD,Core Personal Consumption Expenditures (QoQ),159,USDJPY
+USD,Core Personal Consumption Expenditures - Price Index (MoM),161,USDJPY
+USD,Core Personal Consumption Expenditures - Price Index (YoY),161,USDJPY
+USD,Current Account,54,USDJPY
+USD,Dallas Fed Manufacturing Business Index,161,USDJPY
+USD,Durable Goods Orders,162,USDJPY
+USD,Durable Goods Orders ex Defense,81,USDJPY
+USD,Durable Goods Orders ex Transportation,162,USDJPY
+USD,EIA Crude Oil Stocks Change,700,USDJPY
+USD,EIA Distillate Stocks Change,70,USDJPY
+USD,EIA Gasoline Stocks Change,70,USDJPY
+USD,EIA Heating Oil Stocks Change,70,USDJPY
+USD,EIA Natural Gas Storage Change,694,USDJPY
+USD,Employment Cost Index,54,USDJPY
+USD,Existing Home Sales (MoM),162,USDJPY
+USD,Existing Home Sales Change (MoM),162,USDJPY
+USD,Export Price Index (MoM),160,USDJPY
+USD,Export Price Index (YoY),160,USDJPY
+USD,FOMC Economic Projections,54,USDJPY
+USD,FOMC Member Powell speech (don't use),44,USDJPY
+USD,FOMC Minutes,107,USDJPY
+USD,FOMC Press Conference,63,USDJPY
+USD,Factory Orders (MoM),160,USDJPY
+USD,Fed Interest Rate Decision,109,USDJPY
+USD,Fed Minneapolis's Kocherlakota speech,56,USDJPY
+USD,Fed Monetary Policy Statement,84,USDJPY
+USD,Fed's Barkin speech,77,USDJPY
+USD,Fed's Barr speech,32,USDJPY
+USD,Fed's Beige Book,107,USDJPY
+USD,Fed's Bostic speech,153,USDJPY
+USD,Fed's Bowman speech,99,USDJPY
+USD,Fed's Brainard speech,89,USDJPY
+USD,Fed's Bullard speech,160,USDJPY
+USD,Fed's Chair Powell testifies,43,USDJPY
+USD,Fed's Chair Yellen speech,56,USDJPY
+USD,Fed's Clarida speech,50,USDJPY
+USD,Fed's Collins speech,25,USDJPY
+USD,Fed's Cook speech,41,USDJPY
+USD,Fed's Daly speech,72,USDJPY
+USD,Fed's Dudley speech,107,USDJPY
+USD,Fed's Evans speech,150,USDJPY
+USD,Fed's George speech,60,USDJPY
+USD,Fed's Goolsbee speech,78,USDJPY
+USD,Fed's Harker speech,88,USDJPY
+USD,Fed's Jefferson speech,29,USDJPY
+USD,Fed's Kaplan speech,67,USDJPY
+USD,Fed's Kashkari speech,114,USDJPY
+USD,Fed's Kugler speech,27,USDJPY
+USD,Fed's Lacker speech,37,USDJPY
+USD,Fed's Lockhart speech,79,USDJPY
+USD,Fed's Logan speech,29,USDJPY
+USD,Fed's Mester speech,115,USDJPY
+USD,Fed's Powell speech,115,USDJPY
+USD,Fed's Quarles speech,63,USDJPY
+USD,Fed's Richard Fisher speech,35,USDJPY
+USD,Fed's Rosengren speech,75,USDJPY
+USD,Fed's Stanley Fischer speech,37,USDJPY
+USD,Fed's Tarullo speech,35,USDJPY
+USD,Fed's Waller speech,75,USDJPY
+USD,Fed's Williams speech,278,USDJPY
+USD,Former Fed's Chair Bernanke speech,46,USDJPY
+USD,Goods Trade Balance,173,USDJPY
+USD,Goods and Services Trade Balance,162,USDJPY
+USD,Gross Domestic Product Annualized,161,USDJPY
+USD,Gross Domestic Product Price Index,161,USDJPY
+USD,Housing Price Index (MoM),162,USDJPY
+USD,Housing Starts (MoM),160,USDJPY
+USD,Housing Starts Change,114,USDJPY
+USD,IMF Meeting,81,USDJPY
+USD,ISM Manufacturing Employment Index,91,USDJPY
+USD,ISM Manufacturing New Orders Index,91,USDJPY
+USD,ISM Manufacturing PMI,161,USDJPY
+USD,ISM Manufacturing Prices Paid,161,USDJPY
+USD,ISM Services Employment Index,91,USDJPY
+USD,ISM Services New Orders Index,91,USDJPY
+USD,ISM Services PMI,161,USDJPY
+USD,ISM Services Prices Paid,91,USDJPY
+USD,ISM-NY Business Conditions Index,109,USDJPY
+USD,Import Price Index (MoM),162,USDJPY
+USD,Import Price Index (YoY),162,USDJPY
+USD,Industrial Production (MoM),162,USDJPY
+USD,Initial Jobless Claims,703,USDJPY
+USD,Initial Jobless Claims 4-week average,339,USDJPY
+USD,JOLTS Job Openings,139,USDJPY
+USD,Jackson Hole Symposium,37,USDJPY
+USD,Kansas Fed Manufacturing Activity,160,USDJPY
+USD,Labor Force Participation Rate,138,USDJPY
+USD,Labor Market Conditions Index,43,USDJPY
+USD,Loan Officer Survey,52,USDJPY
+USD,MBA Mortgage Applications,690,USDJPY
+USD,Michigan Consumer Expectations Index,134,USDJPY
+USD,Michigan Consumer Sentiment Index,324,USDJPY
+USD,Monthly Budget Statement,162,USDJPY
+USD,NAHB Housing Market Index,162,USDJPY
+USD,NFIB Business Optimism Index,161,USDJPY
+USD,NY Empire State Manufacturing Index,162,USDJPY
+USD,Net Long-Term TIC Flows,162,USDJPY
+USD,New Home Sales (MoM),161,USDJPY
+USD,New Home Sales Change (MoM),161,USDJPY
+USD,Nondefense Capital Goods Orders ex Aircraft,91,USDJPY
+USD,Nonfarm Payrolls,161,USDJPY
+USD,Nonfarm Productivity,107,USDJPY
+USD,OPEC Meeting,79,USDJPY
+USD,Pending Home Sales (MoM),162,USDJPY
+USD,Pending Home Sales (YoY),155,USDJPY
+USD,Personal Consumption Expenditures - Price Index (MoM),161,USDJPY
+USD,Personal Consumption Expenditures - Price Index (YoY),161,USDJPY
+USD,Personal Consumption Expenditures Prices (QoQ),155,USDJPY
+USD,Personal Income (MoM),161,USDJPY
+USD,Personal Spending,160,USDJPY
+USD,Philadelphia Fed Manufacturing Survey,162,USDJPY
+USD,Philadelphia Fed's Plosser speech,40,USDJPY
+USD,President Biden speech,28,USDJPY
+USD,President Trump speech,34,USDJPY
+USD,Producer Price Index (MoM),162,USDJPY
+USD,Producer Price Index (YoY),162,USDJPY
+USD,Producer Price Index ex Food & Energy (MoM),162,USDJPY
+USD,Producer Price Index ex Food & Energy (YoY),162,USDJPY
+USD,RealClearMarkets/TIPP Economic Optimism (MoM),161,USDJPY
+USD,Redbook Index (MoM),456,USDJPY
+USD,Redbook Index (YoY),676,USDJPY
+USD,Retail Sales (MoM),162,USDJPY
+USD,Retail Sales (YoY),67,USDJPY
+USD,Retail Sales Control Group,126,USDJPY
+USD,Retail Sales ex Autos (MoM),162,USDJPY
+USD,Richmond Fed Manufacturing Index,162,USDJPY
+USD,S&P Global Composite PMI,266,USDJPY
+USD,S&P Global Manufacturing PMI,316,USDJPY
+USD,S&P Global Services PMI,277,USDJPY
+USD,S&P/Case-Shiller Home Price Indices (YoY),162,USDJPY
+USD,Total Net TIC Flows,162,USDJPY
+USD,Total Vehicle Sales,161,USDJPY
+USD,Treasury Sec Lew speech,29,USDJPY
+USD,U6 Underemployment Rate,103,USDJPY
+USD,USDA WASDE Report,73,USDJPY
+USD,Unemployment Rate,161,USDJPY
+USD,Unit Labor Costs,108,USDJPY
+USD,UoM 1-year Consumer Inflation Expectations,134,USDJPY
+USD,UoM 5-year Consumer Inflation Expectation,134,USDJPY
+USD,Wholesale Inventories,263,USDJPY
+AUD,ANZ Job Advertisements,157,AUDUSD
+AUD,Ai Group Construction PMI,27,AUDUSD
+AUD,Ai Group Manufacturing PMI,27,AUDUSD
+AUD,AiG Industry Index,27,AUDUSD
+AUD,AiG Performance of Construction Index,129,AUDUSD
+AUD,AiG Performance of Mfg Index,128,AUDUSD
+AUD,AiG Performance of Services Index,129,AUDUSD
+AUD,Building Permits (MoM),161,AUDUSD
+AUD,Building Permits (YoY),161,AUDUSD
+AUD,CFTC AUD NC Net Positions,490,AUDUSD
+AUD,Company Gross Operating Profits (QoQ),54,AUDUSD
+AUD,Construction Work Done,54,AUDUSD
+AUD,Consumer Inflation Expectations,161,AUDUSD
+AUD,Consumer Price Index (YoY),34,AUDUSD
+AUD,Current Account Balance,54,AUDUSD
+AUD,Employment Change s.a.,162,AUDUSD
+AUD,Export Price Index (QoQ),54,AUDUSD
+AUD,Exports (MoM),165,AUDUSD
+AUD,Financial Stability Review,27,AUDUSD
+AUD,Full-Time Employment,162,AUDUSD
+AUD,Gross Domestic Product (QoQ),54,AUDUSD
+AUD,Gross Domestic Product (YoY),54,AUDUSD
+AUD,HIA New Home Sales (MoM),128,AUDUSD
+AUD,Home Loans,157,AUDUSD
+AUD,House Price Index (QoQ),41,AUDUSD
+AUD,House Price Index (YoY),41,AUDUSD
+AUD,Import Price Index (QoQ),54,AUDUSD
+AUD,Imports (MoM),165,AUDUSD
+AUD,Investment Lending for Homes,156,AUDUSD
+AUD,National Australia Bank's Business Conditions,162,AUDUSD
+AUD,National Australia Bank's Business Confidence,163,AUDUSD
+AUD,National Australia Bank's Business Confidence (QoQ),54,AUDUSD
+AUD,New Motor Vehicle Sales (MoM),73,AUDUSD
+AUD,New Motor Vehicle Sales (YoY),73,AUDUSD
+AUD,OUTDATED - RBA Deputy Governor Lowe Speech,28,AUDUSD
+AUD,Part-Time Employment,149,AUDUSD
+AUD,Participation Rate,140,AUDUSD
+AUD,Private Capital Expenditure,54,AUDUSD
+AUD,Private Sector Credit (MoM),162,AUDUSD
+AUD,Private Sector Credit (YoY),162,AUDUSD
+AUD,Producer Price Index (QoQ),54,AUDUSD
+AUD,Producer Price Index (YoY),54,AUDUSD
+AUD,Quarterly Consumer Price Index (QoQ),54,AUDUSD
+AUD,Quarterly Consumer Price Index (YoY),54,AUDUSD
+AUD,Quarterly RBA Trimmed Mean CPI (QoQ),54,AUDUSD
+AUD,Quarterly RBA Trimmed Mean CPI (YoY),54,AUDUSD
+AUD,RBA Bulletin,54,AUDUSD
+AUD,RBA Commodity Index SDR (YoY),161,AUDUSD
+AUD,RBA Foreign Exchange Transaction,61,AUDUSD
+AUD,RBA Interest Rate Decision,144,AUDUSD
+AUD,RBA Meeting Minutes,143,AUDUSD
+AUD,RBA Monetary Policy Statement,56,AUDUSD
+AUD,RBA Rate Statement,142,AUDUSD
+AUD,RBA's Bullock speech,28,AUDUSD
+AUD,RBA's Debelle speech,95,AUDUSD
+AUD,RBA's Governor Lowe speech,105,AUDUSD
+AUD,RBA's Governor Stevens speech,52,AUDUSD
+AUD,RBA's Kent speech,48,AUDUSD
+AUD,Retail Sales s.a. (MoM),178,AUDUSD
+AUD,S&P Global Composite PMI,157,AUDUSD
+AUD,S&P Global Manufacturing PMI,158,AUDUSD
+AUD,S&P Global Services PMI,157,AUDUSD
+AUD,TD-MI Inflation Gauge (MoM),163,AUDUSD
+AUD,TD-MI Inflation Gauge (YoY),159,AUDUSD
+AUD,Trade Balance (MoM),164,AUDUSD
+AUD,Unemployment Rate s.a.,162,AUDUSD
+AUD,Wage Price Index (QoQ),54,AUDUSD
+AUD,Wage Price Index (YoY),54,AUDUSD
+AUD,Westpac Consumer Confidence,163,AUDUSD
+AUD,Westpac Consumer Confidence Index,54,AUDUSD
+AUD,Westpac Leading Index (MoM),161,AUDUSD
+USD,10-Year Note Auction,159,AUDUSD
+USD,10-year TIPS Auction,34,AUDUSD
+USD,2-Year Note Auction,161,AUDUSD
+USD,20-Year Bond Auction,62,AUDUSD
+USD,3-Month Bill Auction,678,AUDUSD
+USD,3-Year Note Auction,157,AUDUSD
+USD,30-Year Bond Auction,162,AUDUSD
+USD,4-Week Bill Auction,678,AUDUSD
+USD,5-Year Note Auction,159,AUDUSD
+USD,52-Week Bill Auction,173,AUDUSD
+USD,6-Month Bill Auction,681,AUDUSD
+USD,7-Year Note Auction,154,AUDUSD
+USD,ADP Employment Change,159,AUDUSD
+USD,API Weekly Crude Oil Stock,521,AUDUSD
+USD,American Petroleum Institute Monthly Report,32,AUDUSD
+USD,Average Hourly Earnings (MoM),161,AUDUSD
+USD,Average Hourly Earnings (YoY),161,AUDUSD
+USD,Average Weekly Hours,161,AUDUSD
+USD,Baker Hughes US Oil Rig Count,522,AUDUSD
+USD,Building Permits (MoM),161,AUDUSD
+USD,Building Permits Change,114,AUDUSD
+USD,Business Inventories,162,AUDUSD
+USD,CFTC Gold NC Net Positions,489,AUDUSD
+USD,CFTC Oil NC Net Positions,489,AUDUSD
+USD,CFTC S&P 500 NC Net Positions,489,AUDUSD
+USD,Capacity Utilization,162,AUDUSD
+USD,Challenger Job Cuts,161,AUDUSD
+USD,Chicago Fed National Activity Index,161,AUDUSD
+USD,Chicago PMI,162,AUDUSD
+USD,Construction Spending (MoM),160,AUDUSD
+USD,Consumer Confidence,153,AUDUSD
+USD,Consumer Credit Change,161,AUDUSD
+USD,Consumer Price Index (MoM),162,AUDUSD
+USD,Consumer Price Index (YoY),162,AUDUSD
+USD,Consumer Price Index Core s.a,162,AUDUSD
+USD,Consumer Price Index ex Food & Energy (MoM),162,AUDUSD
+USD,Consumer Price Index ex Food & Energy (YoY),162,AUDUSD
+USD,Consumer Price Index n.s.a (MoM),162,AUDUSD
+USD,Continuing Jobless Claims,702,AUDUSD
+USD,Core Personal Consumption Expenditures (QoQ),159,AUDUSD
+USD,Core Personal Consumption Expenditures - Price Index (MoM),161,AUDUSD
+USD,Core Personal Consumption Expenditures - Price Index (YoY),161,AUDUSD
+USD,Current Account,54,AUDUSD
+USD,Dallas Fed Manufacturing Business Index,161,AUDUSD
+USD,Durable Goods Orders,162,AUDUSD
+USD,Durable Goods Orders ex Defense,81,AUDUSD
+USD,Durable Goods Orders ex Transportation,162,AUDUSD
+USD,EIA Crude Oil Stocks Change,700,AUDUSD
+USD,EIA Distillate Stocks Change,70,AUDUSD
+USD,EIA Gasoline Stocks Change,70,AUDUSD
+USD,EIA Heating Oil Stocks Change,70,AUDUSD
+USD,EIA Natural Gas Storage Change,694,AUDUSD
+USD,Employment Cost Index,54,AUDUSD
+USD,Existing Home Sales (MoM),162,AUDUSD
+USD,Existing Home Sales Change (MoM),162,AUDUSD
+USD,Export Price Index (MoM),160,AUDUSD
+USD,Export Price Index (YoY),160,AUDUSD
+USD,FOMC Economic Projections,54,AUDUSD
+USD,FOMC Member Powell speech (don't use),44,AUDUSD
+USD,FOMC Minutes,107,AUDUSD
+USD,FOMC Press Conference,63,AUDUSD
+USD,Factory Orders (MoM),160,AUDUSD
+USD,Fed Interest Rate Decision,109,AUDUSD
+USD,Fed Minneapolis's Kocherlakota speech,56,AUDUSD
+USD,Fed Monetary Policy Statement,84,AUDUSD
+USD,Fed's Barkin speech,77,AUDUSD
+USD,Fed's Barr speech,32,AUDUSD
+USD,Fed's Beige Book,107,AUDUSD
+USD,Fed's Bostic speech,153,AUDUSD
+USD,Fed's Bowman speech,99,AUDUSD
+USD,Fed's Brainard speech,89,AUDUSD
+USD,Fed's Bullard speech,160,AUDUSD
+USD,Fed's Chair Powell testifies,43,AUDUSD
+USD,Fed's Chair Yellen speech,56,AUDUSD
+USD,Fed's Clarida speech,50,AUDUSD
+USD,Fed's Collins speech,25,AUDUSD
+USD,Fed's Cook speech,41,AUDUSD
+USD,Fed's Daly speech,72,AUDUSD
+USD,Fed's Dudley speech,107,AUDUSD
+USD,Fed's Evans speech,150,AUDUSD
+USD,Fed's George speech,60,AUDUSD
+USD,Fed's Goolsbee speech,78,AUDUSD
+USD,Fed's Harker speech,88,AUDUSD
+USD,Fed's Jefferson speech,29,AUDUSD
+USD,Fed's Kaplan speech,67,AUDUSD
+USD,Fed's Kashkari speech,114,AUDUSD
+USD,Fed's Kugler speech,27,AUDUSD
+USD,Fed's Lacker speech,37,AUDUSD
+USD,Fed's Lockhart speech,79,AUDUSD
+USD,Fed's Logan speech,29,AUDUSD
+USD,Fed's Mester speech,115,AUDUSD
+USD,Fed's Powell speech,115,AUDUSD
+USD,Fed's Quarles speech,63,AUDUSD
+USD,Fed's Richard Fisher speech,35,AUDUSD
+USD,Fed's Rosengren speech,75,AUDUSD
+USD,Fed's Stanley Fischer speech,37,AUDUSD
+USD,Fed's Tarullo speech,35,AUDUSD
+USD,Fed's Waller speech,75,AUDUSD
+USD,Fed's Williams speech,278,AUDUSD
+USD,Former Fed's Chair Bernanke speech,46,AUDUSD
+USD,Goods Trade Balance,173,AUDUSD
+USD,Goods and Services Trade Balance,162,AUDUSD
+USD,Gross Domestic Product Annualized,161,AUDUSD
+USD,Gross Domestic Product Price Index,161,AUDUSD
+USD,Housing Price Index (MoM),162,AUDUSD
+USD,Housing Starts (MoM),160,AUDUSD
+USD,Housing Starts Change,114,AUDUSD
+USD,IMF Meeting,81,AUDUSD
+USD,ISM Manufacturing Employment Index,91,AUDUSD
+USD,ISM Manufacturing New Orders Index,91,AUDUSD
+USD,ISM Manufacturing PMI,161,AUDUSD
+USD,ISM Manufacturing Prices Paid,161,AUDUSD
+USD,ISM Services Employment Index,91,AUDUSD
+USD,ISM Services New Orders Index,91,AUDUSD
+USD,ISM Services PMI,161,AUDUSD
+USD,ISM Services Prices Paid,91,AUDUSD
+USD,ISM-NY Business Conditions Index,109,AUDUSD
+USD,Import Price Index (MoM),162,AUDUSD
+USD,Import Price Index (YoY),162,AUDUSD
+USD,Industrial Production (MoM),162,AUDUSD
+USD,Initial Jobless Claims,703,AUDUSD
+USD,Initial Jobless Claims 4-week average,339,AUDUSD
+USD,JOLTS Job Openings,139,AUDUSD
+USD,Jackson Hole Symposium,37,AUDUSD
+USD,Kansas Fed Manufacturing Activity,160,AUDUSD
+USD,Labor Force Participation Rate,138,AUDUSD
+USD,Labor Market Conditions Index,43,AUDUSD
+USD,Loan Officer Survey,52,AUDUSD
+USD,MBA Mortgage Applications,690,AUDUSD
+USD,Michigan Consumer Expectations Index,134,AUDUSD
+USD,Michigan Consumer Sentiment Index,324,AUDUSD
+USD,Monthly Budget Statement,162,AUDUSD
+USD,NAHB Housing Market Index,162,AUDUSD
+USD,NFIB Business Optimism Index,161,AUDUSD
+USD,NY Empire State Manufacturing Index,162,AUDUSD
+USD,Net Long-Term TIC Flows,162,AUDUSD
+USD,New Home Sales (MoM),161,AUDUSD
+USD,New Home Sales Change (MoM),161,AUDUSD
+USD,Nondefense Capital Goods Orders ex Aircraft,91,AUDUSD
+USD,Nonfarm Payrolls,161,AUDUSD
+USD,Nonfarm Productivity,107,AUDUSD
+USD,OPEC Meeting,79,AUDUSD
+USD,Pending Home Sales (MoM),162,AUDUSD
+USD,Pending Home Sales (YoY),155,AUDUSD
+USD,Personal Consumption Expenditures - Price Index (MoM),161,AUDUSD
+USD,Personal Consumption Expenditures - Price Index (YoY),161,AUDUSD
+USD,Personal Consumption Expenditures Prices (QoQ),155,AUDUSD
+USD,Personal Income (MoM),161,AUDUSD
+USD,Personal Spending,160,AUDUSD
+USD,Philadelphia Fed Manufacturing Survey,162,AUDUSD
+USD,Philadelphia Fed's Plosser speech,40,AUDUSD
+USD,President Biden speech,28,AUDUSD
+USD,President Trump speech,34,AUDUSD
+USD,Producer Price Index (MoM),162,AUDUSD
+USD,Producer Price Index (YoY),162,AUDUSD
+USD,Producer Price Index ex Food & Energy (MoM),162,AUDUSD
+USD,Producer Price Index ex Food & Energy (YoY),162,AUDUSD
+USD,RealClearMarkets/TIPP Economic Optimism (MoM),161,AUDUSD
+USD,Redbook Index (MoM),456,AUDUSD
+USD,Redbook Index (YoY),676,AUDUSD
+USD,Retail Sales (MoM),162,AUDUSD
+USD,Retail Sales (YoY),67,AUDUSD
+USD,Retail Sales Control Group,126,AUDUSD
+USD,Retail Sales ex Autos (MoM),162,AUDUSD
+USD,Richmond Fed Manufacturing Index,162,AUDUSD
+USD,S&P Global Composite PMI,266,AUDUSD
+USD,S&P Global Manufacturing PMI,316,AUDUSD
+USD,S&P Global Services PMI,277,AUDUSD
+USD,S&P/Case-Shiller Home Price Indices (YoY),162,AUDUSD
+USD,Total Net TIC Flows,162,AUDUSD
+USD,Total Vehicle Sales,161,AUDUSD
+USD,Treasury Sec Lew speech,29,AUDUSD
+USD,U6 Underemployment Rate,103,AUDUSD
+USD,USDA WASDE Report,73,AUDUSD
+USD,Unemployment Rate,161,AUDUSD
+USD,Unit Labor Costs,108,AUDUSD
+USD,UoM 1-year Consumer Inflation Expectations,134,AUDUSD
+USD,UoM 5-year Consumer Inflation Expectation,134,AUDUSD
+USD,Wholesale Inventories,263,AUDUSD
+CHF,Consumer Price Index (MoM),161,USDCHF
+CHF,Consumer Price Index (YoY),161,USDCHF
+CHF,Employment Level (QoQ),53,USDCHF
+CHF,Exports (MoM),159,USDCHF
+CHF,Foreign Currency Reserves,160,USDCHF
+CHF,Gross Domestic Product (QoQ),54,USDCHF
+CHF,Gross Domestic Product (YoY),54,USDCHF
+CHF,Imports (MoM),159,USDCHF
+CHF,Industrial Production (QoQ),28,USDCHF
+CHF,Industrial Production (YoY),54,USDCHF
+CHF,KOF Leading Indicator,162,USDCHF
+CHF,Producer and Import Prices (MoM),162,USDCHF
+CHF,Producer and Import Prices (YoY),162,USDCHF
+CHF,Real Retail Sales (YoY),161,USDCHF
+CHF,SECO Consumer Climate (3m),54,USDCHF
+CHF,SECO Economic Forecasts,54,USDCHF
+CHF,SNB Interest Rate Decision,57,USDCHF
+CHF,SNB Monetary Policy Assessment,29,USDCHF
+CHF,SNB Press Conference,33,USDCHF
+CHF,SNB Quarterly Bulletin,54,USDCHF
+CHF,SNB's Chairman Jordan speech,64,USDCHF
+CHF,SVME - Purchasing Managers' Index,161,USDCHF
+CHF,Trade Balance,162,USDCHF
+CHF,UBS Consumption Indicator,73,USDCHF
+CHF,Unemployment Rate s.a (MoM),161,USDCHF
+CHF,World Economic Forum - Davos,53,USDCHF
+CHF,ZEW Survey – Expectations,162,USDCHF
+USD,10-Year Note Auction,159,USDCHF
+USD,10-year TIPS Auction,34,USDCHF
+USD,2-Year Note Auction,161,USDCHF
+USD,20-Year Bond Auction,62,USDCHF
+USD,3-Month Bill Auction,678,USDCHF
+USD,3-Year Note Auction,157,USDCHF
+USD,30-Year Bond Auction,162,USDCHF
+USD,4-Week Bill Auction,678,USDCHF
+USD,5-Year Note Auction,159,USDCHF
+USD,52-Week Bill Auction,173,USDCHF
+USD,6-Month Bill Auction,681,USDCHF
+USD,7-Year Note Auction,154,USDCHF
+USD,ADP Employment Change,159,USDCHF
+USD,API Weekly Crude Oil Stock,521,USDCHF
+USD,American Petroleum Institute Monthly Report,32,USDCHF
+USD,Average Hourly Earnings (MoM),161,USDCHF
+USD,Average Hourly Earnings (YoY),161,USDCHF
+USD,Average Weekly Hours,161,USDCHF
+USD,Baker Hughes US Oil Rig Count,522,USDCHF
+USD,Building Permits (MoM),161,USDCHF
+USD,Building Permits Change,114,USDCHF
+USD,Business Inventories,162,USDCHF
+USD,CFTC Gold NC Net Positions,489,USDCHF
+USD,CFTC Oil NC Net Positions,489,USDCHF
+USD,CFTC S&P 500 NC Net Positions,489,USDCHF
+USD,Capacity Utilization,162,USDCHF
+USD,Challenger Job Cuts,161,USDCHF
+USD,Chicago Fed National Activity Index,161,USDCHF
+USD,Chicago PMI,162,USDCHF
+USD,Construction Spending (MoM),160,USDCHF
+USD,Consumer Confidence,153,USDCHF
+USD,Consumer Credit Change,161,USDCHF
+USD,Consumer Price Index (MoM),162,USDCHF
+USD,Consumer Price Index (YoY),162,USDCHF
+USD,Consumer Price Index Core s.a,162,USDCHF
+USD,Consumer Price Index ex Food & Energy (MoM),162,USDCHF
+USD,Consumer Price Index ex Food & Energy (YoY),162,USDCHF
+USD,Consumer Price Index n.s.a (MoM),162,USDCHF
+USD,Continuing Jobless Claims,702,USDCHF
+USD,Core Personal Consumption Expenditures (QoQ),159,USDCHF
+USD,Core Personal Consumption Expenditures - Price Index (MoM),161,USDCHF
+USD,Core Personal Consumption Expenditures - Price Index (YoY),161,USDCHF
+USD,Current Account,54,USDCHF
+USD,Dallas Fed Manufacturing Business Index,161,USDCHF
+USD,Durable Goods Orders,162,USDCHF
+USD,Durable Goods Orders ex Defense,81,USDCHF
+USD,Durable Goods Orders ex Transportation,162,USDCHF
+USD,EIA Crude Oil Stocks Change,700,USDCHF
+USD,EIA Distillate Stocks Change,70,USDCHF
+USD,EIA Gasoline Stocks Change,70,USDCHF
+USD,EIA Heating Oil Stocks Change,70,USDCHF
+USD,EIA Natural Gas Storage Change,694,USDCHF
+USD,Employment Cost Index,54,USDCHF
+USD,Existing Home Sales (MoM),162,USDCHF
+USD,Existing Home Sales Change (MoM),162,USDCHF
+USD,Export Price Index (MoM),160,USDCHF
+USD,Export Price Index (YoY),160,USDCHF
+USD,FOMC Economic Projections,54,USDCHF
+USD,FOMC Member Powell speech (don't use),44,USDCHF
+USD,FOMC Minutes,107,USDCHF
+USD,FOMC Press Conference,63,USDCHF
+USD,Factory Orders (MoM),160,USDCHF
+USD,Fed Interest Rate Decision,109,USDCHF
+USD,Fed Minneapolis's Kocherlakota speech,56,USDCHF
+USD,Fed Monetary Policy Statement,84,USDCHF
+USD,Fed's Barkin speech,77,USDCHF
+USD,Fed's Barr speech,32,USDCHF
+USD,Fed's Beige Book,107,USDCHF
+USD,Fed's Bostic speech,153,USDCHF
+USD,Fed's Bowman speech,99,USDCHF
+USD,Fed's Brainard speech,89,USDCHF
+USD,Fed's Bullard speech,160,USDCHF
+USD,Fed's Chair Powell testifies,43,USDCHF
+USD,Fed's Chair Yellen speech,56,USDCHF
+USD,Fed's Clarida speech,50,USDCHF
+USD,Fed's Collins speech,25,USDCHF
+USD,Fed's Cook speech,41,USDCHF
+USD,Fed's Daly speech,72,USDCHF
+USD,Fed's Dudley speech,107,USDCHF
+USD,Fed's Evans speech,150,USDCHF
+USD,Fed's George speech,60,USDCHF
+USD,Fed's Goolsbee speech,78,USDCHF
+USD,Fed's Harker speech,88,USDCHF
+USD,Fed's Jefferson speech,29,USDCHF
+USD,Fed's Kaplan speech,67,USDCHF
+USD,Fed's Kashkari speech,114,USDCHF
+USD,Fed's Kugler speech,27,USDCHF
+USD,Fed's Lacker speech,37,USDCHF
+USD,Fed's Lockhart speech,79,USDCHF
+USD,Fed's Logan speech,29,USDCHF
+USD,Fed's Mester speech,115,USDCHF
+USD,Fed's Powell speech,115,USDCHF
+USD,Fed's Quarles speech,63,USDCHF
+USD,Fed's Richard Fisher speech,35,USDCHF
+USD,Fed's Rosengren speech,75,USDCHF
+USD,Fed's Stanley Fischer speech,37,USDCHF
+USD,Fed's Tarullo speech,35,USDCHF
+USD,Fed's Waller speech,75,USDCHF
+USD,Fed's Williams speech,278,USDCHF
+USD,Former Fed's Chair Bernanke speech,46,USDCHF
+USD,Goods Trade Balance,173,USDCHF
+USD,Goods and Services Trade Balance,162,USDCHF
+USD,Gross Domestic Product Annualized,161,USDCHF
+USD,Gross Domestic Product Price Index,161,USDCHF
+USD,Housing Price Index (MoM),162,USDCHF
+USD,Housing Starts (MoM),160,USDCHF
+USD,Housing Starts Change,114,USDCHF
+USD,IMF Meeting,81,USDCHF
+USD,ISM Manufacturing Employment Index,91,USDCHF
+USD,ISM Manufacturing New Orders Index,91,USDCHF
+USD,ISM Manufacturing PMI,161,USDCHF
+USD,ISM Manufacturing Prices Paid,161,USDCHF
+USD,ISM Services Employment Index,91,USDCHF
+USD,ISM Services New Orders Index,91,USDCHF
+USD,ISM Services PMI,161,USDCHF
+USD,ISM Services Prices Paid,91,USDCHF
+USD,ISM-NY Business Conditions Index,109,USDCHF
+USD,Import Price Index (MoM),162,USDCHF
+USD,Import Price Index (YoY),162,USDCHF
+USD,Industrial Production (MoM),162,USDCHF
+USD,Initial Jobless Claims,703,USDCHF
+USD,Initial Jobless Claims 4-week average,339,USDCHF
+USD,JOLTS Job Openings,139,USDCHF
+USD,Jackson Hole Symposium,37,USDCHF
+USD,Kansas Fed Manufacturing Activity,160,USDCHF
+USD,Labor Force Participation Rate,138,USDCHF
+USD,Labor Market Conditions Index,43,USDCHF
+USD,Loan Officer Survey,52,USDCHF
+USD,MBA Mortgage Applications,690,USDCHF
+USD,Michigan Consumer Expectations Index,134,USDCHF
+USD,Michigan Consumer Sentiment Index,324,USDCHF
+USD,Monthly Budget Statement,162,USDCHF
+USD,NAHB Housing Market Index,162,USDCHF
+USD,NFIB Business Optimism Index,161,USDCHF
+USD,NY Empire State Manufacturing Index,162,USDCHF
+USD,Net Long-Term TIC Flows,162,USDCHF
+USD,New Home Sales (MoM),161,USDCHF
+USD,New Home Sales Change (MoM),161,USDCHF
+USD,Nondefense Capital Goods Orders ex Aircraft,91,USDCHF
+USD,Nonfarm Payrolls,161,USDCHF
+USD,Nonfarm Productivity,107,USDCHF
+USD,OPEC Meeting,79,USDCHF
+USD,Pending Home Sales (MoM),162,USDCHF
+USD,Pending Home Sales (YoY),155,USDCHF
+USD,Personal Consumption Expenditures - Price Index (MoM),161,USDCHF
+USD,Personal Consumption Expenditures - Price Index (YoY),161,USDCHF
+USD,Personal Consumption Expenditures Prices (QoQ),155,USDCHF
+USD,Personal Income (MoM),161,USDCHF
+USD,Personal Spending,160,USDCHF
+USD,Philadelphia Fed Manufacturing Survey,162,USDCHF
+USD,Philadelphia Fed's Plosser speech,40,USDCHF
+USD,President Biden speech,28,USDCHF
+USD,President Trump speech,34,USDCHF
+USD,Producer Price Index (MoM),162,USDCHF
+USD,Producer Price Index (YoY),162,USDCHF
+USD,Producer Price Index ex Food & Energy (MoM),162,USDCHF
+USD,Producer Price Index ex Food & Energy (YoY),162,USDCHF
+USD,RealClearMarkets/TIPP Economic Optimism (MoM),161,USDCHF
+USD,Redbook Index (MoM),456,USDCHF
+USD,Redbook Index (YoY),676,USDCHF
+USD,Retail Sales (MoM),162,USDCHF
+USD,Retail Sales (YoY),67,USDCHF
+USD,Retail Sales Control Group,126,USDCHF
+USD,Retail Sales ex Autos (MoM),162,USDCHF
+USD,Richmond Fed Manufacturing Index,162,USDCHF
+USD,S&P Global Composite PMI,266,USDCHF
+USD,S&P Global Manufacturing PMI,316,USDCHF
+USD,S&P Global Services PMI,277,USDCHF
+USD,S&P/Case-Shiller Home Price Indices (YoY),162,USDCHF
+USD,Total Net TIC Flows,162,USDCHF
+USD,Total Vehicle Sales,161,USDCHF
+USD,Treasury Sec Lew speech,29,USDCHF
+USD,U6 Underemployment Rate,103,USDCHF
+USD,USDA WASDE Report,73,USDCHF
+USD,Unemployment Rate,161,USDCHF
+USD,Unit Labor Costs,108,USDCHF
+USD,UoM 1-year Consumer Inflation Expectations,134,USDCHF
+USD,UoM 5-year Consumer Inflation Expectation,134,USDCHF
+USD,Wholesale Inventories,263,USDCHF

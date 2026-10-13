@@ -1,0 +1,850 @@
+Currency,Name,days,first,last,pair
+EUR,eur Audit of Spanish Banks,1,2012-06-21,2012-06-21,EURUSD
+EUR,eur Bank Stress Test Info,2,2014-10-26,2016-07-29,EURUSD
+EUR,eur Barroso - Monti Meeting,1,2012-09-06,2012-09-06,EURUSD
+EUR,eur Barroso and Juncker speak to European Parliament,1,2012-07-03,2012-07-03,EURUSD
+EUR,eur Barroso speaks at European Forum Alpbach,1,2012-08-30,2012-08-30,EURUSD
+EUR,eur Brexit Summit,4,2018-10-17,2020-12-09,EURUSD
+EUR,eur Business Climate,160,2012-03-29,2025-06-27,EURUSD
+EUR,eur CFTC EUR NC Net Positions,490,2016-01-04,2025-06-27,EURUSD
+EUR,eur Construction Output s.a (MoM),161,2012-01-18,2025-06-19,EURUSD
+EUR,eur Construction Output w.d.a (YoY),161,2012-01-18,2025-06-19,EURUSD
+EUR,eur Consumer Confidence,324,2012-01-23,2025-06-27,EURUSD
+EUR,eur Core Harmonized Index of Consumer Prices (MoM),152,2015-09-30,2025-06-18,EURUSD
+EUR,eur Core Harmonized Index of Consumer Prices (YoY),306,2012-01-17,2025-06-18,EURUSD
+EUR,eur Current Account n.s.a,161,2012-01-19,2025-06-18,EURUSD
+EUR,eur Current Account s.a,162,2012-01-19,2025-06-18,EURUSD
+EUR,eur Cyprus - Eurogroup Teleconference,1,2013-03-21,2013-03-21,EURUSD
+EUR,"eur Cyprus Parliament Vote on Banking Restructuring, Wealth Fund Bill",1,2013-03-22,2013-03-22,EURUSD
+EUR,eur Cyprus Parliament to Vote on Deposit Levy for EU Bailout Plan,1,2013-03-19,2013-03-19,EURUSD
+EUR,eur Donald Tusk speech,1,2017-03-29,2017-03-29,EURUSD
+EUR,eur Draghi - Merkel Meeting,1,2012-09-25,2012-09-25,EURUSD
+EUR,eur Draghi - Varoufakis Meeting,1,2015-02-04,2015-02-04,EURUSD
+EUR,eur Dutch Parliamentary Election,1,2012-09-12,2012-09-12,EURUSD
+EUR,eur EC President von der Leyen speech,1,2022-09-14,2022-09-14,EURUSD
+EUR,eur ECB Bank Lending Survey,25,2017-07-18,2025-04-15,EURUSD
+EUR,eur ECB LTRO Auction,1,2012-02-29,2012-02-29,EURUSD
+EUR,eur ECB Main Refinancing Operations Rate,120,2012-01-12,2025-06-05,EURUSD
+EUR,eur ECB Mid-Month Meeting,2,2012-06-21,2012-07-19,EURUSD
+EUR,eur ECB Monetary Policy Meeting Accounts,84,2015-02-19,2025-05-22,EURUSD
+EUR,eur ECB Monetary Policy Statement,33,2021-07-22,2025-06-05,EURUSD
+EUR,eur ECB Monthly Report,36,2012-01-19,2014-12-11,EURUSD
+EUR,eur ECB Press Conference,116,2012-03-08,2025-06-05,EURUSD
+EUR,eur ECB Rate On Deposit Facility,88,2012-07-11,2025-06-05,EURUSD
+EUR,eur ECB Special Strategy Meeting,1,2021-07-08,2021-07-08,EURUSD
+EUR,eur ECB announces Bond Purchases,1,2012-06-25,2012-06-25,EURUSD
+EUR,eur ECB's Asmussen speech,9,2012-06-18,2012-11-15,EURUSD
+EUR,eur ECB's Cipollone speech,43,2024-01-17,2025-06-16,EURUSD
+EUR,eur ECB's Constancio speech,17,2015-08-25,2018-05-17,EURUSD
+EUR,eur ECB's Cœuré speech,65,2016-07-03,2019-12-18,EURUSD
+EUR,eur ECB's De Guindos speech,218,2019-02-19,2025-06-30,EURUSD
+EUR,eur ECB's Elderson speech,83,2021-09-29,2025-06-18,EURUSD
+EUR,eur ECB's Escrivá speech,7,2025-05-13,2025-06-18,EURUSD
+EUR,eur ECB's Knot speech,7,2025-05-13,2025-06-27,EURUSD
+EUR,eur ECB's Lane speech,181,2019-06-18,2025-06-24,EURUSD
+EUR,eur ECB's Lautenschläger speech,41,2016-02-22,2019-10-30,EURUSD
+EUR,eur ECB's Mersch speech,56,2017-12-06,2020-11-16,EURUSD
+EUR,eur ECB's Nagel speech,112,2022-11-08,2025-06-23,EURUSD
+EUR,eur ECB's Nowotny speech,4,2016-09-01,2018-11-26,EURUSD
+EUR,eur ECB's Noyer speech,6,2012-06-27,2014-04-14,EURUSD
+EUR,eur ECB's Panetta speech,77,2020-02-13,2025-06-18,EURUSD
+EUR,eur ECB's Praet speech,55,2016-02-26,2019-05-22,EURUSD
+EUR,eur ECB's President Draghi speaks at Davos,1,2013-01-25,2013-01-25,EURUSD
+EUR,eur ECB's President Draghi speaks at Jackson Hole,2,2014-08-22,2017-08-25,EURUSD
+EUR,eur ECB's President Draghi speech,187,2012-01-12,2019-10-28,EURUSD
+EUR,eur ECB's President Draghi statement,1,2014-10-02,2014-10-02,EURUSD
+EUR,eur ECB's President Lagarde speech,254,2019-09-04,2025-06-30,EURUSD
+EUR,eur ECB's President Mario Draghi visits Germany,1,2012-10-24,2012-10-24,EURUSD
+EUR,eur ECB's Schnabel speech,134,2020-02-11,2025-06-28,EURUSD
+EUR,eur ECB's Villeroy speech,21,2023-02-17,2025-06-24,EURUSD
+EUR,eur ECJ Opinion on Brexit Reversibility,2,2018-11-27,2018-12-04,EURUSD
+EUR,eur ECJ ruling on Article 50,1,2018-12-10,2018-12-10,EURUSD
+EUR,eur EU Extraordinary Economic Summit,9,2012-01-30,2015-06-26,EURUSD
+EUR,eur EU FinMin Teleconference on Greece,1,2012-11-24,2012-11-24,EURUSD
+EUR,eur EU Finance Ministers Meeting,4,2012-02-20,2020-03-16,EURUSD
+EUR,eur EU Financial Stability Review,24,2012-06-12,2025-05-21,EURUSD
+EUR,eur EU Leaders Special Summit,7,2012-06-22,2020-10-02,EURUSD
+EUR,eur EU Parliament to Vote on Resolution on UK Referendum,1,2016-06-28,2016-06-28,EURUSD
+EUR,eur EU leaders summit,50,2016-06-28,2025-06-27,EURUSD
+EUR,eur EU proposal on Brexit Northern Ireland protocol,1,2021-10-13,2021-10-13,EURUSD
+EUR,eur EU's Juncker and Italy's Conte meet to discuss Italian Budget,1,2018-12-12,2018-12-12,EURUSD
+EUR,eur EU's Rompuy & Barroso and China's Wen at EU-China Summit,1,2012-09-20,2012-09-20,EURUSD
+EUR,eur EcoFin Meeting,163,2012-01-23,2025-05-13,EURUSD
+EUR,eur Economic Bulletin,85,2015-02-05,2025-06-20,EURUSD
+EUR,eur Economic Sentiment Indicator,162,2012-01-30,2025-06-27,EURUSD
+EUR,eur Employment Change (QoQ),81,2012-03-15,2025-06-06,EURUSD
+EUR,eur Employment Change (YoY),80,2012-03-15,2025-06-06,EURUSD
+EUR,eur Eurogroup Meeting,181,2012-10-30,2025-06-20,EURUSD
+EUR,eur European Commission Decision on Italy,1,2018-11-21,2018-11-21,EURUSD
+EUR,eur European Commission Press Conference,1,2014-03-17,2014-03-17,EURUSD
+EUR,eur European Commission releases Economic Growth Forecasts,47,2012-05-11,2025-05-19,EURUSD
+EUR,eur European Council Meeting,53,2012-05-23,2021-12-16,EURUSD
+EUR,eur European Court of Justice Ruling,2,2015-01-14,2015-06-16,EURUSD
+EUR,eur European Parliament Election,6,2014-05-22,2024-06-08,EURUSD
+EUR,eur European Systemic Risk Board Meeting,4,2012-03-22,2012-12-20,EURUSD
+EUR,eur Eurozone Economic Outlook,1,2016-01-01,2016-01-01,EURUSD
+EUR,eur Finnish Parliament votes on the Spanish Bailout,1,2012-07-20,2012-07-20,EURUSD
+EUR,eur G20 Finance Ministers and Central Bank Governors Meeting,6,2013-04-18,2023-02-25,EURUSD
+EUR,eur G20 Meeting,69,2012-02-24,2025-02-27,EURUSD
+EUR,eur G7 Finance Ministers Meeting,3,2012-10-11,2013-05-11,EURUSD
+EUR,eur G7 Meeting,36,2012-06-05,2025-05-22,EURUSD
+EUR,eur G8 Meeting,3,2012-06-03,2013-06-18,EURUSD
+EUR,eur Gross Domestic Product s.a. (QoQ),153,2012-02-15,2025-06-06,EURUSD
+EUR,eur Gross Domestic Product s.a. (YoY),148,2012-02-15,2025-06-06,EURUSD
+EUR,eur HCOB Composite PMI,313,2012-06-05,2025-06-23,EURUSD
+EUR,eur HCOB Manufacturing PMI,323,2012-01-24,2025-06-23,EURUSD
+EUR,eur HCOB Services PMI,323,2012-01-24,2025-06-23,EURUSD
+EUR,eur Harmonized Index of Consumer Prices (MoM),197,2012-01-17,2025-06-18,EURUSD
+EUR,eur Harmonized Index of Consumer Prices (YoY),323,2012-01-17,2025-06-18,EURUSD
+EUR,eur Hollande - Merkel Meeting,1,2012-08-23,2012-08-23,EURUSD
+EUR,eur Hollande - Van Rompuy Meeting,1,2012-09-05,2012-09-05,EURUSD
+EUR,eur Hollande-Monti Meeting,2,2012-06-14,2012-09-04,EURUSD
+EUR,eur IMF Global Economic Outlook,1,2013-07-09,2013-07-09,EURUSD
+EUR,eur Industrial Confidence,161,2012-02-28,2025-06-27,EURUSD
+EUR,eur Industrial New Orders (YoY),3,2012-01-24,2012-03-22,EURUSD
+EUR,eur Industrial New Orders s.a. (MoM),3,2012-01-24,2012-03-22,EURUSD
+EUR,eur Industrial Production s.a. (MoM),162,2012-01-12,2025-06-13,EURUSD
+EUR,eur Industrial Production w.d.a. (YoY),162,2012-01-12,2025-06-13,EURUSD
+EUR,eur Irish Stability Treaty Vote,1,2012-05-31,2012-05-31,EURUSD
+EUR,eur Jean Claude Juncker speech,2,2015-06-29,2019-06-19,EURUSD
+EUR,eur Juncker - Tsipras Meeting,1,2015-02-04,2015-02-04,EURUSD
+EUR,eur Labor Cost Index,54,2012-03-15,2025-06-16,EURUSD
+EUR,eur M3 Money Supply (3m),162,2012-01-27,2025-06-30,EURUSD
+EUR,eur M3 Money Supply (YoY),162,2012-01-27,2025-06-30,EURUSD
+EUR,eur Merkel - Barroso Meeting,1,2012-10-11,2012-10-11,EURUSD
+EUR,eur Merkel - Cameron Meeting,1,2012-11-07,2012-11-07,EURUSD
+EUR,eur Merkel - Van Rompuy Meeting,1,2012-09-04,2012-09-04,EURUSD
+EUR,eur Monti - Hollande - Rajoy Meeting,1,2012-10-05,2012-10-05,EURUSD
+EUR,eur NATO Summit,2,2025-06-24,2025-06-25,EURUSD
+EUR,eur Negotiated Wage Rates (QoQ),6,2024-02-20,2025-05-23,EURUSD
+EUR,eur Non-Monetary Policy ECB Meeting,111,2015-01-07,2025-03-26,EURUSD
+EUR,eur OECD Economic Outlook,1,2015-11-09,2015-11-09,EURUSD
+EUR,eur President Barroso delivers the State of the Union Address 2012,1,2012-09-12,2012-09-12,EURUSD
+EUR,eur Press Conference with Mario Monti and Mariano Rajoy,1,2012-08-02,2012-08-02,EURUSD
+EUR,eur Private Loans (YoY),160,2012-03-28,2025-06-30,EURUSD
+EUR,eur Producer Price Index (MoM),161,2012-02-02,2025-06-05,EURUSD
+EUR,eur Producer Price Index (YoY),161,2012-02-02,2025-06-05,EURUSD
+EUR,eur Rajoy - Draghi Meeting,1,2013-02-12,2013-02-12,EURUSD
+EUR,eur Rajoy - Merkel Meeting,2,2012-09-06,2013-02-04,EURUSD
+EUR,eur Rajoy - Monti Meeting,2,2012-09-21,2012-10-29,EURUSD
+EUR,eur Rajoy - Van Rompuy Meeting,1,2012-08-28,2012-08-28,EURUSD
+EUR,eur Rajoy-Hollande Meeting,2,2012-08-30,2012-10-10,EURUSD
+EUR,eur Retail Sales (MoM),161,2012-02-03,2025-06-06,EURUSD
+EUR,eur Retail Sales (YoY),161,2012-02-03,2025-06-06,EURUSD
+EUR,eur Runoff Election in Cyprus,1,2013-02-24,2013-02-24,EURUSD
+EUR,eur Samaras - Hollande Meeting,1,2012-08-25,2012-08-25,EURUSD
+EUR,eur Samaras - Juncker Meeting,1,2012-08-22,2012-08-22,EURUSD
+EUR,eur Samaras - Merkel Meeting,3,2012-08-24,2013-01-08,EURUSD
+EUR,eur Samaras - Monti Meeting,1,2012-09-21,2012-09-21,EURUSD
+EUR,eur Schaeuble - Stournaras Meeting,1,2012-09-04,2012-09-04,EURUSD
+EUR,eur Second Round French Legislative Elections,1,2012-06-17,2012-06-17,EURUSD
+EUR,eur Sentix Investor Confidence,161,2012-02-06,2025-06-10,EURUSD
+EUR,eur Services Sentiment,162,2012-01-30,2025-06-27,EURUSD
+EUR,eur Spain Formal Request for Banking Rescue,1,2012-06-25,2012-06-25,EURUSD
+EUR,eur Targeted LTRO,12,2014-09-18,2017-03-23,EURUSD
+EUR,eur Trade Balance n.s.a.,162,2012-01-13,2025-06-13,EURUSD
+EUR,eur Trade Balance s.a.,161,2012-01-13,2025-06-13,EURUSD
+EUR,eur Troika visits Greece,3,2012-07-24,2012-09-10,EURUSD
+EUR,eur Unemployment Rate,161,2012-01-31,2025-06-03,EURUSD
+EUR,eur Van Rompuy - Barroso - Monti Meeting,1,2012-10-11,2012-10-11,EURUSD
+EUR,eur ZEW Survey – Economic Sentiment,162,2012-01-17,2025-06-17,EURUSD
+EUR,fra 10-y Bond Auction,151,2012-04-04,2025-06-05,EURUSD
+EUR,fra Budget Balance,162,2012-01-12,2025-06-03,EURUSD
+EUR,fra Business Climate in Manufacturing,162,2012-01-23,2025-06-20,EURUSD
+EUR,fra Consumer Confidence,161,2012-01-26,2025-06-25,EURUSD
+EUR,fra Consumer Price Index (EU norm) (MoM),245,2012-01-12,2025-06-27,EURUSD
+EUR,fra Consumer Price Index (EU norm) (YoY),272,2012-01-12,2025-06-27,EURUSD
+EUR,fra Consumer Spending (MoM),158,2012-01-31,2025-06-27,EURUSD
+EUR,fra Current Account,162,2012-01-12,2025-06-06,EURUSD
+EUR,fra Emmanuel Macron speech,1,2017-09-26,2017-09-26,EURUSD
+EUR,"fra Exports, EUR",161,2012-02-07,2025-06-06,EURUSD
+EUR,fra Gross Domestic Product (QoQ),122,2012-02-15,2025-05-28,EURUSD
+EUR,fra Gross Domestic Product (YoY),36,2012-09-28,2017-06-23,EURUSD
+EUR,fra HCOB Composite PMI,253,2014-12-16,2025-06-23,EURUSD
+EUR,fra HCOB Manufacturing PMI,323,2012-01-24,2025-06-23,EURUSD
+EUR,fra HCOB Services PMI,322,2012-01-24,2025-06-23,EURUSD
+EUR,fra ILO Unemployment,54,2012-03-01,2025-05-16,EURUSD
+EUR,"fra Imports, EUR",161,2012-02-07,2025-06-06,EURUSD
+EUR,fra Individual Investment (Current Year),37,2012-02-09,2021-08-26,EURUSD
+EUR,fra Industrial Output (MoM),161,2012-02-10,2025-06-06,EURUSD
+EUR,fra Inflation ex-tobacco (MoM),162,2012-01-12,2025-06-13,EURUSD
+EUR,fra Legislative Election,2,2024-06-30,2024-07-07,EURUSD
+EUR,fra No-confidence motion against French PM,1,2024-12-04,2024-12-04,EURUSD
+EUR,fra Nonfarm Payrolls (QoQ),108,2012-02-14,2025-05-28,EURUSD
+EUR,fra Presidential Election,3,2017-04-23,2022-04-24,EURUSD
+EUR,fra Producer Prices (MoM),161,2012-01-31,2025-06-27,EURUSD
+EUR,fra Trade Balance EUR,161,2012-02-07,2025-06-06,EURUSD
+EUR,ger 10-y Bond Auction,185,2012-04-11,2025-06-11,EURUSD
+EUR,ger 2-year Notes Auction,40,2012-03-21,2015-07-08,EURUSD
+EUR,ger 30-y Bond Auction,121,2012-04-25,2025-06-18,EURUSD
+EUR,ger 5-y Note Auction,72,2019-11-27,2025-06-10,EURUSD
+EUR,ger Baden-Wuerttemberg CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Baden-Wuerttemberg CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Bavaria CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Bavaria CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Brandenburg CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Brandenburg CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Bundestag vote on Greek Aid,1,2012-11-30,2012-11-30,EURUSD
+EUR,ger Bundestag votes on the Spanish Bailout,1,2012-07-19,2012-07-19,EURUSD
+EUR,ger CDU Party Leader Election,1,2018-12-07,2018-12-07,EURUSD
+EUR,ger Constitutional Court Ruling on ECB QE Legality,1,2020-03-24,2020-03-24,EURUSD
+EUR,ger Consumer Price Index (MoM),324,2012-01-12,2025-06-30,EURUSD
+EUR,ger Consumer Price Index (YoY),324,2012-01-12,2025-06-30,EURUSD
+EUR,ger Current Account n.s.a.,161,2012-02-08,2025-06-12,EURUSD
+EUR,ger Exports (MoM),159,2012-04-10,2025-06-06,EURUSD
+EUR,ger Factory Orders n.s.a. (YoY),161,2012-02-06,2025-06-05,EURUSD
+EUR,ger Factory Orders s.a. (MoM),161,2012-02-06,2025-06-05,EURUSD
+EUR,ger Federal Election,4,2013-09-22,2025-02-23,EURUSD
+EUR,ger German Buba Monthly Report,126,2015-01-19,2025-05-22,EURUSD
+EUR,ger German Buba President Weidmann speech,129,2012-06-14,2022-01-11,EURUSD
+EUR,ger German Constitutional Court Ruling,1,2016-06-21,2016-06-21,EURUSD
+EUR,ger German Constitutional Court discusses Motions to stop ESM,1,2012-07-10,2012-07-10,EURUSD
+EUR,ger Germany Constitutional Court ruling on OMT Bond Buying,3,2012-09-12,2013-06-12,EURUSD
+EUR,ger GfK Consumer Confidence Survey,162,2012-01-26,2025-06-26,EURUSD
+EUR,ger Gross Domestic Product (QoQ),108,2012-02-15,2025-05-23,EURUSD
+EUR,ger Gross Domestic Product (YoY),108,2012-02-15,2025-05-23,EURUSD
+EUR,ger Gross Domestic Product w.d.a (YoY),108,2012-02-15,2025-05-23,EURUSD
+EUR,ger HCOB Composite PMI,253,2015-01-06,2025-06-23,EURUSD
+EUR,ger HCOB Manufacturing PMI,323,2012-01-24,2025-06-23,EURUSD
+EUR,ger HCOB Services PMI,323,2012-01-24,2025-06-23,EURUSD
+EUR,ger Harmonized Index of Consumer Prices (MoM),316,2012-04-13,2025-06-30,EURUSD
+EUR,ger Harmonized Index of Consumer Prices (YoY),316,2012-04-13,2025-06-30,EURUSD
+EUR,ger Hesse CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Hesse CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger IFO – Business Climate,163,2012-01-25,2025-06-24,EURUSD
+EUR,ger IFO – Current Assessment,163,2012-01-25,2025-06-24,EURUSD
+EUR,ger IFO – Expectations,162,2012-01-25,2025-06-24,EURUSD
+EUR,ger Import Price Index (MoM),162,2012-01-27,2025-06-30,EURUSD
+EUR,ger Import Price Index (YoY),159,2012-04-27,2025-06-30,EURUSD
+EUR,ger Imports (MoM),159,2012-04-10,2025-06-06,EURUSD
+EUR,ger Industrial Production n.s.a. w.d.a. (YoY),161,2012-02-07,2025-06-06,EURUSD
+EUR,ger Industrial Production s.a. (MoM),161,2012-02-07,2025-06-06,EURUSD
+EUR,ger Merkel speaks in the Bundestag,3,2012-06-14,2012-10-18,EURUSD
+EUR,ger North Rhine-Westphalia CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger North Rhine-Westphalia CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Producer Price Index (MoM),162,2012-01-20,2025-06-20,EURUSD
+EUR,ger Producer Price Index (YoY),162,2012-01-20,2025-06-20,EURUSD
+EUR,ger Public Finances Balance – GDP Ratio,2,2013-01-15,2014-01-15,EURUSD
+EUR,ger Real GDP Growth,13,2013-01-15,2025-01-15,EURUSD
+EUR,ger Retail Sales (MoM),159,2012-01-31,2025-06-30,EURUSD
+EUR,ger Retail Sales (YoY),160,2012-01-31,2025-06-30,EURUSD
+EUR,ger Saxony CPI (MoM),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Saxony CPI (YoY),54,2021-01-28,2025-06-30,EURUSD
+EUR,ger Trade Balance s.a.,161,2012-02-08,2025-06-06,EURUSD
+EUR,ger Unemployment Change,161,2012-01-31,2025-05-28,EURUSD
+EUR,ger Unemployment Rate s.a.,161,2012-01-31,2025-05-28,EURUSD
+EUR,ger Wholesale Price Index (MoM),161,2012-01-16,2025-06-13,EURUSD
+EUR,ger Wholesale Price Index (YoY),161,2012-01-16,2025-06-13,EURUSD
+EUR,ger ZEW Survey – Current Situation,162,2012-01-17,2025-06-17,EURUSD
+EUR,ger ZEW Survey – Economic Sentiment,162,2012-01-17,2025-06-17,EURUSD
+GBP,10-y Bond Auction,134,2012-04-03,2025-06-11,GBPUSD
+GBP,30-y Bond Auction,75,2012-03-15,2025-03-04,GBPUSD
+GBP,Autumn Forecast Statement,13,2012-12-05,2024-10-30,GBPUSD
+GBP,Average Earnings Excluding Bonus (3Mo/Yr),162,2012-01-18,2025-06-10,GBPUSD
+GBP,Average Earnings Including Bonus (3Mo/Yr),162,2012-01-18,2025-06-10,GBPUSD
+GBP,BBA Mortgage Approvals,97,2012-01-25,2020-01-27,GBPUSD
+GBP,BRC Like-For-Like Retail Sales (YoY),162,2012-02-07,2025-06-09,GBPUSD
+GBP,BRC Shop Price Index (YoY),163,2012-02-08,2025-06-30,GBPUSD
+GBP,Bank Stress Test Results,7,2014-12-16,2021-12-13,GBPUSD
+GBP,Bank of England Credit Conditions Report (QoQ),1,2012-03-29,2012-03-29,GBPUSD
+GBP,BoE Asset Purchase Facility,102,2012-01-12,2022-02-03,GBPUSD
+GBP,BoE Credit Conditions Survey,53,2012-03-28,2025-04-17,GBPUSD
+GBP,BoE Inflation Letter,1,2015-02-12,2015-02-12,GBPUSD
+GBP,BoE Interest Rate Decision,129,2012-01-12,2025-06-19,GBPUSD
+GBP,BoE MPC Vote Rate Cut,112,2013-06-18,2025-06-19,GBPUSD
+GBP,BoE MPC Vote Rate Hike,112,2013-06-18,2025-06-19,GBPUSD
+GBP,BoE MPC Vote Rate Unchanged,112,2013-06-18,2025-06-19,GBPUSD
+GBP,BoE Minutes,128,2012-01-25,2025-06-19,GBPUSD
+GBP,BoE Monetary Policy Report,54,2012-02-15,2025-05-08,GBPUSD
+GBP,BoE Monetary Policy Report Hearings,46,2012-06-26,2025-06-03,GBPUSD
+GBP,BoE Monetary Policy Statement,1,2017-01-01,2017-01-01,GBPUSD
+GBP,BoE Monetary Policy Summary,79,2015-12-10,2025-06-19,GBPUSD
+GBP,BoE Quarterly Bulletin,47,2012-03-27,2024-09-30,GBPUSD
+GBP,BoE's Bean speech,10,2012-02-21,2014-05-20,GBPUSD
+GBP,BoE's Breeden speech,19,2024-04-08,2025-06-26,GBPUSD
+GBP,BoE's Broadbent speech,38,2012-09-12,2024-05-20,GBPUSD
+GBP,BoE's Cunliffe speech,57,2016-01-22,2023-10-26,GBPUSD
+GBP,BoE's Dale speech,7,2012-09-08,2014-04-30,GBPUSD
+GBP,BoE's Dhingra speech,11,2023-10-17,2025-05-22,GBPUSD
+GBP,BoE's Fisher speech,7,2013-02-26,2014-01-23,GBPUSD
+GBP,BoE's Forbes speech,4,2016-11-04,2017-06-22,GBPUSD
+GBP,BoE's Governor Bailey speech,129,2020-03-04,2025-06-26,GBPUSD
+GBP,BoE's Governor Carney speech,161,2013-10-24,2020-03-11,GBPUSD
+GBP,BoE's Governor King speech,20,2012-01-17,2013-06-26,GBPUSD
+GBP,BoE's Greene speech,23,2023-11-17,2025-06-26,GBPUSD
+GBP,BoE's Haldane speech,57,2016-02-23,2021-06-30,GBPUSD
+GBP,BoE's Haskel speech,30,2018-06-26,2024-07-08,GBPUSD
+GBP,BoE's Hogg speech,2,2017-02-28,2017-03-06,GBPUSD
+GBP,BoE's Lombardelli speech,9,2024-11-25,2025-06-26,GBPUSD
+GBP,BoE's Mann speech,41,2022-03-01,2025-06-02,GBPUSD
+GBP,BoE's McCafferty speech,3,2018-02-12,2018-06-26,GBPUSD
+GBP,BoE's Miles speech,6,2012-09-11,2014-11-21,GBPUSD
+GBP,BoE's Pill speech,64,2022-02-24,2025-06-25,GBPUSD
+GBP,BoE's Ramsden speech,36,2017-11-20,2025-06-24,GBPUSD
+GBP,BoE's Saunders speech,14,2018-01-17,2022-05-09,GBPUSD
+GBP,BoE's Taylor speech,1,2025-05-12,2025-05-12,GBPUSD
+GBP,BoE's Tenreyro speech,40,2018-01-15,2023-06-29,GBPUSD
+GBP,BoE's Tucker speech,9,2012-06-18,2013-10-12,GBPUSD
+GBP,BoE's Vlieghe speech,16,2018-02-12,2021-07-26,GBPUSD
+GBP,BoE's Weale speech,14,2012-06-28,2016-07-18,GBPUSD
+GBP,Boris Johnson speech,2,2018-10-02,2021-02-10,GBPUSD
+GBP,Brexit Bill's Final Vote in House of Commons,1,2017-02-08,2017-02-08,GBPUSD
+GBP,Brexit Deadline,1,2020-01-31,2020-01-31,GBPUSD
+GBP,Brexit Press Conference,1,2018-03-19,2018-03-19,GBPUSD
+GBP,Budget Report,16,2012-03-21,2025-03-26,GBPUSD
+GBP,CBI Distributive Trades Survey – Realized (MoM),105,2012-01-26,2020-09-24,GBPUSD
+GBP,CBI Industrial Trends Survey – Orders (MoM),105,2012-01-25,2020-09-22,GBPUSD
+GBP,CFTC GBP NC Net Positions,490,2016-01-04,2025-06-27,GBPUSD
+GBP,Claimant Count Change,162,2012-01-18,2025-06-10,GBPUSD
+GBP,Claimant Count Rate,162,2012-01-18,2025-06-10,GBPUSD
+GBP,Consumer Credit,162,2012-01-31,2025-06-30,GBPUSD
+GBP,Consumer Inflation Expectations,53,2012-03-09,2025-06-13,GBPUSD
+GBP,Consumer Price Index (MoM),162,2012-01-17,2025-06-18,GBPUSD
+GBP,Consumer Price Index (YoY),162,2012-01-17,2025-06-18,GBPUSD
+GBP,Core Consumer Price Index (YoY),162,2012-01-17,2025-06-18,GBPUSD
+GBP,Current Account,54,2012-03-28,2025-06-30,GBPUSD
+GBP,DCLG House Price Index (YoY),162,2012-01-17,2025-06-18,GBPUSD
+GBP,David Cameron speech,1,2013-01-23,2013-01-23,GBPUSD
+GBP,EU Membership Court Ruling,2,2016-11-03,2017-01-24,GBPUSD
+GBP,EU Referendum,1,2016-06-23,2016-06-23,GBPUSD
+GBP,Employment Change (3M),67,2019-12-17,2025-06-10,GBPUSD
+GBP,European Council Summit on Brexit,3,2019-04-10,2019-10-18,GBPUSD
+GBP,FPC Meeting Minutes,27,2018-07-03,2025-04-09,GBPUSD
+GBP,FPC Statement,44,2014-03-27,2025-04-09,GBPUSD
+GBP,Financial Stability Report,28,2012-06-29,2024-11-29,GBPUSD
+GBP,GfK Consumer Confidence,166,2012-01-31,2025-06-19,GBPUSD
+GBP,Goods Trade Balance,161,2012-02-09,2025-06-12,GBPUSD
+GBP,Government Spending Review,1,2013-06-26,2013-06-26,GBPUSD
+GBP,Gross Domestic Product (MoM),84,2018-07-10,2025-06-12,GBPUSD
+GBP,Gross Domestic Product (QoQ),134,2012-01-25,2025-06-30,GBPUSD
+GBP,Gross Domestic Product (YoY),134,2012-01-25,2025-06-30,GBPUSD
+GBP,Hometrack Housing Prices s.a (MoM),18,2012-08-26,2014-09-25,GBPUSD
+GBP,ILO Unemployment Rate (3M),162,2012-01-18,2025-06-10,GBPUSD
+GBP,Index of Services (3M/3M),162,2012-01-25,2025-06-12,GBPUSD
+GBP,Industrial Production (MoM),162,2012-01-12,2025-06-12,GBPUSD
+GBP,Industrial Production (YoY),162,2012-01-12,2025-06-12,GBPUSD
+GBP,Lloyds House Price Index (MoM),161,2012-02-06,2025-06-06,GBPUSD
+GBP,Lloyds House Price Index (YoY),161,2012-02-06,2025-06-06,GBPUSD
+GBP,M4 Money Supply (MoM),162,2012-01-31,2025-06-30,GBPUSD
+GBP,M4 Money Supply (YoY),161,2012-01-31,2025-06-30,GBPUSD
+GBP,Manufacturing Production (MoM),162,2012-01-12,2025-06-12,GBPUSD
+GBP,Manufacturing Production (YoY),162,2012-01-12,2025-06-12,GBPUSD
+GBP,Mark Carney speaks at UK Parliament,4,2013-02-07,2020-02-11,GBPUSD
+GBP,Mark Carney will become the new Bank of England Governor,2,2012-11-27,2013-07-01,GBPUSD
+GBP,May - Juncker Meeting,2,2019-02-07,2019-02-20,GBPUSD
+GBP,Mortgage Approvals,162,2012-01-31,2025-06-30,GBPUSD
+GBP,NIESR GDP Estimate (3M),162,2012-01-12,2025-06-12,GBPUSD
+GBP,Nationwide Consumer Confidence,5,2012-01-19,2012-05-10,GBPUSD
+GBP,Nationwide Housing Prices n.s.a (YoY),161,2012-02-01,2025-06-02,GBPUSD
+GBP,Nationwide Housing Prices s.a (MoM),161,2012-02-01,2025-06-02,GBPUSD
+GBP,Net Lending to Individuals (MoM),159,2012-01-31,2025-06-30,GBPUSD
+GBP,No confidence vote in UK PM Johnson,1,2022-06-06,2022-06-06,GBPUSD
+GBP,PM May's Leadership Challenge,2,2018-12-12,2019-01-16,GBPUSD
+GBP,PPI Core Output (MoM) n.s.a,157,2012-01-13,2025-02-19,GBPUSD
+GBP,PPI Core Output (YoY) n.s.a,156,2012-02-10,2025-02-19,GBPUSD
+GBP,Parliamentary Election,4,2015-05-07,2024-07-04,GBPUSD
+GBP,Paul Volcker testifies to UK Banking Standards Comission,1,2012-10-17,2012-10-17,GBPUSD
+GBP,Producer Price Index - Input (MoM) n.s.a,157,2012-01-13,2025-02-19,GBPUSD
+GBP,Producer Price Index - Input (YoY) n.s.a,157,2012-01-13,2025-02-19,GBPUSD
+GBP,Producer Price Index - Output (MoM) n.s.a,157,2012-01-13,2025-02-19,GBPUSD
+GBP,Producer Price Index - Output (YoY) n.s.a,157,2012-01-13,2025-02-19,GBPUSD
+GBP,Public Sector Net Borrowing,162,2012-01-24,2025-06-20,GBPUSD
+GBP,RICS Housing Price Balance,161,2012-02-14,2025-06-11,GBPUSD
+GBP,Retail Price Index (MoM),162,2012-01-17,2025-06-18,GBPUSD
+GBP,Retail Price Index (YoY),162,2012-01-17,2025-06-18,GBPUSD
+GBP,Retail Sales (MoM),162,2012-01-20,2025-06-20,GBPUSD
+GBP,Retail Sales (YoY),162,2012-01-20,2025-06-20,GBPUSD
+GBP,Retail Sales ex-Fuel (MoM),162,2012-01-20,2025-06-20,GBPUSD
+GBP,Retail Sales ex-Fuel (YoY),162,2012-01-20,2025-06-20,GBPUSD
+GBP,Rightmove House Price Index (MoM),160,2012-01-16,2025-06-15,GBPUSD
+GBP,Rightmove House Price Index (YoY),159,2012-01-16,2025-06-15,GBPUSD
+GBP,S&P Global Composite PMI,134,2019-12-04,2025-06-23,GBPUSD
+GBP,S&P Global Construction PMI,161,2012-02-02,2025-06-05,GBPUSD
+GBP,S&P Global Manufacturing PMI,230,2012-02-01,2025-06-23,GBPUSD
+GBP,S&P Global Services PMI,230,2012-02-03,2025-06-23,GBPUSD
+GBP,Scottish Independence Referendum,1,2014-09-18,2014-09-18,GBPUSD
+GBP,Start of Brexit Negotiations,1,2017-06-19,2017-06-19,GBPUSD
+GBP,Tory Leadership Contest Results Announcement,1,2019-07-23,2019-07-23,GBPUSD
+GBP,Total Business Investment (QoQ),106,2012-02-24,2025-06-30,GBPUSD
+GBP,Total Business Investment (YoY),107,2012-02-24,2025-06-30,GBPUSD
+GBP,Total Trade Balance,154,2012-09-11,2025-06-12,GBPUSD
+GBP,Trade Balance; non-EU,161,2012-02-09,2025-06-12,GBPUSD
+GBP,UK Brexit Department releases Brexit Economic Impact,1,2018-11-28,2018-11-28,GBPUSD
+GBP,UK Cabinet Meeting to discuss Brexit Deal,1,2018-11-14,2018-11-14,GBPUSD
+GBP,UK Conservative Party New Prime Minister Announcement,1,2022-09-05,2022-09-05,GBPUSD
+GBP,UK Government triggers Article 50 for Brexit,1,2017-03-29,2017-03-29,GBPUSD
+GBP,UK PM May meets EU Juncker,1,2018-11-21,2018-11-21,GBPUSD
+GBP,UK Parliamentary Vote on Brexit,15,2019-01-15,2020-12-30,GBPUSD
+GBP,UK Prime Minister Boris Johnson speech,8,2019-10-02,2021-11-30,GBPUSD
+GBP,UK Prime Minister Theresa May speech,23,2016-08-31,2019-05-24,GBPUSD
+GBP,UK Supreme Court Hears Government-Parliament Brexit Appeal,4,2016-12-05,2016-12-08,GBPUSD
+GBP,UK court hearing on forcing no-deal Brexit,2,2019-09-03,2019-09-05,GBPUSD
+GBP,UK court ruling on forcing no-deal Brexit,1,2019-09-24,2019-09-24,GBPUSD
+JPY,10-y Bond Auction,92,2017-12-05,2025-06-03,USDJPY
+JPY,Adjusted Merchandise Trade Balance,162,2012-01-24,2025-06-17,USDJPY
+JPY,All Industry Activity Index (MoM),105,2012-01-20,2020-09-23,USDJPY
+JPY,Annualized Housing Starts,158,2012-04-27,2025-06-30,USDJPY
+JPY,BSI Large Manufacturing Conditions Index (QoQ),54,2012-03-13,2025-06-11,USDJPY
+JPY,Bank Lending (YoY),162,2012-01-12,2025-06-08,USDJPY
+JPY,BoJ Governor Shirakawa steps down,1,2013-03-19,2013-03-19,USDJPY
+JPY,BoJ Governor Ueda speech,22,2023-02-24,2025-06-03,USDJPY
+JPY,BoJ Interest Rate Decision,128,2012-01-24,2025-06-17,USDJPY
+JPY,BoJ Minutes,1,2013-03-11,2013-03-11,USDJPY
+JPY,BoJ Monetary Policy Meeting Minutes,130,2012-01-26,2025-06-19,USDJPY
+JPY,BoJ Monetary Policy Statement,133,2012-01-24,2025-06-17,USDJPY
+JPY,BoJ Monthly Economic Survey,48,2012-01-25,2015-12-21,USDJPY
+JPY,BoJ Outlook Report,46,2012-04-28,2025-05-01,USDJPY
+JPY,BoJ Press Conference,108,2013-04-26,2025-06-17,USDJPY
+JPY,BoJ Summary of Opinions,75,2016-01-07,2025-06-24,USDJPY
+JPY,BoJ's Adachi speech,1,2020-11-12,2020-11-12,USDJPY
+JPY,BoJ's Amamiya speech,8,2019-08-01,2020-12-02,USDJPY
+JPY,BoJ's Funo speech,4,2018-02-21,2019-10-03,USDJPY
+JPY,BoJ's Governor Kuroda speech,145,2013-03-21,2023-03-28,USDJPY
+JPY,BoJ's Governor Kuroda speech at Jackson Hole,1,2014-08-23,2014-08-23,USDJPY
+JPY,BoJ's Governor Shirakawa speech,14,2012-07-26,2013-02-05,USDJPY
+JPY,BoJ's Harada speech,5,2018-07-04,2019-12-05,USDJPY
+JPY,BoJ's Ishida speech,2,2013-09-11,2016-02-18,USDJPY
+JPY,BoJ's Kataoka speech,3,2019-09-04,2020-09-03,USDJPY
+JPY,BoJ's Kiuchi speech,5,2013-02-28,2016-06-23,USDJPY
+JPY,BoJ's Masai speech,5,2018-07-05,2020-11-16,USDJPY
+JPY,BoJ's Miyao speech,3,2012-09-05,2014-11-12,USDJPY
+JPY,BoJ's Nakaso speech,11,2013-10-09,2017-07-26,USDJPY
+JPY,BoJ's Nishimura speech,1,2012-12-05,2012-12-05,USDJPY
+JPY,BoJ's Sakurai speech,2,2019-11-27,2020-10-21,USDJPY
+JPY,BoJ's Sato speech,5,2013-07-22,2015-12-07,USDJPY
+JPY,BoJ's Shirai speech,4,2012-11-29,2015-11-25,USDJPY
+JPY,BoJ's Suzuki speech,3,2019-08-29,2020-12-03,USDJPY
+JPY,BoJ's Wakatabe speech,4,2019-06-27,2021-02-03,USDJPY
+JPY,BoJ's Yamaguchi speech,2,2012-09-24,2012-10-15,USDJPY
+JPY,CFTC JPY NC Net Positions,490,2016-01-04,2025-06-27,USDJPY
+JPY,Capacity Utilization,162,2012-01-18,2025-06-13,USDJPY
+JPY,Capital Spending,54,2012-02-29,2025-06-01,USDJPY
+JPY,Children's Day,1,2015-05-05,2015-05-05,USDJPY
+JPY,Coincident Index,323,2012-01-20,2025-06-25,USDJPY
+JPY,Construction Orders (YoY),162,2012-01-31,2025-06-30,USDJPY
+JPY,Consumer Confidence Index,162,2012-01-16,2025-05-29,USDJPY
+JPY,Corporate Service Price Index (YoY),162,2012-01-25,2025-06-24,USDJPY
+JPY,Current Account n.s.a.,161,2012-02-07,2025-06-08,USDJPY
+JPY,Eco Watchers Survey: Current,162,2012-01-12,2025-06-09,USDJPY
+JPY,Eco Watchers Survey: Outlook,162,2012-01-12,2025-06-09,USDJPY
+JPY,Exports (YoY),160,2012-03-22,2025-06-17,USDJPY
+JPY,Foreign Bond Investment,648,2012-06-21,2025-06-25,USDJPY
+JPY,Foreign Investment in Japan Stocks,647,2012-06-21,2025-06-25,USDJPY
+JPY,Gross Domestic Product (QoQ),109,2012-02-12,2025-06-08,USDJPY
+JPY,Gross Domestic Product Annualized,109,2012-02-12,2025-06-08,USDJPY
+JPY,Gross Domestic Product Deflator (YoY),106,2012-03-07,2025-06-08,USDJPY
+JPY,Housing Starts (YoY),162,2012-01-31,2025-06-30,USDJPY
+JPY,Imports (YoY),160,2012-03-22,2025-06-17,USDJPY
+JPY,Industrial Production (MoM),324,2012-01-18,2025-06-29,USDJPY
+JPY,Industrial Production (YoY),324,2012-01-18,2025-06-29,USDJPY
+JPY,JP Foreign Reserves,157,2012-03-07,2025-06-05,USDJPY
+JPY,Japan Parliament votes New BOJ Authorities,1,2012-06-21,2012-06-21,USDJPY
+JPY,Japan's House of Councillors Election,2,2013-07-21,2016-07-10,USDJPY
+JPY,Japanese General Elections,2,2012-12-16,2017-10-22,USDJPY
+JPY,Jibun Bank Manufacturing PMI,295,2012-01-30,2025-06-23,USDJPY
+JPY,Jibun Bank Services PMI,175,2014-01-06,2025-06-23,USDJPY
+JPY,Jobs / Applicants Ratio,162,2012-01-30,2025-06-26,USDJPY
+JPY,LDP Presidential Election,1,2018-09-20,2018-09-20,USDJPY
+JPY,Labor Cash Earnings (YoY),161,2012-02-01,2025-06-04,USDJPY
+JPY,Large Retailer Sales,161,2012-01-26,2025-06-26,USDJPY
+JPY,Leading Economic Index,323,2012-01-20,2025-06-25,USDJPY
+JPY,Lower House Elections,1,2014-12-14,2014-12-14,USDJPY
+JPY,Machine Tool Orders (YoY),162,2012-01-12,2025-06-10,USDJPY
+JPY,Machinery Orders (MoM),162,2012-01-15,2025-06-17,USDJPY
+JPY,Machinery Orders (YoY),160,2012-03-12,2025-06-17,USDJPY
+JPY,Merchandise Trade Balance Total,162,2012-01-24,2025-06-17,USDJPY
+JPY,Monetary Base (YoY),161,2012-02-01,2025-06-02,USDJPY
+JPY,Money Supply M2+CD (YoY),162,2012-01-12,2025-06-09,USDJPY
+JPY,"National CPI ex Food, Energy (YoY)",162,2012-01-26,2025-06-19,USDJPY
+JPY,National CPI ex Fresh Food (YoY),162,2012-01-26,2025-06-19,USDJPY
+JPY,National Consumer Price Index (YoY),162,2012-01-26,2025-06-19,USDJPY
+JPY,Overall Household Spending (YoY),161,2012-01-30,2025-06-05,USDJPY
+JPY,Producer Price Index (MoM),162,2012-01-15,2025-06-10,USDJPY
+JPY,Producer Price Index (YoY),162,2012-01-15,2025-06-10,USDJPY
+JPY,Retail Trade (YoY),162,2012-01-26,2025-06-26,USDJPY
+JPY,Retail Trade s.a (MoM),162,2012-01-26,2025-06-26,USDJPY
+JPY,Tankan Large All Industry Capex,54,2012-04-01,2025-06-30,USDJPY
+JPY,Tankan Large Manufacturing Index,54,2012-04-01,2025-06-30,USDJPY
+JPY,Tankan Large Manufacturing Outlook,53,2012-04-01,2025-06-30,USDJPY
+JPY,Tankan Non - Manufacturing Index,54,2012-04-01,2025-06-30,USDJPY
+JPY,Tankan Non - Manufacturing Outlook,54,2012-04-01,2025-06-30,USDJPY
+JPY,Tertiary Industry Index (MoM),162,2012-01-16,2025-06-13,USDJPY
+JPY,"Tokyo CPI ex Food, Energy (YoY)",162,2012-01-26,2025-06-26,USDJPY
+JPY,Tokyo CPI ex Fresh Food (YoY),162,2012-01-26,2025-06-26,USDJPY
+JPY,Tokyo Consumer Price Index (YoY),162,2012-01-26,2025-06-26,USDJPY
+JPY,Trade Balance - BOP Basis,159,2012-02-07,2025-06-08,USDJPY
+JPY,Unemployment Rate,162,2012-01-30,2025-06-26,USDJPY
+JPY,Vehicle Production (YoY),81,2012-04-27,2019-11-29,USDJPY
+JPY,Vehicle Sales (YoY),82,2012-03-01,2019-12-02,USDJPY
+USD,10-Year Note Auction,159,2012-06-13,2025-06-11,USDJPY
+USD,10-year TIPS Auction,34,2019-11-21,2025-05-22,USDJPY
+USD,2-Year Note Auction,161,2012-02-21,2025-06-24,USDJPY
+USD,20-Year Bond Auction,62,2020-05-20,2025-06-16,USDJPY
+USD,3-Month Bill Auction,678,2012-06-18,2025-06-30,USDJPY
+USD,3-Year Note Auction,157,2012-04-10,2025-06-10,USDJPY
+USD,30-Year Bond Auction,162,2012-02-09,2025-06-12,USDJPY
+USD,30-year TIPS Auction,12,2019-08-22,2025-02-20,USDJPY
+USD,4-Week Bill Auction,678,2012-05-30,2025-06-26,USDJPY
+USD,5-Year Note Auction,159,2012-03-28,2025-06-25,USDJPY
+USD,5-year TIPS Auction,21,2019-12-19,2025-06-17,USDJPY
+USD,52-Week Bill Auction,173,2012-04-03,2025-06-10,USDJPY
+USD,6-Month Bill Auction,681,2012-05-29,2025-06-30,USDJPY
+USD,7-Year Note Auction,154,2012-09-27,2025-06-26,USDJPY
+USD,ADP Employment Change,159,2012-02-01,2025-06-04,USDJPY
+USD,API Weekly Crude Oil Stock,521,2015-07-07,2025-06-24,USDJPY
+USD,American Petroleum Institute Monthly Report,32,2012-03-15,2015-01-22,USDJPY
+USD,Average Hourly Earnings (MoM),161,2012-02-03,2025-06-06,USDJPY
+USD,Average Hourly Earnings (YoY),161,2012-02-03,2025-06-06,USDJPY
+USD,Average Weekly Hours,161,2012-02-03,2025-06-06,USDJPY
+USD,Baker Hughes US Oil Rig Count,522,2015-07-02,2025-06-27,USDJPY
+USD,Bank Stress Test Results,16,2012-03-13,2025-06-27,USDJPY
+USD,Barack Obama Press Conference,9,2012-02-13,2014-03-17,USDJPY
+USD,Biden-Powell meeting,1,2022-05-31,2022-05-31,USDJPY
+USD,Building Permits (MoM),161,2012-01-19,2025-06-18,USDJPY
+USD,Building Permits Change,114,2016-01-20,2025-06-18,USDJPY
+USD,Business Inventories,162,2012-01-12,2025-06-17,USDJPY
+USD,CFTC Gold NC Net Positions,489,2016-01-04,2025-06-27,USDJPY
+USD,CFTC Oil NC Net Positions,489,2016-01-04,2025-06-27,USDJPY
+USD,CFTC S&P 500 NC Net Positions,489,2016-01-04,2025-06-27,USDJPY
+USD,COVID-19 Vaccine announcement,2,2020-12-10,2020-12-17,USDJPY
+USD,Capacity Utilization,162,2012-01-18,2025-06-17,USDJPY
+USD,Challenger Job Cuts,161,2012-02-02,2025-06-05,USDJPY
+USD,Chicago Fed National Activity Index,161,2012-01-26,2025-06-26,USDJPY
+USD,Chicago PMI,162,2012-01-31,2025-06-30,USDJPY
+USD,Construction Spending (MoM),160,2012-02-01,2025-06-02,USDJPY
+USD,Consumer Confidence,153,2012-01-31,2025-06-24,USDJPY
+USD,Consumer Credit Change,161,2012-02-07,2025-06-06,USDJPY
+USD,Consumer Price Index (MoM),162,2012-01-19,2025-06-11,USDJPY
+USD,Consumer Price Index (YoY),162,2012-01-19,2025-06-11,USDJPY
+USD,Consumer Price Index Core s.a,162,2012-01-19,2025-06-11,USDJPY
+USD,Consumer Price Index ex Food & Energy (MoM),162,2012-01-19,2025-06-11,USDJPY
+USD,Consumer Price Index ex Food & Energy (YoY),162,2012-01-19,2025-06-11,USDJPY
+USD,Consumer Price Index n.s.a (MoM),162,2012-01-19,2025-06-11,USDJPY
+USD,Continuing Jobless Claims,702,2012-01-12,2025-06-26,USDJPY
+USD,Core Personal Consumption Expenditures (QoQ),159,2012-01-27,2025-06-26,USDJPY
+USD,Core Personal Consumption Expenditures - Price Index (MoM),161,2012-01-30,2025-06-27,USDJPY
+USD,Core Personal Consumption Expenditures - Price Index (YoY),161,2012-01-30,2025-06-27,USDJPY
+USD,Coronavirus Task Force Press Briefing,1,2020-03-10,2020-03-10,USDJPY
+USD,Current Account,54,2012-03-14,2025-06-24,USDJPY
+USD,Dallas Fed Manufacturing Business Index,161,2012-02-27,2025-06-30,USDJPY
+USD,Democratic National Convention,3,2012-09-04,2012-09-06,USDJPY
+USD,Donald Trump's News Conference,3,2017-01-11,2020-05-29,USDJPY
+USD,Durable Goods Orders,162,2012-01-26,2025-06-26,USDJPY
+USD,Durable Goods Orders ex Defense,81,2018-11-21,2025-06-26,USDJPY
+USD,Durable Goods Orders ex Transportation,162,2012-01-26,2025-06-26,USDJPY
+USD,EIA Crude Oil Stocks Change,700,2012-01-19,2025-06-25,USDJPY
+USD,EIA Distillate Stocks Change,70,2024-02-28,2025-06-25,USDJPY
+USD,EIA Gasoline Stocks Change,70,2024-02-28,2025-06-25,USDJPY
+USD,EIA Heating Oil Stocks Change,70,2024-02-28,2025-06-25,USDJPY
+USD,EIA Natural Gas Storage Change,694,2012-03-08,2025-06-26,USDJPY
+USD,Employment Cost Index,54,2012-01-31,2025-04-30,USDJPY
+USD,Existing Home Sales (MoM),162,2012-01-20,2025-06-23,USDJPY
+USD,Existing Home Sales Change (MoM),162,2012-01-20,2025-06-23,USDJPY
+USD,Export Price Index (MoM),160,2012-01-13,2025-06-17,USDJPY
+USD,Export Price Index (YoY),160,2012-03-14,2025-06-17,USDJPY
+USD,FOMC Economic Projections,54,2012-01-25,2025-06-18,USDJPY
+USD,FOMC Member Powell speech (don't use),44,2013-02-22,2017-11-28,USDJPY
+USD,FOMC Minutes,107,2012-02-15,2025-05-28,USDJPY
+USD,FOMC Press Conference,63,2016-06-15,2025-06-18,USDJPY
+USD,Factory Orders (MoM),160,2012-02-03,2025-06-03,USDJPY
+USD,Fed Announcement,1,2016-04-11,2016-04-11,USDJPY
+USD,Fed Chairman Nomination Vote,1,2014-01-06,2014-01-06,USDJPY
+USD,Fed Index of Common Inflation Expectations,12,2019-12-31,2022-10-14,USDJPY
+USD,Fed Interest Rate Decision,109,2012-01-25,2025-06-18,USDJPY
+USD,Fed Minneapolis's Kocherlakota speech,56,2012-04-12,2015-12-04,USDJPY
+USD,Fed Monetary Policy Report,20,2016-02-11,2025-06-20,USDJPY
+USD,Fed Monetary Policy Statement,84,2012-08-01,2025-06-18,USDJPY
+USD,Fed Pace of MBS Purchase Program,10,2013-09-18,2014-10-29,USDJPY
+USD,Fed Pace of Treasury Purchase Program,10,2013-09-18,2014-10-29,USDJPY
+USD,Fed's Barkin speech,77,2018-05-07,2025-06-26,USDJPY
+USD,Fed's Barr speech,32,2023-11-28,2025-06-26,USDJPY
+USD,Fed's Beige Book,107,2012-02-29,2025-06-04,USDJPY
+USD,Fed's Bostic speech,155,2018-01-08,2025-06-30,USDJPY
+USD,Fed's Bowman speech,99,2019-02-11,2025-06-23,USDJPY
+USD,Fed's Brainard speech,89,2015-11-01,2023-01-19,USDJPY
+USD,Fed's Bullard speech,160,2012-02-24,2023-07-11,USDJPY
+USD,Fed's Chair Bernanke speaks at Jackson Hole,1,2012-08-31,2012-08-31,USDJPY
+USD,Fed's Chair Bernanke testifies,10,2012-02-02,2013-05-22,USDJPY
+USD,Fed's Chair Powell testifies,43,2019-02-26,2025-06-25,USDJPY
+USD,Fed's Chair Yellen speech,56,2014-02-11,2017-11-21,USDJPY
+USD,Fed's Chair Yellen testifies,17,2014-07-15,2023-03-23,USDJPY
+USD,Fed's Clarida speech,50,2018-10-25,2021-11-30,USDJPY
+USD,Fed's Collins speech,25,2022-11-07,2025-06-25,USDJPY
+USD,Fed's Cook speech,42,2022-10-20,2025-06-27,USDJPY
+USD,Fed's Daly speech,73,2018-10-16,2025-06-26,USDJPY
+USD,Fed's Dudley speech,107,2012-02-24,2018-06-18,USDJPY
+USD,Fed's Duke speech,7,2012-03-27,2018-06-18,USDJPY
+USD,Fed's Evans speech,150,2012-06-06,2022-12-02,USDJPY
+USD,Fed's George speech,60,2012-07-16,2023-01-18,USDJPY
+USD,Fed's Goolsbee speech,78,2023-02-28,2025-06-30,USDJPY
+USD,Fed's Hammack speech,15,2024-10-02,2025-06-27,USDJPY
+USD,Fed's Harker speech,88,2016-04-12,2025-06-06,USDJPY
+USD,Fed's Jefferson speech,29,2022-10-20,2025-05-19,USDJPY
+USD,Fed's Kaplan speech,68,2017-02-23,2021-02-03,USDJPY
+USD,Fed's Kashkari speech,114,2017-02-21,2025-06-27,USDJPY
+USD,Fed's Kugler speech,27,2024-02-07,2025-06-23,USDJPY
+USD,Fed's Lacker speech,37,2012-05-02,2017-04-03,USDJPY
+USD,Fed's Lockhart speech,79,2012-02-14,2017-02-23,USDJPY
+USD,Fed's Logan speech,29,2023-03-03,2025-06-02,USDJPY
+USD,Fed's Mester speech,115,2014-09-04,2024-06-14,USDJPY
+USD,Fed's Monetary Policy Statement and Press Conference,18,2012-01-25,2016-03-16,USDJPY
+USD,Fed's Musalem speech,18,2024-06-18,2025-05-23,USDJPY
+USD,Fed's Pianalto speech,15,2012-04-16,2014-03-27,USDJPY
+USD,Fed's Powell speech,116,2018-02-27,2025-06-02,USDJPY
+USD,Fed's Quarles speech,63,2018-01-19,2021-10-20,USDJPY
+USD,Fed's Raskin speech,8,2012-07-23,2013-07-17,USDJPY
+USD,Fed's Richard Fisher speech,35,2012-02-15,2015-03-09,USDJPY
+USD,Fed's Rosengren speech,75,2012-09-20,2022-09-26,USDJPY
+USD,Fed's Schmid speech,17,2024-02-26,2025-06-25,USDJPY
+USD,Fed's Stanley Fischer speech,37,2014-12-02,2017-09-28,USDJPY
+USD,Fed's Stein speech,16,2012-10-11,2014-05-06,USDJPY
+USD,Fed's Tarullo speech,35,2012-06-12,2017-04-04,USDJPY
+USD,Fed's Waller speech,75,2021-08-05,2025-06-23,USDJPY
+USD,Fed's Williams speech,280,2012-06-06,2025-06-27,USDJPY
+USD,Fed's Yellen speech,12,2012-04-11,2013-11-14,USDJPY
+USD,Fed's Yellen speech on Labor Markets in Jackson Hole,1,2014-08-22,2014-08-22,USDJPY
+USD,Federal Reserve releases Quarterly Flow of Funds Accounts,3,2012-03-08,2012-09-20,USDJPY
+USD,Fed’s Chair Bernanke meets with Senate Fin Committee,1,2012-09-19,2012-09-19,USDJPY
+USD,Fiscal Cliff talks,1,2012-11-16,2012-11-16,USDJPY
+USD,Former Fed's Chair Bernanke speech,46,2012-02-10,2015-03-02,USDJPY
+USD,G7 Call on Coronavirus,4,2020-03-03,2020-06-03,USDJPY
+USD,Goods Trade Balance,173,2015-07-30,2025-06-26,USDJPY
+USD,Goods and Services Trade Balance,162,2012-01-13,2025-06-05,USDJPY
+USD,Grain Stock Report,23,2020-01-10,2025-06-30,USDJPY
+USD,Gross Domestic Product Annualized,161,2012-01-27,2025-06-26,USDJPY
+USD,Gross Domestic Product Price Index,161,2012-01-27,2025-06-26,USDJPY
+USD,House votes on Coronavirus Bill,1,2020-03-27,2020-03-27,USDJPY
+USD,Housing Price Index (MoM),162,2012-01-25,2025-06-24,USDJPY
+USD,Housing Starts (MoM),160,2012-01-19,2025-06-18,USDJPY
+USD,Housing Starts Change,114,2016-01-12,2025-06-18,USDJPY
+USD,IMF Meeting,105,2012-04-20,2025-04-27,USDJPY
+USD,ISM Manufacturing Employment Index,91,2017-12-01,2025-06-02,USDJPY
+USD,ISM Manufacturing New Orders Index,91,2017-12-01,2025-06-02,USDJPY
+USD,ISM Manufacturing PMI,161,2012-02-01,2025-06-02,USDJPY
+USD,ISM Manufacturing Prices Paid,161,2012-02-01,2025-06-02,USDJPY
+USD,ISM Services Employment Index,91,2017-12-05,2025-06-04,USDJPY
+USD,ISM Services New Orders Index,91,2017-12-05,2025-06-04,USDJPY
+USD,ISM Services PMI,161,2012-02-03,2025-06-04,USDJPY
+USD,ISM Services Prices Paid,91,2017-12-05,2025-06-04,USDJPY
+USD,ISM-NY Business Conditions Index,109,2012-04-03,2021-04-05,USDJPY
+USD,Import Price Index (MoM),162,2012-01-13,2025-06-17,USDJPY
+USD,Import Price Index (YoY),162,2012-01-13,2025-06-17,USDJPY
+USD,Industrial Production (MoM),162,2012-01-18,2025-06-17,USDJPY
+USD,Initial Jobless Claims,703,2012-01-12,2025-06-26,USDJPY
+USD,Initial Jobless Claims 4-week average,339,2019-01-03,2025-06-26,USDJPY
+USD,Interest Rate Projections - 1st year,22,2019-12-11,2025-06-18,USDJPY
+USD,Interest Rate Projections - 2nd year,22,2019-12-11,2025-06-18,USDJPY
+USD,Interest Rate Projections - 3rd year,11,2019-12-11,2024-12-18,USDJPY
+USD,Interest Rate Projections - Current,22,2019-12-11,2025-06-18,USDJPY
+USD,Interest Rate Projections - Longer,22,2019-12-11,2025-06-18,USDJPY
+USD,JOLTS Job Openings,139,2013-12-10,2025-06-03,USDJPY
+USD,Jackson Hole Symposium,37,2012-08-30,2024-08-24,USDJPY
+USD,Kansas Fed Manufacturing Activity,160,2012-03-29,2025-06-26,USDJPY
+USD,Labor Force Participation Rate,138,2014-01-10,2025-06-06,USDJPY
+USD,Labor Market Conditions Index,43,2014-01-06,2017-07-10,USDJPY
+USD,Lame Duck Period ends,1,2012-12-18,2012-12-18,USDJPY
+USD,Loan Officer Survey,52,2012-01-30,2025-05-12,USDJPY
+USD,MBA Mortgage Applications,690,2012-01-18,2025-06-25,USDJPY
+USD,Michigan Consumer Expectations Index,134,2019-12-06,2025-06-27,USDJPY
+USD,Michigan Consumer Sentiment Index,324,2012-01-13,2025-06-27,USDJPY
+USD,Monthly Budget Statement,162,2012-01-12,2025-06-11,USDJPY
+USD,NAHB Housing Market Index,162,2012-01-18,2025-06-17,USDJPY
+USD,NFIB Business Optimism Index,161,2012-02-14,2025-06-10,USDJPY
+USD,NY Empire State Manufacturing Index,162,2012-01-17,2025-06-16,USDJPY
+USD,National Day of Mourning,1,2025-01-09,2025-01-09,USDJPY
+USD,Net Long-Term TIC Flows,162,2012-01-18,2025-06-18,USDJPY
+USD,New Home Sales (MoM),161,2012-01-26,2025-06-25,USDJPY
+USD,New Home Sales Change (MoM),161,2012-01-26,2025-06-25,USDJPY
+USD,Nondefense Capital Goods Orders ex Aircraft,91,2017-12-22,2025-06-26,USDJPY
+USD,Nonfarm Payrolls,161,2012-02-03,2025-06-06,USDJPY
+USD,Nonfarm Payrolls Benchmark Revision,1,2024-08-21,2024-08-21,USDJPY
+USD,Nonfarm Productivity,107,2012-02-02,2025-06-05,USDJPY
+USD,OPEC Meeting,79,2012-06-14,2025-02-03,USDJPY
+USD,OPEC Monthly Market Report,20,2023-11-13,2025-06-16,USDJPY
+USD,OPEC Press Conference,3,2016-11-30,2020-06-08,USDJPY
+USD,Pending Home Sales (MoM),162,2012-01-25,2025-06-26,USDJPY
+USD,Pending Home Sales (YoY),155,2012-08-27,2025-06-26,USDJPY
+USD,Personal Consumption Expenditures - Price Index (MoM),161,2012-01-30,2025-06-27,USDJPY
+USD,Personal Consumption Expenditures - Price Index (YoY),161,2012-01-30,2025-06-27,USDJPY
+USD,Personal Consumption Expenditures Prices (QoQ),155,2012-04-27,2025-06-26,USDJPY
+USD,Personal Income (MoM),161,2012-01-30,2025-06-27,USDJPY
+USD,Personal Spending,160,2012-03-01,2025-06-27,USDJPY
+USD,Philadelphia Fed Manufacturing Survey,162,2012-01-19,2025-06-20,USDJPY
+USD,Philadelphia Fed's Plosser speech,40,2012-02-24,2015-03-02,USDJPY
+USD,President Biden speech,28,2021-01-15,2024-07-11,USDJPY
+USD,President Obama speech,9,2013-02-13,2016-01-13,USDJPY
+USD,President Trump State of the Union address,2,2019-02-06,2020-02-05,USDJPY
+USD,President Trump speech,34,2017-01-20,2025-05-08,USDJPY
+USD,President Trump to announce Fed Chair Nominee,1,2017-11-02,2017-11-02,USDJPY
+USD,Presidential Debate,7,2012-10-04,2024-09-11,USDJPY
+USD,Presidential Election,4,2012-11-06,2024-11-05,USDJPY
+USD,Presidential Inauguration,2,2021-01-20,2025-01-20,USDJPY
+USD,Producer Price Index (MoM),162,2012-01-18,2025-06-12,USDJPY
+USD,Producer Price Index (YoY),162,2012-01-18,2025-06-12,USDJPY
+USD,Producer Price Index ex Food & Energy (MoM),162,2012-01-18,2025-06-12,USDJPY
+USD,Producer Price Index ex Food & Energy (YoY),162,2012-01-18,2025-06-12,USDJPY
+USD,RealClearMarkets/TIPP Economic Optimism (MoM),161,2012-02-07,2025-06-03,USDJPY
+USD,Redbook Index (MoM),456,2012-07-03,2021-04-06,USDJPY
+USD,Redbook Index (YoY),676,2012-07-03,2025-06-24,USDJPY
+USD,Republican National Convention,1,2012-08-28,2012-08-28,USDJPY
+USD,Retail Sales (MoM),162,2012-01-12,2025-06-17,USDJPY
+USD,Retail Sales (YoY),67,2019-12-13,2025-06-17,USDJPY
+USD,Retail Sales Control Group,126,2015-01-01,2025-06-17,USDJPY
+USD,Retail Sales ex Autos (MoM),162,2012-01-12,2025-06-17,USDJPY
+USD,Richmond Fed Manufacturing Index,162,2012-01-24,2025-06-24,USDJPY
+USD,"Roundtable with Janet Yellen, Fed; Zhou Xiaochuan, PBoC; Haruhiko Kuroda, BoJ; and Vítor Constâncio, ECB",1,2017-10-15,2017-10-15,USDJPY
+USD,S&P Global Composite PMI,266,2014-06-04,2025-06-23,USDJPY
+USD,S&P Global Manufacturing PMI,316,2012-04-25,2025-06-23,USDJPY
+USD,S&P Global Services PMI,277,2013-12-04,2025-06-23,USDJPY
+USD,S&P/Case-Shiller Home Price Indices (YoY),162,2012-01-31,2025-06-24,USDJPY
+USD,Senate votes on Coronavirus Bill,1,2020-03-23,2020-03-23,USDJPY
+USD,Senate votes on Government Shutdown,1,2019-01-24,2019-01-24,USDJPY
+USD,The House of Representatives Election Recess starts,1,2012-10-05,2012-10-05,USDJPY
+USD,Total Net TIC Flows,162,2012-01-18,2025-06-18,USDJPY
+USD,Total Vehicle Sales,161,2012-02-01,2025-06-03,USDJPY
+USD,Treasury Sec Lew speech,29,2013-02-13,2017-01-17,USDJPY
+USD,Treasury Sec Mnuchin speech,9,2017-02-23,2020-09-24,USDJPY
+USD,Treasury Sec Yellen speech,6,2021-01-19,2023-03-30,USDJPY
+USD,Treasury Sec Yellen testifies,1,2022-06-07,2022-06-07,USDJPY
+USD,Treasury's Geithner speech,8,2012-02-14,2012-09-25,USDJPY
+USD,Trump - Juncker meeting,1,2018-07-25,2018-07-25,USDJPY
+USD,Trump - Kim Meeting,1,2018-06-12,2018-06-12,USDJPY
+USD,Trump - May meeting,1,2017-01-27,2017-01-27,USDJPY
+USD,Trump - Merkel Meeting,1,2017-03-17,2017-03-17,USDJPY
+USD,Trump - Putin Meeting,2,2017-07-07,2018-07-16,USDJPY
+USD,Trump - Xi meeting,2,2017-04-06,2017-04-07,USDJPY
+USD,Trump's speech to Congress,1,2017-03-01,2017-03-01,USDJPY
+USD,U6 Underemployment Rate,103,2016-12-02,2025-06-06,USDJPY
+USD,US Congress votes Health Care Bill,1,2017-03-24,2017-03-24,USDJPY
+USD,US Democratic Primaries Super Tuesday,1,2020-03-03,2020-03-03,USDJPY
+USD,US Government Shutdown Limit,1,2017-12-22,2017-12-22,USDJPY
+USD,US Liberation Day Tariff Announcements,1,2025-04-02,2025-04-02,USDJPY
+USD,US Midterm Elections,2,2018-11-06,2022-11-08,USDJPY
+USD,US President Biden and Chinese President Xi summit,3,2021-11-15,2022-11-14,USDJPY
+USD,US-China Phase One Trade Deal Signature,1,2020-01-15,2020-01-15,USDJPY
+USD,USDA WASDE Report,73,2019-06-11,2025-06-12,USDJPY
+USD,Unemployment Rate,161,2012-02-03,2025-06-06,USDJPY
+USD,Unit Labor Costs,108,2012-02-02,2025-06-05,USDJPY
+USD,UoM 1-year Consumer Inflation Expectations,134,2019-12-06,2025-06-27,USDJPY
+USD,UoM 5-year Consumer Inflation Expectation,134,2019-12-06,2025-06-27,USDJPY
+USD,Vice-Presidential Debate,1,2020-10-08,2020-10-08,USDJPY
+USD,Wholesale Inventories,263,2012-02-09,2025-06-26,USDJPY
+AUD,ANZ Job Advertisements,157,2012-01-16,2025-06-02,AUDUSD
+AUD,Ai Group Construction PMI,27,2023-02-07,2025-06-03,AUDUSD
+AUD,Ai Group Manufacturing PMI,27,2023-02-07,2025-06-03,AUDUSD
+AUD,AiG Industry Index,27,2023-02-07,2025-06-03,AUDUSD
+AUD,AiG Performance of Construction Index,129,2012-02-06,2022-12-04,AUDUSD
+AUD,AiG Performance of Mfg Index,128,2012-01-31,2022-11-30,AUDUSD
+AUD,AiG Performance of Services Index,129,2012-02-02,2022-12-06,AUDUSD
+AUD,Budget Release,15,2012-05-08,2025-03-25,AUDUSD
+AUD,Building Permits (MoM),161,2012-02-02,2025-05-30,AUDUSD
+AUD,Building Permits (YoY),161,2012-02-02,2025-05-30,AUDUSD
+AUD,CFTC AUD NC Net Positions,490,2016-01-04,2025-06-27,AUDUSD
+AUD,Company Gross Operating Profits (QoQ),54,2012-03-05,2025-06-03,AUDUSD
+AUD,Construction Work Done,54,2012-02-29,2025-05-28,AUDUSD
+AUD,Consumer Inflation Expectations,161,2012-01-19,2025-06-12,AUDUSD
+AUD,Consumer Price Index (MoM),13,2024-06-26,2025-06-25,AUDUSD
+AUD,Consumer Price Index (YoY),34,2022-09-29,2025-06-25,AUDUSD
+AUD,Current Account Balance,54,2012-03-06,2025-06-03,AUDUSD
+AUD,Dwelling Unit Starts (QoQ),3,2012-03-14,2012-09-12,AUDUSD
+AUD,Employment Change s.a.,162,2012-01-19,2025-06-19,AUDUSD
+AUD,Export Price Index (QoQ),54,2012-01-20,2025-05-01,AUDUSD
+AUD,Exports (MoM),165,2012-02-02,2025-06-05,AUDUSD
+AUD,Federal Election,3,2013-09-07,2019-05-18,AUDUSD
+AUD,Financial Stability Review,27,2012-03-28,2025-04-03,AUDUSD
+AUD,Full-Time Employment,162,2012-01-19,2025-06-19,AUDUSD
+AUD,Gross Domestic Product (QoQ),54,2012-03-07,2025-06-04,AUDUSD
+AUD,Gross Domestic Product (YoY),54,2012-03-07,2025-06-04,AUDUSD
+AUD,HIA New Home Sales (MoM),128,2012-02-01,2022-09-14,AUDUSD
+AUD,Home Loans,157,2012-01-16,2025-05-14,AUDUSD
+AUD,House Price Index (QoQ),41,2012-02-01,2022-03-15,AUDUSD
+AUD,House Price Index (YoY),41,2012-02-01,2022-03-15,AUDUSD
+AUD,Import Price Index (QoQ),54,2012-01-20,2025-05-01,AUDUSD
+AUD,Imports (MoM),165,2012-02-02,2025-06-05,AUDUSD
+AUD,Investment Lending for Homes,156,2012-01-16,2025-05-14,AUDUSD
+AUD,Mid-Year Economic and Fiscal Outlook,12,2012-10-22,2024-12-18,AUDUSD
+AUD,National Australia Bank's Business Conditions,162,2012-01-31,2025-06-10,AUDUSD
+AUD,National Australia Bank's Business Confidence,163,2012-01-31,2025-06-10,AUDUSD
+AUD,National Australia Bank's Business Confidence (QoQ),54,2012-02-08,2025-04-17,AUDUSD
+AUD,New Motor Vehicle Sales (MoM),73,2012-01-18,2018-01-16,AUDUSD
+AUD,New Motor Vehicle Sales (YoY),73,2012-01-18,2018-01-16,AUDUSD
+AUD,OUTDATED - RBA Deputy Governor Lowe Speech,28,2012-07-10,2016-10-17,AUDUSD
+AUD,Part-Time Employment,149,2013-02-07,2025-06-19,AUDUSD
+AUD,Participation Rate,140,2013-11-07,2025-06-19,AUDUSD
+AUD,Private Capital Expenditure,54,2012-03-01,2025-05-29,AUDUSD
+AUD,Private Sector Credit (MoM),162,2012-01-31,2025-06-30,AUDUSD
+AUD,Private Sector Credit (YoY),162,2012-01-31,2025-06-30,AUDUSD
+AUD,Producer Price Index (QoQ),54,2012-01-23,2025-05-02,AUDUSD
+AUD,Producer Price Index (YoY),54,2012-01-23,2025-05-02,AUDUSD
+AUD,Quarterly Consumer Price Index (QoQ),54,2012-01-25,2025-04-30,AUDUSD
+AUD,Quarterly Consumer Price Index (YoY),54,2012-01-25,2025-04-30,AUDUSD
+AUD,Quarterly RBA Trimmed Mean CPI (QoQ),54,2012-01-25,2025-04-30,AUDUSD
+AUD,Quarterly RBA Trimmed Mean CPI (YoY),54,2012-01-25,2025-04-30,AUDUSD
+AUD,RBA Annual Report,14,2012-09-20,2024-10-25,AUDUSD
+AUD,RBA Bulletin,54,2012-03-21,2025-04-24,AUDUSD
+AUD,RBA Commodity Index SDR (YoY),161,2012-02-01,2025-06-02,AUDUSD
+AUD,RBA Foreign Exchange Transaction,61,2012-01-19,2017-05-18,AUDUSD
+AUD,RBA Governor Bullock speech,17,2023-10-17,2025-04-10,AUDUSD
+AUD,RBA Interest Rate Decision,144,2012-02-07,2025-05-20,AUDUSD
+AUD,RBA Meeting Minutes,143,2012-02-21,2025-06-03,AUDUSD
+AUD,RBA Monetary Policy Statement,56,2012-02-09,2025-05-20,AUDUSD
+AUD,RBA Press Conference,11,2024-02-06,2025-05-20,AUDUSD
+AUD,RBA Rate Statement,142,2012-02-07,2025-05-20,AUDUSD
+AUD,RBA's Bullock speech,28,2018-02-19,2023-08-29,AUDUSD
+AUD,RBA's Debelle speech,95,2012-08-16,2022-03-09,AUDUSD
+AUD,RBA's Edey speech,13,2013-05-01,2016-09-28,AUDUSD
+AUD,RBA's Ellis speech,18,2018-02-12,2023-03-28,AUDUSD
+AUD,RBA's Governor Lowe speech,105,2016-09-11,2023-09-07,AUDUSD
+AUD,RBA's Governor Stevens speech,52,2012-02-21,2016-08-10,AUDUSD
+AUD,RBA's Kent speech,48,2012-07-19,2023-10-11,AUDUSD
+AUD,RPData/Rismark House Price Index,3,2014-02-02,2014-03-31,AUDUSD
+AUD,Retail Sales (QoQ),22,2020-02-06,2025-05-02,AUDUSD
+AUD,Retail Sales s.a. (MoM),178,2012-02-06,2025-05-30,AUDUSD
+AUD,S&P Global Composite PMI,157,2018-12-13,2025-06-22,AUDUSD
+AUD,S&P Global Manufacturing PMI,158,2018-12-13,2025-06-30,AUDUSD
+AUD,S&P Global Services PMI,157,2018-12-13,2025-06-22,AUDUSD
+AUD,TD-MI Inflation Gauge (MoM),163,2012-01-15,2025-06-30,AUDUSD
+AUD,TD-MI Inflation Gauge (YoY),159,2012-01-15,2025-06-30,AUDUSD
+AUD,Trade Balance (MoM),164,2012-02-02,2025-06-05,AUDUSD
+AUD,Trimmed Mean CPI (MoM),13,2024-06-26,2025-06-25,AUDUSD
+AUD,Trimmed Mean CPI (YoY),2,2025-05-28,2025-06-25,AUDUSD
+AUD,Unemployment Rate s.a.,162,2012-01-19,2025-06-19,AUDUSD
+AUD,Wage Price Index (QoQ),54,2012-02-22,2025-05-14,AUDUSD
+AUD,Wage Price Index (YoY),54,2012-02-22,2025-05-14,AUDUSD
+AUD,Westpac Consumer Confidence,163,2012-01-17,2025-06-10,AUDUSD
+AUD,Westpac Consumer Confidence Index,54,2012-04-11,2017-05-17,AUDUSD
+AUD,Westpac Leading Index (MoM),161,2012-01-24,2025-06-18,AUDUSD
+CHF,"""Save our Swiss gold"" Referendum",1,2014-11-30,2014-11-30,USDCHF
+CHF,Consumer Price Index (MoM),161,2012-02-10,2025-06-03,USDCHF
+CHF,Consumer Price Index (YoY),161,2012-02-10,2025-06-03,USDCHF
+CHF,Employment Level (QoQ),53,2012-02-28,2025-05-26,USDCHF
+CHF,Exports (MoM),159,2012-04-24,2025-06-19,USDCHF
+CHF,Foreign Currency Reserves,160,2012-02-07,2025-06-06,USDCHF
+CHF,Gross Domestic Product (QoQ),54,2012-03-01,2025-06-02,USDCHF
+CHF,Gross Domestic Product (YoY),54,2012-03-01,2025-06-02,USDCHF
+CHF,Imports (MoM),159,2012-04-24,2025-06-19,USDCHF
+CHF,Industrial Production (QoQ),28,2012-03-20,2018-11-21,USDCHF
+CHF,Industrial Production (YoY),54,2012-03-20,2025-05-16,USDCHF
+CHF,KOF Leading Indicator,162,2012-01-27,2025-06-30,USDCHF
+CHF,Monthly Statistical Bulletin,20,2012-06-21,2014-02-21,USDCHF
+CHF,Producer and Import Prices (MoM),162,2012-01-16,2025-06-16,USDCHF
+CHF,Producer and Import Prices (YoY),162,2012-01-16,2025-06-16,USDCHF
+CHF,Real Retail Sales (YoY),161,2012-02-01,2025-06-02,USDCHF
+CHF,SECO Consumer Climate (3m),54,2012-02-09,2025-05-09,USDCHF
+CHF,SECO Economic Forecasts,54,2012-03-15,2025-06-16,USDCHF
+CHF,SNB Chairman Schlegel speech,3,2024-11-22,2025-05-27,USDCHF
+CHF,SNB Financial Stability Report,14,2012-06-14,2025-06-19,USDCHF
+CHF,SNB Interest Rate Decision,57,2012-03-15,2025-06-19,USDCHF
+CHF,SNB Monetary Policy Assessment,29,2018-06-21,2025-06-19,USDCHF
+CHF,SNB Press Conference,33,2012-03-15,2025-06-19,USDCHF
+CHF,SNB Quarterly Bulletin,54,2012-03-23,2025-06-25,USDCHF
+CHF,SNB's Chairman Jordan speech,64,2012-04-27,2024-05-30,USDCHF
+CHF,SNB's Danthine speech,9,2012-01-24,2015-05-19,USDCHF
+CHF,SNB's Maechler speech,10,2018-11-08,2023-05-25,USDCHF
+CHF,SNB's Zurbrugg speech,17,2012-11-21,2022-03-29,USDCHF
+CHF,SVME - Purchasing Managers' Index,161,2012-02-01,2025-06-02,USDCHF
+CHF,Trade Balance,162,2012-02-02,2025-06-19,USDCHF
+CHF,UBS Consumption Indicator,73,2012-01-31,2018-01-31,USDCHF
+CHF,Unemployment Rate s.a (MoM),161,2012-02-08,2025-06-05,USDCHF
+CHF,World Economic Forum - Davos,61,2012-07-06,2025-01-23,USDCHF
+CHF,ZEW Survey – Expectations,162,2012-01-18,2025-06-25,USDCHF

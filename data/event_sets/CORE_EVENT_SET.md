@@ -5,8 +5,8 @@ pairs (EUR/USD, GBP/USD, AUD/USD), built by `scripts/build_core_events.py`
 from `data/event_sets/core_release_map.csv` into `data/<PAIR>_EVENTS_CORE.csv`.
 
 The wider EXT set ([EXT_EVENT_SET.md](EXT_EVENT_SET.md), `data/<PAIR>_EVENTS_EXT.csv`)
-keeps these 139 releases unchanged and adds the 68 that rules R1–R3 leave out,
-dropping only speech-like communication, releases with no macro news and rare ones.
+keeps these 139 releases unchanged and adds the 76 that rules R1–R3 leave out,
+dropping only speech-like communication and rare releases.
 
 ## Selection rules
 

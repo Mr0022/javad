@@ -39,17 +39,6 @@ AUD,Consumer Price Index (MoM),13,2024-06-26,2025-06-25,first published after 20
 AUD,Consumer Price Index (YoY),34,2022-09-29,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
 AUD,Trimmed Mean CPI (MoM),13,2024-06-26,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
 AUD,Trimmed Mean CPI (YoY),2,2025-05-28,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
-AUD,CFTC AUD NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
-EUR,eur CFTC EUR NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
-EUR,eur Non-Monetary Policy ECB Meeting,111,2015-01-07,2025-03-26,no macro news,ECB meeting without a policy decision
-GBP,CFTC GBP NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
-USD,3-Month Bill Auction,678,2012-06-18,2025-06-30,no macro news,Treasury bill auction
-USD,4-Week Bill Auction,678,2012-05-30,2025-06-26,no macro news,Treasury bill auction
-USD,52-Week Bill Auction,173,2012-04-03,2025-06-10,no macro news,Treasury bill auction
-USD,6-Month Bill Auction,681,2012-05-29,2025-06-30,no macro news,Treasury bill auction
-USD,CFTC Gold NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
-USD,CFTC Oil NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
-USD,CFTC S&P 500 NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
 AUD,Budget Release,15,2012-05-08,2025-03-25,rare,fewer than 24 announcements
 AUD,Dwelling Unit Starts (QoQ),3,2012-03-14,2012-09-12,rare,fewer than 24 announcements
 AUD,Federal Election,3,2013-09-07,2019-05-18,rare,fewer than 24 announcements

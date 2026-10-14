@@ -50,15 +50,16 @@ CAT_LABEL = {"Government": "Government Purchases", "Monetary": "Money and Credit
 SECT = ["Agriculture", "Energy", "Housing and Real Estate", "Industrial Sector", "Intl Trade & BoP",
         "Labor Market", "Monetary Sector", "National Accounts (GDP)", "Personal/Household Sector", "Prices",
         "Retail & Wholesale Sector", "Surveys/Cyclical Indicators", "Government Finance",
-        "Political & Supranational"]
+        "Political & Supranational", "Positioning (CFTC)"]
 COLS = [("USD", "US"), ("EUR", "EA"), ("GBP", "UK"), ("AUD", "AU")]
-ADDED = [("R1", "C", "Central-bank publications (minutes, accounts, reports, bulletins)"),
-         ("R1", "A", "Government bond auctions"),
+ADDED = [("R1", "C", "Central-bank publications (minutes, accounts, reports, bulletins) and meetings"),
+         ("R1", "A", "Government debt auctions (bonds and bills)"),
+         ("R1", "F", "Futures positioning reports (CFTC)"),
          ("R1", "X", "Commodity-market reports"),
          ("R1", "S", "Political and supranational meetings, official forecasts"),
          ("R2", None, "Sub-national releases (regional Fed surveys, Chicago PMI, ISM-New York, German state CPIs)"),
          ("R3", None, "Started after 2014 or stopped before 2025")]
-REASONS = ["speech-like", "no macro news", "rare", "first published after 2021"]
+REASONS = ["speech-like", "rare", "first published after 2021"]
 
 
 def fail(msg):
@@ -261,12 +262,11 @@ md = ["# EXT news-announcement set", "",
       "mostly, series of one release published on the same days (CPI MoM, YoY and core; NFP,",
       "unemployment rate and earnings; flash and final PMIs), which would add identical columns.", "",
       "## Selection rules", "",
-      "- **X1 Scope.** Every scheduled release in the calendars, except (a) speech-like communication: "
+      "- **X1 Scope.** Every scheduled release in the calendars, CFTC positioning reports, Treasury bill "
+      "auctions and ECB meetings without a policy decision included, except speech-like communication: "
       "speeches, testimony and parliamentary hearings, press conferences, and the Jackson Hole symposium "
-      "(the decision, statement or report they accompany stays in, so no announcement day is lost); and "
-      "(b) releases with no macroeconomic news: CFTC positioning reports (published after the Friday "
-      "session, on Tuesday's positions), Treasury bill auctions (weekly cash management), and ECB "
-      "Governing Council meetings without a monetary-policy decision. Replaces CORE's R1.",
+      "(the decision, statement or report they accompany stays in, so no announcement day is lost). "
+      "Replaces CORE's R1.",
       "- **X2 Geography.** No restriction: sub-national releases (regional Fed surveys, Chicago PMI, "
       "ISM-New York, German state CPIs) are in. Replaces R2.",
       f"- **X3 Training coverage.** A release enters if it is first published before 1 Jan 2022, so it "
@@ -293,11 +293,9 @@ md += ["| **left out** | " + " | ".join(f"**{tot[c]}**" for c in CURS) + f" | **
        "| *covered by a CORE release (not left out)* | "
        + " | ".join(str(left.loc['covered by a CORE release', c]) for c in CURS)
        + f" | {left.loc['covered by a CORE release'].sum()} |", ""]
-nomacro = excl[excl.reason == "no macro news"]
 md += ["- **speech-like**: every central-bank and political speech, testimony and hearing (e.g. "
        "*Fed's Williams speech*, *Fed's Chair Powell testifies*, *BoE Monetary Policy Report "
        "Hearings*), and the FOMC and ECB press conferences.",
-       "- **no macro news**: " + "; ".join(f"{c} *{s}*" for c, s in zip(nomacro.currency, nomacro.series)) + ".",
        f"- **rare**: fewer than {MIN_DAYS} announcements — annual and one-off events (elections, "
        "summits on a single issue, budget days, stress tests) and series that ran only briefly.",
        "- **first published after 2021**: " + "; ".join(sorted(set(
@@ -348,10 +346,11 @@ tot2 = sect.sum()
 md += ["| | **Total** | " + " | ".join(f"**{tot2[c]}**" for c, _ in COLS) + f" | **{tot2.sum()}** |", "",
        "Notes: Number of different announcements (releases) per currency, classified into Plihal's "
        "Bloomberg sectors (Agriculture to Surveys/Cyclical Indicators), plus Government Finance (budget "
-       "statements, public-sector borrowing, government bond auctions) and Political & Supranational (EU, "
-       "G7, G20 and IMF meetings, European Commission forecasts). Central-bank decisions and publications "
-       "(minutes, accounts, reports, bulletins) are in the Monetary Sector. EA covers the euro area, "
-       "Germany and France.", ""]
+       "statements, public-sector borrowing, government bond and bill auctions), Political & Supranational "
+       "(EU, G7, G20 and IMF meetings, European Commission forecasts) and Positioning (the CFTC's weekly "
+       "Commitments of Traders net positions). Central-bank decisions, publications (minutes, accounts, "
+       "reports, bulletins) and meetings are in the Monetary Sector. EA covers the euro area, Germany and "
+       "France.", ""]
 
 md += ["## Table 3", "", f"**Table 3: The {n_new} Releases EXT Adds to CORE, by the CORE Rule That Left Them Out**",
        "", "| CORE rule | Releases | " + " | ".join(l for _, l in COLS) + " | Total |",
@@ -439,9 +438,10 @@ t2 += [r"\midrule", r" & Total & " + " & ".join(str(tot2[c]) for c, _ in COLS) +
        r"\begin{minipage}{0.85\textwidth}\vspace{4pt}\footnotesize",
        r"\textit{Notes:} Number of different announcements (releases) per country, classified into "
        r"Plihal's Bloomberg sectors (Agriculture to Surveys/Cyclical Indicators), plus Government Finance "
-       r"(budget statements, public-sector borrowing, government bond auctions) and Political \& "
-       r"Supranational (EU, G7, G20 and IMF meetings, European Commission forecasts). Central-bank "
-       r"decisions and publications are in the Monetary Sector. EA covers the euro area, Germany and France.",
+       r"(budget statements, public-sector borrowing, government bond and bill auctions), Political \& "
+       r"Supranational (EU, G7, G20 and IMF meetings, European Commission forecasts) and Positioning (the "
+       r"CFTC's weekly Commitments of Traders net positions). Central-bank decisions, publications and "
+       r"meetings are in the Monetary Sector. EA covers the euro area, Germany and France.",
        r"\end{minipage}", r"\end{table}", ""]
 
 t3 = [r"\begin{table}[htbp]", r"\centering",

@@ -289,6 +289,10 @@ USD,US,U61,Treasury 10-Year Note Auction,monthly,Government,Government Finance,1
 USD,US,U62,Treasury 20-Year Bond Auction,monthly,Government,Government Finance,20-Year Bond Auction,13:00,,ET,False,R1,A
 USD,US,U63,Treasury 30-Year Bond Auction,monthly,Government,Government Finance,30-Year Bond Auction,13:00,,ET,False,R1,A
 USD,US,U64,Treasury 10-Year TIPS Auction,bimonthly,Government,Government Finance,10-year TIPS Auction,13:00,,ET,False,R1,A
+USD,US,U74,Treasury 4-Week Bill Auction,weekly,Government,Government Finance,4-Week Bill Auction,11:30,,ET,False,R1,A
+USD,US,U75,Treasury 13- and 26-Week Bill Auctions,weekly,Government,Government Finance,3-Month Bill Auction,11:30,,ET,False,R1,A
+USD,US,U75,Treasury 13- and 26-Week Bill Auctions,weekly,Government,Government Finance,6-Month Bill Auction,11:30,,ET,False,R1,A
+USD,US,U76,Treasury 52-Week Bill Auction,every 4 weeks,Government,Government Finance,52-Week Bill Auction,11:30,,ET,False,R1,A
 USD,US,U65,EIA Weekly Petroleum Status Report,weekly,Commodities,Energy,EIA Crude Oil Stocks Change,10:30,,ET,False,R1,X
 USD,US,U65,EIA Weekly Petroleum Status Report,weekly,Commodities,Energy,EIA Distillate Stocks Change,10:30,,ET,False,R1,X
 USD,US,U65,EIA Weekly Petroleum Status Report,weekly,Commodities,Energy,EIA Gasoline Stocks Change,10:30,,ET,False,R1,X
@@ -299,12 +303,17 @@ USD,US,U68,API Monthly Statistical Report,monthly,Commodities,Energy,American Pe
 USD,US,U69,Baker Hughes Oil Rig Count,weekly,Commodities,Energy,Baker Hughes US Oil Rig Count,13:00,,ET,False,R1,X
 USD,US,U70,OPEC Meeting,irregular,Commodities,Energy,OPEC Meeting,varies,,ET,False,R1,X
 USD,US,U71,USDA WASDE Report,monthly,Commodities,Agriculture,USDA WASDE Report,12:00,,ET,False,R1,X
+USD,US,U73,"CFTC Gold, Oil and S&P 500 Net Positions",weekly,Positioning,Positioning (CFTC),CFTC Gold NC Net Positions,15:30,,ET,False,R1,F
+USD,US,U73,"CFTC Gold, Oil and S&P 500 Net Positions",weekly,Positioning,Positioning (CFTC),CFTC Oil NC Net Positions,15:30,,ET,False,R1,F
+USD,US,U73,"CFTC Gold, Oil and S&P 500 Net Positions",weekly,Positioning,Positioning (CFTC),CFTC S&P 500 NC Net Positions,15:30,,ET,False,R1,F
 USD,US,U72,IMF Spring and Annual Meetings,semiannual,Political,Political & Supranational,IMF Meeting,varies,,ET,False,R1,S
 EUR,EA,E19,ECB Monetary Policy Account,policy meeting,Monetary,Monetary Sector,eur ECB Monetary Policy Meeting Accounts,13:30,,CET,False,R1,C
 EUR,EA,E20,ECB Monthly Bulletin / Economic Bulletin,policy meeting,Monetary,Monetary Sector,eur ECB Monthly Report,10:00,,CET,False,R1,C
 EUR,EA,E20,ECB Monthly Bulletin / Economic Bulletin,policy meeting,Monetary,Monetary Sector,eur Economic Bulletin,10:00,,CET,False,R1,C
 EUR,EA,E21,ECB Bank Lending Survey,quarterly,Monetary,Monetary Sector,eur ECB Bank Lending Survey,10:00,,CET,False,R3,Q
 EUR,EA,E22,ECB Financial Stability Review,semiannual,Monetary,Monetary Sector,eur EU Financial Stability Review,—,,CET,False,R1,C
+EUR,EA,E29,ECB Non-Monetary Policy Meeting,irregular,Monetary,Monetary Sector,eur Non-Monetary Policy ECB Meeting,varies,,CET,False,R1,C
+EUR,EA,E30,CFTC EUR Net Positions,weekly,Positioning,Positioning (CFTC),eur CFTC EUR NC Net Positions,15:30 ET,,CET,False,R1,F
 EUR,EA,E23,Eurogroup Meeting,monthly,Political,Political & Supranational,eur Eurogroup Meeting,varies,,CET,False,R1,S
 EUR,EA,E24,EcoFin Meeting,monthly,Political,Political & Supranational,eur EcoFin Meeting,varies,,CET,False,R1,S
 EUR,EA,E25,European Council (EU leaders' summit),irregular,Political,Political & Supranational,eur European Council Meeting,varies,,CET,False,R1,S
@@ -346,6 +355,7 @@ GBP,UK,G33,CBI Industrial Trends Survey,monthly,Forward-Looking,Surveys/Cyclical
 GBP,UK,G34,BBA Mortgage Approvals,monthly,Monetary,Housing and Real Estate,BBA Mortgage Approvals,9:30,,UK,False,R3,M
 GBP,UK,G35,UK 10-Year Gilt Auction,irregular,Government,Government Finance,10-y Bond Auction,varies (morning),,UK,False,R1,A
 GBP,UK,G36,UK 30-Year Gilt Auction,irregular,Government,Government Finance,30-y Bond Auction,varies (morning),,UK,False,R1,A
+GBP,UK,G37,CFTC GBP Net Positions,weekly,Positioning,Positioning (CFTC),CFTC GBP NC Net Positions,15:30 ET,,UK,False,R1,F
 AUD,AU,A25,RBA Meeting Minutes,policy meeting,Monetary,Monetary Sector,RBA Meeting Minutes,11:30,,Sydney,False,R1,C
 AUD,AU,A26,RBA Statement on Monetary Policy,quarterly,Monetary,Monetary Sector,RBA Monetary Policy Statement,11:30,"14:30 from Feb-2024, published with the decision.",Sydney,False,R1,C
 AUD,AU,A27,RBA Bulletin,quarterly,Monetary,Monetary Sector,RBA Bulletin,11:30,,Sydney,False,R1,C
@@ -362,3 +372,4 @@ AUD,AU,A36,Residential Property Price Index,quarterly,Prices,Housing and Real Es
 AUD,AU,A36,Residential Property Price Index,quarterly,Prices,Housing and Real Estate,House Price Index (YoY),11:30,,Sydney,False,R3,Q
 AUD,AU,A37,New Motor Vehicle Sales,monthly,Consumption,Retail & Wholesale Sector,New Motor Vehicle Sales (MoM),11:30,,Sydney,False,R3,M
 AUD,AU,A37,New Motor Vehicle Sales,monthly,Consumption,Retail & Wholesale Sector,New Motor Vehicle Sales (YoY),11:30,,Sydney,False,R3,M
+AUD,AU,A38,CFTC AUD Net Positions,weekly,Positioning,Positioning (CFTC),CFTC AUD NC Net Positions,15:30 ET,,Sydney,False,R1,F

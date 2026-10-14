@@ -1,16 +1,13 @@
 """EXT release set: every CORE release, plus the releases CORE's scope rules left out.
 
 CORE (../core/families.py) keeps 139 releases. Its scope (R1), geography (R2) and
-continuity (R3) rules also removed minutes, regional surveys, bond auctions,
-commodity reports, political meetings and every release that started after
-2014 or stopped before 2025. EXT puts those back and drops only
+continuity (R3) rules also removed minutes, regional surveys, debt auctions,
+CFTC positioning, commodity reports, political meetings and every release that
+started after 2014 or stopped before 2025. EXT puts those back and drops only
 
   * speech-like communication: speeches, testimony and parliamentary hearings,
     press conferences, and the Jackson Hole symposium. The decision, statement or
     report they accompany stays in, so no announcement day is lost;
-  * releases with no macroeconomic news: CFTC positioning (published after the
-    Friday session, on Tuesday's positions), Treasury bill auctions (weekly cash
-    management) and ECB Governing Council meetings without a policy decision;
   * rare releases: fewer than 24 announcements in the sample (R5, as in CORE),
     or first published after 2021, so absent from the deep models' training
     years (2012-2021) -- the ABS monthly CPI indicator and the Ai Group Industry
@@ -34,12 +31,14 @@ from families import F as CORE  # noqa: E402
 # group codes for Table 1 sections; Q/M/P/W are CORE's frequency codes
 GROUPS = [("Q", "Quarterly Announcements"), ("M", "Monthly Announcements"),
           ("P", "Monetary Policy Decisions"), ("W", "Weekly Announcements"),
-          ("C", "Central-Bank Publications"), ("X", "Commodity-Market Reports"),
-          ("A", "Government Bond Auctions"), ("S", "Political and Supranational Meetings")]
+          ("C", "Central-Bank Publications and Meetings"), ("X", "Commodity-Market Reports"),
+          ("F", "Futures Positioning Reports (CFTC)"), ("A", "Government Debt Auctions"),
+          ("S", "Political and Supranational Meetings")]
 
 # The CORE rule that kept each added release out:
-#   R1 scope (central-bank communication, auctions, commodity reports, political
-#      events and official forecasts), R2 geography (sub-national), R3 continuity
+#   R1 scope (central-bank communication, auctions, positioning and commodity
+#      reports, political events and official forecasts), R2 geography
+#      (sub-national), R3 continuity
 NEW = []
 
 
@@ -80,6 +79,12 @@ for fid, tenor, member in [("U57", "2-Year Note", "2-Year Note Auction"), ("U58"
     U(fid, f"Treasury {tenor} Auction", "A", "monthly", "Government", "Government Finance", "R1", "13:00", [member])
 U("U64", "Treasury 10-Year TIPS Auction", "A", "bimonthly", "Government", "Government Finance", "R1", "13:00",
   ["10-year TIPS Auction"])
+U("U74", "Treasury 4-Week Bill Auction", "A", "weekly", "Government", "Government Finance", "R1", "11:30",
+  ["4-Week Bill Auction"])
+U("U75", "Treasury 13- and 26-Week Bill Auctions", "A", "weekly", "Government", "Government Finance", "R1", "11:30",
+  ["3-Month Bill Auction", "6-Month Bill Auction"])
+U("U76", "Treasury 52-Week Bill Auction", "A", "every 4 weeks", "Government", "Government Finance", "R1", "11:30",
+  ["52-Week Bill Auction"])
 U("U65", "EIA Weekly Petroleum Status Report", "X", "weekly", "Commodities", "Energy", "R1", "10:30",
   ["EIA Crude Oil Stocks Change", "EIA Distillate Stocks Change", "EIA Gasoline Stocks Change", "EIA Heating Oil Stocks Change"])
 U("U66", "EIA Natural Gas Storage Report", "X", "weekly", "Commodities", "Energy", "R1", "10:30", ["EIA Natural Gas Storage Change"])
@@ -89,6 +94,8 @@ U("U68", "API Monthly Statistical Report", "X", "monthly", "Commodities", "Energ
 U("U69", "Baker Hughes Oil Rig Count", "X", "weekly", "Commodities", "Energy", "R1", "13:00", ["Baker Hughes US Oil Rig Count"])
 U("U70", "OPEC Meeting", "X", "irregular", "Commodities", "Energy", "R1", "varies", ["OPEC Meeting"])
 U("U71", "USDA WASDE Report", "X", "monthly", "Commodities", "Agriculture", "R1", "12:00", ["USDA WASDE Report"])
+U("U73", "CFTC Gold, Oil and S&P 500 Net Positions", "F", "weekly", "Positioning", "Positioning (CFTC)", "R1", "15:30",
+  ["CFTC Gold NC Net Positions", "CFTC Oil NC Net Positions", "CFTC S&P 500 NC Net Positions"])
 U("U72", "IMF Spring and Annual Meetings", "S", "semiannual", "Political", "Political & Supranational", "R1", "varies",
   ["IMF Meeting"])
 
@@ -103,6 +110,10 @@ EA("E20", "ECB Monthly Bulletin / Economic Bulletin", "C", "policy meeting", "Mo
 EA("E21", "ECB Bank Lending Survey", "Q", "quarterly", "Monetary", "Monetary Sector", "R3", "10:00", ["eur ECB Bank Lending Survey"])
 EA("E22", "ECB Financial Stability Review", "C", "semiannual", "Monetary", "Monetary Sector", "R1", "—",
    ["eur EU Financial Stability Review"])
+EA("E29", "ECB Non-Monetary Policy Meeting", "C", "irregular", "Monetary", "Monetary Sector", "R1", "varies",
+   ["eur Non-Monetary Policy ECB Meeting"])
+EA("E30", "CFTC EUR Net Positions", "F", "weekly", "Positioning", "Positioning (CFTC)", "R1", "15:30 ET",
+   ["eur CFTC EUR NC Net Positions"])
 EA("E23", "Eurogroup Meeting", "S", "monthly", "Political", "Political & Supranational", "R1", "varies", ["eur Eurogroup Meeting"])
 EA("E24", "EcoFin Meeting", "S", "monthly", "Political", "Political & Supranational", "R1", "varies", ["eur EcoFin Meeting"])
 EA("E25", "European Council (EU leaders' summit)", "S", "irregular", "Political", "Political & Supranational", "R1", "varies",
@@ -144,6 +155,8 @@ G("G35", "UK 10-Year Gilt Auction", "A", "irregular", "Government", "Government 
   ["10-y Bond Auction"])
 G("G36", "UK 30-Year Gilt Auction", "A", "irregular", "Government", "Government Finance", "R1", "varies (morning)",
   ["30-y Bond Auction"])
+G("G37", "CFTC GBP Net Positions", "F", "weekly", "Positioning", "Positioning (CFTC)", "R1", "15:30 ET",
+  ["CFTC GBP NC Net Positions"])
 
 # ---------------- AUD (Sydney time) ----------------
 A = lambda *a, **k: f("AUD", "AU", *a, **k)
@@ -170,15 +183,13 @@ A("A36", "Residential Property Price Index", "Q", "quarterly", "Prices", "Housin
   ["House Price Index (QoQ)", "House Price Index (YoY)"])
 A("A37", "New Motor Vehicle Sales", "M", "monthly", "Consumption", "Retail & Wholesale Sector", "R3", "11:30",
   ["New Motor Vehicle Sales (MoM)", "New Motor Vehicle Sales (YoY)"])
+A("A38", "CFTC AUD Net Positions", "F", "weekly", "Positioning", "Positioning (CFTC)", "R1", "15:30 ET",
+  ["CFTC AUD NC Net Positions"])
 
 
 # ---------------- what stays out, and why ----------------
 SPEECH_LIKE = re.compile(r"speech|\bspeaks?\b|testif|\bhearings\b|press conference|press briefing|"
                          r"news conference|jackson hole|state of the union", re.I)
-
-UNNECESSARY = [(re.compile(r"\bCFTC\b"), "CFTC positioning report"),
-               (re.compile(r"Bill Auction"), "Treasury bill auction"),
-               (re.compile(r"Non-Monetary Policy ECB Meeting"), "ECB meeting without a policy decision")]
 
 # releases first published after 2021 (X3): never seen in the deep models' training years
 LATE = {("AUD", "Consumer Price Index (YoY)"): "ABS Monthly CPI Indicator (from Sep-2022)",
@@ -220,9 +231,6 @@ def exclusion_reason(cur, name):
     """
     if SPEECH_LIKE.search(name):
         return "speech-like", "speech, testimony, hearing or press conference"
-    for rx, what in UNNECESSARY:
-        if rx.search(name):
-            return "no macro news", what
     if name in COVERED.get(cur, {}):
         return "covered by a CORE release", COVERED[cur][name]
     if (cur, name) in LATE:

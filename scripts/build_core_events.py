@@ -36,11 +36,10 @@ CORE selection rules
 EXT
 ---
   Every CORE release, unchanged, plus the releases R1-R3 left out: minutes
-  and other central-bank publications, regional surveys, bond auctions,
-  commodity reports, political meetings, and releases that started after 2014
-  or stopped before 2025. EXT drops only speech-like communication (speeches,
-  testimony, hearings, press conferences), releases with no macro news (CFTC
-  positioning, Treasury bill auctions, ECB meetings without a policy decision)
+  and other central-bank publications and meetings, regional surveys, bond and
+  bill auctions, CFTC positioning, commodity reports, political meetings, and
+  releases that started after 2014 or stopped before 2025. EXT drops only
+  speech-like communication (speeches, testimony, hearings, press conferences)
   and rare releases (R5, or first published after 2021). Its map is written by
   analysis/event_set_study/ext/make_ext.py and listed in
   data/event_sets/EXT_EVENT_SET.md.

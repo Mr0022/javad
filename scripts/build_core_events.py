@@ -1,15 +1,16 @@
 """
-Build the CORE release-level news calendars, data/<PAIR>_EVENTS_CORE.csv.
+Build the release-level news calendars: CORE (data/<PAIR>_EVENTS_CORE.csv) and
+EXT (data/<PAIR>_EVENTS_EXT.csv).
 
 The raw calendars (data/<PAIR>_EVENTS.csv) list one row per published SERIES,
 so a single statistical release appears many times (CPI MoM, CPI YoY, core CPI
-MoM, ... all on the same morning). The CORE set is defined at the level of the
-RELEASE instead, by the rules below, and the mapping from raw series to
-releases lives in data/event_sets/core_release_map.csv (one row per raw
-series, with the release it belongs to and the release's metadata).
+MoM, ... all on the same morning). Both sets are defined at the level of the
+RELEASE instead, and the mapping from raw series to releases lives in
+data/event_sets/<set>_release_map.csv (one row per raw series, with the release
+it belongs to and the release's metadata).
 
-Selection rules
----------------
+CORE selection rules
+--------------------
   R1 Scope       scheduled official statistics and nationally representative
                  surveys of the domestic economy, plus central-bank policy-rate
                  decisions. Excluded: central-bank communication (speeches,
@@ -32,11 +33,24 @@ Selection rules
   R5 Frequency   at least 24 announcements in the sample (the event loader's
                  min_days), which drops annual releases.
 
+EXT
+---
+  Every CORE release, unchanged, plus the releases R1-R3 left out: minutes
+  and other central-bank publications, regional surveys, bond auctions,
+  commodity reports, political meetings, and releases that started after 2014
+  or stopped before 2025. EXT drops only speech-like communication (speeches,
+  testimony, hearings, press conferences), releases with no macro news (CFTC
+  positioning, Treasury bill auctions, ECB meetings without a policy decision)
+  and rare releases (R5, or first published after 2021). Its map is written by
+  analysis/event_set_study/ext/make_ext.py and listed in
+  data/event_sets/EXT_EVENT_SET.md.
+
 Usage
 -----
-    python scripts/build_core_events.py
-    python run.py ... --data_path EURUSD_lnRV.csv --event_data_path EURUSD_EVENTS_CORE.csv
-    python HAR_X_run.py --pairs EURUSD --event_suffix _CORE
+    python scripts/build_core_events.py              # CORE
+    python scripts/build_core_events.py --set EXT    # EXT
+    python run.py ... --data_path EURUSD_lnRV.csv --event_data_path EURUSD_EVENTS_EXT.csv
+    python HAR_X_run.py --pairs EURUSD --event_suffix _EXT
 """
 
 import argparse
@@ -50,6 +64,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_provider.event_preprocessing import _read_raw  # noqa: E402
 
 PAIRS = ["EURUSD", "GBPUSD", "AUDUSD"]
+SETS = {"CORE": "core_release_map.csv", "EXT": "ext_release_map.csv"}
 
 
 def build(root, map_path, suffix="_CORE", pairs=PAIRS):
@@ -76,11 +91,15 @@ def build(root, map_path, suffix="_CORE", pairs=PAIRS):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[1])
     ap.add_argument("--root_path", default="./data")
-    ap.add_argument("--map", default="./data/event_sets/core_release_map.csv")
-    ap.add_argument("--suffix", default="_CORE")
+    ap.add_argument("--set", default="CORE", choices=sorted(SETS),
+                    help="release set to build; picks the map and the file suffix")
+    ap.add_argument("--map", default=None,
+                    help="release map csv (default: <root_path>/event_sets/<set>_release_map.csv)")
+    ap.add_argument("--suffix", default=None, help="output suffix (default: _<SET>)")
     ap.add_argument("--pairs", nargs="+", default=PAIRS)
     a = ap.parse_args()
-    build(a.root_path, a.map, a.suffix, a.pairs)
+    build(a.root_path, a.map or os.path.join(a.root_path, "event_sets", SETS[a.set]),
+          a.suffix or f"_{a.set}", a.pairs)
 
 
 if __name__ == "__main__":

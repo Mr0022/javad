@@ -96,7 +96,8 @@ Usage
     python HAR_X_run.py                       # EUR/USD, h = 1, 5, 10
     python HAR_X_run.py --pairs AUDUSD EURUSD GBPUSD
     python HAR_X_run.py --horizons 1
-    python HAR_X_run.py --event_suffix _CORE  # release-level calendar
+    python HAR_X_run.py --event_suffix _EXT   # release-level calendar, EXT set
+    python HAR_X_run.py --event_suffix _CORE  # release-level calendar, CORE set
     python HAR_X_run.py --no_dow              # no weekday controls
 ==============================================================================
 """
@@ -583,8 +584,8 @@ def fit_nhar(train, test, z_cols, x_cols, h, rule=LAMBDA_RULE):
 def run_pair(pair, root_path, target, horizons, event_kwargs,
              rule=LAMBDA_RULE, verbose=True, event_suffix="", dow=True):
     data_path  = f"{pair}_lnRV.csv"
-    # '' -> <PAIR>_EVENTS.csv; '_CORE' -> the release-level calendar written by
-    # scripts/build_core_events.py
+    # '' -> <PAIR>_EVENTS.csv; '_CORE' / '_EXT' -> the release-level calendars
+    # written by scripts/build_core_events.py
     event_path = resolve_event_path(
         root_path, data_path,
         f"{pair}_EVENTS{event_suffix}.csv" if event_suffix else None)
@@ -710,7 +711,7 @@ def main():
                     default=DEFAULT_ON_NONTRADING, choices=["roll", "drop"])
     ap.add_argument("--event_suffix", type=str, default="",
                     help="read data/<PAIR>_EVENTS<suffix>.csv instead of the raw "
-                         "calendar, e.g. '_CORE' for the release-level set")
+                         "calendar, e.g. '_EXT' or '_CORE' for a release-level set")
     ap.add_argument("--no_dow", action="store_true",
                     help="drop the weekday x RV_d controls: HAR-NEWS and N-HAR are "
                          "fitted on the plain HAR core and HAR+DOW is not estimated")

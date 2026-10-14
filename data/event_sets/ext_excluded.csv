@@ -1,0 +1,357 @@
+currency,series,days,first,last,reason,detail
+AUD,Westpac Consumer Confidence Index,54,2012-04-11,2017-05-17,covered by a CORE release,A22
+EUR,eur Core Harmonized Index of Consumer Prices (MoM),152,2015-09-30,2025-06-18,covered by a CORE release,E10
+EUR,eur ECB Monetary Policy Statement,33,2021-07-22,2025-06-05,covered by a CORE release,E18
+EUR,fra Gross Domestic Product (YoY),36,2012-09-28,2017-06-23,covered by a CORE release,F01
+EUR,ger HCOB Composite PMI,253,2015-01-06,2025-06-23,covered by a CORE release,E17
+GBP,BoE Asset Purchase Facility,102,2012-01-12,2022-02-03,covered by a CORE release,G26
+GBP,BoE Monetary Policy Summary,79,2015-12-10,2025-06-19,covered by a CORE release,G26
+GBP,Employment Change (3M),67,2019-12-17,2025-06-10,covered by a CORE release,G05
+GBP,S&P Global Composite PMI,134,2019-12-04,2025-06-23,covered by a CORE release,G23
+USD,Building Permits Change,114,2016-01-20,2025-06-18,covered by a CORE release,U19
+USD,Durable Goods Orders ex Defense,81,2018-11-21,2025-06-26,covered by a CORE release,U15
+USD,Fed Pace of MBS Purchase Program,10,2013-09-18,2014-10-29,covered by a CORE release,U42
+USD,Fed Pace of Treasury Purchase Program,10,2013-09-18,2014-10-29,covered by a CORE release,U42
+USD,Housing Starts Change,114,2016-01-12,2025-06-18,covered by a CORE release,U19
+USD,ISM Manufacturing Employment Index,91,2017-12-01,2025-06-02,covered by a CORE release,U32
+USD,ISM Manufacturing New Orders Index,91,2017-12-01,2025-06-02,covered by a CORE release,U32
+USD,ISM Services Employment Index,91,2017-12-05,2025-06-04,covered by a CORE release,U33
+USD,ISM Services New Orders Index,91,2017-12-05,2025-06-04,covered by a CORE release,U33
+USD,ISM Services Prices Paid,91,2017-12-05,2025-06-04,covered by a CORE release,U33
+USD,Initial Jobless Claims 4-week average,339,2019-01-03,2025-06-26,covered by a CORE release,U43
+USD,Interest Rate Projections - 1st year,22,2019-12-11,2025-06-18,covered by a CORE release,U42
+USD,Interest Rate Projections - 2nd year,22,2019-12-11,2025-06-18,covered by a CORE release,U42
+USD,Interest Rate Projections - 3rd year,11,2019-12-11,2024-12-18,covered by a CORE release,U42
+USD,Interest Rate Projections - Current,22,2019-12-11,2025-06-18,covered by a CORE release,U42
+USD,Interest Rate Projections - Longer,22,2019-12-11,2025-06-18,covered by a CORE release,U42
+USD,Michigan Consumer Expectations Index,134,2019-12-06,2025-06-27,covered by a CORE release,U37
+USD,Nondefense Capital Goods Orders ex Aircraft,91,2017-12-22,2025-06-26,covered by a CORE release,U15
+USD,Redbook Index (MoM),456,2012-07-03,2021-04-06,covered by a CORE release,U45
+USD,Retail Sales (YoY),67,2019-12-13,2025-06-17,covered by a CORE release,U10
+USD,Retail Sales Control Group,126,2015-01-01,2025-06-17,covered by a CORE release,U10
+USD,U6 Underemployment Rate,103,2016-12-02,2025-06-06,covered by a CORE release,U06
+USD,UoM 1-year Consumer Inflation Expectations,134,2019-12-06,2025-06-27,covered by a CORE release,U37
+USD,UoM 5-year Consumer Inflation Expectation,134,2019-12-06,2025-06-27,covered by a CORE release,U37
+AUD,Ai Group Construction PMI,27,2023-02-07,2025-06-03,first published after 2021,Ai Group Industry Index (from Feb-2023)
+AUD,Ai Group Manufacturing PMI,27,2023-02-07,2025-06-03,first published after 2021,Ai Group Industry Index (from Feb-2023)
+AUD,AiG Industry Index,27,2023-02-07,2025-06-03,first published after 2021,Ai Group Industry Index (from Feb-2023)
+AUD,Consumer Price Index (MoM),13,2024-06-26,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
+AUD,Consumer Price Index (YoY),34,2022-09-29,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
+AUD,Trimmed Mean CPI (MoM),13,2024-06-26,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
+AUD,Trimmed Mean CPI (YoY),2,2025-05-28,2025-06-25,first published after 2021,ABS Monthly CPI Indicator (from Sep-2022)
+AUD,CFTC AUD NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+EUR,eur CFTC EUR NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+EUR,eur Non-Monetary Policy ECB Meeting,111,2015-01-07,2025-03-26,no macro news,ECB meeting without a policy decision
+GBP,CFTC GBP NC Net Positions,490,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+USD,3-Month Bill Auction,678,2012-06-18,2025-06-30,no macro news,Treasury bill auction
+USD,4-Week Bill Auction,678,2012-05-30,2025-06-26,no macro news,Treasury bill auction
+USD,52-Week Bill Auction,173,2012-04-03,2025-06-10,no macro news,Treasury bill auction
+USD,6-Month Bill Auction,681,2012-05-29,2025-06-30,no macro news,Treasury bill auction
+USD,CFTC Gold NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+USD,CFTC Oil NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+USD,CFTC S&P 500 NC Net Positions,489,2016-01-04,2025-06-27,no macro news,CFTC positioning report
+AUD,Budget Release,15,2012-05-08,2025-03-25,rare,fewer than 24 announcements
+AUD,Dwelling Unit Starts (QoQ),3,2012-03-14,2012-09-12,rare,fewer than 24 announcements
+AUD,Federal Election,3,2013-09-07,2019-05-18,rare,fewer than 24 announcements
+AUD,Mid-Year Economic and Fiscal Outlook,12,2012-10-22,2024-12-18,rare,fewer than 24 announcements
+AUD,RBA Annual Report,14,2012-09-20,2024-10-25,rare,fewer than 24 announcements
+AUD,RPData/Rismark House Price Index,3,2014-02-02,2014-03-31,rare,fewer than 24 announcements
+AUD,Retail Sales (QoQ),22,2020-02-06,2025-05-02,rare,fewer than 24 announcements
+EUR,eur Audit of Spanish Banks,1,2012-06-21,2012-06-21,rare,fewer than 24 announcements
+EUR,eur Bank Stress Test Info,2,2014-10-26,2016-07-29,rare,fewer than 24 announcements
+EUR,eur Barroso - Monti Meeting,1,2012-09-06,2012-09-06,rare,fewer than 24 announcements
+EUR,eur Brexit Summit,4,2018-10-17,2020-12-09,rare,fewer than 24 announcements
+EUR,eur Cyprus - Eurogroup Teleconference,1,2013-03-21,2013-03-21,rare,fewer than 24 announcements
+EUR,"eur Cyprus Parliament Vote on Banking Restructuring, Wealth Fund Bill",1,2013-03-22,2013-03-22,rare,fewer than 24 announcements
+EUR,eur Cyprus Parliament to Vote on Deposit Levy for EU Bailout Plan,1,2013-03-19,2013-03-19,rare,fewer than 24 announcements
+EUR,eur Draghi - Merkel Meeting,1,2012-09-25,2012-09-25,rare,fewer than 24 announcements
+EUR,eur Draghi - Varoufakis Meeting,1,2015-02-04,2015-02-04,rare,fewer than 24 announcements
+EUR,eur Dutch Parliamentary Election,1,2012-09-12,2012-09-12,rare,fewer than 24 announcements
+EUR,eur ECB LTRO Auction,1,2012-02-29,2012-02-29,rare,fewer than 24 announcements
+EUR,eur ECB Mid-Month Meeting,2,2012-06-21,2012-07-19,rare,fewer than 24 announcements
+EUR,eur ECB Special Strategy Meeting,1,2021-07-08,2021-07-08,rare,fewer than 24 announcements
+EUR,eur ECB announces Bond Purchases,1,2012-06-25,2012-06-25,rare,fewer than 24 announcements
+EUR,eur ECB's President Draghi statement,1,2014-10-02,2014-10-02,rare,fewer than 24 announcements
+EUR,eur ECB's President Mario Draghi visits Germany,1,2012-10-24,2012-10-24,rare,fewer than 24 announcements
+EUR,eur ECJ Opinion on Brexit Reversibility,2,2018-11-27,2018-12-04,rare,fewer than 24 announcements
+EUR,eur ECJ ruling on Article 50,1,2018-12-10,2018-12-10,rare,fewer than 24 announcements
+EUR,eur EU Extraordinary Economic Summit,9,2012-01-30,2015-06-26,rare,fewer than 24 announcements
+EUR,eur EU FinMin Teleconference on Greece,1,2012-11-24,2012-11-24,rare,fewer than 24 announcements
+EUR,eur EU Finance Ministers Meeting,4,2012-02-20,2020-03-16,rare,fewer than 24 announcements
+EUR,eur EU Leaders Special Summit,7,2012-06-22,2020-10-02,rare,fewer than 24 announcements
+EUR,eur EU Parliament to Vote on Resolution on UK Referendum,1,2016-06-28,2016-06-28,rare,fewer than 24 announcements
+EUR,eur EU proposal on Brexit Northern Ireland protocol,1,2021-10-13,2021-10-13,rare,fewer than 24 announcements
+EUR,eur EU's Juncker and Italy's Conte meet to discuss Italian Budget,1,2018-12-12,2018-12-12,rare,fewer than 24 announcements
+EUR,eur EU's Rompuy & Barroso and China's Wen at EU-China Summit,1,2012-09-20,2012-09-20,rare,fewer than 24 announcements
+EUR,eur European Commission Decision on Italy,1,2018-11-21,2018-11-21,rare,fewer than 24 announcements
+EUR,eur European Court of Justice Ruling,2,2015-01-14,2015-06-16,rare,fewer than 24 announcements
+EUR,eur European Parliament Election,5,2014-05-22,2024-06-08,rare,fewer than 24 announcements
+EUR,eur European Systemic Risk Board Meeting,4,2012-03-22,2012-12-20,rare,fewer than 24 announcements
+EUR,eur Eurozone Economic Outlook,1,2016-01-01,2016-01-01,rare,fewer than 24 announcements
+EUR,eur Finnish Parliament votes on the Spanish Bailout,1,2012-07-20,2012-07-20,rare,fewer than 24 announcements
+EUR,eur G20 Finance Ministers and Central Bank Governors Meeting,6,2013-04-18,2023-02-25,rare,fewer than 24 announcements
+EUR,eur G7 Finance Ministers Meeting,3,2012-10-11,2013-05-11,rare,fewer than 24 announcements
+EUR,eur G8 Meeting,3,2012-06-03,2013-06-18,rare,fewer than 24 announcements
+EUR,eur Hollande - Merkel Meeting,1,2012-08-23,2012-08-23,rare,fewer than 24 announcements
+EUR,eur Hollande - Van Rompuy Meeting,1,2012-09-05,2012-09-05,rare,fewer than 24 announcements
+EUR,eur Hollande-Monti Meeting,2,2012-06-14,2012-09-04,rare,fewer than 24 announcements
+EUR,eur IMF Global Economic Outlook,1,2013-07-09,2013-07-09,rare,fewer than 24 announcements
+EUR,eur Industrial New Orders (YoY),3,2012-01-24,2012-03-22,rare,fewer than 24 announcements
+EUR,eur Industrial New Orders s.a. (MoM),3,2012-01-24,2012-03-22,rare,fewer than 24 announcements
+EUR,eur Irish Stability Treaty Vote,1,2012-05-31,2012-05-31,rare,fewer than 24 announcements
+EUR,eur Juncker - Tsipras Meeting,1,2015-02-04,2015-02-04,rare,fewer than 24 announcements
+EUR,eur Merkel - Barroso Meeting,1,2012-10-11,2012-10-11,rare,fewer than 24 announcements
+EUR,eur Merkel - Cameron Meeting,1,2012-11-07,2012-11-07,rare,fewer than 24 announcements
+EUR,eur Merkel - Van Rompuy Meeting,1,2012-09-04,2012-09-04,rare,fewer than 24 announcements
+EUR,eur Monti - Hollande - Rajoy Meeting,1,2012-10-05,2012-10-05,rare,fewer than 24 announcements
+EUR,eur NATO Summit,2,2025-06-24,2025-06-25,rare,fewer than 24 announcements
+EUR,eur Negotiated Wage Rates (QoQ),6,2024-02-20,2025-05-23,rare,fewer than 24 announcements
+EUR,eur OECD Economic Outlook,1,2015-11-09,2015-11-09,rare,fewer than 24 announcements
+EUR,eur Rajoy - Draghi Meeting,1,2013-02-12,2013-02-12,rare,fewer than 24 announcements
+EUR,eur Rajoy - Merkel Meeting,2,2012-09-06,2013-02-04,rare,fewer than 24 announcements
+EUR,eur Rajoy - Monti Meeting,2,2012-09-21,2012-10-29,rare,fewer than 24 announcements
+EUR,eur Rajoy - Van Rompuy Meeting,1,2012-08-28,2012-08-28,rare,fewer than 24 announcements
+EUR,eur Rajoy-Hollande Meeting,2,2012-08-30,2012-10-10,rare,fewer than 24 announcements
+EUR,eur Runoff Election in Cyprus,1,2013-02-24,2013-02-24,rare,fewer than 24 announcements
+EUR,eur Samaras - Hollande Meeting,1,2012-08-25,2012-08-25,rare,fewer than 24 announcements
+EUR,eur Samaras - Juncker Meeting,1,2012-08-22,2012-08-22,rare,fewer than 24 announcements
+EUR,eur Samaras - Merkel Meeting,3,2012-08-24,2013-01-08,rare,fewer than 24 announcements
+EUR,eur Samaras - Monti Meeting,1,2012-09-21,2012-09-21,rare,fewer than 24 announcements
+EUR,eur Schaeuble - Stournaras Meeting,1,2012-09-04,2012-09-04,rare,fewer than 24 announcements
+EUR,eur Second Round French Legislative Elections,1,2012-06-17,2012-06-17,rare,fewer than 24 announcements
+EUR,eur Spain Formal Request for Banking Rescue,1,2012-06-25,2012-06-25,rare,fewer than 24 announcements
+EUR,eur Targeted LTRO,12,2014-09-18,2017-03-23,rare,fewer than 24 announcements
+EUR,eur Troika visits Greece,2,2012-07-24,2012-09-10,rare,fewer than 24 announcements
+EUR,eur Van Rompuy - Barroso - Monti Meeting,1,2012-10-11,2012-10-11,rare,fewer than 24 announcements
+EUR,fra Legislative Election,2,2024-06-30,2024-07-07,rare,fewer than 24 announcements
+EUR,fra No-confidence motion against French PM,1,2024-12-04,2024-12-04,rare,fewer than 24 announcements
+EUR,fra Presidential Election,3,2017-04-23,2022-04-24,rare,fewer than 24 announcements
+EUR,ger Bundestag vote on Greek Aid,1,2012-11-30,2012-11-30,rare,fewer than 24 announcements
+EUR,ger Bundestag votes on the Spanish Bailout,1,2012-07-19,2012-07-19,rare,fewer than 24 announcements
+EUR,ger CDU Party Leader Election,1,2018-12-07,2018-12-07,rare,fewer than 24 announcements
+EUR,ger Constitutional Court Ruling on ECB QE Legality,1,2020-03-24,2020-03-24,rare,fewer than 24 announcements
+EUR,ger Federal Election,4,2013-09-22,2025-02-23,rare,fewer than 24 announcements
+EUR,ger German Constitutional Court Ruling,1,2016-06-21,2016-06-21,rare,fewer than 24 announcements
+EUR,ger German Constitutional Court discusses Motions to stop ESM,1,2012-07-10,2012-07-10,rare,fewer than 24 announcements
+EUR,ger Germany Constitutional Court ruling on OMT Bond Buying,3,2012-09-12,2013-06-12,rare,fewer than 24 announcements
+EUR,ger Public Finances Balance – GDP Ratio,2,2013-01-15,2014-01-15,rare,fewer than 24 announcements
+EUR,ger Real GDP Growth,13,2013-01-15,2025-01-15,rare,fewer than 24 announcements
+GBP,Autumn Forecast Statement,13,2012-12-05,2024-10-30,rare,fewer than 24 announcements
+GBP,Bank Stress Test Results,7,2014-12-16,2021-12-13,rare,fewer than 24 announcements
+GBP,Bank of England Credit Conditions Report (QoQ),1,2012-03-29,2012-03-29,rare,fewer than 24 announcements
+GBP,BoE Inflation Letter,1,2015-02-12,2015-02-12,rare,fewer than 24 announcements
+GBP,BoE Monetary Policy Statement,1,2017-01-01,2017-01-01,rare,fewer than 24 announcements
+GBP,Brexit Bill's Final Vote in House of Commons,1,2017-02-08,2017-02-08,rare,fewer than 24 announcements
+GBP,Brexit Deadline,1,2020-01-31,2020-01-31,rare,fewer than 24 announcements
+GBP,Budget Report,16,2012-03-21,2025-03-26,rare,fewer than 24 announcements
+GBP,EU Membership Court Ruling,2,2016-11-03,2017-01-24,rare,fewer than 24 announcements
+GBP,EU Referendum,1,2016-06-23,2016-06-23,rare,fewer than 24 announcements
+GBP,European Council Summit on Brexit,3,2019-04-10,2019-10-18,rare,fewer than 24 announcements
+GBP,Government Spending Review,1,2013-06-26,2013-06-26,rare,fewer than 24 announcements
+GBP,Hometrack Housing Prices s.a (MoM),18,2012-08-26,2014-09-25,rare,fewer than 24 announcements
+GBP,Mark Carney will become the new Bank of England Governor,2,2012-11-27,2013-07-01,rare,fewer than 24 announcements
+GBP,May - Juncker Meeting,2,2019-02-07,2019-02-20,rare,fewer than 24 announcements
+GBP,Nationwide Consumer Confidence,5,2012-01-19,2012-05-10,rare,fewer than 24 announcements
+GBP,No confidence vote in UK PM Johnson,1,2022-06-06,2022-06-06,rare,fewer than 24 announcements
+GBP,PM May's Leadership Challenge,2,2018-12-12,2019-01-16,rare,fewer than 24 announcements
+GBP,Parliamentary Election,4,2015-05-07,2024-07-04,rare,fewer than 24 announcements
+GBP,Scottish Independence Referendum,1,2014-09-18,2014-09-18,rare,fewer than 24 announcements
+GBP,Start of Brexit Negotiations,1,2017-06-19,2017-06-19,rare,fewer than 24 announcements
+GBP,Tory Leadership Contest Results Announcement,1,2019-07-23,2019-07-23,rare,fewer than 24 announcements
+GBP,UK Brexit Department releases Brexit Economic Impact,1,2018-11-28,2018-11-28,rare,fewer than 24 announcements
+GBP,UK Cabinet Meeting to discuss Brexit Deal,1,2018-11-14,2018-11-14,rare,fewer than 24 announcements
+GBP,UK Conservative Party New Prime Minister Announcement,1,2022-09-05,2022-09-05,rare,fewer than 24 announcements
+GBP,UK Government triggers Article 50 for Brexit,1,2017-03-29,2017-03-29,rare,fewer than 24 announcements
+GBP,UK PM May meets EU Juncker,1,2018-11-21,2018-11-21,rare,fewer than 24 announcements
+GBP,UK Parliamentary Vote on Brexit,15,2019-01-15,2020-12-30,rare,fewer than 24 announcements
+GBP,UK Supreme Court Hears Government-Parliament Brexit Appeal,4,2016-12-05,2016-12-08,rare,fewer than 24 announcements
+GBP,UK court hearing on forcing no-deal Brexit,2,2019-09-03,2019-09-05,rare,fewer than 24 announcements
+GBP,UK court ruling on forcing no-deal Brexit,1,2019-09-24,2019-09-24,rare,fewer than 24 announcements
+USD,30-year TIPS Auction,12,2019-08-22,2025-02-20,rare,fewer than 24 announcements
+USD,5-year TIPS Auction,21,2019-12-19,2025-06-17,rare,fewer than 24 announcements
+USD,Bank Stress Test Results,16,2012-03-13,2025-06-27,rare,fewer than 24 announcements
+USD,Biden-Powell meeting,1,2022-05-31,2022-05-31,rare,fewer than 24 announcements
+USD,COVID-19 Vaccine announcement,2,2020-12-10,2020-12-17,rare,fewer than 24 announcements
+USD,Democratic National Convention,3,2012-09-04,2012-09-06,rare,fewer than 24 announcements
+USD,Fed Announcement,1,2016-04-11,2016-04-11,rare,fewer than 24 announcements
+USD,Fed Chairman Nomination Vote,1,2014-01-06,2014-01-06,rare,fewer than 24 announcements
+USD,Fed Index of Common Inflation Expectations,12,2019-12-31,2022-10-14,rare,fewer than 24 announcements
+USD,Fed Monetary Policy Report,20,2016-02-11,2025-06-20,rare,fewer than 24 announcements
+USD,Federal Reserve releases Quarterly Flow of Funds Accounts,3,2012-03-08,2012-09-20,rare,fewer than 24 announcements
+USD,Fed’s Chair Bernanke meets with Senate Fin Committee,1,2012-09-19,2012-09-19,rare,fewer than 24 announcements
+USD,Fiscal Cliff talks,1,2012-11-16,2012-11-16,rare,fewer than 24 announcements
+USD,G7 Call on Coronavirus,4,2020-03-03,2020-06-03,rare,fewer than 24 announcements
+USD,Grain Stock Report,23,2020-01-10,2025-06-30,rare,fewer than 24 announcements
+USD,House votes on Coronavirus Bill,1,2020-03-27,2020-03-27,rare,fewer than 24 announcements
+USD,Lame Duck Period ends,1,2012-12-18,2012-12-18,rare,fewer than 24 announcements
+USD,National Day of Mourning,1,2025-01-09,2025-01-09,rare,fewer than 24 announcements
+USD,Nonfarm Payrolls Benchmark Revision,1,2024-08-21,2024-08-21,rare,fewer than 24 announcements
+USD,OPEC Monthly Market Report,20,2023-11-13,2025-06-16,rare,fewer than 24 announcements
+USD,President Trump to announce Fed Chair Nominee,1,2017-11-02,2017-11-02,rare,fewer than 24 announcements
+USD,Presidential Debate,7,2012-10-04,2024-09-11,rare,fewer than 24 announcements
+USD,Presidential Election,4,2012-11-06,2024-11-05,rare,fewer than 24 announcements
+USD,Presidential Inauguration,2,2021-01-20,2025-01-20,rare,fewer than 24 announcements
+USD,Republican National Convention,1,2012-08-28,2012-08-28,rare,fewer than 24 announcements
+USD,"Roundtable with Janet Yellen, Fed; Zhou Xiaochuan, PBoC; Haruhiko Kuroda, BoJ; and Vítor Constâncio, ECB",1,2017-10-15,2017-10-15,rare,fewer than 24 announcements
+USD,Senate votes on Coronavirus Bill,1,2020-03-23,2020-03-23,rare,fewer than 24 announcements
+USD,Senate votes on Government Shutdown,1,2019-01-24,2019-01-24,rare,fewer than 24 announcements
+USD,The House of Representatives Election Recess starts,1,2012-10-05,2012-10-05,rare,fewer than 24 announcements
+USD,Trump - Juncker meeting,1,2018-07-25,2018-07-25,rare,fewer than 24 announcements
+USD,Trump - Kim Meeting,1,2018-06-12,2018-06-12,rare,fewer than 24 announcements
+USD,Trump - May meeting,1,2017-01-27,2017-01-27,rare,fewer than 24 announcements
+USD,Trump - Merkel Meeting,1,2017-03-17,2017-03-17,rare,fewer than 24 announcements
+USD,Trump - Putin Meeting,2,2017-07-07,2018-07-16,rare,fewer than 24 announcements
+USD,Trump - Xi meeting,2,2017-04-06,2017-04-07,rare,fewer than 24 announcements
+USD,US Congress votes Health Care Bill,1,2017-03-24,2017-03-24,rare,fewer than 24 announcements
+USD,US Democratic Primaries Super Tuesday,1,2020-03-03,2020-03-03,rare,fewer than 24 announcements
+USD,US Government Shutdown Limit,1,2017-12-22,2017-12-22,rare,fewer than 24 announcements
+USD,US Liberation Day Tariff Announcements,1,2025-04-02,2025-04-02,rare,fewer than 24 announcements
+USD,US Midterm Elections,2,2018-11-06,2022-11-08,rare,fewer than 24 announcements
+USD,US President Biden and Chinese President Xi summit,3,2021-11-15,2022-11-14,rare,fewer than 24 announcements
+USD,US-China Phase One Trade Deal Signature,1,2020-01-15,2020-01-15,rare,fewer than 24 announcements
+USD,Vice-Presidential Debate,1,2020-10-08,2020-10-08,rare,fewer than 24 announcements
+AUD,OUTDATED - RBA Deputy Governor Lowe Speech,28,2012-07-10,2016-10-17,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA Governor Bullock speech,17,2023-10-17,2025-04-10,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA Press Conference,11,2024-02-06,2025-05-20,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Bullock speech,28,2018-02-19,2023-08-29,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Debelle speech,95,2012-08-16,2022-03-09,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Edey speech,13,2013-05-01,2016-09-28,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Ellis speech,18,2018-02-12,2023-03-28,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Governor Lowe speech,105,2016-09-11,2023-09-07,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Governor Stevens speech,52,2012-02-21,2016-08-10,speech-like,"speech, testimony, hearing or press conference"
+AUD,RBA's Kent speech,48,2012-07-19,2023-10-11,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur Barroso and Juncker speak to European Parliament,1,2012-07-03,2012-07-03,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur Barroso speaks at European Forum Alpbach,1,2012-08-30,2012-08-30,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur Donald Tusk speech,1,2017-03-29,2017-03-29,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur EC President von der Leyen speech,1,2022-09-14,2022-09-14,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB Press Conference,116,2012-03-08,2025-06-05,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Asmussen speech,9,2012-06-18,2012-11-15,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Cipollone speech,43,2024-01-17,2025-06-16,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Constancio speech,17,2015-08-25,2018-05-17,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Cœuré speech,65,2016-07-03,2019-12-18,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's De Guindos speech,217,2019-02-19,2025-06-30,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Elderson speech,83,2021-09-29,2025-06-18,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Escrivá speech,7,2025-05-13,2025-06-18,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Knot speech,7,2025-05-13,2025-06-27,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Lane speech,180,2019-06-18,2025-06-24,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Lautenschläger speech,41,2016-02-22,2019-10-30,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Mersch speech,56,2017-12-06,2020-11-16,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Nagel speech,112,2022-11-08,2025-06-23,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Nowotny speech,4,2016-09-01,2018-11-26,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Noyer speech,6,2012-06-27,2014-04-14,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Panetta speech,77,2020-02-13,2025-06-18,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Praet speech,55,2016-02-26,2019-05-22,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's President Draghi speaks at Davos,1,2013-01-25,2013-01-25,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's President Draghi speaks at Jackson Hole,2,2014-08-22,2017-08-25,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's President Draghi speech,187,2012-01-12,2019-10-28,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's President Lagarde speech,252,2019-09-04,2025-06-30,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Schnabel speech,131,2020-02-11,2025-06-28,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur ECB's Villeroy speech,21,2023-02-17,2025-06-24,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur European Commission Press Conference,1,2014-03-17,2014-03-17,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur Jean Claude Juncker speech,2,2015-06-29,2019-06-19,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur President Barroso delivers the State of the Union Address 2012,1,2012-09-12,2012-09-12,speech-like,"speech, testimony, hearing or press conference"
+EUR,eur Press Conference with Mario Monti and Mariano Rajoy,1,2012-08-02,2012-08-02,speech-like,"speech, testimony, hearing or press conference"
+EUR,fra Emmanuel Macron speech,1,2017-09-26,2017-09-26,speech-like,"speech, testimony, hearing or press conference"
+EUR,ger German Buba President Weidmann speech,129,2012-06-14,2022-01-11,speech-like,"speech, testimony, hearing or press conference"
+EUR,ger Merkel speaks in the Bundestag,3,2012-06-14,2012-10-18,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE Monetary Policy Report Hearings,46,2012-06-26,2025-06-03,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Bean speech,10,2012-02-21,2014-05-20,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Breeden speech,19,2024-04-08,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Broadbent speech,38,2012-09-12,2024-05-20,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Cunliffe speech,57,2016-01-22,2023-10-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Dale speech,7,2012-09-08,2014-04-30,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Dhingra speech,11,2023-10-17,2025-05-22,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Fisher speech,7,2013-02-26,2014-01-23,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Forbes speech,4,2016-11-04,2017-06-22,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Governor Bailey speech,129,2020-03-04,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Governor Carney speech,161,2013-10-24,2020-03-11,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Governor King speech,20,2012-01-17,2013-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Greene speech,23,2023-11-17,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Haldane speech,57,2016-02-23,2021-06-30,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Haskel speech,30,2018-06-26,2024-07-08,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Hogg speech,2,2017-02-28,2017-03-06,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Lombardelli speech,9,2024-11-25,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Mann speech,41,2022-03-01,2025-06-02,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's McCafferty speech,3,2018-02-12,2018-06-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Miles speech,6,2012-09-11,2014-11-21,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Pill speech,64,2022-02-24,2025-06-25,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Ramsden speech,36,2017-11-20,2025-06-24,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Saunders speech,14,2018-01-17,2022-05-09,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Taylor speech,1,2025-05-12,2025-05-12,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Tenreyro speech,40,2018-01-15,2023-06-29,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Tucker speech,9,2012-06-18,2013-10-12,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Vlieghe speech,16,2018-02-12,2021-07-26,speech-like,"speech, testimony, hearing or press conference"
+GBP,BoE's Weale speech,14,2012-06-28,2016-07-18,speech-like,"speech, testimony, hearing or press conference"
+GBP,Boris Johnson speech,2,2018-10-02,2021-02-10,speech-like,"speech, testimony, hearing or press conference"
+GBP,Brexit Press Conference,1,2018-03-19,2018-03-19,speech-like,"speech, testimony, hearing or press conference"
+GBP,David Cameron speech,1,2013-01-23,2013-01-23,speech-like,"speech, testimony, hearing or press conference"
+GBP,Mark Carney speaks at UK Parliament,4,2013-02-07,2020-02-11,speech-like,"speech, testimony, hearing or press conference"
+GBP,Paul Volcker testifies to UK Banking Standards Comission,1,2012-10-17,2012-10-17,speech-like,"speech, testimony, hearing or press conference"
+GBP,UK Prime Minister Boris Johnson speech,8,2019-10-02,2021-11-30,speech-like,"speech, testimony, hearing or press conference"
+GBP,UK Prime Minister Theresa May speech,23,2016-08-31,2019-05-24,speech-like,"speech, testimony, hearing or press conference"
+USD,Barack Obama Press Conference,9,2012-02-13,2014-03-17,speech-like,"speech, testimony, hearing or press conference"
+USD,Coronavirus Task Force Press Briefing,1,2020-03-10,2020-03-10,speech-like,"speech, testimony, hearing or press conference"
+USD,Donald Trump's News Conference,3,2017-01-11,2020-05-29,speech-like,"speech, testimony, hearing or press conference"
+USD,FOMC Member Powell speech (don't use),44,2013-02-22,2017-11-28,speech-like,"speech, testimony, hearing or press conference"
+USD,FOMC Press Conference,63,2016-06-15,2025-06-18,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed Minneapolis's Kocherlakota speech,56,2012-04-12,2015-12-04,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Barkin speech,77,2018-05-07,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Barr speech,32,2023-11-28,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Bostic speech,153,2018-01-08,2025-06-30,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Bowman speech,99,2019-02-11,2025-06-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Brainard speech,89,2015-11-01,2023-01-19,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Bullard speech,160,2012-02-24,2023-07-11,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Chair Bernanke speaks at Jackson Hole,1,2012-08-31,2012-08-31,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Chair Bernanke testifies,10,2012-02-02,2013-05-22,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Chair Powell testifies,43,2019-02-26,2025-06-25,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Chair Yellen speech,56,2014-02-11,2017-11-21,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Chair Yellen testifies,17,2014-07-15,2023-03-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Clarida speech,50,2018-10-25,2021-11-30,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Collins speech,25,2022-11-07,2025-06-25,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Cook speech,41,2022-10-20,2025-06-27,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Daly speech,72,2018-10-16,2025-06-26,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Dudley speech,107,2012-02-24,2018-06-18,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Duke speech,7,2012-03-27,2018-06-18,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Evans speech,150,2012-06-06,2022-12-02,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's George speech,60,2012-07-16,2023-01-18,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Goolsbee speech,78,2023-02-28,2025-06-30,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Hammack speech,15,2024-10-02,2025-06-27,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Harker speech,88,2016-04-12,2025-06-06,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Jefferson speech,29,2022-10-20,2025-05-19,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Kaplan speech,67,2017-02-23,2021-02-03,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Kashkari speech,114,2017-02-21,2025-06-27,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Kugler speech,27,2024-02-07,2025-06-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Lacker speech,37,2012-05-02,2017-04-03,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Lockhart speech,79,2012-02-14,2017-02-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Logan speech,29,2023-03-03,2025-06-02,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Mester speech,115,2014-09-04,2024-06-14,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Monetary Policy Statement and Press Conference,18,2012-01-25,2016-03-16,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Musalem speech,18,2024-06-18,2025-05-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Pianalto speech,15,2012-04-16,2014-03-27,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Powell speech,115,2018-02-27,2025-06-02,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Quarles speech,63,2018-01-19,2021-10-20,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Raskin speech,8,2012-07-23,2013-07-17,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Richard Fisher speech,35,2012-02-15,2015-03-09,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Rosengren speech,75,2012-09-20,2022-09-26,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Schmid speech,17,2024-02-26,2025-06-25,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Stanley Fischer speech,37,2014-12-02,2017-09-28,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Stein speech,16,2012-10-11,2014-05-06,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Tarullo speech,35,2012-06-12,2017-04-04,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Waller speech,75,2021-08-05,2025-06-23,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Williams speech,278,2012-06-06,2025-06-27,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Yellen speech,12,2012-04-11,2013-11-14,speech-like,"speech, testimony, hearing or press conference"
+USD,Fed's Yellen speech on Labor Markets in Jackson Hole,1,2014-08-22,2014-08-22,speech-like,"speech, testimony, hearing or press conference"
+USD,Former Fed's Chair Bernanke speech,46,2012-02-10,2015-03-02,speech-like,"speech, testimony, hearing or press conference"
+USD,Jackson Hole Symposium,37,2012-08-30,2024-08-24,speech-like,"speech, testimony, hearing or press conference"
+USD,OPEC Press Conference,3,2016-11-30,2020-06-08,speech-like,"speech, testimony, hearing or press conference"
+USD,Philadelphia Fed's Plosser speech,40,2012-02-24,2015-03-02,speech-like,"speech, testimony, hearing or press conference"
+USD,President Biden speech,28,2021-01-15,2024-07-11,speech-like,"speech, testimony, hearing or press conference"
+USD,President Obama speech,9,2013-02-13,2016-01-13,speech-like,"speech, testimony, hearing or press conference"
+USD,President Trump State of the Union address,2,2019-02-06,2020-02-05,speech-like,"speech, testimony, hearing or press conference"
+USD,President Trump speech,34,2017-01-20,2025-05-08,speech-like,"speech, testimony, hearing or press conference"
+USD,Treasury Sec Lew speech,29,2013-02-13,2017-01-17,speech-like,"speech, testimony, hearing or press conference"
+USD,Treasury Sec Mnuchin speech,9,2017-02-23,2020-09-24,speech-like,"speech, testimony, hearing or press conference"
+USD,Treasury Sec Yellen speech,6,2021-01-19,2023-03-30,speech-like,"speech, testimony, hearing or press conference"
+USD,Treasury Sec Yellen testifies,1,2022-06-07,2022-06-07,speech-like,"speech, testimony, hearing or press conference"
+USD,Treasury's Geithner speech,8,2012-02-14,2012-09-25,speech-like,"speech, testimony, hearing or press conference"
+USD,Trump's speech to Congress,1,2017-03-01,2017-03-01,speech-like,"speech, testimony, hearing or press conference"

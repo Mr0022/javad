@@ -19,5 +19,7 @@ here mirrors that directory so relative paths between them still resolve.
 | `core/eval/core_*.csv` | CORE test-period MSE; `core_merged_*` lists releases merged by the 0.9-correlation dedup |
 | `core/times_draft.py`, `times_final.json` | scheduled local release times used in Table 1 |
 | `core/make_tables.py`, `table1.md`, `table2.md` | the two Table 1-style tables in `data/event_sets/CORE_EVENT_SET.md` |
+| `ext/families_ext.py` | the EXT set: the releases it adds to CORE and the rules for what stays out (speech-like, no macro news, rare) |
+| `ext/make_ext.py` | writes `data/event_sets/ext_release_map.csv`, `ext_excluded.csv`, `data/<PAIR>_EVENTS_EXT.csv` and `data/event_sets/EXT_EVENT_SET.md` / `.tex`, checking that every raw series is accounted for |
 
 Test period 2024-01 .. 2025-06 (~385 days per pair); train <= 2023.

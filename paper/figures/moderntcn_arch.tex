@@ -28,7 +28,7 @@
 \node[box, fill=cRevIN] (v2) at (0,-1.6)
   {\textbf{RevIN} (normalize)\\keep $\mu_t,\ \sigma_t$};
 \node[box, fill=cStem] (v3) at (0,-3.2)
-  {Stem: patch embedding\\$P{=}16,\ S{=}8$};
+  {Stem: patch embedding\\$P{=}16,\ S{=}8$, pad to 78};
 \draw[arr] (v1) -- (v2);
 \draw[arr] (v2) -- (v3);
 
@@ -61,8 +61,8 @@
 \draw[arr, dashed, black!45] (v2) -- node[dim, above] {$\mu_t,\ \sigma_t$} (u4);
 
 % ---- inside one ModernTCN block --------------------------------------------
-\coordinate (bin) at (-5.4,-11.6);
-\node[ibox, fill=cBlock!45, minimum width=3.4cm] (b1) at (-2.3,-11.6)
+\coordinate (bin) at (-5.8,-11.6);
+\node[ibox, fill=cBlock!45, minimum width=3.4cm] (b1) at (-2.7,-11.6)
   {Depthwise conv over patches\\$K_L{=}27$ and $K_S{=}5$, BN\\(each channel)};
 \node[ibox, fill=cBlock!45, minimum width=2.8cm] (b2) at (1.3,-11.6)
   {ConvFFN 1\\mixes channels};

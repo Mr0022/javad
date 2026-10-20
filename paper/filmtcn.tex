@@ -45,12 +45,14 @@ the architecture.
     variance as a second variable; both variables pass through four ModernTCN
     stages, and the calendar variable is dropped after the last one. The
     forecast-horizon calendar is embedded with the same $\mathbf{W}_e$,
-    averaged over the $h$ forecast days and mapped to the FiLM scale
-    $\boldsymbol{\gamma}_t$ and shift $\boldsymbol{\beta}_t$, which modulate
-    the history representation $\mathbf{H}_t$ before the linear head. Grey
-    labels give tensor shapes: (batch, days, features) for the inputs and
-    (batch, variables, channels, patches) inside the backbone. $J$ is the
-    number of calendar features.}
+    averaged over the $h$ forecast days and mapped to the FiLM parameters
+    $\boldsymbol{\gamma}_t$ and $\boldsymbol{\beta}_t$, which rescale and
+    shift the history representation $\mathbf{H}_t$ before the linear head.
+    Both stems pad the 70-day window at its end to 78 days, which gives
+    $N=8$ patches. Grey labels on the arrows give tensor shapes, as
+    (batch, days, features) before the mean-pool and as (batch, variables,
+    channels, patches) inside the backbone, or name the quantity passed;
+    $/2$ marks downsampling. $J$ is the number of calendar features.}
   \label{fig:filmtcn}
 \end{figure}
 
@@ -350,8 +352,9 @@ pair and horizon, by minimizing the mean squared error
 \end{equation}
 over the forecast origins $\mathcal{T}$ of the training years. All three series
 start on 12 January 2012, so with $L=70$ the first training origin is
-19 April 2012 and $\mathcal{T}$ runs to the end of 2021: 2,515 origins at
-$h=1$ and 2,511 at $h=5$. Each epoch draws shuffled mini-batches of 256 origins
+19 April 2012. The last training origin is the latest one whose $h$-day target
+window ends by 31 December 2021: 30 December 2021 at $h=1$ and 24 December 2021
+at $h=5$. This gives 2,515 training origins at $h=1$ and 2,511 at $h=5$. Each epoch draws shuffled mini-batches of 256 origins
 and drops the last incomplete batch, so it uses 9 batches, or 2,304 origins.
 
 We use Adam \citep{kingma2015adam} without weight decay and a one-cycle
@@ -368,15 +371,27 @@ computed on two shuffled batches of 256 origins, 512 of the 514--519
 validation origins. Each configuration is trained with the seeds
 $2021,\dots,2030$, and the losses we report are averages over seeds.
 
-Table~\ref{tab:filmtcn-hparams} lists the hyperparameters. The backbone and
-optimizer values are the optimum of an Optuna search \citep{akiba2019optuna}
-for ModernTCN on EUR/USD at $h=1$, with the dropout rate in the blocks raised
-from 0.33 to 0.5. That search has no calendar embedding; $d_e=16$ is set
-separately [state how $d_e=16$ was chosen]. All values are held fixed across
-pairs and horizons. The ModernTCN benchmark is the same
-network with the calendar variable and the FiLM layer removed ($M=1$), trained
-with the same hyperparameters, so the difference between the two models
-isolates the calendar path.
+Table~\ref{tab:filmtcn-hparams} lists the hyperparameters. The look-back
+length, the network dimensions, the dropout rates, the learning rate and the
+batch size are the optimum of an Optuna search \citep{akiba2019optuna} for
+ModernTCN on EUR/USD at $h=1$ [state the EUR/USD series and sample the search
+used]. The search held the optimizer and the one-cycle schedule fixed and
+trained each trial for at most 30 epochs with patience 7. We raise the dropout
+rate in the blocks from the optimum of 0.33 to 0.5. The search has no calendar
+embedding, so $d_e=16$ is set separately [state how $d_e=16$ was chosen].
+% Candidate, if this is how d_e was chosen: tuningresults/EVENTTCN1 searched
+% d_e in {4, 8, 16} for the event model at h = 1 and selected 16 (EVENTTCN5
+% selected 4 at h = 5, EVENTTCN22 selected 8 at h = 22). That search used a
+% different backbone (seq_len 22, patch 32, 3 blocks). E.g.: "We take d_e = 16
+% from a second search, for FiLM-TCN at h = 1 over d_e in {4, 8, 16}; none of
+% its other values are used."
+All values are held fixed across pairs and horizons. The ModernTCN benchmark
+is the same network with the calendar variable and the FiLM layer removed
+($M=1$), trained with the same hyperparameters and seeds. Because \FiLMTCN{}
+creates its calendar layers before the backbone, a given seed does not give the
+two networks the same initial backbone weights or the same batch order, so the
+difference between the two models isolates the calendar path only on average
+over seeds.
 
 \begin{table}[t]
   \centering

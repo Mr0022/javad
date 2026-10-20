@@ -33,7 +33,7 @@
 \node[box, fill=cPast] (p2) at (0,-1.6)
   {Event embedding $\mathbf{W}_e$\\(shared with future path)};
 \node[box, fill=cPast] (p3) at (0,-3.2)
-  {Event patch stem\\$P{=}16,\ S{=}8$};
+  {Event patch stem\\$P{=}16,\ S{=}8$, pad to 78};
 \draw[arr] (p1) -- node[dim, right] {$(B,70,J)$} (p2);
 \draw[arr] (p2) -- node[dim, right] {$(B,70,16)$} (p3);
 
@@ -43,7 +43,7 @@
 \node[box, fill=cRevIN] (v2) at (4.2,-1.6)
   {\textbf{RevIN} (normalize)\\keep $\mu_t,\ \sigma_t$};
 \node[box, fill=cStem] (v3) at (4.2,-3.2)
-  {Stem: patch embedding\\$P{=}16,\ S{=}8$};
+  {Stem: patch embedding\\$P{=}16,\ S{=}8$, pad to 78};
 \node[box, fill=cConcat] (v4) at (4.2,-4.8)
   {Concatenate calendar\\as 2nd variable};
 \draw[arr] (v1) -- (v2);

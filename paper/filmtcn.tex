@@ -40,18 +40,19 @@ the architecture.
 \begin{figure}[tbp]
   \centering
   \includegraphics[width=\textwidth]{figures/filmtcn_arch}
-  \caption{\FiLMTCN{} as estimated in this paper. The look-back calendar is
-    embedded, patched by its own stem and concatenated with log realized
-    variance as a second variable; both variables pass through four ModernTCN
-    stages, and the calendar variable is dropped after the last one. The
-    forecast-horizon calendar is embedded with the same $\mathbf{W}_e$,
-    averaged over the $h$ forecast days and mapped to the FiLM parameters
-    $\boldsymbol{\gamma}_t$ and $\boldsymbol{\beta}_t$, which rescale and
-    shift the history representation $\mathbf{H}_t$ before the linear head.
-    Both stems pad the 70-day window at its end to 78 days, which gives
-    $N=8$ patches. Grey labels on the arrows give tensor shapes, as
-    (batch, days, features) before the mean-pool and as (batch, variables,
-    channels, patches) inside the backbone, or name the quantity passed;
+  \caption{\FiLMTCN{} at $h=1$. The look-back calendar is embedded, patched
+    by its own stem and concatenated with log realized variance as a second
+    variable; both variables pass through four ModernTCN stages, and the
+    calendar variable is dropped after the last one. The calendar of the
+    forecast day $t+1$ is embedded with the same $\mathbf{W}_e$ and mapped to
+    the FiLM parameters $\boldsymbol{\gamma}_t$ and $\boldsymbol{\beta}_t$,
+    which rescale and shift the history representation $\mathbf{H}_t$ before
+    the linear head. At $h=1$ the summary~\eqref{eq:filmtcn-cond} is just
+    $\mathbf{e}_{t+1}$, so no averaging step is drawn. Both stems pad the
+    70-day window at its end to 78 days, which gives $N=8$ patches. Grey
+    labels on the arrows give tensor shapes, as (batch, days, features) for
+    the inputs and as (batch, variables, channels, patches) inside the
+    backbone, or name the quantity passed;
     $/2$ marks downsampling. $J$ is the number of calendar features.}
   \label{fig:filmtcn}
 \end{figure}

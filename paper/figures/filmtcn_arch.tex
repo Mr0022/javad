@@ -1,6 +1,8 @@
-% FiLM-TCN architecture as run in colab_benchmark_h1_h5.ipynb
+% FiLM-TCN architecture as run in colab_benchmark_h1_h5.ipynb at h = 1
 % (--use_events --event_fusion channel --event_dim 16 --use_multi_scale False
-%  --aggregate_horizon). Compile with pdflatex; include the PDF in the paper.
+%  --aggregate_horizon --pred_len 1). At h = 1 the forecast-horizon calendar
+% is the single day t+1, so the mean-pool over the horizon is the identity
+% and is not drawn. Compile with pdflatex; include the PDF in the paper.
 \documentclass[tikz,border=6pt]{standalone}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows.meta,fit,calc}
@@ -76,7 +78,7 @@
 \node[box, fill=cRevIN] (u4) at (9.4,-1.6)
   {\textbf{RevIN} (denormalize)\\$\mu_t+\sigma_t\,\hat{y}_t$};
 \node[box, fill=cIO] (u5) at (9.4,0)
-  {\textbf{Output} $\hat{Y}_t^{(h)}$\\$(B,\,1,\,1)$};
+  {\textbf{Output}: forecast of $\ln RV_{t+1}$\\$(B,\,1,\,1)$};
 \draw[arr] (s4.east) -| node[dim, right, pos=0.75] {$(B,2,32,1)$} (u1.south);
 \draw[arr] (u1) -- node[dim, right] {$\mathbf{H}_t$: $(B,1,32,1)$} (u2);
 \draw[arr] (u2) -- (u3);
@@ -84,18 +86,15 @@
 \draw[arr] (u4) -- (u5);
 \draw[arr, dashed, black!45] (v2) -- node[dim, above] {$\mu_t,\ \sigma_t$} (u4);
 
-% ---- known future calendar (forecast days) -------------------------------
-\node[box, fill=cFut] (f1) at (14.0,0)
-  {\textbf{Known future calendar}\\$\mathbf{d}_{t+1},\dots,\mathbf{d}_{t+h}$};
-\node[box, fill=cFut] (f2) at (14.0,-1.6)
+% ---- known calendar of the forecast day t+1 --------------------------------
+\node[box, fill=cFut] (f1) at (14.4,0)
+  {\textbf{Known calendar, day $t{+}1$}\\$\mathbf{d}_{t+1}$};
+\node[box, fill=cFut] (f2) at (14.4,-2.4)
   {Event embedding $\mathbf{W}_e$\\(shared with past path)};
-\node[box, fill=cFut] (f3) at (14.0,-3.2)
-  {Mean-pool over\\the $h$ forecast days};
-\node[box, fill=cFut] (f4) at (14.0,-4.8)
+\node[box, fill=cFut] (f4) at (14.4,-4.8)
   {\textbf{FiLM generator} $\mathbf{W}_f$\\(zero-initialized)};
-\draw[arr] (f1) -- node[dim, right] {$(B,h,J)$} (f2);
-\draw[arr] (f2) -- node[dim, right] {$(B,h,16)$} (f3);
-\draw[arr] (f3) -- node[dim, right] {$\bar{\mathbf{e}}_t^{(h)}$: $(B,16)$} (f4);
+\draw[arr] (f1) -- node[dim, right] {$(B,1,J)$} (f2);
+\draw[arr] (f2) -- node[dim, right] {$\mathbf{e}_{t+1}$: $(B,16)$} (f4);
 \draw[arr] (f4) -- node[dim, above] {$\boldsymbol{\gamma}_t,\boldsymbol{\beta}_t$} (u2);
 
 % ---- inside one ModernTCN block --------------------------------------------

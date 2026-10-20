@@ -1,7 +1,9 @@
 % ---------------------------------------------------------------------------
 % FiLM-TCN model section.
 %
-% Packages assumed in the preamble: amsmath, amssymb, booktabs, natbib.
+% Packages assumed in the preamble: amsmath, amssymb, booktabs, natbib,
+% graphicx. Figure~\ref{fig:filmtcn} includes figures/filmtcn_arch.pdf,
+% compiled from paper/figures/filmtcn_arch.tex (TikZ, standalone).
 % Citation keys: perez2018film (already in your .bib); the others are in
 % paper/filmtcn_refs.bib -- rename them if your .bib uses different keys.
 % Every equation, dimension and default below follows models/ModernTCN.py,
@@ -32,7 +34,25 @@ forecast-horizon calendar, and that calendar acts only on the finished
 representation. In our experiments this placement gave better forecasts than
 FiLM layers inside each block.
 Section~\ref{sec:dummies-to-film} shows what this conditioning adds relative
-to announcement dummies in a HAR regression.
+to announcement dummies in a HAR regression. Figure~\ref{fig:filmtcn} shows
+the architecture.
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/filmtcn_arch}
+  \caption{\FiLMTCN{} as estimated in this paper. The look-back calendar is
+    embedded, patched by its own stem and concatenated with log realized
+    variance as a second variable; both variables pass through four ModernTCN
+    stages, and the calendar variable is dropped after the last one. The
+    forecast-horizon calendar is embedded with the same $\mathbf{W}_e$,
+    averaged over the $h$ forecast days and mapped to the FiLM scale
+    $\boldsymbol{\gamma}_t$ and shift $\boldsymbol{\beta}_t$, which modulate
+    the history representation $\mathbf{H}_t$ before the linear head. Grey
+    labels give tensor shapes: (batch, days, features) for the inputs and
+    (batch, variables, channels, patches) inside the backbone. $J$ is the
+    number of calendar features.}
+  \label{fig:filmtcn}
+\end{figure}
 
 \subsubsection{Inputs and forecast target}
 \label{sec:filmtcn-inputs}
@@ -57,7 +77,9 @@ scheduled on day $s$, in total and for each of the two currencies of the pair;
 they are standardized with the mean and standard deviation of the training
 years. The remaining entries are indicators $D_{j,s}\in\{0,1\}$, one for each
 release type $j$ that is scheduled on at least 24 trading days, equal to one
-when $j$ is scheduled on day $s$. A release dated on a non-trading day is
+when $j$ is scheduled on day $s$. The 24 days are counted over the full sample,
+12 January 2012 to 30 June 2025, so the selection of release types also sees
+the validation and test years. A release dated on a non-trading day is
 assigned to the next trading day. This gives $J = 253$ for AUD/USD, $322$ for
 EUR/USD and $270$ for GBP/USD. The model reads the calendar over two windows:
 the look-back days, $\mathbf{d}_{t-L+1},\dots,\mathbf{d}_t$, and the forecast
@@ -212,8 +234,8 @@ embeddings,
 where $\mathbf{W}_e$ and $\mathbf{b}_e$ are the embedding
 of~\eqref{eq:filmtcn-embed}, shared with the look-back calendar. For an
 indicator entry, $\bar{d}^{(h)}_{t,j}$ is the share of the $h$ forecast days on
-which release type $j$ is scheduled, the same announcement regressor that
-enters the HAR regression of Section~\ref{sec:dummies-to-film}.
+which release type $j$ is scheduled, which is how the announcement regressors
+of the HAR regression in Section~\ref{sec:dummies-to-film} are constructed.
 
 A linear generator maps the summary to a scale and a shift for each channel,
 \begin{equation}
@@ -245,7 +267,10 @@ of~\eqref{eq:filmtcn-revin} return the forecast to the log-variance scale,
   \label{eq:filmtcn-output}
 \end{equation}
 The model produces one number per origin, the forecast of $Y^{(h)}_t$
-in~\eqref{eq:filmtcn-target}, at every horizon.
+in~\eqref{eq:filmtcn-target}, at every horizon. During training, the output of
+the head passes through dropout with rate 0.134: with that probability
+$\hat{y}_t$ is set to zero, so that the forecast equals $\mu_t$, and otherwise
+it is scaled by $1/(1-0.134)$.
 
 \subsubsection{What the conditioning computes}
 \label{sec:filmtcn-decomposition}
@@ -323,19 +348,32 @@ pair and horizon, by minimizing the mean squared error
     \bigl(\hat{Y}^{(h)}_t - Y^{(h)}_t\bigr)^2
   \label{eq:filmtcn-loss}
 \end{equation}
-over the forecast origins $\mathcal{T}$ of the training years 2010--2021. We
-use Adam \citep{kingma2015adam} with mini-batches of 256 origins and a
-one-cycle learning-rate schedule \citep{smith2019superconvergence} that peaks
-at $6.35\times10^{-3}$ after 30\% of the training steps. Training runs for at
-most 40 epochs and stops when the validation loss over 2022--2023 has not
-improved for 8 epochs; we keep the parameters with the lowest validation loss.
-Each configuration is trained with ten random seeds, and the losses we report
-are averages over seeds.
+over the forecast origins $\mathcal{T}$ of the training years. All three series
+start on 12 January 2012, so with $L=70$ the first training origin is
+19 April 2012 and $\mathcal{T}$ runs to the end of 2021: 2,515 origins at
+$h=1$ and 2,511 at $h=5$. Each epoch draws shuffled mini-batches of 256 origins
+and drops the last incomplete batch, so it uses 9 batches, or 2,304 origins.
 
-Table~\ref{tab:filmtcn-hparams} lists the hyperparameters. They are the
-optimum of an Optuna search \citep{akiba2019optuna} for ModernTCN on EUR/USD
-at $h=1$, with the dropout rate in the blocks raised from 0.33 to 0.5, and are
-held fixed across pairs and horizons. The ModernTCN benchmark is the same
+We use Adam \citep{kingma2015adam} without weight decay and a one-cycle
+learning-rate schedule \citep{smith2019superconvergence}, updated after every
+mini-batch and planned over the maximum of 40 epochs. With the PyTorch defaults
+we keep, the rate rises from $2.5\times10^{-4}$ to its peak of
+$6.35\times10^{-3}$ over the first 30\% of that budget, that is, by the end of
+epoch 12, and then decays by cosine annealing; Adam's $\beta_1$ moves from 0.95
+to 0.85 and back over the same cycle. Training stops when the validation loss
+over 2022--2023 has not improved for 8 epochs, and we keep the parameters with
+the lowest validation loss. Because the schedule is fixed in advance, a run
+that stops before epoch 12 never reaches the peak rate. The validation loss is
+computed on two shuffled batches of 256 origins, 512 of the 514--519
+validation origins. Each configuration is trained with the seeds
+$2021,\dots,2030$, and the losses we report are averages over seeds.
+
+Table~\ref{tab:filmtcn-hparams} lists the hyperparameters. The backbone and
+optimizer values are the optimum of an Optuna search \citep{akiba2019optuna}
+for ModernTCN on EUR/USD at $h=1$, with the dropout rate in the blocks raised
+from 0.33 to 0.5. That search has no calendar embedding; $d_e=16$ is set
+separately [state how $d_e=16$ was chosen]. All values are held fixed across
+pairs and horizons. The ModernTCN benchmark is the same
 network with the calendar variable and the FiLM layer removed ($M=1$), trained
 with the same hyperparameters, so the difference between the two models
 isolates the calendar path.
@@ -362,7 +400,7 @@ isolates the calendar path.
     Batch size                          &                & 256 \\
     Peak learning rate                  &                & $6.35\times10^{-3}$ \\
     Maximum epochs, patience            &                & 40, 8 \\
-    Random seeds                        &                & 10 \\
+    Random seeds                        &                & 2021--2030 \\
     \bottomrule
   \end{tabular}
 \end{table}

@@ -1,0 +1,87 @@
+% ModernTCN benchmark architecture as run in colab_benchmark_h1_h5.ipynb
+% (no --use_events; --use_multi_scale False --aggregate_horizon).
+% Compile with pdflatex; include the PDF in the paper.
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows.meta,fit,calc}
+
+\definecolor{cIO}{HTML}{98A8CE}
+\definecolor{cRevIN}{HTML}{FFB3B8}
+\definecolor{cStem}{HTML}{7FBFE0}
+\definecolor{cBlock}{HTML}{D79BDB}
+\definecolor{cHead}{HTML}{AEF0EB}
+
+\begin{document}
+\begin{tikzpicture}[
+  box/.style={rounded corners=2pt, minimum height=1.0cm, minimum width=3.3cm,
+              align=center, font=\small, inner sep=3pt},
+  stage/.style={box, fill=cBlock, minimum height=0.7cm},
+  arr/.style={-{Stealth[length=2.4mm,width=1.8mm]}, line width=0.8pt},
+  dim/.style={font=\footnotesize, text=black!60},
+  ibox/.style={rounded corners=2pt, minimum height=1.3cm, align=center,
+               font=\footnotesize, inner sep=3pt},
+]
+
+% ---- input path -------------------------------------------------------------
+\node[box, fill=cIO] (v1) at (0,0)
+  {\textbf{Input} $\ln RV$, $L{=}70$ days\\$(B,\,70,\,1)$};
+\node[box, fill=cRevIN] (v2) at (0,-1.6)
+  {\textbf{RevIN} (normalize)\\keep $\mu_t,\ \sigma_t$};
+\node[box, fill=cStem] (v3) at (0,-3.2)
+  {Stem: patch embedding\\$P{=}16,\ S{=}8$};
+\draw[arr] (v1) -- (v2);
+\draw[arr] (v2) -- (v3);
+
+% ---- backbone: 4 stages x 2 blocks, downsampling between -----------------
+\node[stage] (s1) at (0,-5.0) {\textbf{Stage 1}: 2 blocks, $N{=}8$};
+\node[stage] (s2) at (0,-6.2) {\textbf{Stage 2}: 2 blocks, $N{=}4$};
+\node[stage] (s3) at (0,-7.4) {\textbf{Stage 3}: 2 blocks, $N{=}2$};
+\node[stage] (s4) at (0,-8.6) {\textbf{Stage 4}: 2 blocks, $N{=}1$};
+\draw[arr] (s1) -- node[dim, right] {$/2$} (s2);
+\draw[arr] (s2) -- node[dim, right] {$/2$} (s3);
+\draw[arr] (s3) -- node[dim, right] {$/2$} (s4);
+\node[draw, dashed, rounded corners=3pt, fit=(s1)(s2)(s3)(s4),
+      inner xsep=0.25cm, inner ysep=0.25cm] (bb) {};
+\node[font=\footnotesize, align=center, text width=3.3cm] at (-4.0,-6.8)
+  {\textbf{ModernTCN backbone}\\4 stages $\times$ 2 blocks\\
+   $D{=}32$ channels\\$M{=}1$ variable: log RV\\[3pt]
+   $/2$: downsampling\\(BN, convolution with\\kernel and stride 2)};
+\draw[arr] (v3) -- node[dim, right] {$(B,1,32,8)$} (s1);
+
+% ---- output path -------------------------------------------------------------
+\node[box, fill=cHead] (u3) at (5.4,-3.2)
+  {Flatten head (linear)\\$\hat{y}_t$};
+\node[box, fill=cRevIN] (u4) at (5.4,-1.6)
+  {\textbf{RevIN} (denormalize)\\$\mu_t+\sigma_t\,\hat{y}_t$};
+\node[box, fill=cIO] (u5) at (5.4,0)
+  {\textbf{Output} $\hat{Y}_t^{(h)}$\\$(B,\,1,\,1)$};
+\draw[arr] (s4.east) -| node[dim, right, pos=0.75] {$(B,1,32,1)$} (u3.south);
+\draw[arr] (u3) -- (u4);
+\draw[arr] (u4) -- (u5);
+\draw[arr, dashed, black!45] (v2) -- node[dim, above] {$\mu_t,\ \sigma_t$} (u4);
+
+% ---- inside one ModernTCN block --------------------------------------------
+\coordinate (bin) at (-5.4,-11.6);
+\node[ibox, fill=cBlock!45, minimum width=3.4cm] (b1) at (-2.3,-11.6)
+  {Depthwise conv over patches\\$K_L{=}27$ and $K_S{=}5$, BN\\(each channel)};
+\node[ibox, fill=cBlock!45, minimum width=2.8cm] (b2) at (1.3,-11.6)
+  {ConvFFN 1\\mixes channels};
+\node[ibox, fill=cBlock!45, minimum width=3.0cm] (b3) at (4.7,-11.6)
+  {ConvFFN 2\\mixes variables\\(one variable here)};
+\node[draw, circle, line width=0.8pt, inner sep=1pt, font=\small] (plus)
+  at (6.9,-11.6) {$+$};
+\coordinate (bout) at (7.7,-11.6);
+\draw[arr] (bin) -- (b1);
+\draw[arr] (b1) -- (b2);
+\draw[arr] (b2) -- (b3);
+\draw[arr] (b3) -- (plus);
+\draw[arr] (plus) -- (bout);
+\coordinate (rtop) at ($(bin)+(0,1.0)$);
+\draw[arr] (bin) -- (rtop) -| node[dim, pos=0.25, above] {residual} (plus);
+\node[draw, dashed, rounded corners=3pt, fit=(bin)(rtop)(b1)(b2)(b3)(plus)(bout),
+      inner xsep=0.25cm, inner ysep=0.5cm,
+      label={[font=\footnotesize\bfseries, anchor=south west]north west:%
+             Inside each ModernTCN block}] {};
+
+\end{tikzpicture}
+\end{document}

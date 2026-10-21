@@ -84,6 +84,11 @@ class Exp_Main(Exp_Basic):
             name += '-L1'
         if getattr(self.args, 'event_untie', False):
             name += '-U'
+        # the calendar ablation: one half of the calendar switched off
+        if not getattr(self.args, 'event_past', True):
+            name += '-noPast'
+        if not getattr(self.args, 'event_future', True):
+            name += '-noFuture'
         return name
 
     def _save_losses(self, setting, test_data, preds, trues):

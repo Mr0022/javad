@@ -7,7 +7,7 @@ import random
 import numpy as np
 from utils.str2bool import str2bool
 from data_provider.event_preprocessing import (
-    DEFAULT_DATA_PATH, DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING,
+    DEFAULT_DATA_PATH, DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING, DEFAULT_SELECT_END_YEAR,
     count_event_features, event_kwargs_from_args, resolve_event_path)
 
 parser = argparse.ArgumentParser(description='ModernTCN')
@@ -143,6 +143,10 @@ parser.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS,
                     help='raw calendar only: emit an evt_* indicator for release types seen on '
                          'at least this many distinct trading days. The calendar\'s '
                          'Impact column is ignored, so recurrence is the only filter')
+parser.add_argument('--event_select_end_year', type=int, default=DEFAULT_SELECT_END_YEAR,
+                    help='raw calendar only: --event_min_days counts releases up to the end of '
+                         'this year only (default: 2021, the training years), so a release type '
+                         'that starts later gets no column it could never be trained on')
 parser.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
                     choices=['roll', 'drop'],
                     help="raw calendar only: releases dated on a non-trading day are rolled onto "

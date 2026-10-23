@@ -44,10 +44,25 @@ Output columns
 
 ``evt_<CUR>_<Name>`` (multi-hot indicators -- kept raw 0/1 by the loader)
     One column per (Currency, Name) release type seen on at least ``min_days``
-    distinct trading days.  With impact gone, recurrence is the only filter, so
-    the long tail of frequent-but-minor releases (bill auctions, Redbook, rig
-    counts) now survives wherever it is regular enough -- raise ``min_days`` if
-    you want a tighter set.
+    distinct trading days of the SELECTION years (``select_end_year``, default
+    2021: the deep models' training years).  With impact gone, recurrence is
+    the only filter, so the long tail of frequent-but-minor releases (bill
+    auctions, Redbook, rig counts) now survives wherever it is regular enough
+    -- raise ``min_days`` if you want a tighter set.
+
+    Counting on the training years only means a release type that first
+    appears later (a new survey, a vendor's new listing, an official appointed
+    in 2022) gets no column: its all-zero training column would leave its
+    embedding at the random initialisation, and choosing columns by how often
+    they occur in the test years is itself a look-ahead.  Two kinds of
+    late-starting names are not new releases and are merged first, so they
+    keep reaching a trained column:
+
+    * renames -- the same survey under a new label (``RENAMES``);
+    * central-bank speeches -- coded by institution rather than by person
+      (``Fed official speech``), with the Fed Chair, ECB President and BoE /
+      RBA Governor kept separate by term date (``LEADERS``).  Board turnover
+      otherwise turns every new member into an untrainable column.
 
 Calendar alignment
 ------------------
@@ -78,6 +93,46 @@ SERIES_SUFFIXES = ('_lnRV',)
 DEFAULT_DATA_PATH = 'EURUSD_lnRV.csv'
 DEFAULT_MIN_DAYS = 24
 DEFAULT_ON_NONTRADING = 'roll'
+# last year whose releases count towards min_days: the deep models train on
+# 2010-2021 (data_loader.split_borders), and HAR_X_run.py uses the same rule
+DEFAULT_SELECT_END_YEAR = 2021
+
+# the same survey under a new label: (Currency, new name) -> the name the
+# training years use. Ai Group renamed its AiG Performance of Manufacturing /
+# Construction indices in Feb 2023; its new composite 'AiG Industry Index' has
+# no predecessor and is left to the selection rule.
+RENAMES = {
+    ('AUD', 'Ai Group Manufacturing PMI'): 'AiG Performance of Mfg Index',
+    ('AUD', 'Ai Group Construction PMI'): 'AiG Performance of Construction Index',
+}
+
+# central-bank speeches by institution. A name is an institution's speech when
+# it matches OFFICIAL[inst] and SPEECH; it is the leader's when it also names
+# the leader within their term (the calendar does not always say so: 'Fed's
+# Powell speech' is the Chair's), else an official's.
+OFFICIAL = {
+    'Fed': r"\bFed\b|\bFOMC Member\b",
+    'ECB': r"\bECB's\b|\bBuba President\b",
+    'BoE': r"\bBoE's\b",
+    'RBA': r"\bRBA's\b|\bRBA (?:Deputy )?Governor\b",
+}
+SPEECH = r"\bspeech\b|\bspeaks\b|\btestifies\b"
+LEADERS = {   # institution -> (title, [(surname, first day, last day)])
+    'Fed': ('Chair', [('Bernanke', '2006-02-01', '2014-01-31'),
+                      ('Yellen', '2014-02-03', '2018-02-03'),
+                      ('Powell', '2018-02-05', None)]),
+    'ECB': ('President', [('Draghi', '2011-11-01', '2019-10-31'),
+                          ('Lagarde', '2019-11-01', None)]),
+    'BoE': ('Governor', [('King', '2003-07-01', '2013-06-30'),
+                         ('Carney', '2013-07-01', '2020-03-15'),
+                         ('Bailey', '2020-03-16', None)]),
+    'RBA': ('Governor', [('Stevens', '2006-09-18', '2016-09-17'),
+                         ('Lowe', '2016-09-18', '2023-09-17'),
+                         ('Bullock', '2023-09-18', None)]),
+}
+# the EURUSD calendar prefixes names with a region ('usd Fed's ...', 'ger
+# German Buba President ...'); a merged name takes its institution's
+REGION = {'Fed': 'usd', 'ECB': 'eur', 'BoE': 'gbp', 'RBA': 'aud'}
 
 # build_daily_event_features is called once per dataset split (train/val/test)
 # plus once by run.py/tune.py to size the event embedding; the inputs are
@@ -127,7 +182,40 @@ def _read_raw(path):
         warnings.warn(f'{path}: dropping {int(bad_date.sum())} rows with unparseable Date')
         df = df[~bad_date]
 
-    return _normalise_names(df).reset_index(drop=True)
+    return _merge_releases(_normalise_names(df)).reset_index(drop=True)
+
+
+def _merge_releases(df):
+    """Map renamed surveys onto their old name, and speeches onto institutions.
+
+    'usd Fed's Cook speech' -> 'usd Fed official speech'; 'Fed's Powell speech'
+    on 2019-05-01 -> 'Fed Chair speech'; 'Ai Group Manufacturing PMI' -> 'AiG
+    Performance of Mfg Index'. Press conferences and policy statements are
+    left as they are.
+    """
+    df = df.copy()
+    names = df['Name'].copy()
+    for (cur, new), old in RENAMES.items():
+        names[(df['Currency'] == cur) & (names == new)] = old
+
+    speech = names.str.contains(SPEECH, case=False, regex=True)
+    prefixed = names.str.match(r'[a-z]{3} ')
+    for inst, pattern in OFFICIAL.items():
+        hit = speech & names.str.contains(pattern, regex=True)
+        if not hit.any():
+            continue
+        title, terms = LEADERS[inst]
+        lead = pd.Series(False, index=df.index)
+        for surname, first, last in terms:
+            in_term = df['Date'] >= first
+            if last is not None:
+                in_term &= df['Date'] <= last
+            lead |= names.str.contains(rf'\b{surname}\b', regex=True) & in_term
+        merged = np.where(lead, f'{inst} {title} speech', f'{inst} official speech')
+        merged = np.where(prefixed, REGION[inst] + ' ', '') + merged
+        names[hit] = merged[hit.to_numpy()]
+    df['Name'] = names
+    return df
 
 
 def _align_to_trading_days(df, trading_dates, on_nontrading):
@@ -152,6 +240,7 @@ def _align_to_trading_days(df, trading_dates, on_nontrading):
 def build_daily_event_features(event_file, trading_dates,
                                min_days=DEFAULT_MIN_DAYS,
                                on_nontrading=DEFAULT_ON_NONTRADING,
+                               select_end_year=DEFAULT_SELECT_END_YEAR,
                                verbose=True):
     """Long-format calendar -> wide daily matrix indexed by ``trading_dates``.
 
@@ -165,8 +254,13 @@ def build_daily_event_features(event_file, trading_dates,
         The target series' dates, in order.  The result has exactly these rows.
     min_days :
         An ``evt_*`` indicator is emitted for a (Currency, Name) release type
-        seen on at least ``min_days`` distinct trading days. Impact ratings are
-        ignored, so recurrence is the only filter.
+        seen on at least ``min_days`` distinct trading days up to the end of
+        ``select_end_year``. Impact ratings are ignored, so recurrence is the
+        only filter.
+    select_end_year : int or None
+        Last year counted by ``min_days`` (default 2021, the deep models'
+        training years). None counts the whole sample, test years included --
+        the old behaviour, which keeps types the model can never train.
     on_nontrading : {'roll', 'drop'}
         What to do with releases dated on a non-trading day.
 
@@ -200,7 +294,11 @@ def build_daily_event_features(event_file, trading_dates,
         _daily(aligned['Currency'] == cur, f'n_events_{_sanitise(cur).lower()}')
 
     # ---- multi-hot indicators for the release types worth modelling ----------
-    stats = (aligned.groupby(['Currency', 'Name'])
+    # recurrence is counted on the selection years only, so a type that starts
+    # after them gets no column (see the module docstring)
+    in_sel = (aligned['trade_date'].dt.year <= select_end_year
+              if select_end_year is not None else pd.Series(True, index=aligned.index))
+    stats = (aligned.loc[in_sel].groupby(['Currency', 'Name'])
              .agg(days=('trade_date', 'nunique'))
              .reset_index())
     sel = stats[stats['days'] >= min_days]
@@ -241,8 +339,8 @@ def build_daily_event_features(event_file, trading_dates,
         n_evt = sum(c.startswith('evt_') for c in out.columns)
         print(f'events: {len(out.columns) - 1} feature columns '
               f'({n_evt} evt_* indicators from {len(stats)} release types, '
-              f'min_days={min_days}; impact ignored) '
-              f'over {len(out)} trading days')
+              f'min_days={min_days} counted up to {select_end_year or "the end"}; '
+              f'impact ignored) over {len(out)} trading days')
     return out
 
 
@@ -380,6 +478,7 @@ def event_kwargs_from_args(args):
     return {
         'min_days': getattr(args, 'event_min_days', DEFAULT_MIN_DAYS),
         'on_nontrading': getattr(args, 'event_on_nontrading', DEFAULT_ON_NONTRADING),
+        'select_end_year': getattr(args, 'event_select_end_year', DEFAULT_SELECT_END_YEAR),
     }
 
 
@@ -394,6 +493,7 @@ def _main():
                    help='defaults to the calendar paired with --data_path by name')
     p.add_argument('--target', type=str, default='ln_RV')
     p.add_argument('--event_min_days', type=int, default=DEFAULT_MIN_DAYS)
+    p.add_argument('--event_select_end_year', type=int, default=DEFAULT_SELECT_END_YEAR)
     p.add_argument('--event_on_nontrading', type=str, default=DEFAULT_ON_NONTRADING,
                    choices=['roll', 'drop'])
     p.add_argument('--out', type=str, default=None,
@@ -405,6 +505,7 @@ def _main():
     df = build_daily_event_features(
         os.path.join(a.root_path, event_path), dates,
         min_days=a.event_min_days,
+        select_end_year=a.event_select_end_year,
         on_nontrading=a.event_on_nontrading)
     default_out = os.path.splitext(os.path.basename(event_path))[0] + '_features.csv'
     out = a.out or os.path.join(a.root_path, default_out)

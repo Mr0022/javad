@@ -116,7 +116,7 @@ from sklearn.linear_model import lasso_path
 
 # -- Local ---------------------------------------------------------------------
 from data_provider.event_preprocessing import (
-    DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING,
+    DEFAULT_MIN_DAYS, DEFAULT_ON_NONTRADING, DEFAULT_SELECT_END_YEAR,
     load_event_features, resolve_event_path, resolve_target_column)
 from utils.target_agg import forward_log_mean_rv
 
@@ -692,6 +692,10 @@ def main():
                          "minimum, '1se' the largest lambda within one standard "
                          "error of it (more shrinkage, steadier at the longer horizons)")
     ap.add_argument("--event_min_days", type=int, default=DEFAULT_MIN_DAYS)
+    ap.add_argument("--event_select_end_year", type=int, default=DEFAULT_SELECT_END_YEAR,
+                    help="--event_min_days counts releases up to the end of this "
+                         "year only. 2021 (the deep models' training years) gives "
+                         "HAR-NEWS / N-HAR the same release types as FiLM-TCN")
     ap.add_argument("--event_on_nontrading", type=str,
                     default=DEFAULT_ON_NONTRADING, choices=["roll", "drop"])
     args = ap.parse_args()
@@ -702,7 +706,8 @@ def main():
                      f"known horizons are {sorted(HORIZONS)}")
 
     event_kwargs = {"min_days": args.event_min_days,
-                    "on_nontrading": args.event_on_nontrading}
+                    "on_nontrading": args.event_on_nontrading,
+                    "select_end_year": args.event_select_end_year}
 
     os.makedirs(args.output_dir, exist_ok=True)
 
